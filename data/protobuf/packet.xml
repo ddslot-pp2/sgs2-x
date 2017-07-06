@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<packet>
+
+	<LOBBY start="1000">
+		<!--게임 데이터 타입위한 enum값-->
+		<GameDataType type="enum">
+			 <test_1/>
+			 <test_2/>
+			 <test_3/>
+		</GameDataType>
+
+		<!-- 로그인 위한 패킷-->
+		<CS_LOG_IN>
+			<id type="string"/>
+			<password type="string"/>
+		</CS_LOG_IN>
+
+		<SC_LOG_IN>
+			<result type="bool"/>
+			<timestamp type="int64"/>
+			<ec type="string"/>
+		</SC_LOG_IN>
+
+
+	</LOBBY>
+
+	<GAME start="2000">
+		
+		<CS_PING>
+			<timestamp type="int64"/>
+		</CS_PING>
+		<SC_PING>
+			<timestamp type="int64"/>
+		</SC_PING>
+	</GAME>
+
+
+</packet>

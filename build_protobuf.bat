@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" ".\protobuf-master\cmake\build\solution\protobuf.sln" /p:Configuration=Debug /p:Platform=x64 /t:rebuild
+"C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" ".\protobuf-master\cmake\build\solution\protobuf.sln" /p:Configuration=Release /p:Platform=x64 /t:rebuild

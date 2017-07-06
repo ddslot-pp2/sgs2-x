@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{090a29a9-6875-475c-8e9e-f15a2f117b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\server_session">
+      <UniqueIdentifier>{6d8a4e31-bfce-43dc-bc55-48ffdc291803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\packet_processor">
+      <UniqueIdentifier>{6b488af4-7216-4594-aed0-58122f320056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\packet_processor\packet">
+      <UniqueIdentifier>{5b49d87f-fa07-4904-93ef-d4205895c574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\packet_processor\packet_handler">
+      <UniqueIdentifier>{61144f34-669b-4532-b270-3515b41a4c13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\packet_processor\packet\GAME">
+      <UniqueIdentifier>{f6b9a859-33f4-48c8-b4da-b2c63c147558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\packet_processor\packet\LOBBY">
+      <UniqueIdentifier>{4caefc8c-8435-4ece-a116-bba5f73fc2c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\server_session\server_session.cpp">
+      <Filter>src\server_session</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_processor.cpp">
+      <Filter>src\packet_processor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet\LOBBY.pb.cc">
+      <Filter>src\packet_processor\packet\LOBBY</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet\GAME.pb.cc">
+      <Filter>src\packet_processor\packet\GAME</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\handle_CS_LOGIN.cpp">
+      <Filter>src\packet_processor\packet_handler</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\handle_CS_PING.cpp">
+      <Filter>src\packet_processor\packet_handler</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\server_session\server_session.h">
+      <Filter>src\server_session</Filter>
+    </ClInclude>
+    <ClInclude Include="src\packet_processor\packet_processor.h">
+      <Filter>src\packet_processor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\packet_processor\static_if.h">
+      <Filter>src\packet_processor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\packet_processor\send_helper.h">
+      <Filter>src\packet_processor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\packet_processor\packet\LOBBY.pb.h">
+      <Filter>src\packet_processor\packet\LOBBY</Filter>
+    </ClInclude>
+    <ClInclude Include="src\packet_processor\packet\GAME.pb.h">
+      <Filter>src\packet_processor\packet\GAME</Filter>
+    </ClInclude>
+    <ClInclude Include="src\packet_processor\opcode.h">
+      <Filter>src\packet_processor</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
