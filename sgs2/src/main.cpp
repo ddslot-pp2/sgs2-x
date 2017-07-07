@@ -16,6 +16,7 @@ void sig_handler(int signal_val)
     cv.notify_all();
 }
 
+
 int main()
 {
     // 서버 종료 ctrl + break
