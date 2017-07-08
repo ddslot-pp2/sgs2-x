@@ -22,6 +22,24 @@
     <Filter Include="src\packet_processor\packet\LOBBY">
       <UniqueIdentifier>{4caefc8c-8435-4ece-a116-bba5f73fc2c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\field">
+      <UniqueIdentifier>{0f3fd2fd-ca72-4822-b269-8a1a88c25d28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\object">
+      <UniqueIdentifier>{6d3dfdd3-cdaa-45b4-8645-d206870389c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\component">
+      <UniqueIdentifier>{fe57fd8a-b5db-4a36-8863-7a53d843771a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\account">
+      <UniqueIdentifier>{a48e2ab5-166f-41b0-96be-7bf6ce7ea4c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\component\skill">
+      <UniqueIdentifier>{416e3270-b33b-48e4-9d47-8e463e9f1685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\component\movement">
+      <UniqueIdentifier>{a2970f7d-6975-4f88-8980-67de8465df6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -45,6 +63,36 @@
     <ClCompile Include="src\packet_processor\packet_handler\handle_CS_PING.cpp">
       <Filter>src\packet_processor\packet_handler</Filter>
     </ClCompile>
+    <ClCompile Include="src\field\field_manager.cpp">
+      <Filter>src\field</Filter>
+    </ClCompile>
+    <ClCompile Include="src\field\egypt_field.cpp">
+      <Filter>src\field</Filter>
+    </ClCompile>
+    <ClCompile Include="src\field\field.cpp">
+      <Filter>src\field</Filter>
+    </ClCompile>
+    <ClCompile Include="src\account\account_manager.cpp">
+      <Filter>src\account</Filter>
+    </ClCompile>
+    <ClCompile Include="src\account\account.cpp">
+      <Filter>src\account</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\component.cpp">
+      <Filter>src\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\skill\skill_component.cpp">
+      <Filter>src\component\skill</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\movement\move_component.cpp">
+      <Filter>src\component\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\object.cpp">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\character.cpp">
+      <Filter>src\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -67,6 +115,36 @@
     </ClInclude>
     <ClInclude Include="src\packet_processor\opcode.h">
       <Filter>src\packet_processor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\field\field_manager.h">
+      <Filter>src\field</Filter>
+    </ClInclude>
+    <ClInclude Include="src\field\egypt_field.h">
+      <Filter>src\field</Filter>
+    </ClInclude>
+    <ClInclude Include="src\field\field.h">
+      <Filter>src\field</Filter>
+    </ClInclude>
+    <ClInclude Include="src\account\account_manager.h">
+      <Filter>src\account</Filter>
+    </ClInclude>
+    <ClInclude Include="src\account\account.h">
+      <Filter>src\account</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\component.h">
+      <Filter>src\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\skill\skill_component.h">
+      <Filter>src\component\skill</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\movement\move_component.h">
+      <Filter>src\component\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object\character.h">
+      <Filter>src\object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object\object.h">
+      <Filter>src\object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
