@@ -106,6 +106,7 @@
     <ClInclude Include="src\packet_processor\packet_processor.h" />
     <ClInclude Include="src\packet_processor\send_helper.h" />
     <ClInclude Include="src\packet_processor\static_if.h" />
+    <ClInclude Include="src\predeclare.h" />
     <ClInclude Include="src\server_session\server_session.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

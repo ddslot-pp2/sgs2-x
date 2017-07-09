@@ -1,1 +1,12 @@
-ECHO가 설정되어 있습니다.
+#ifndef __MOVE_COMPONENT_H
+#define __MOVE_COMPONENT_H
+#include "../component.h"
+
+class move_component : public component
+{
+public:
+
+    //void process_task() override;
+};
+
+#endif

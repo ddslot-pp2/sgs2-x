@@ -10,10 +10,16 @@
     <Filter Include="src\locale">
       <UniqueIdentifier>{78d2b73d-8a76-465e-80d3-506389811741}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\timer">
+      <UniqueIdentifier>{20087730-4e89-4981-8216-ff8b1c045edf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\locale\string_helper.h">
       <Filter>src\locale</Filter>
+    </ClInclude>
+    <ClInclude Include="src\timer\timer_helper.hpp">
+      <Filter>src\timer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

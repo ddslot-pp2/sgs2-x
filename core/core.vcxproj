@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\locale\string_helper.h" />
+    <ClInclude Include="src\timer\timer_helper.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\locale\string_helper.cpp" />

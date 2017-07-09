@@ -119,9 +119,6 @@
     <ClInclude Include="src\field\field_manager.h">
       <Filter>src\field</Filter>
     </ClInclude>
-    <ClInclude Include="src\field\egypt_field.h">
-      <Filter>src\field</Filter>
-    </ClInclude>
     <ClInclude Include="src\field\field.h">
       <Filter>src\field</Filter>
     </ClInclude>
@@ -145,6 +142,12 @@
     </ClInclude>
     <ClInclude Include="src\object\object.h">
       <Filter>src\object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\field\egypt_field.h">
+      <Filter>src\field</Filter>
+    </ClInclude>
+    <ClInclude Include="src\predeclare.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

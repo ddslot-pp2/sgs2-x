@@ -22,7 +22,7 @@ namespace network
     boost::asio::io_service& io_service();
 
     void initialize();
-    void start(size_t thread_pool_size);
+    void start(size_t thread_pool_size, std::function<void()> callaback);
     void stop();
 }
 

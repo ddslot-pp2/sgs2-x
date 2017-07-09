@@ -1,1 +1,10 @@
-ECHO가 설정되어 있습니다.
+#ifndef __ACCOUNT_H
+#define __ACCOUNT_H
+
+class account
+{
+public:
+
+};
+
+#endif

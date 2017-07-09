@@ -1,1 +1,10 @@
-ECHO가 설정되어 있습니다.
+#include "component.h"
+
+void component::process_task()
+{
+    task t;
+    while (q_.try_pop(t))
+    {
+        t();
+    }
+}

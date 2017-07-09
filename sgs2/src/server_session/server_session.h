@@ -2,6 +2,7 @@
 #define __SERVER_SESSION_H
 
 #include "session/session.h"
+#include "../predeclare.h"
 
 using boost::asio::ip::tcp;
 
@@ -19,6 +20,9 @@ protected:
     virtual void on_disconnect(boost::system::error_code& ec) override;
     virtual void on_disconnect() override;
 
+private:
+    account_id account_id_;
+    //std::shared_ptr<character> character_;
 };
 
 #endif

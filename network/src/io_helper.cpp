@@ -28,16 +28,17 @@ namespace network
 
     }
 
-    void start(size_t thread_count)
+    void start(size_t thread_count, std::function<void()> callback)
     {
         g_io_threads.reserve(thread_count);
 
         for (auto i = 0; i < thread_count; ++i)
         {
-            g_io_threads.emplace_back([] {
+            g_io_threads.emplace_back([callback] {
+
+                callback();
 
                 boost::system::error_code ec;
-
                 g_io_service->run(ec);
 
                 if (ec)
