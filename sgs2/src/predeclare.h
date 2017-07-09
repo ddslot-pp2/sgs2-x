@@ -11,6 +11,7 @@ using timer_milliseconds = std::chrono::milliseconds;
 using timer_ptr = std::unique_ptr<boost::asio::steady_timer>;
 
 using uid = __int64;
+//using obj_id = __int64;
 
 constexpr static auto update_interval = 1.0f / 60.0f;
 constexpr static auto max_user_per_field = 50;

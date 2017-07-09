@@ -6,23 +6,24 @@
 #include "../component/movement/move_component.h"
 #include "../component/skill/skill_component.h"
 
+class server_session;
+
 class character : public object
 {
 public:
+    explicit character(field_id id, std::shared_ptr<server_session> session);
+    ~character();
 
+    void initialize() override;
+    void update(float delta) override;
+
+    void leave_field() const;
    
-    /*
-    template <typename C, typename Fn, typename... Args>
-    void push_task(std::shared_ptr<object> obj, Fn f, Args&&... args)
-    {
-        constexpr auto index = Index<C, character_component_t>::value;
+    std::shared_ptr<server_session> session() const { return session_; }
 
-        auto comp = std::static_pointer_cast<C>(obj->components_[index]);
-        auto callback = std::bind(f, comp, std::forward<Args>(args)...);
-        obj->q_.push(callback);
-    }
-    */
 
+protected:
+    std::shared_ptr<server_session> session_;
 };
 
 #endif

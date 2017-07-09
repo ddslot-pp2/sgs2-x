@@ -31,26 +31,29 @@ void initialize()
 
 }
 
-/*
-void update_all_field()
+
+void test()
 {
-    while (true)
+    tcp::socket sock(network::io_service());
+    auto sess = std::make_shared<server_session>(std::move(sock));
+    auto fid = 0;
+
+    field_manager::instance().try_enter_field(fid, sess);
+
+
+    using namespace std::chrono_literals;
+    std::this_thread::sleep_for(2s);
+    auto c = sess->character();
+    if (c)
     {
-        for (auto field : fields)
-        {
-            using namespace network;
-            if (field->check_update_flag())
-            {
-                
-                io_service().post([field] {
-                    field->try_update();
-                });
-            }
-            
-        }
+        c->send_task<move_component>(comp_id::move_comp, &move_component::say_hello);
+    
+        std::this_thread::sleep_for(2s);
+        sess->destroy_character();
     }
+
 }
-*/
+
 
 void on_local_thread_initialize()
 {
@@ -75,6 +78,8 @@ int main()
     // 메인 스레드 초기화
     initialize();
     //network::io_service().post(update_all_field);
+    // 테스트
+    network::io_service().post(test);
 
     // 서버 생성
     tcp::endpoint endpoint(tcp::v4(), 3000);

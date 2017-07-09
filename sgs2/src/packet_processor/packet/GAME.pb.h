@@ -31,9 +31,15 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace GAME {
+class CS_ENTER_FIELD;
+class CS_ENTER_FIELDDefaultTypeInternal;
+extern CS_ENTER_FIELDDefaultTypeInternal _CS_ENTER_FIELD_default_instance_;
 class CS_PING;
 class CS_PINGDefaultTypeInternal;
 extern CS_PINGDefaultTypeInternal _CS_PING_default_instance_;
+class SC_ENTER_FIELD;
+class SC_ENTER_FIELDDefaultTypeInternal;
+extern SC_ENTER_FIELDDefaultTypeInternal _SC_ENTER_FIELD_default_instance_;
 class SC_PING;
 class SC_PINGDefaultTypeInternal;
 extern SC_PINGDefaultTypeInternal _SC_PING_default_instance_;
@@ -215,6 +221,173 @@ class SC_PING : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class CS_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_ENTER_FIELD) */ {
+ public:
+  CS_ENTER_FIELD();
+  virtual ~CS_ENTER_FIELD();
+
+  CS_ENTER_FIELD(const CS_ENTER_FIELD& from);
+
+  inline CS_ENTER_FIELD& operator=(const CS_ENTER_FIELD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_ENTER_FIELD& default_instance();
+
+  static inline const CS_ENTER_FIELD* internal_default_instance() {
+    return reinterpret_cast<const CS_ENTER_FIELD*>(
+               &_CS_ENTER_FIELD_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    2;
+
+  void Swap(CS_ENTER_FIELD* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_ENTER_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_ENTER_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_ENTER_FIELD& from);
+  void MergeFrom(const CS_ENTER_FIELD& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_ENTER_FIELD* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 field_id = 1;
+  void clear_field_id();
+  static const int kFieldIdFieldNumber = 1;
+  ::google::protobuf::int32 field_id() const;
+  void set_field_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GAME.CS_ENTER_FIELD)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 field_id_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_ENTER_FIELD) */ {
+ public:
+  SC_ENTER_FIELD();
+  virtual ~SC_ENTER_FIELD();
+
+  SC_ENTER_FIELD(const SC_ENTER_FIELD& from);
+
+  inline SC_ENTER_FIELD& operator=(const SC_ENTER_FIELD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_ENTER_FIELD& default_instance();
+
+  static inline const SC_ENTER_FIELD* internal_default_instance() {
+    return reinterpret_cast<const SC_ENTER_FIELD*>(
+               &_SC_ENTER_FIELD_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    3;
+
+  void Swap(SC_ENTER_FIELD* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_ENTER_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_ENTER_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_ENTER_FIELD& from);
+  void MergeFrom(const SC_ENTER_FIELD& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_ENTER_FIELD* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bool result = 1;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  bool result() const;
+  void set_result(bool value);
+
+  // int32 field_id = 2;
+  void clear_field_id();
+  static const int kFieldIdFieldNumber = 2;
+  ::google::protobuf::int32 field_id() const;
+  void set_field_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_ENTER_FIELD)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool result_;
+  ::google::protobuf::int32 field_id_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -255,7 +428,61 @@ inline void SC_PING::set_timestamp(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:GAME.SC_PING.timestamp)
 }
 
+// -------------------------------------------------------------------
+
+// CS_ENTER_FIELD
+
+// int32 field_id = 1;
+inline void CS_ENTER_FIELD::clear_field_id() {
+  field_id_ = 0;
+}
+inline ::google::protobuf::int32 CS_ENTER_FIELD::field_id() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_ENTER_FIELD.field_id)
+  return field_id_;
+}
+inline void CS_ENTER_FIELD::set_field_id(::google::protobuf::int32 value) {
+  
+  field_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_ENTER_FIELD.field_id)
+}
+
+// -------------------------------------------------------------------
+
+// SC_ENTER_FIELD
+
+// bool result = 1;
+inline void SC_ENTER_FIELD::clear_result() {
+  result_ = false;
+}
+inline bool SC_ENTER_FIELD::result() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_ENTER_FIELD.result)
+  return result_;
+}
+inline void SC_ENTER_FIELD::set_result(bool value) {
+  
+  result_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_ENTER_FIELD.result)
+}
+
+// int32 field_id = 2;
+inline void SC_ENTER_FIELD::clear_field_id() {
+  field_id_ = 0;
+}
+inline ::google::protobuf::int32 SC_ENTER_FIELD::field_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_ENTER_FIELD.field_id)
+  return field_id_;
+}
+inline void SC_ENTER_FIELD::set_field_id(::google::protobuf::int32 value) {
+  
+  field_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_ENTER_FIELD.field_id)
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

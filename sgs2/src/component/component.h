@@ -8,7 +8,13 @@ class component : public std::enable_shared_from_this<component>
 {
 public:
     void process_task();
-    
+
+    void send_task(task t)
+    {
+        q_.push(t);
+    }
+
+    //Concurrency::concurrent_queue<task>& queue();
     Concurrency::concurrent_queue<task> q_;
 };
 

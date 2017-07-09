@@ -1,5 +1,7 @@
 #include "egypt_field.h"
 
+using super = field;
+
 egypt_field::egypt_field(unsigned int field_id) : field(field_id)
 {
 
@@ -21,4 +23,6 @@ void egypt_field::update(float delta)
     {
         wprintf(L"id: %d, delta: %f\n", field_id_, delta);
     }
+
+    super::update(delta);
 }

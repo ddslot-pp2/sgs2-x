@@ -3,8 +3,12 @@
 
 #include "session/session.h"
 #include "../predeclare.h"
+#include "../object/character.h"
 
 using boost::asio::ip::tcp;
+
+using character_ptr = std::shared_ptr<character>;
+using character_weak_ptr = std::weak_ptr<character>;
 
 class server_session : public network::session
 {
@@ -12,6 +16,11 @@ public:
 
     explicit server_session(tcp::socket socket);
     virtual ~server_session();
+
+    void set_character(std::shared_ptr<character> character);
+    std::shared_ptr<character> character();
+
+    void destroy_character();
 
 protected:
 
@@ -22,6 +31,8 @@ protected:
 
 private:
     account_id account_id_;
+
+    character_weak_ptr character_;
     //std::shared_ptr<character> character_;
 };
 

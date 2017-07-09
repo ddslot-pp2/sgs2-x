@@ -36,3 +36,13 @@ void field_manager::update_fields()
         field_manager::instance().update_fields();
     });
 }
+
+void field_manager::request_field_status(std::shared_ptr<server_session> session)
+{
+    
+}
+
+void field_manager::try_enter_field(int field_id, std::shared_ptr<server_session> session)
+{
+    fields_[field_id]->send_task(&field::enter_field, session);
+}

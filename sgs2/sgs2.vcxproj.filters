@@ -93,6 +93,9 @@
     <ClCompile Include="src\object\character.cpp">
       <Filter>src\object</Filter>
     </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\handle_ENTER_FIELD.cpp">
+      <Filter>src\packet_processor\packet_handler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">

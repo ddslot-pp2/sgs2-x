@@ -2,7 +2,7 @@
 #include "../packet_processor/packet_processor.h"
 #include "../packet_processor/send_helper.h"
 
-server_session::server_session(tcp::socket socket) : session(std::move(socket))
+server_session::server_session(tcp::socket socket) : session(std::move(socket)), account_id_(0)
 {
     
 }
@@ -38,4 +38,29 @@ void server_session::on_disconnect(boost::system::error_code& ec)
 void server_session::on_disconnect()
 {
     wprintf(L"on disconnect\n");
+}
+
+void server_session::destroy_character()
+{
+    if (!character_.expired())
+    {
+        auto c = character_.lock();
+        c->leave_field();
+    }
+}
+
+void server_session::set_character(character_ptr character)
+{
+    character_ = character;
+}
+
+std::shared_ptr<character> server_session::character()
+{
+    auto c = character_.lock();
+    if (c)
+    {
+        return c;
+    }
+    
+    return nullptr;
 }

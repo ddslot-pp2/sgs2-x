@@ -32,6 +32,16 @@
 		<SC_PING>
 			<timestamp type="int64"/>
 		</SC_PING>
+
+		
+		<CS_ENTER_FIELD>
+			<field_id type="int32"/>
+		</CS_ENTER_FIELD>
+
+		<SC_ENTER_FIELD>
+			<result type="bool"/>
+			<field_id type="int32"/>
+		</SC_ENTER_FIELD>
 	</GAME>
 
 

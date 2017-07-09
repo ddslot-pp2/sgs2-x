@@ -86,6 +86,7 @@
     <ClCompile Include="src\packet_processor\packet\LOBBY.pb.cc" />
     <ClCompile Include="src\packet_processor\packet_handler\handle_CS_LOGIN.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\handle_CS_PING.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\handle_ENTER_FIELD.cpp" />
     <ClCompile Include="src\packet_processor\packet_processor.cpp" />
     <ClCompile Include="src\server_session\server_session.cpp" />
   </ItemGroup>

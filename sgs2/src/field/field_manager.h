@@ -6,6 +6,8 @@
 #include "../predeclare.h"
 #include "field.h"
 
+using field_ptr = std::shared_ptr<field>;
+
 class field_manager
 {
 public:
@@ -23,7 +25,12 @@ public:
 
     void update_fields();
 
-    std::vector<std::shared_ptr<field>> fields_;
+    void request_field_status(std::shared_ptr<server_session> session);
+    void try_enter_field(int field_id, std::shared_ptr<server_session> session);
+ 
+    field_ptr field(field_id id) { return fields_[id]; }
+
+    std::vector<field_ptr> fields_;
 };
 
 #endif

@@ -7,5 +7,7 @@
 		SC_LOG_IN = 1001,
 		CS_PING = 2000,
 		SC_PING = 2001,
+		CS_ENTER_FIELD = 2002,
+		SC_ENTER_FIELD = 2003,
   };
 #endif

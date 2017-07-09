@@ -13,6 +13,7 @@ class server_session;
 
 void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_LOG_IN& read);
 void handle_CS_PING(std::shared_ptr<server_session> session, const GAME::CS_PING& read);
+void handle_CS_ENTER_FIELD(std::shared_ptr<server_session> session, const GAME::CS_ENTER_FIELD& read);
 
 
 void register_handlers();
