@@ -28,9 +28,7 @@ void initialize()
 
     // 필드 업데이트 시작 
     field_manager::instance().update_fields();
-
 }
-
 
 void test()
 {
@@ -43,17 +41,15 @@ void test()
 
     using namespace std::chrono_literals;
     std::this_thread::sleep_for(2s);
-    auto c = sess->character();
+    auto c = sess->get_character();
     if (c)
     {
         c->send_task<move_component>(comp_id::move_comp, &move_component::say_hello);
     
         std::this_thread::sleep_for(2s);
-        sess->destroy_character();
+        //sess->destroy_character();
     }
-
 }
-
 
 void on_local_thread_initialize()
 {
@@ -79,7 +75,7 @@ int main()
     initialize();
     //network::io_service().post(update_all_field);
     // 테스트
-    network::io_service().post(test);
+    //network::io_service().post(test);
 
     // 서버 생성
     tcp::endpoint endpoint(tcp::v4(), 3000);

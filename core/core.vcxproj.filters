@@ -13,6 +13,9 @@
     <Filter Include="src\timer">
       <UniqueIdentifier>{20087730-4e89-4981-8216-ff8b1c045edf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{e3b0aa7b-f971-49f6-991b-d07b96321950}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\locale\string_helper.h">
@@ -21,10 +24,22 @@
     <ClInclude Include="src\timer\timer_helper.hpp">
       <Filter>src\timer</Filter>
     </ClInclude>
+    <ClInclude Include="src\util\vector3.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\vector4.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\locale\string_helper.cpp">
       <Filter>src\locale</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\vector4.cpp">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\vector3.cpp">
+      <Filter>src\util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -31,18 +31,33 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace GAME {
-class CS_ENTER_FIELD;
-class CS_ENTER_FIELDDefaultTypeInternal;
-extern CS_ENTER_FIELDDefaultTypeInternal _CS_ENTER_FIELD_default_instance_;
+class CS_NOTI_MOVE;
+class CS_NOTI_MOVEDefaultTypeInternal;
+extern CS_NOTI_MOVEDefaultTypeInternal _CS_NOTI_MOVE_default_instance_;
 class CS_PING;
 class CS_PINGDefaultTypeInternal;
 extern CS_PINGDefaultTypeInternal _CS_PING_default_instance_;
-class SC_ENTER_FIELD;
-class SC_ENTER_FIELDDefaultTypeInternal;
-extern SC_ENTER_FIELDDefaultTypeInternal _SC_ENTER_FIELD_default_instance_;
+class CS_SYNC_FIELD;
+class CS_SYNC_FIELDDefaultTypeInternal;
+extern CS_SYNC_FIELDDefaultTypeInternal _CS_SYNC_FIELD_default_instance_;
+class OTHER_INFO;
+class OTHER_INFODefaultTypeInternal;
+extern OTHER_INFODefaultTypeInternal _OTHER_INFO_default_instance_;
+class SC_NOTI_OTHER_ENTER_FIELD;
+class SC_NOTI_OTHER_ENTER_FIELDDefaultTypeInternal;
+extern SC_NOTI_OTHER_ENTER_FIELDDefaultTypeInternal _SC_NOTI_OTHER_ENTER_FIELD_default_instance_;
+class SC_NOTI_OTHER_LEAVE_FIELD;
+class SC_NOTI_OTHER_LEAVE_FIELDDefaultTypeInternal;
+extern SC_NOTI_OTHER_LEAVE_FIELDDefaultTypeInternal _SC_NOTI_OTHER_LEAVE_FIELD_default_instance_;
+class SC_NOTI_OTHER_MOVE;
+class SC_NOTI_OTHER_MOVEDefaultTypeInternal;
+extern SC_NOTI_OTHER_MOVEDefaultTypeInternal _SC_NOTI_OTHER_MOVE_default_instance_;
 class SC_PING;
 class SC_PINGDefaultTypeInternal;
 extern SC_PINGDefaultTypeInternal _SC_PING_default_instance_;
+class SC_SYNC_FIELD;
+class SC_SYNC_FIELDDefaultTypeInternal;
+extern SC_SYNC_FIELDDefaultTypeInternal _SC_SYNC_FIELD_default_instance_;
 }  // namespace GAME
 
 namespace GAME {
@@ -223,39 +238,39 @@ class SC_PING : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 };
 // -------------------------------------------------------------------
 
-class CS_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_ENTER_FIELD) */ {
+class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.OTHER_INFO) */ {
  public:
-  CS_ENTER_FIELD();
-  virtual ~CS_ENTER_FIELD();
+  OTHER_INFO();
+  virtual ~OTHER_INFO();
 
-  CS_ENTER_FIELD(const CS_ENTER_FIELD& from);
+  OTHER_INFO(const OTHER_INFO& from);
 
-  inline CS_ENTER_FIELD& operator=(const CS_ENTER_FIELD& from) {
+  inline OTHER_INFO& operator=(const OTHER_INFO& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CS_ENTER_FIELD& default_instance();
+  static const OTHER_INFO& default_instance();
 
-  static inline const CS_ENTER_FIELD* internal_default_instance() {
-    return reinterpret_cast<const CS_ENTER_FIELD*>(
-               &_CS_ENTER_FIELD_default_instance_);
+  static inline const OTHER_INFO* internal_default_instance() {
+    return reinterpret_cast<const OTHER_INFO*>(
+               &_OTHER_INFO_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
     2;
 
-  void Swap(CS_ENTER_FIELD* other);
+  void Swap(OTHER_INFO* other);
 
   // implements Message ----------------------------------------------
 
-  inline CS_ENTER_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline OTHER_INFO* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  CS_ENTER_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  OTHER_INFO* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const CS_ENTER_FIELD& from);
-  void MergeFrom(const CS_ENTER_FIELD& from);
+  void CopyFrom(const OTHER_INFO& from);
+  void MergeFrom(const OTHER_INFO& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -271,7 +286,137 @@ class CS_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(CS_ENTER_FIELD* other);
+  void InternalSwap(OTHER_INFO* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string nickname = 3;
+  void clear_nickname();
+  static const int kNicknameFieldNumber = 3;
+  const ::std::string& nickname() const;
+  void set_nickname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nickname(::std::string&& value);
+  #endif
+  void set_nickname(const char* value);
+  void set_nickname(const char* value, size_t size);
+  ::std::string* mutable_nickname();
+  ::std::string* release_nickname();
+  void set_allocated_nickname(::std::string* nickname);
+
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // int32 tank_type = 2;
+  void clear_tank_type();
+  static const int kTankTypeFieldNumber = 2;
+  ::google::protobuf::int32 tank_type() const;
+  void set_tank_type(::google::protobuf::int32 value);
+
+  // int32 hp = 4;
+  void clear_hp();
+  static const int kHpFieldNumber = 4;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float pos_x = 5;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 5;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 6;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 6;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 7;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 7;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.OTHER_INFO)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr nickname_;
+  ::google::protobuf::int64 obj_id_;
+  ::google::protobuf::int32 tank_type_;
+  ::google::protobuf::int32 hp_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class CS_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_SYNC_FIELD) */ {
+ public:
+  CS_SYNC_FIELD();
+  virtual ~CS_SYNC_FIELD();
+
+  CS_SYNC_FIELD(const CS_SYNC_FIELD& from);
+
+  inline CS_SYNC_FIELD& operator=(const CS_SYNC_FIELD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_SYNC_FIELD& default_instance();
+
+  static inline const CS_SYNC_FIELD* internal_default_instance() {
+    return reinterpret_cast<const CS_SYNC_FIELD*>(
+               &_CS_SYNC_FIELD_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    3;
+
+  void Swap(CS_SYNC_FIELD* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_SYNC_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_SYNC_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_SYNC_FIELD& from);
+  void MergeFrom(const CS_SYNC_FIELD& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_SYNC_FIELD* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -293,7 +438,7 @@ class CS_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_
   ::google::protobuf::int32 field_id() const;
   void set_field_id(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:GAME.CS_ENTER_FIELD)
+  // @@protoc_insertion_point(class_scope:GAME.CS_SYNC_FIELD)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -303,39 +448,39 @@ class CS_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_
 };
 // -------------------------------------------------------------------
 
-class SC_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_ENTER_FIELD) */ {
+class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_SYNC_FIELD) */ {
  public:
-  SC_ENTER_FIELD();
-  virtual ~SC_ENTER_FIELD();
+  SC_SYNC_FIELD();
+  virtual ~SC_SYNC_FIELD();
 
-  SC_ENTER_FIELD(const SC_ENTER_FIELD& from);
+  SC_SYNC_FIELD(const SC_SYNC_FIELD& from);
 
-  inline SC_ENTER_FIELD& operator=(const SC_ENTER_FIELD& from) {
+  inline SC_SYNC_FIELD& operator=(const SC_SYNC_FIELD& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const SC_ENTER_FIELD& default_instance();
+  static const SC_SYNC_FIELD& default_instance();
 
-  static inline const SC_ENTER_FIELD* internal_default_instance() {
-    return reinterpret_cast<const SC_ENTER_FIELD*>(
-               &_SC_ENTER_FIELD_default_instance_);
+  static inline const SC_SYNC_FIELD* internal_default_instance() {
+    return reinterpret_cast<const SC_SYNC_FIELD*>(
+               &_SC_SYNC_FIELD_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    3;
+    4;
 
-  void Swap(SC_ENTER_FIELD* other);
+  void Swap(SC_SYNC_FIELD* other);
 
   // implements Message ----------------------------------------------
 
-  inline SC_ENTER_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline SC_SYNC_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  SC_ENTER_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  SC_SYNC_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const SC_ENTER_FIELD& from);
-  void MergeFrom(const SC_ENTER_FIELD& from);
+  void CopyFrom(const SC_SYNC_FIELD& from);
+  void MergeFrom(const SC_SYNC_FIELD& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -351,7 +496,7 @@ class SC_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(SC_ENTER_FIELD* other);
+  void InternalSwap(SC_SYNC_FIELD* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -367,24 +512,485 @@ class SC_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
-  // bool result = 1;
-  void clear_result();
-  static const int kResultFieldNumber = 1;
-  bool result() const;
-  void set_result(bool value);
+  // repeated .GAME.OTHER_INFO other_infos = 8;
+  int other_infos_size() const;
+  void clear_other_infos();
+  static const int kOtherInfosFieldNumber = 8;
+  const ::GAME::OTHER_INFO& other_infos(int index) const;
+  ::GAME::OTHER_INFO* mutable_other_infos(int index);
+  ::GAME::OTHER_INFO* add_other_infos();
+  ::google::protobuf::RepeatedPtrField< ::GAME::OTHER_INFO >*
+      mutable_other_infos();
+  const ::google::protobuf::RepeatedPtrField< ::GAME::OTHER_INFO >&
+      other_infos() const;
 
-  // int32 field_id = 2;
-  void clear_field_id();
-  static const int kFieldIdFieldNumber = 2;
-  ::google::protobuf::int32 field_id() const;
-  void set_field_id(::google::protobuf::int32 value);
+  // string nickname = 3;
+  void clear_nickname();
+  static const int kNicknameFieldNumber = 3;
+  const ::std::string& nickname() const;
+  void set_nickname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nickname(::std::string&& value);
+  #endif
+  void set_nickname(const char* value);
+  void set_nickname(const char* value, size_t size);
+  ::std::string* mutable_nickname();
+  ::std::string* release_nickname();
+  void set_allocated_nickname(::std::string* nickname);
 
-  // @@protoc_insertion_point(class_scope:GAME.SC_ENTER_FIELD)
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // int32 tank_type = 2;
+  void clear_tank_type();
+  static const int kTankTypeFieldNumber = 2;
+  ::google::protobuf::int32 tank_type() const;
+  void set_tank_type(::google::protobuf::int32 value);
+
+  // int32 hp = 4;
+  void clear_hp();
+  static const int kHpFieldNumber = 4;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float pos_x = 5;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 5;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 6;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 6;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 7;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 7;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_SYNC_FIELD)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  bool result_;
-  ::google::protobuf::int32 field_id_;
+  ::google::protobuf::RepeatedPtrField< ::GAME::OTHER_INFO > other_infos_;
+  ::google::protobuf::internal::ArenaStringPtr nickname_;
+  ::google::protobuf::int64 obj_id_;
+  ::google::protobuf::int32 tank_type_;
+  ::google::protobuf::int32 hp_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_OTHER_ENTER_FIELD) */ {
+ public:
+  SC_NOTI_OTHER_ENTER_FIELD();
+  virtual ~SC_NOTI_OTHER_ENTER_FIELD();
+
+  SC_NOTI_OTHER_ENTER_FIELD(const SC_NOTI_OTHER_ENTER_FIELD& from);
+
+  inline SC_NOTI_OTHER_ENTER_FIELD& operator=(const SC_NOTI_OTHER_ENTER_FIELD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_NOTI_OTHER_ENTER_FIELD& default_instance();
+
+  static inline const SC_NOTI_OTHER_ENTER_FIELD* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_OTHER_ENTER_FIELD*>(
+               &_SC_NOTI_OTHER_ENTER_FIELD_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    5;
+
+  void Swap(SC_NOTI_OTHER_ENTER_FIELD* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_NOTI_OTHER_ENTER_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_NOTI_OTHER_ENTER_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_NOTI_OTHER_ENTER_FIELD& from);
+  void MergeFrom(const SC_NOTI_OTHER_ENTER_FIELD& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_NOTI_OTHER_ENTER_FIELD* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string nickname = 3;
+  void clear_nickname();
+  static const int kNicknameFieldNumber = 3;
+  const ::std::string& nickname() const;
+  void set_nickname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nickname(::std::string&& value);
+  #endif
+  void set_nickname(const char* value);
+  void set_nickname(const char* value, size_t size);
+  ::std::string* mutable_nickname();
+  ::std::string* release_nickname();
+  void set_allocated_nickname(::std::string* nickname);
+
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // int32 tank_type = 2;
+  void clear_tank_type();
+  static const int kTankTypeFieldNumber = 2;
+  ::google::protobuf::int32 tank_type() const;
+  void set_tank_type(::google::protobuf::int32 value);
+
+  // int32 hp = 4;
+  void clear_hp();
+  static const int kHpFieldNumber = 4;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float pos_x = 5;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 5;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 6;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 6;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 7;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 7;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_OTHER_ENTER_FIELD)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr nickname_;
+  ::google::protobuf::int64 obj_id_;
+  ::google::protobuf::int32 tank_type_;
+  ::google::protobuf::int32 hp_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_NOTI_OTHER_LEAVE_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_OTHER_LEAVE_FIELD) */ {
+ public:
+  SC_NOTI_OTHER_LEAVE_FIELD();
+  virtual ~SC_NOTI_OTHER_LEAVE_FIELD();
+
+  SC_NOTI_OTHER_LEAVE_FIELD(const SC_NOTI_OTHER_LEAVE_FIELD& from);
+
+  inline SC_NOTI_OTHER_LEAVE_FIELD& operator=(const SC_NOTI_OTHER_LEAVE_FIELD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_NOTI_OTHER_LEAVE_FIELD& default_instance();
+
+  static inline const SC_NOTI_OTHER_LEAVE_FIELD* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_OTHER_LEAVE_FIELD*>(
+               &_SC_NOTI_OTHER_LEAVE_FIELD_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    6;
+
+  void Swap(SC_NOTI_OTHER_LEAVE_FIELD* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_NOTI_OTHER_LEAVE_FIELD* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_NOTI_OTHER_LEAVE_FIELD* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_NOTI_OTHER_LEAVE_FIELD& from);
+  void MergeFrom(const SC_NOTI_OTHER_LEAVE_FIELD& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_NOTI_OTHER_LEAVE_FIELD* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_OTHER_LEAVE_FIELD)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 obj_id_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class CS_NOTI_MOVE : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_NOTI_MOVE) */ {
+ public:
+  CS_NOTI_MOVE();
+  virtual ~CS_NOTI_MOVE();
+
+  CS_NOTI_MOVE(const CS_NOTI_MOVE& from);
+
+  inline CS_NOTI_MOVE& operator=(const CS_NOTI_MOVE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_NOTI_MOVE& default_instance();
+
+  static inline const CS_NOTI_MOVE* internal_default_instance() {
+    return reinterpret_cast<const CS_NOTI_MOVE*>(
+               &_CS_NOTI_MOVE_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    7;
+
+  void Swap(CS_NOTI_MOVE* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_NOTI_MOVE* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_NOTI_MOVE* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_NOTI_MOVE& from);
+  void MergeFrom(const CS_NOTI_MOVE& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_NOTI_MOVE* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // float pos_x = 1;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 1;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 2;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 2;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 3;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 3;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.CS_NOTI_MOVE)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_NOTI_OTHER_MOVE : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_OTHER_MOVE) */ {
+ public:
+  SC_NOTI_OTHER_MOVE();
+  virtual ~SC_NOTI_OTHER_MOVE();
+
+  SC_NOTI_OTHER_MOVE(const SC_NOTI_OTHER_MOVE& from);
+
+  inline SC_NOTI_OTHER_MOVE& operator=(const SC_NOTI_OTHER_MOVE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_NOTI_OTHER_MOVE& default_instance();
+
+  static inline const SC_NOTI_OTHER_MOVE* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_OTHER_MOVE*>(
+               &_SC_NOTI_OTHER_MOVE_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    8;
+
+  void Swap(SC_NOTI_OTHER_MOVE* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_NOTI_OTHER_MOVE* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_NOTI_OTHER_MOVE* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_NOTI_OTHER_MOVE& from);
+  void MergeFrom(const SC_NOTI_OTHER_MOVE& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_NOTI_OTHER_MOVE* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // float pos_x = 2;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 2;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 3;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 3;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 4;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 4;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_OTHER_MOVE)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 obj_id_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -430,55 +1036,610 @@ inline void SC_PING::set_timestamp(::google::protobuf::int64 value) {
 
 // -------------------------------------------------------------------
 
-// CS_ENTER_FIELD
+// OTHER_INFO
 
-// int32 field_id = 1;
-inline void CS_ENTER_FIELD::clear_field_id() {
-  field_id_ = 0;
+// int64 obj_id = 1;
+inline void OTHER_INFO::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::int32 CS_ENTER_FIELD::field_id() const {
-  // @@protoc_insertion_point(field_get:GAME.CS_ENTER_FIELD.field_id)
-  return field_id_;
+inline ::google::protobuf::int64 OTHER_INFO::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.obj_id)
+  return obj_id_;
 }
-inline void CS_ENTER_FIELD::set_field_id(::google::protobuf::int32 value) {
+inline void OTHER_INFO::set_obj_id(::google::protobuf::int64 value) {
   
-  field_id_ = value;
-  // @@protoc_insertion_point(field_set:GAME.CS_ENTER_FIELD.field_id)
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.obj_id)
+}
+
+// int32 tank_type = 2;
+inline void OTHER_INFO::clear_tank_type() {
+  tank_type_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::tank_type() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.tank_type)
+  return tank_type_;
+}
+inline void OTHER_INFO::set_tank_type(::google::protobuf::int32 value) {
+  
+  tank_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.tank_type)
+}
+
+// string nickname = 3;
+inline void OTHER_INFO::clear_nickname() {
+  nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& OTHER_INFO::nickname() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.nickname)
+  return nickname_.GetNoArena();
+}
+inline void OTHER_INFO::set_nickname(const ::std::string& value) {
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.nickname)
+}
+#if LANG_CXX11
+inline void OTHER_INFO::set_nickname(::std::string&& value) {
+  
+  nickname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:GAME.OTHER_INFO.nickname)
+}
+#endif
+inline void OTHER_INFO::set_nickname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:GAME.OTHER_INFO.nickname)
+}
+inline void OTHER_INFO::set_nickname(const char* value, size_t size) {
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:GAME.OTHER_INFO.nickname)
+}
+inline ::std::string* OTHER_INFO::mutable_nickname() {
+  
+  // @@protoc_insertion_point(field_mutable:GAME.OTHER_INFO.nickname)
+  return nickname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* OTHER_INFO::release_nickname() {
+  // @@protoc_insertion_point(field_release:GAME.OTHER_INFO.nickname)
+  
+  return nickname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void OTHER_INFO::set_allocated_nickname(::std::string* nickname) {
+  if (nickname != NULL) {
+    
+  } else {
+    
+  }
+  nickname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nickname);
+  // @@protoc_insertion_point(field_set_allocated:GAME.OTHER_INFO.nickname)
+}
+
+// int32 hp = 4;
+inline void OTHER_INFO::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.hp)
+  return hp_;
+}
+inline void OTHER_INFO::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.hp)
+}
+
+// float pos_x = 5;
+inline void OTHER_INFO::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float OTHER_INFO::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.pos_x)
+  return pos_x_;
+}
+inline void OTHER_INFO::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_x)
+}
+
+// float pos_y = 6;
+inline void OTHER_INFO::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float OTHER_INFO::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.pos_y)
+  return pos_y_;
+}
+inline void OTHER_INFO::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_y)
+}
+
+// float pos_z = 7;
+inline void OTHER_INFO::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float OTHER_INFO::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.pos_z)
+  return pos_z_;
+}
+inline void OTHER_INFO::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_z)
 }
 
 // -------------------------------------------------------------------
 
-// SC_ENTER_FIELD
+// CS_SYNC_FIELD
 
-// bool result = 1;
-inline void SC_ENTER_FIELD::clear_result() {
-  result_ = false;
-}
-inline bool SC_ENTER_FIELD::result() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_ENTER_FIELD.result)
-  return result_;
-}
-inline void SC_ENTER_FIELD::set_result(bool value) {
-  
-  result_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_ENTER_FIELD.result)
-}
-
-// int32 field_id = 2;
-inline void SC_ENTER_FIELD::clear_field_id() {
+// int32 field_id = 1;
+inline void CS_SYNC_FIELD::clear_field_id() {
   field_id_ = 0;
 }
-inline ::google::protobuf::int32 SC_ENTER_FIELD::field_id() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_ENTER_FIELD.field_id)
+inline ::google::protobuf::int32 CS_SYNC_FIELD::field_id() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_SYNC_FIELD.field_id)
   return field_id_;
 }
-inline void SC_ENTER_FIELD::set_field_id(::google::protobuf::int32 value) {
+inline void CS_SYNC_FIELD::set_field_id(::google::protobuf::int32 value) {
   
   field_id_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_ENTER_FIELD.field_id)
+  // @@protoc_insertion_point(field_set:GAME.CS_SYNC_FIELD.field_id)
+}
+
+// -------------------------------------------------------------------
+
+// SC_SYNC_FIELD
+
+// int64 obj_id = 1;
+inline void SC_SYNC_FIELD::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_SYNC_FIELD::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.obj_id)
+  return obj_id_;
+}
+inline void SC_SYNC_FIELD::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.obj_id)
+}
+
+// int32 tank_type = 2;
+inline void SC_SYNC_FIELD::clear_tank_type() {
+  tank_type_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::tank_type() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.tank_type)
+  return tank_type_;
+}
+inline void SC_SYNC_FIELD::set_tank_type(::google::protobuf::int32 value) {
+  
+  tank_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.tank_type)
+}
+
+// string nickname = 3;
+inline void SC_SYNC_FIELD::clear_nickname() {
+  nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SC_SYNC_FIELD::nickname() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.nickname)
+  return nickname_.GetNoArena();
+}
+inline void SC_SYNC_FIELD::set_nickname(const ::std::string& value) {
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.nickname)
+}
+#if LANG_CXX11
+inline void SC_SYNC_FIELD::set_nickname(::std::string&& value) {
+  
+  nickname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:GAME.SC_SYNC_FIELD.nickname)
+}
+#endif
+inline void SC_SYNC_FIELD::set_nickname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:GAME.SC_SYNC_FIELD.nickname)
+}
+inline void SC_SYNC_FIELD::set_nickname(const char* value, size_t size) {
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:GAME.SC_SYNC_FIELD.nickname)
+}
+inline ::std::string* SC_SYNC_FIELD::mutable_nickname() {
+  
+  // @@protoc_insertion_point(field_mutable:GAME.SC_SYNC_FIELD.nickname)
+  return nickname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SC_SYNC_FIELD::release_nickname() {
+  // @@protoc_insertion_point(field_release:GAME.SC_SYNC_FIELD.nickname)
+  
+  return nickname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SC_SYNC_FIELD::set_allocated_nickname(::std::string* nickname) {
+  if (nickname != NULL) {
+    
+  } else {
+    
+  }
+  nickname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nickname);
+  // @@protoc_insertion_point(field_set_allocated:GAME.SC_SYNC_FIELD.nickname)
+}
+
+// int32 hp = 4;
+inline void SC_SYNC_FIELD::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.hp)
+  return hp_;
+}
+inline void SC_SYNC_FIELD::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.hp)
+}
+
+// float pos_x = 5;
+inline void SC_SYNC_FIELD::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float SC_SYNC_FIELD::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.pos_x)
+  return pos_x_;
+}
+inline void SC_SYNC_FIELD::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_x)
+}
+
+// float pos_y = 6;
+inline void SC_SYNC_FIELD::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float SC_SYNC_FIELD::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.pos_y)
+  return pos_y_;
+}
+inline void SC_SYNC_FIELD::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_y)
+}
+
+// float pos_z = 7;
+inline void SC_SYNC_FIELD::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float SC_SYNC_FIELD::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.pos_z)
+  return pos_z_;
+}
+inline void SC_SYNC_FIELD::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_z)
+}
+
+// repeated .GAME.OTHER_INFO other_infos = 8;
+inline int SC_SYNC_FIELD::other_infos_size() const {
+  return other_infos_.size();
+}
+inline void SC_SYNC_FIELD::clear_other_infos() {
+  other_infos_.Clear();
+}
+inline const ::GAME::OTHER_INFO& SC_SYNC_FIELD::other_infos(int index) const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.other_infos)
+  return other_infos_.Get(index);
+}
+inline ::GAME::OTHER_INFO* SC_SYNC_FIELD::mutable_other_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:GAME.SC_SYNC_FIELD.other_infos)
+  return other_infos_.Mutable(index);
+}
+inline ::GAME::OTHER_INFO* SC_SYNC_FIELD::add_other_infos() {
+  // @@protoc_insertion_point(field_add:GAME.SC_SYNC_FIELD.other_infos)
+  return other_infos_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::GAME::OTHER_INFO >*
+SC_SYNC_FIELD::mutable_other_infos() {
+  // @@protoc_insertion_point(field_mutable_list:GAME.SC_SYNC_FIELD.other_infos)
+  return &other_infos_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::GAME::OTHER_INFO >&
+SC_SYNC_FIELD::other_infos() const {
+  // @@protoc_insertion_point(field_list:GAME.SC_SYNC_FIELD.other_infos)
+  return other_infos_;
+}
+
+// -------------------------------------------------------------------
+
+// SC_NOTI_OTHER_ENTER_FIELD
+
+// int64 obj_id = 1;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_OTHER_ENTER_FIELD::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.obj_id)
+  return obj_id_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.obj_id)
+}
+
+// int32 tank_type = 2;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_tank_type() {
+  tank_type_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::tank_type() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.tank_type)
+  return tank_type_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_tank_type(::google::protobuf::int32 value) {
+  
+  tank_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.tank_type)
+}
+
+// string nickname = 3;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_nickname() {
+  nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SC_NOTI_OTHER_ENTER_FIELD::nickname() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+  return nickname_.GetNoArena();
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_nickname(const ::std::string& value) {
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+}
+#if LANG_CXX11
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_nickname(::std::string&& value) {
+  
+  nickname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+}
+#endif
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_nickname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_nickname(const char* value, size_t size) {
+  
+  nickname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+}
+inline ::std::string* SC_NOTI_OTHER_ENTER_FIELD::mutable_nickname() {
+  
+  // @@protoc_insertion_point(field_mutable:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+  return nickname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SC_NOTI_OTHER_ENTER_FIELD::release_nickname() {
+  // @@protoc_insertion_point(field_release:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+  
+  return nickname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_allocated_nickname(::std::string* nickname) {
+  if (nickname != NULL) {
+    
+  } else {
+    
+  }
+  nickname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nickname);
+  // @@protoc_insertion_point(field_set_allocated:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
+}
+
+// int32 hp = 4;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.hp)
+  return hp_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.hp)
+}
+
+// float pos_x = 5;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float SC_NOTI_OTHER_ENTER_FIELD::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_x)
+  return pos_x_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_x)
+}
+
+// float pos_y = 6;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float SC_NOTI_OTHER_ENTER_FIELD::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_y)
+  return pos_y_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_y)
+}
+
+// float pos_z = 7;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float SC_NOTI_OTHER_ENTER_FIELD::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_z)
+  return pos_z_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_z)
+}
+
+// -------------------------------------------------------------------
+
+// SC_NOTI_OTHER_LEAVE_FIELD
+
+// int64 obj_id = 1;
+inline void SC_NOTI_OTHER_LEAVE_FIELD::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_OTHER_LEAVE_FIELD::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_LEAVE_FIELD.obj_id)
+  return obj_id_;
+}
+inline void SC_NOTI_OTHER_LEAVE_FIELD::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_LEAVE_FIELD.obj_id)
+}
+
+// -------------------------------------------------------------------
+
+// CS_NOTI_MOVE
+
+// float pos_x = 1;
+inline void CS_NOTI_MOVE::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float CS_NOTI_MOVE::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_NOTI_MOVE.pos_x)
+  return pos_x_;
+}
+inline void CS_NOTI_MOVE::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_NOTI_MOVE.pos_x)
+}
+
+// float pos_y = 2;
+inline void CS_NOTI_MOVE::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float CS_NOTI_MOVE::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_NOTI_MOVE.pos_y)
+  return pos_y_;
+}
+inline void CS_NOTI_MOVE::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_NOTI_MOVE.pos_y)
+}
+
+// float pos_z = 3;
+inline void CS_NOTI_MOVE::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float CS_NOTI_MOVE::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_NOTI_MOVE.pos_z)
+  return pos_z_;
+}
+inline void CS_NOTI_MOVE::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_NOTI_MOVE.pos_z)
+}
+
+// -------------------------------------------------------------------
+
+// SC_NOTI_OTHER_MOVE
+
+// int64 obj_id = 1;
+inline void SC_NOTI_OTHER_MOVE::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_OTHER_MOVE::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_MOVE.obj_id)
+  return obj_id_;
+}
+inline void SC_NOTI_OTHER_MOVE::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_MOVE.obj_id)
+}
+
+// float pos_x = 2;
+inline void SC_NOTI_OTHER_MOVE::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float SC_NOTI_OTHER_MOVE::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_MOVE.pos_x)
+  return pos_x_;
+}
+inline void SC_NOTI_OTHER_MOVE::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_MOVE.pos_x)
+}
+
+// float pos_y = 3;
+inline void SC_NOTI_OTHER_MOVE::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float SC_NOTI_OTHER_MOVE::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_MOVE.pos_y)
+  return pos_y_;
+}
+inline void SC_NOTI_OTHER_MOVE::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_MOVE.pos_y)
+}
+
+// float pos_z = 4;
+inline void SC_NOTI_OTHER_MOVE::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float SC_NOTI_OTHER_MOVE::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_MOVE.pos_z)
+  return pos_z_;
+}
+inline void SC_NOTI_OTHER_MOVE::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_MOVE.pos_z)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

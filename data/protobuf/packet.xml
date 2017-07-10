@@ -14,18 +14,45 @@
 			<id type="string"/>
 			<password type="string"/>
 		</CS_LOG_IN>
-
 		<SC_LOG_IN>
 			<result type="bool"/>
 			<timestamp type="int64"/>
-			<ec type="string"/>
+			<nickname type="string"/>
 		</SC_LOG_IN>
 
+		<FIELD_INFO struct = "true">
+			<field_id type="int32"/>
+			<user_count type="int32"/>
+			<max_user_count type="int32"/>
+		</FIELD_INFO>
+
+		<CS_FIELD_LIST>
+		</CS_FIELD_LIST>
+		<SC_FIELD_LIST>
+			<result type="bool"/>
+			<field_infos type="FIELD_INFO" repeated="true"/>
+		</SC_FIELD_LIST>
+
+		<CS_ENTER_FIELD>
+			<field_id type="int32"/>
+		</CS_ENTER_FIELD>
+		<SC_ENTER_FIELD>
+			<result type="bool"/>
+			<field_id type="int32"/>
+			<ec type="string"/>
+		</SC_ENTER_FIELD>
+
+		<CS_LEAVE_FIELD>
+			<field_id type="int32"/>
+		</CS_LEAVE_FIELD>
+		<SC_LEAVE_FIELD>
+			<result type="bool"/>
+			<ec type="string"/>
+		</SC_LEAVE_FIELD>
 
 	</LOBBY>
 
 	<GAME start="2000">
-		
 		<CS_PING>
 			<timestamp type="int64"/>
 		</CS_PING>
@@ -33,15 +60,58 @@
 			<timestamp type="int64"/>
 		</SC_PING>
 
-		
-		<CS_ENTER_FIELD>
-			<field_id type="int32"/>
-		</CS_ENTER_FIELD>
+		<!-- 패킷 아님; 유저 정보 구조체 -->
+		<OTHER_INFO struct = "true">
+			<obj_id type="int64"/>
+			<tank_type type="int32"/>
+			<nickname type="string"/>
+			<hp type="int32"/>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+		</OTHER_INFO>
 
-		<SC_ENTER_FIELD>
-			<result type="bool"/>
+		<CS_SYNC_FIELD>
 			<field_id type="int32"/>
-		</SC_ENTER_FIELD>
+		</CS_SYNC_FIELD>
+		<SC_SYNC_FIELD>
+			<obj_id type="int64"/>
+			<tank_type type="int32"/>
+			<nickname type="string"/>
+			<hp type="int32"/>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+			<other_infos type="OTHER_INFO" repeated="true"/>
+		</SC_SYNC_FIELD>
+		
+		<SC_NOTI_OTHER_ENTER_FIELD>
+			<obj_id type="int64"/>
+			<tank_type type="int32"/>
+			<nickname type="string"/>
+			<hp type="int32"/>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+		</SC_NOTI_OTHER_ENTER_FIELD>
+
+		<SC_NOTI_OTHER_LEAVE_FIELD>
+			<obj_id type="int64"/>
+		</SC_NOTI_OTHER_LEAVE_FIELD>
+
+		<CS_NOTI_MOVE>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+		</CS_NOTI_MOVE>
+
+		<SC_NOTI_OTHER_MOVE>
+			<obj_id type="int64"/>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+		</SC_NOTI_OTHER_MOVE>
+
 	</GAME>
 
 

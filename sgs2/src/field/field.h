@@ -21,6 +21,8 @@ public:
     virtual void initialize();
     virtual void update(float delta);
 
+    virtual void sync_field(std::shared_ptr<server_session> session) const;
+
     bool check_update_flag();
 
     void enter_field(std::shared_ptr<server_session> session);
@@ -36,9 +38,9 @@ public:
         q_.push(f);
     }
 
+    std::map<object_id, std::shared_ptr<character>>& get_view_list();
 
 protected:
-    std::map<object_id, std::shared_ptr<character>>& view_list();
 
     unsigned int field_id_;
     Concurrency::concurrent_queue<task> q_;

@@ -12,7 +12,7 @@ public:
     virtual void initialize() override;
     virtual void update(float delta) override;
 
-    
+    void sync_field(std::shared_ptr<server_session> session) const override;
 
 protected:
     //virtual void process_task() override;

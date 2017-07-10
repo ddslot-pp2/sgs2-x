@@ -7,6 +7,8 @@
 #include "../predeclare.h"
 #include "../component/component.h"
 #include "../component/movement/move_component.h"
+#include "../../../core/src/util/vector3.h"
+#include <mutex>
 
 class field;
 
@@ -43,6 +45,12 @@ public:
     }
 
     void set_object_id(size_t obj_id) noexcept;
+    size_t get_object_id() const;
+
+    field_id get_field_id() const { return field_id_; }
+
+    void set_pos(const vector3& pos);
+    vector3 get_pos();
 
 protected:
     std::map<comp_id, std::shared_ptr<component>> components_;
@@ -50,6 +58,8 @@ protected:
     size_t object_id_;
 
     field* field_;
+
+    vector3 pos_;
 };
 
 #endif

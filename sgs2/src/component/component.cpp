@@ -1,4 +1,15 @@
 #include "component.h"
+#include "../object/object.h"
+
+component::component(object* obj)
+{
+    object_ = obj;
+}
+
+component::~component()
+{
+
+}
 
 void component::process_task()
 {
@@ -7,4 +18,9 @@ void component::process_task()
     {
         t();
     }
+}
+
+void component::update(float dt)
+{
+    process_task();
 }

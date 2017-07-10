@@ -84,9 +84,13 @@
     <ClCompile Include="src\object\object.cpp" />
     <ClCompile Include="src\packet_processor\packet\GAME.pb.cc" />
     <ClCompile Include="src\packet_processor\packet\LOBBY.pb.cc" />
-    <ClCompile Include="src\packet_processor\packet_handler\handle_CS_LOGIN.cpp" />
-    <ClCompile Include="src\packet_processor\packet_handler\handle_CS_PING.cpp" />
-    <ClCompile Include="src\packet_processor\packet_handler\handle_ENTER_FIELD.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_NOTI_MOVE.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_PING.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_SYNC_FIELD.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_ENTER_FIELD.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_FIELD_LIST.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LEAVEL_FIELD.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LOG_IN.cpp" />
     <ClCompile Include="src\packet_processor\packet_processor.cpp" />
     <ClCompile Include="src\server_session\server_session.cpp" />
   </ItemGroup>

@@ -40,6 +40,12 @@
     <Filter Include="src\component\movement">
       <UniqueIdentifier>{a2970f7d-6975-4f88-8980-67de8465df6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\packet_processor\packet_handler\lobby">
+      <UniqueIdentifier>{b49e612a-05b8-41d0-8201-0c04cfe7679d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\packet_processor\packet_handler\game">
+      <UniqueIdentifier>{99462837-08d9-487c-920c-ab54b2663a89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -56,12 +62,6 @@
     </ClCompile>
     <ClCompile Include="src\packet_processor\packet\GAME.pb.cc">
       <Filter>src\packet_processor\packet\GAME</Filter>
-    </ClCompile>
-    <ClCompile Include="src\packet_processor\packet_handler\handle_CS_LOGIN.cpp">
-      <Filter>src\packet_processor\packet_handler</Filter>
-    </ClCompile>
-    <ClCompile Include="src\packet_processor\packet_handler\handle_CS_PING.cpp">
-      <Filter>src\packet_processor\packet_handler</Filter>
     </ClCompile>
     <ClCompile Include="src\field\field_manager.cpp">
       <Filter>src\field</Filter>
@@ -93,8 +93,26 @@
     <ClCompile Include="src\object\character.cpp">
       <Filter>src\object</Filter>
     </ClCompile>
-    <ClCompile Include="src\packet_processor\packet_handler\handle_ENTER_FIELD.cpp">
-      <Filter>src\packet_processor\packet_handler</Filter>
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_FIELD_LIST.cpp">
+      <Filter>src\packet_processor\packet_handler\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LEAVEL_FIELD.cpp">
+      <Filter>src\packet_processor\packet_handler\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_ENTER_FIELD.cpp">
+      <Filter>src\packet_processor\packet_handler\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_PING.cpp">
+      <Filter>src\packet_processor\packet_handler\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LOG_IN.cpp">
+      <Filter>src\packet_processor\packet_handler\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_SYNC_FIELD.cpp">
+      <Filter>src\packet_processor\packet_handler\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_NOTI_MOVE.cpp">
+      <Filter>src\packet_processor\packet_handler\game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

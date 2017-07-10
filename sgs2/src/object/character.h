@@ -19,11 +19,12 @@ public:
 
     void leave_field() const;
    
-    std::shared_ptr<server_session> session() const { return session_; }
+    std::shared_ptr<server_session> get_session() const;
 
 
 protected:
-    std::shared_ptr<server_session> session_;
+    std::weak_ptr<server_session> session_;
+   
 };
 
 #endif

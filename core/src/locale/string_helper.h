@@ -5,6 +5,7 @@
 namespace core
 {
     std::wstring utf8_to_wstring(const std::string& str);
+    std::string wstring_to_utf8(const std::wstring& str);
 
     std::wstring    string_to_wstring(std::string bytes);
     std::string     wstring_to_string(std::wstring wstr);

@@ -1,16 +1,18 @@
 #include "character.h"
 #include "../field/field.h"
+#include "../field/field_manager.h"
 
 using super = object;
 
 character::character(field_id id, std::shared_ptr<server_session> session) : object(id), session_(session)
 {
-
+    wprintf(L"케릭터 생성자 호출\n");
+    field_ = field_manager::instance().get_field(id);
 }
 
 character::~character()
 {
-
+    wprintf(L"케릭터 소멸자 호출\n");
 }
 
 void character::initialize()
@@ -25,9 +27,18 @@ void character::update(float delta)
 
 void character::leave_field() const
 {
-    if (field_)
+    
+    field_->send_task(&field::leave_field, object_id_);
+
+}
+
+std::shared_ptr<server_session> character::get_session() const
+{
+    auto sess = session_.lock();
+    if (sess)
     {
-        //field_->send_task(&field::enter_field, session_);
-        //fields_[field_id]->send_task(&field::enter_field, session);
+        return sess;
     }
+
+    return nullptr;
 }

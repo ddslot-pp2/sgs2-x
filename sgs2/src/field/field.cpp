@@ -2,6 +2,9 @@
 #include "../../../network/src/io_helper.h"
 #include "../../../core/src/timer/timer_helper.hpp"
 #include <iostream>
+#include "../packet_processor/packet/LOBBY.pb.h"
+#include "../packet_processor/send_helper.h"
+#include "../packet_processor/packet/GAME.pb.h"
 
 using namespace network;
 
@@ -71,16 +74,22 @@ bool field::check_update_flag()
     return true;
 }
 
-std::map<uid, std::shared_ptr<character>>& field::view_list()
+std::map<uid, std::shared_ptr<character>>& field::get_view_list()
 {
     return characters_;
 }
 
 void field::enter_field(std::shared_ptr<server_session> session)
 {
+    wprintf(L"유저 필드 들어옴\n");
+
+    LOBBY::SC_ENTER_FIELD send;
+    send.set_result(true);
+
     if (characters_.size() > max_user_per_field)
     {
-
+        send.set_result(false);
+        send_packet(session, opcode::SC_ENTER_FIELD, send);
         return;
     }
 
@@ -92,28 +101,60 @@ void field::enter_field(std::shared_ptr<server_session> session)
     auto it = characters_.find(object_id);
     if (it != characters_.end())
     {
-      
-        // error: 오브젝트 메모리 주소 겹침
-        int d = 20;
+        // 오브젝트 메모리 주소겹침
+        send.set_result(false);
+        send_packet(session, opcode::SC_ENTER_FIELD, send);
         return;
     }
 
     characters_[object_id] = c;
     c->set_object_id(object_id);
 
+    vector3 spawn_pos(5.0f, 0.0f, 0.0f);
+    c->set_pos(spawn_pos);
+
     session->set_character(c);
     current_user_count_ = characters_.size();
+    send_packet(session, opcode::SC_ENTER_FIELD, send);
+
+    wprintf(L"유저 카운트: %lld\n", characters_.size());
 }
 
 void field::leave_field(object_id id)
 {
+    wprintf(L"유저 필드 나감\n");
     current_user_count_ = characters_.size();
     auto it = characters_.find(id);
 
-    auto sess = it->second->session();
+    auto sess = it->second->get_session();
 
     if (it != characters_.end())
     {
         characters_.erase(id);
     }
+
+    if (sess)
+    {
+        sess->set_character(nullptr);
+        // 정상적으로 방을 나갔다고 알려줌
+        //sess->
+    }
+
+    for (const auto& kv : characters_)
+    {
+        auto user = kv.second;
+
+        auto other_session = user->get_session();
+        if (!other_session) continue;
+
+        GAME::SC_NOTI_OTHER_LEAVE_FIELD noti;
+        send_packet(other_session, opcode::SC_NOTI_OTHER_LEAVE_FIELD, noti);
+    }
+
+    wprintf(L"유저 카운트: %lld\n", characters_.size());
+}
+
+void field::sync_field(std::shared_ptr<server_session> session) const
+{
+    wprintf(L"sync field called\n");
 }

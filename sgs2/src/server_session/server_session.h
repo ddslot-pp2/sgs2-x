@@ -18,9 +18,10 @@ public:
     virtual ~server_session();
 
     void set_character(std::shared_ptr<character> character);
-    std::shared_ptr<character> character();
+    std::shared_ptr<character> get_character();
 
-    void destroy_character();
+    //void destroy_character();
+    std::wstring get_tmp_nickname() const { return L"µ¹°İÅÊÅ©"; }
 
 protected:
 
@@ -32,7 +33,9 @@ protected:
 private:
     account_id account_id_;
 
-    character_weak_ptr character_;
+    character_ptr character_;
+
+    
     //std::shared_ptr<character> character_;
 };
 

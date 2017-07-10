@@ -102,7 +102,7 @@ namespace network
                     send_buf->size),
                 [this, self](boost::system::error_code ec, std::size_t length)
             {
-                wprintf(L"send complete:%d\n", length);
+                //wprintf(L"send complete:%d\n", length);
                 write_in_progress_.clear(std::memory_order_release);
                 
                 if (ec)
@@ -117,7 +117,7 @@ namespace network
 
                 if (q_.empty())
                 {
-                    wprintf(L"retur q is empty\n");
+                    //wprintf(L"retur q is empty\n");
                     return;
                 }
 

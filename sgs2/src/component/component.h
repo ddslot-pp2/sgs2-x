@@ -4,9 +4,15 @@
 #include <concurrent_queue.h>
 #include "../predeclare.h"
 
+class object;
+
 class component : public std::enable_shared_from_this<component>
 {
 public:
+
+    explicit component(object* obj);
+    virtual ~component();
+
     void process_task();
 
     void send_task(task t)
@@ -14,8 +20,11 @@ public:
         q_.push(t);
     }
 
+    virtual void update(float dt);
+
     //Concurrency::concurrent_queue<task>& queue();
     Concurrency::concurrent_queue<task> q_;
+    object* object_;
 };
 
 #endif

@@ -28,7 +28,7 @@ public:
     void request_field_status(std::shared_ptr<server_session> session);
     void try_enter_field(int field_id, std::shared_ptr<server_session> session);
  
-    field_ptr field(field_id id) { return fields_[id]; }
+    field* get_field(field_id id) { return fields_[id].get(); }
 
     std::vector<field_ptr> fields_;
 };

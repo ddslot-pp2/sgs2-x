@@ -1,8 +1,8 @@
-#include "../packet_processor.h"
+#include "../../packet_processor.h"
 #include <memory>
-#include "../../server_session/server_session.h"
-#include "../opcode.h"
-#include "../send_helper.h"
+#include "../../../server_session/server_session.h"
+#include "../../opcode.h"
+#include "../../send_helper.h"
 #include "../core/src/locale/string_helper.h"
 
 void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_LOG_IN& read)
@@ -22,6 +22,7 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     LOBBY::SC_LOG_IN send;
     send.set_result(result);
     send.set_timestamp(200000);
+    send.set_nickname(core::wstring_to_utf8(L"∏€∏€¿Ã"));
 
     send_packet(session, opcode::SC_LOG_IN, send);
     return;

@@ -14,6 +14,12 @@ namespace core
         return cvt.from_bytes(str);
     }
 
+    std::string wstring_to_utf8(const std::wstring& str)
+    {
+        //std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> convert;
+        return cvt.to_bytes(str);
+    }
+
     std::wstring string_to_wstring(std::string bytes)
     {
         try
