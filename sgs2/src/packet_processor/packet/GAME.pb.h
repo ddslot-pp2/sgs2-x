@@ -31,6 +31,12 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace GAME {
+class BULLET_INFO;
+class BULLET_INFODefaultTypeInternal;
+extern BULLET_INFODefaultTypeInternal _BULLET_INFO_default_instance_;
+class CS_FIRE;
+class CS_FIREDefaultTypeInternal;
+extern CS_FIREDefaultTypeInternal _CS_FIRE_default_instance_;
 class CS_NOTI_MOVE;
 class CS_NOTI_MOVEDefaultTypeInternal;
 extern CS_NOTI_MOVEDefaultTypeInternal _CS_NOTI_MOVE_default_instance_;
@@ -43,6 +49,9 @@ extern CS_SYNC_FIELDDefaultTypeInternal _CS_SYNC_FIELD_default_instance_;
 class OTHER_INFO;
 class OTHER_INFODefaultTypeInternal;
 extern OTHER_INFODefaultTypeInternal _OTHER_INFO_default_instance_;
+class SC_NOTI_FIRE;
+class SC_NOTI_FIREDefaultTypeInternal;
+extern SC_NOTI_FIREDefaultTypeInternal _SC_NOTI_FIRE_default_instance_;
 class SC_NOTI_OTHER_ENTER_FIELD;
 class SC_NOTI_OTHER_ENTER_FIELDDefaultTypeInternal;
 extern SC_NOTI_OTHER_ENTER_FIELDDefaultTypeInternal _SC_NOTI_OTHER_ENTER_FIELD_default_instance_;
@@ -994,6 +1003,335 @@ class SC_NOTI_OTHER_MOVE : public ::google::protobuf::Message /* @@protoc_insert
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class BULLET_INFO : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.BULLET_INFO) */ {
+ public:
+  BULLET_INFO();
+  virtual ~BULLET_INFO();
+
+  BULLET_INFO(const BULLET_INFO& from);
+
+  inline BULLET_INFO& operator=(const BULLET_INFO& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const BULLET_INFO& default_instance();
+
+  static inline const BULLET_INFO* internal_default_instance() {
+    return reinterpret_cast<const BULLET_INFO*>(
+               &_BULLET_INFO_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    9;
+
+  void Swap(BULLET_INFO* other);
+
+  // implements Message ----------------------------------------------
+
+  inline BULLET_INFO* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  BULLET_INFO* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const BULLET_INFO& from);
+  void MergeFrom(const BULLET_INFO& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(BULLET_INFO* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // float dir_x = 1;
+  void clear_dir_x();
+  static const int kDirXFieldNumber = 1;
+  float dir_x() const;
+  void set_dir_x(float value);
+
+  // float dir_y = 2;
+  void clear_dir_y();
+  static const int kDirYFieldNumber = 2;
+  float dir_y() const;
+  void set_dir_y(float value);
+
+  // float dir_z = 3;
+  void clear_dir_z();
+  static const int kDirZFieldNumber = 3;
+  float dir_z() const;
+  void set_dir_z(float value);
+
+  // float speed = 4;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 4;
+  float speed() const;
+  void set_speed(float value);
+
+  // float distance = 5;
+  void clear_distance();
+  static const int kDistanceFieldNumber = 5;
+  float distance() const;
+  void set_distance(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.BULLET_INFO)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  float dir_x_;
+  float dir_y_;
+  float dir_z_;
+  float speed_;
+  float distance_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class CS_FIRE : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_FIRE) */ {
+ public:
+  CS_FIRE();
+  virtual ~CS_FIRE();
+
+  CS_FIRE(const CS_FIRE& from);
+
+  inline CS_FIRE& operator=(const CS_FIRE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_FIRE& default_instance();
+
+  static inline const CS_FIRE* internal_default_instance() {
+    return reinterpret_cast<const CS_FIRE*>(
+               &_CS_FIRE_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    10;
+
+  void Swap(CS_FIRE* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_FIRE* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_FIRE* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_FIRE& from);
+  void MergeFrom(const CS_FIRE& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_FIRE* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 2;
+  int bullet_infos_size() const;
+  void clear_bullet_infos();
+  static const int kBulletInfosFieldNumber = 2;
+  const ::GAME::BULLET_INFO& bullet_infos(int index) const;
+  ::GAME::BULLET_INFO* mutable_bullet_infos(int index);
+  ::GAME::BULLET_INFO* add_bullet_infos();
+  ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >*
+      mutable_bullet_infos();
+  const ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >&
+      bullet_infos() const;
+
+  // int32 bullet_type = 1;
+  void clear_bullet_type();
+  static const int kBulletTypeFieldNumber = 1;
+  ::google::protobuf::int32 bullet_type() const;
+  void set_bullet_type(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GAME.CS_FIRE)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO > bullet_infos_;
+  ::google::protobuf::int32 bullet_type_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_NOTI_FIRE : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_FIRE) */ {
+ public:
+  SC_NOTI_FIRE();
+  virtual ~SC_NOTI_FIRE();
+
+  SC_NOTI_FIRE(const SC_NOTI_FIRE& from);
+
+  inline SC_NOTI_FIRE& operator=(const SC_NOTI_FIRE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_NOTI_FIRE& default_instance();
+
+  static inline const SC_NOTI_FIRE* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_FIRE*>(
+               &_SC_NOTI_FIRE_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    11;
+
+  void Swap(SC_NOTI_FIRE* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_NOTI_FIRE* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_NOTI_FIRE* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_NOTI_FIRE& from);
+  void MergeFrom(const SC_NOTI_FIRE& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_NOTI_FIRE* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 7;
+  int bullet_infos_size() const;
+  void clear_bullet_infos();
+  static const int kBulletInfosFieldNumber = 7;
+  const ::GAME::BULLET_INFO& bullet_infos(int index) const;
+  ::GAME::BULLET_INFO* mutable_bullet_infos(int index);
+  ::GAME::BULLET_INFO* add_bullet_infos();
+  ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >*
+      mutable_bullet_infos();
+  const ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >&
+      bullet_infos() const;
+
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // int64 bullet_id = 2;
+  void clear_bullet_id();
+  static const int kBulletIdFieldNumber = 2;
+  ::google::protobuf::int64 bullet_id() const;
+  void set_bullet_id(::google::protobuf::int64 value);
+
+  // int32 bullet_type = 3;
+  void clear_bullet_type();
+  static const int kBulletTypeFieldNumber = 3;
+  ::google::protobuf::int32 bullet_type() const;
+  void set_bullet_type(::google::protobuf::int32 value);
+
+  // float pos_x = 4;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 4;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 5;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 5;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 6;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 6;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_FIRE)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO > bullet_infos_;
+  ::google::protobuf::int64 obj_id_;
+  ::google::protobuf::int64 bullet_id_;
+  ::google::protobuf::int32 bullet_type_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -1629,7 +1967,253 @@ inline void SC_NOTI_OTHER_MOVE::set_pos_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_MOVE.pos_z)
 }
 
+// -------------------------------------------------------------------
+
+// BULLET_INFO
+
+// float dir_x = 1;
+inline void BULLET_INFO::clear_dir_x() {
+  dir_x_ = 0;
+}
+inline float BULLET_INFO::dir_x() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.dir_x)
+  return dir_x_;
+}
+inline void BULLET_INFO::set_dir_x(float value) {
+  
+  dir_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_x)
+}
+
+// float dir_y = 2;
+inline void BULLET_INFO::clear_dir_y() {
+  dir_y_ = 0;
+}
+inline float BULLET_INFO::dir_y() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.dir_y)
+  return dir_y_;
+}
+inline void BULLET_INFO::set_dir_y(float value) {
+  
+  dir_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_y)
+}
+
+// float dir_z = 3;
+inline void BULLET_INFO::clear_dir_z() {
+  dir_z_ = 0;
+}
+inline float BULLET_INFO::dir_z() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.dir_z)
+  return dir_z_;
+}
+inline void BULLET_INFO::set_dir_z(float value) {
+  
+  dir_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_z)
+}
+
+// float speed = 4;
+inline void BULLET_INFO::clear_speed() {
+  speed_ = 0;
+}
+inline float BULLET_INFO::speed() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.speed)
+  return speed_;
+}
+inline void BULLET_INFO::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.speed)
+}
+
+// float distance = 5;
+inline void BULLET_INFO::clear_distance() {
+  distance_ = 0;
+}
+inline float BULLET_INFO::distance() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.distance)
+  return distance_;
+}
+inline void BULLET_INFO::set_distance(float value) {
+  
+  distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.distance)
+}
+
+// -------------------------------------------------------------------
+
+// CS_FIRE
+
+// int32 bullet_type = 1;
+inline void CS_FIRE::clear_bullet_type() {
+  bullet_type_ = 0;
+}
+inline ::google::protobuf::int32 CS_FIRE::bullet_type() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.bullet_type)
+  return bullet_type_;
+}
+inline void CS_FIRE::set_bullet_type(::google::protobuf::int32 value) {
+  
+  bullet_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.bullet_type)
+}
+
+// repeated .GAME.BULLET_INFO bullet_infos = 2;
+inline int CS_FIRE::bullet_infos_size() const {
+  return bullet_infos_.size();
+}
+inline void CS_FIRE::clear_bullet_infos() {
+  bullet_infos_.Clear();
+}
+inline const ::GAME::BULLET_INFO& CS_FIRE::bullet_infos(int index) const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_.Get(index);
+}
+inline ::GAME::BULLET_INFO* CS_FIRE::mutable_bullet_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_.Mutable(index);
+}
+inline ::GAME::BULLET_INFO* CS_FIRE::add_bullet_infos() {
+  // @@protoc_insertion_point(field_add:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >*
+CS_FIRE::mutable_bullet_infos() {
+  // @@protoc_insertion_point(field_mutable_list:GAME.CS_FIRE.bullet_infos)
+  return &bullet_infos_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >&
+CS_FIRE::bullet_infos() const {
+  // @@protoc_insertion_point(field_list:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_;
+}
+
+// -------------------------------------------------------------------
+
+// SC_NOTI_FIRE
+
+// int64 obj_id = 1;
+inline void SC_NOTI_FIRE::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_FIRE::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.obj_id)
+  return obj_id_;
+}
+inline void SC_NOTI_FIRE::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.obj_id)
+}
+
+// int64 bullet_id = 2;
+inline void SC_NOTI_FIRE::clear_bullet_id() {
+  bullet_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_FIRE::bullet_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.bullet_id)
+  return bullet_id_;
+}
+inline void SC_NOTI_FIRE::set_bullet_id(::google::protobuf::int64 value) {
+  
+  bullet_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.bullet_id)
+}
+
+// int32 bullet_type = 3;
+inline void SC_NOTI_FIRE::clear_bullet_type() {
+  bullet_type_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_FIRE::bullet_type() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.bullet_type)
+  return bullet_type_;
+}
+inline void SC_NOTI_FIRE::set_bullet_type(::google::protobuf::int32 value) {
+  
+  bullet_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.bullet_type)
+}
+
+// float pos_x = 4;
+inline void SC_NOTI_FIRE::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float SC_NOTI_FIRE::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.pos_x)
+  return pos_x_;
+}
+inline void SC_NOTI_FIRE::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.pos_x)
+}
+
+// float pos_y = 5;
+inline void SC_NOTI_FIRE::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float SC_NOTI_FIRE::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.pos_y)
+  return pos_y_;
+}
+inline void SC_NOTI_FIRE::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.pos_y)
+}
+
+// float pos_z = 6;
+inline void SC_NOTI_FIRE::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float SC_NOTI_FIRE::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.pos_z)
+  return pos_z_;
+}
+inline void SC_NOTI_FIRE::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.pos_z)
+}
+
+// repeated .GAME.BULLET_INFO bullet_infos = 7;
+inline int SC_NOTI_FIRE::bullet_infos_size() const {
+  return bullet_infos_.size();
+}
+inline void SC_NOTI_FIRE::clear_bullet_infos() {
+  bullet_infos_.Clear();
+}
+inline const ::GAME::BULLET_INFO& SC_NOTI_FIRE::bullet_infos(int index) const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_.Get(index);
+}
+inline ::GAME::BULLET_INFO* SC_NOTI_FIRE::mutable_bullet_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_.Mutable(index);
+}
+inline ::GAME::BULLET_INFO* SC_NOTI_FIRE::add_bullet_infos() {
+  // @@protoc_insertion_point(field_add:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >*
+SC_NOTI_FIRE::mutable_bullet_infos() {
+  // @@protoc_insertion_point(field_mutable_list:GAME.SC_NOTI_FIRE.bullet_infos)
+  return &bullet_infos_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >&
+SC_NOTI_FIRE::bullet_infos() const {
+  // @@protoc_insertion_point(field_list:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_;
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

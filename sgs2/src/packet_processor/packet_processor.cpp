@@ -52,6 +52,7 @@ void register_handlers()
 	packet_handlers[to_index(opcode::CS_PING)] = [](std::shared_ptr<server_session> session, buf_ptr buffer, int size) { deserialize<GAME::CS_PING>(std::move(session), std::move(buffer), size, handle_CS_PING); };
 	packet_handlers[to_index(opcode::CS_SYNC_FIELD)] = [](std::shared_ptr<server_session> session, buf_ptr buffer, int size) { deserialize<GAME::CS_SYNC_FIELD>(std::move(session), std::move(buffer), size, handle_CS_SYNC_FIELD); };
 	packet_handlers[to_index(opcode::CS_NOTI_MOVE)] = [](std::shared_ptr<server_session> session, buf_ptr buffer, int size) { deserialize<GAME::CS_NOTI_MOVE>(std::move(session), std::move(buffer), size, handle_CS_NOTI_MOVE); };
+	packet_handlers[to_index(opcode::CS_FIRE)] = [](std::shared_ptr<server_session> session, buf_ptr buffer, int size) { deserialize<GAME::CS_FIRE>(std::move(session), std::move(buffer), size, handle_CS_FIRE); };
 }
 
 void handle_packet(std::shared_ptr<server_session> session, buf_ptr buffer, int size)

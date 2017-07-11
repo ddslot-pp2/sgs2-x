@@ -20,7 +20,7 @@ public:
         q_.push(t);
     }
 
-    virtual void update(float dt);
+    virtual void update(float delta);
 
     //Concurrency::concurrent_queue<task>& queue();
     Concurrency::concurrent_queue<task> q_;

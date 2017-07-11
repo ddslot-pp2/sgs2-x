@@ -7,8 +7,10 @@
 #include "../predeclare.h"
 #include "../component/component.h"
 #include "../component/movement/move_component.h"
+#include "../component/skill/skill_component.h"
 #include "../../../core/src/util/vector3.h"
 #include <mutex>
+#include "stat_info.h"
 
 class field;
 
@@ -52,6 +54,9 @@ public:
     void set_pos(const vector3& pos);
     vector3 get_pos();
 
+    field* get_field() const { return field_; }
+    auto get_stat_info() const { return stat_; }
+
 protected:
     std::map<comp_id, std::shared_ptr<component>> components_;
     field_id field_id_;
@@ -60,6 +65,8 @@ protected:
     field* field_;
 
     vector3 pos_;
+
+    std::shared_ptr<stat_info> stat_;
 };
 
 #endif

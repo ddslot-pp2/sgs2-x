@@ -46,6 +46,9 @@
     <Filter Include="src\packet_processor\packet_handler\game">
       <UniqueIdentifier>{99462837-08d9-487c-920c-ab54b2663a89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\component\skill\bullet">
+      <UniqueIdentifier>{95adc58d-919e-4270-b214-1442fd1fca3e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -114,6 +117,15 @@
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_NOTI_MOVE.cpp">
       <Filter>src\packet_processor\packet_handler\game</Filter>
     </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_FIRE.cpp">
+      <Filter>src\packet_processor\packet_handler\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\skill\bullet\default_bullet.cpp">
+      <Filter>src\component\skill\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\skill\bullet\bullet.cpp">
+      <Filter>src\component\skill\bullet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -169,6 +181,15 @@
     </ClInclude>
     <ClInclude Include="src\predeclare.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\skill\bullet\default_bullet.h">
+      <Filter>src\component\skill\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\skill\bullet\bullet.h">
+      <Filter>src\component\skill\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object\stat_info.h">
+      <Filter>src\object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

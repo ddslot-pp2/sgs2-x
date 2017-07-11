@@ -12,7 +12,7 @@ public:
     explicit move_component(object* obj);
     virtual ~move_component();
 
-    void update(float dt) override;
+    void update(float delta) override;
 
     void set_pos(const vector3& pos);
 

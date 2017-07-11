@@ -17,6 +17,7 @@ character::~character()
 
 void character::initialize()
 {
+    components_[comp_id::skill_comp] = std::make_shared<skill_component>(this);
     super::initialize();
 }
 

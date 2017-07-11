@@ -22,6 +22,13 @@ std::shared_ptr<component> object::get_component(comp_id id)
 void object::initialize()
 {
     components_[comp_id::move_comp] = std::make_shared<move_component>(this);
+
+    // session_ 한테 물어서 stat_info를 가져온다;
+    // 예를들어 사이즈, 스피드 등등
+    stat_ = std::make_shared<stat_info>();
+    stat_->hp = 100;
+    stat_->speed = 10.0f;
+    stat_->size = vector3(2.0f, 0.0, 2.0f);
 }
 
 void object::update(float delta)
@@ -29,6 +36,7 @@ void object::update(float delta)
     for (auto& comp : components_)
     {
         comp.second->process_task();
+        comp.second->update(delta);
     }
 }
 

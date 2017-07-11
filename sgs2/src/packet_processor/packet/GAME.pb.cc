@@ -36,13 +36,19 @@ class CS_NOTI_MOVEDefaultTypeInternal : public ::google::protobuf::internal::Exp
 } _CS_NOTI_MOVE_default_instance_;
 class SC_NOTI_OTHER_MOVEDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_NOTI_OTHER_MOVE> {
 } _SC_NOTI_OTHER_MOVE_default_instance_;
+class BULLET_INFODefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<BULLET_INFO> {
+} _BULLET_INFO_default_instance_;
+class CS_FIREDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<CS_FIRE> {
+} _CS_FIRE_default_instance_;
+class SC_NOTI_FIREDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_NOTI_FIRE> {
+} _SC_NOTI_FIRE_default_instance_;
 
 namespace protobuf_GAME_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[9];
+::google::protobuf::Metadata file_level_metadata[12];
 
 }  // namespace
 
@@ -57,6 +63,9 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
@@ -147,6 +156,35 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_MOVE, pos_x_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_MOVE, pos_y_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_MOVE, pos_z_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, dir_x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, dir_y_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, dir_z_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, speed_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, distance_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_FIRE, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_FIRE, bullet_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_FIRE, bullet_infos_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, obj_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, bullet_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, bullet_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, pos_x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, pos_y_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, pos_z_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_FIRE, bullet_infos_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -159,6 +197,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 55, -1, sizeof(SC_NOTI_OTHER_LEAVE_FIELD)},
   { 61, -1, sizeof(CS_NOTI_MOVE)},
   { 69, -1, sizeof(SC_NOTI_OTHER_MOVE)},
+  { 78, -1, sizeof(BULLET_INFO)},
+  { 88, -1, sizeof(CS_FIRE)},
+  { 95, -1, sizeof(SC_NOTI_FIRE)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -171,6 +212,9 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_OTHER_LEAVE_FIELD_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_CS_NOTI_MOVE_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_OTHER_MOVE_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_BULLET_INFO_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_CS_FIRE_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_FIRE_default_instance_),
 };
 
 namespace {
@@ -191,7 +235,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 9);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
 }
 
 }  // namespace
@@ -215,6 +259,12 @@ void TableStruct::Shutdown() {
   delete file_level_metadata[7].reflection;
   _SC_NOTI_OTHER_MOVE_default_instance_.Shutdown();
   delete file_level_metadata[8].reflection;
+  _BULLET_INFO_default_instance_.Shutdown();
+  delete file_level_metadata[9].reflection;
+  _CS_FIRE_default_instance_.Shutdown();
+  delete file_level_metadata[10].reflection;
+  _SC_NOTI_FIRE_default_instance_.Shutdown();
+  delete file_level_metadata[11].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
@@ -230,6 +280,9 @@ void TableStruct::InitDefaultsImpl() {
   _SC_NOTI_OTHER_LEAVE_FIELD_default_instance_.DefaultConstruct();
   _CS_NOTI_MOVE_default_instance_.DefaultConstruct();
   _SC_NOTI_OTHER_MOVE_default_instance_.DefaultConstruct();
+  _BULLET_INFO_default_instance_.DefaultConstruct();
+  _CS_FIRE_default_instance_.DefaultConstruct();
+  _SC_NOTI_FIRE_default_instance_.DefaultConstruct();
 }
 
 void InitDefaults() {
@@ -257,10 +310,18 @@ void AddDescriptorsImpl() {
       "_MOVE\022\r\n\005pos_x\030\001 \001(\002\022\r\n\005pos_y\030\002 \001(\002\022\r\n\005p"
       "os_z\030\003 \001(\002\"Q\n\022SC_NOTI_OTHER_MOVE\022\016\n\006obj_"
       "id\030\001 \001(\003\022\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r"
-      "\n\005pos_z\030\004 \001(\002b\006proto3"
+      "\n\005pos_z\030\004 \001(\002\"[\n\013BULLET_INFO\022\r\n\005dir_x\030\001 "
+      "\001(\002\022\r\n\005dir_y\030\002 \001(\002\022\r\n\005dir_z\030\003 \001(\002\022\r\n\005spe"
+      "ed\030\004 \001(\002\022\020\n\010distance\030\005 \001(\002\"G\n\007CS_FIRE\022\023\n"
+      "\013bullet_type\030\001 \001(\005\022\'\n\014bullet_infos\030\002 \003(\013"
+      "2\021.GAME.BULLET_INFO\"\234\001\n\014SC_NOTI_FIRE\022\016\n\006"
+      "obj_id\030\001 \001(\003\022\021\n\tbullet_id\030\002 \001(\003\022\023\n\013bulle"
+      "t_type\030\003 \001(\005\022\r\n\005pos_x\030\004 \001(\002\022\r\n\005pos_y\030\005 \001"
+      "(\002\022\r\n\005pos_z\030\006 \001(\002\022\'\n\014bullet_infos\030\007 \003(\0132"
+      "\021.GAME.BULLET_INFOb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 741);
+      descriptor, 1066);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -3773,6 +3834,1292 @@ void SC_NOTI_OTHER_MOVE::set_pos_z(float value) {
   
   pos_z_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_MOVE.pos_z)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int BULLET_INFO::kDirXFieldNumber;
+const int BULLET_INFO::kDirYFieldNumber;
+const int BULLET_INFO::kDirZFieldNumber;
+const int BULLET_INFO::kSpeedFieldNumber;
+const int BULLET_INFO::kDistanceFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+BULLET_INFO::BULLET_INFO()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_GAME_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:GAME.BULLET_INFO)
+}
+BULLET_INFO::BULLET_INFO(const BULLET_INFO& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&dir_x_, &from.dir_x_,
+    reinterpret_cast<char*>(&distance_) -
+    reinterpret_cast<char*>(&dir_x_) + sizeof(distance_));
+  // @@protoc_insertion_point(copy_constructor:GAME.BULLET_INFO)
+}
+
+void BULLET_INFO::SharedCtor() {
+  ::memset(&dir_x_, 0, reinterpret_cast<char*>(&distance_) -
+    reinterpret_cast<char*>(&dir_x_) + sizeof(distance_));
+  _cached_size_ = 0;
+}
+
+BULLET_INFO::~BULLET_INFO() {
+  // @@protoc_insertion_point(destructor:GAME.BULLET_INFO)
+  SharedDtor();
+}
+
+void BULLET_INFO::SharedDtor() {
+}
+
+void BULLET_INFO::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* BULLET_INFO::descriptor() {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const BULLET_INFO& BULLET_INFO::default_instance() {
+  protobuf_GAME_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+BULLET_INFO* BULLET_INFO::New(::google::protobuf::Arena* arena) const {
+  BULLET_INFO* n = new BULLET_INFO;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void BULLET_INFO::Clear() {
+// @@protoc_insertion_point(message_clear_start:GAME.BULLET_INFO)
+  ::memset(&dir_x_, 0, reinterpret_cast<char*>(&distance_) -
+    reinterpret_cast<char*>(&dir_x_) + sizeof(distance_));
+}
+
+bool BULLET_INFO::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:GAME.BULLET_INFO)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // float dir_x = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(13u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &dir_x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float dir_y = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(21u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &dir_y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float dir_z = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &dir_z_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float speed = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &speed_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float distance = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &distance_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:GAME.BULLET_INFO)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:GAME.BULLET_INFO)
+  return false;
+#undef DO_
+}
+
+void BULLET_INFO::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:GAME.BULLET_INFO)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float dir_x = 1;
+  if (this->dir_x() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->dir_x(), output);
+  }
+
+  // float dir_y = 2;
+  if (this->dir_y() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->dir_y(), output);
+  }
+
+  // float dir_z = 3;
+  if (this->dir_z() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->dir_z(), output);
+  }
+
+  // float speed = 4;
+  if (this->speed() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->speed(), output);
+  }
+
+  // float distance = 5;
+  if (this->distance() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->distance(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:GAME.BULLET_INFO)
+}
+
+::google::protobuf::uint8* BULLET_INFO::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:GAME.BULLET_INFO)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float dir_x = 1;
+  if (this->dir_x() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->dir_x(), target);
+  }
+
+  // float dir_y = 2;
+  if (this->dir_y() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->dir_y(), target);
+  }
+
+  // float dir_z = 3;
+  if (this->dir_z() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->dir_z(), target);
+  }
+
+  // float speed = 4;
+  if (this->speed() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->speed(), target);
+  }
+
+  // float distance = 5;
+  if (this->distance() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->distance(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:GAME.BULLET_INFO)
+  return target;
+}
+
+size_t BULLET_INFO::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GAME.BULLET_INFO)
+  size_t total_size = 0;
+
+  // float dir_x = 1;
+  if (this->dir_x() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float dir_y = 2;
+  if (this->dir_y() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float dir_z = 3;
+  if (this->dir_z() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float speed = 4;
+  if (this->speed() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float distance = 5;
+  if (this->distance() != 0) {
+    total_size += 1 + 4;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void BULLET_INFO::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:GAME.BULLET_INFO)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BULLET_INFO* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const BULLET_INFO>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:GAME.BULLET_INFO)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:GAME.BULLET_INFO)
+    MergeFrom(*source);
+  }
+}
+
+void BULLET_INFO::MergeFrom(const BULLET_INFO& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:GAME.BULLET_INFO)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.dir_x() != 0) {
+    set_dir_x(from.dir_x());
+  }
+  if (from.dir_y() != 0) {
+    set_dir_y(from.dir_y());
+  }
+  if (from.dir_z() != 0) {
+    set_dir_z(from.dir_z());
+  }
+  if (from.speed() != 0) {
+    set_speed(from.speed());
+  }
+  if (from.distance() != 0) {
+    set_distance(from.distance());
+  }
+}
+
+void BULLET_INFO::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:GAME.BULLET_INFO)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BULLET_INFO::CopyFrom(const BULLET_INFO& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:GAME.BULLET_INFO)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BULLET_INFO::IsInitialized() const {
+  return true;
+}
+
+void BULLET_INFO::Swap(BULLET_INFO* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void BULLET_INFO::InternalSwap(BULLET_INFO* other) {
+  std::swap(dir_x_, other->dir_x_);
+  std::swap(dir_y_, other->dir_y_);
+  std::swap(dir_z_, other->dir_z_);
+  std::swap(speed_, other->speed_);
+  std::swap(distance_, other->distance_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata BULLET_INFO::GetMetadata() const {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// BULLET_INFO
+
+// float dir_x = 1;
+void BULLET_INFO::clear_dir_x() {
+  dir_x_ = 0;
+}
+float BULLET_INFO::dir_x() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.dir_x)
+  return dir_x_;
+}
+void BULLET_INFO::set_dir_x(float value) {
+  
+  dir_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_x)
+}
+
+// float dir_y = 2;
+void BULLET_INFO::clear_dir_y() {
+  dir_y_ = 0;
+}
+float BULLET_INFO::dir_y() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.dir_y)
+  return dir_y_;
+}
+void BULLET_INFO::set_dir_y(float value) {
+  
+  dir_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_y)
+}
+
+// float dir_z = 3;
+void BULLET_INFO::clear_dir_z() {
+  dir_z_ = 0;
+}
+float BULLET_INFO::dir_z() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.dir_z)
+  return dir_z_;
+}
+void BULLET_INFO::set_dir_z(float value) {
+  
+  dir_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_z)
+}
+
+// float speed = 4;
+void BULLET_INFO::clear_speed() {
+  speed_ = 0;
+}
+float BULLET_INFO::speed() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.speed)
+  return speed_;
+}
+void BULLET_INFO::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.speed)
+}
+
+// float distance = 5;
+void BULLET_INFO::clear_distance() {
+  distance_ = 0;
+}
+float BULLET_INFO::distance() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.distance)
+  return distance_;
+}
+void BULLET_INFO::set_distance(float value) {
+  
+  distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.distance)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int CS_FIRE::kBulletTypeFieldNumber;
+const int CS_FIRE::kBulletInfosFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+CS_FIRE::CS_FIRE()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_GAME_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:GAME.CS_FIRE)
+}
+CS_FIRE::CS_FIRE(const CS_FIRE& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      bullet_infos_(from.bullet_infos_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  bullet_type_ = from.bullet_type_;
+  // @@protoc_insertion_point(copy_constructor:GAME.CS_FIRE)
+}
+
+void CS_FIRE::SharedCtor() {
+  bullet_type_ = 0;
+  _cached_size_ = 0;
+}
+
+CS_FIRE::~CS_FIRE() {
+  // @@protoc_insertion_point(destructor:GAME.CS_FIRE)
+  SharedDtor();
+}
+
+void CS_FIRE::SharedDtor() {
+}
+
+void CS_FIRE::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CS_FIRE::descriptor() {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const CS_FIRE& CS_FIRE::default_instance() {
+  protobuf_GAME_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+CS_FIRE* CS_FIRE::New(::google::protobuf::Arena* arena) const {
+  CS_FIRE* n = new CS_FIRE;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void CS_FIRE::Clear() {
+// @@protoc_insertion_point(message_clear_start:GAME.CS_FIRE)
+  bullet_infos_.Clear();
+  bullet_type_ = 0;
+}
+
+bool CS_FIRE::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:GAME.CS_FIRE)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 bullet_type = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &bullet_type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .GAME.BULLET_INFO bullet_infos = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_bullet_infos()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:GAME.CS_FIRE)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:GAME.CS_FIRE)
+  return false;
+#undef DO_
+}
+
+void CS_FIRE::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:GAME.CS_FIRE)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 bullet_type = 1;
+  if (this->bullet_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->bullet_type(), output);
+  }
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 2;
+  for (unsigned int i = 0, n = this->bullet_infos_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->bullet_infos(i), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:GAME.CS_FIRE)
+}
+
+::google::protobuf::uint8* CS_FIRE::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:GAME.CS_FIRE)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 bullet_type = 1;
+  if (this->bullet_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->bullet_type(), target);
+  }
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 2;
+  for (unsigned int i = 0, n = this->bullet_infos_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, this->bullet_infos(i), deterministic, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:GAME.CS_FIRE)
+  return target;
+}
+
+size_t CS_FIRE::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GAME.CS_FIRE)
+  size_t total_size = 0;
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 2;
+  {
+    unsigned int count = this->bullet_infos_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->bullet_infos(i));
+    }
+  }
+
+  // int32 bullet_type = 1;
+  if (this->bullet_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->bullet_type());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CS_FIRE::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:GAME.CS_FIRE)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CS_FIRE* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const CS_FIRE>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:GAME.CS_FIRE)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:GAME.CS_FIRE)
+    MergeFrom(*source);
+  }
+}
+
+void CS_FIRE::MergeFrom(const CS_FIRE& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:GAME.CS_FIRE)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  bullet_infos_.MergeFrom(from.bullet_infos_);
+  if (from.bullet_type() != 0) {
+    set_bullet_type(from.bullet_type());
+  }
+}
+
+void CS_FIRE::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:GAME.CS_FIRE)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CS_FIRE::CopyFrom(const CS_FIRE& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:GAME.CS_FIRE)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CS_FIRE::IsInitialized() const {
+  return true;
+}
+
+void CS_FIRE::Swap(CS_FIRE* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void CS_FIRE::InternalSwap(CS_FIRE* other) {
+  bullet_infos_.InternalSwap(&other->bullet_infos_);
+  std::swap(bullet_type_, other->bullet_type_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata CS_FIRE::GetMetadata() const {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// CS_FIRE
+
+// int32 bullet_type = 1;
+void CS_FIRE::clear_bullet_type() {
+  bullet_type_ = 0;
+}
+::google::protobuf::int32 CS_FIRE::bullet_type() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.bullet_type)
+  return bullet_type_;
+}
+void CS_FIRE::set_bullet_type(::google::protobuf::int32 value) {
+  
+  bullet_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.bullet_type)
+}
+
+// repeated .GAME.BULLET_INFO bullet_infos = 2;
+int CS_FIRE::bullet_infos_size() const {
+  return bullet_infos_.size();
+}
+void CS_FIRE::clear_bullet_infos() {
+  bullet_infos_.Clear();
+}
+const ::GAME::BULLET_INFO& CS_FIRE::bullet_infos(int index) const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_.Get(index);
+}
+::GAME::BULLET_INFO* CS_FIRE::mutable_bullet_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_.Mutable(index);
+}
+::GAME::BULLET_INFO* CS_FIRE::add_bullet_infos() {
+  // @@protoc_insertion_point(field_add:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >*
+CS_FIRE::mutable_bullet_infos() {
+  // @@protoc_insertion_point(field_mutable_list:GAME.CS_FIRE.bullet_infos)
+  return &bullet_infos_;
+}
+const ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >&
+CS_FIRE::bullet_infos() const {
+  // @@protoc_insertion_point(field_list:GAME.CS_FIRE.bullet_infos)
+  return bullet_infos_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SC_NOTI_FIRE::kObjIdFieldNumber;
+const int SC_NOTI_FIRE::kBulletIdFieldNumber;
+const int SC_NOTI_FIRE::kBulletTypeFieldNumber;
+const int SC_NOTI_FIRE::kPosXFieldNumber;
+const int SC_NOTI_FIRE::kPosYFieldNumber;
+const int SC_NOTI_FIRE::kPosZFieldNumber;
+const int SC_NOTI_FIRE::kBulletInfosFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SC_NOTI_FIRE::SC_NOTI_FIRE()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_GAME_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:GAME.SC_NOTI_FIRE)
+}
+SC_NOTI_FIRE::SC_NOTI_FIRE(const SC_NOTI_FIRE& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      bullet_infos_(from.bullet_infos_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&obj_id_, &from.obj_id_,
+    reinterpret_cast<char*>(&pos_z_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(pos_z_));
+  // @@protoc_insertion_point(copy_constructor:GAME.SC_NOTI_FIRE)
+}
+
+void SC_NOTI_FIRE::SharedCtor() {
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&pos_z_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(pos_z_));
+  _cached_size_ = 0;
+}
+
+SC_NOTI_FIRE::~SC_NOTI_FIRE() {
+  // @@protoc_insertion_point(destructor:GAME.SC_NOTI_FIRE)
+  SharedDtor();
+}
+
+void SC_NOTI_FIRE::SharedDtor() {
+}
+
+void SC_NOTI_FIRE::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SC_NOTI_FIRE::descriptor() {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SC_NOTI_FIRE& SC_NOTI_FIRE::default_instance() {
+  protobuf_GAME_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+SC_NOTI_FIRE* SC_NOTI_FIRE::New(::google::protobuf::Arena* arena) const {
+  SC_NOTI_FIRE* n = new SC_NOTI_FIRE;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void SC_NOTI_FIRE::Clear() {
+// @@protoc_insertion_point(message_clear_start:GAME.SC_NOTI_FIRE)
+  bullet_infos_.Clear();
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&pos_z_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(pos_z_));
+}
+
+bool SC_NOTI_FIRE::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:GAME.SC_NOTI_FIRE)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 obj_id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &obj_id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 bullet_id = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &bullet_id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 bullet_type = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &bullet_type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float pos_x = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &pos_x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float pos_y = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &pos_y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float pos_z = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &pos_z_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .GAME.BULLET_INFO bullet_infos = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_bullet_infos()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:GAME.SC_NOTI_FIRE)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:GAME.SC_NOTI_FIRE)
+  return false;
+#undef DO_
+}
+
+void SC_NOTI_FIRE::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:GAME.SC_NOTI_FIRE)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->obj_id(), output);
+  }
+
+  // int64 bullet_id = 2;
+  if (this->bullet_id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->bullet_id(), output);
+  }
+
+  // int32 bullet_type = 3;
+  if (this->bullet_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->bullet_type(), output);
+  }
+
+  // float pos_x = 4;
+  if (this->pos_x() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->pos_x(), output);
+  }
+
+  // float pos_y = 5;
+  if (this->pos_y() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->pos_y(), output);
+  }
+
+  // float pos_z = 6;
+  if (this->pos_z() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->pos_z(), output);
+  }
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 7;
+  for (unsigned int i = 0, n = this->bullet_infos_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, this->bullet_infos(i), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_FIRE)
+}
+
+::google::protobuf::uint8* SC_NOTI_FIRE::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:GAME.SC_NOTI_FIRE)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->obj_id(), target);
+  }
+
+  // int64 bullet_id = 2;
+  if (this->bullet_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->bullet_id(), target);
+  }
+
+  // int32 bullet_type = 3;
+  if (this->bullet_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->bullet_type(), target);
+  }
+
+  // float pos_x = 4;
+  if (this->pos_x() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->pos_x(), target);
+  }
+
+  // float pos_y = 5;
+  if (this->pos_y() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->pos_y(), target);
+  }
+
+  // float pos_z = 6;
+  if (this->pos_z() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->pos_z(), target);
+  }
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 7;
+  for (unsigned int i = 0, n = this->bullet_infos_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        7, this->bullet_infos(i), deterministic, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_FIRE)
+  return target;
+}
+
+size_t SC_NOTI_FIRE::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GAME.SC_NOTI_FIRE)
+  size_t total_size = 0;
+
+  // repeated .GAME.BULLET_INFO bullet_infos = 7;
+  {
+    unsigned int count = this->bullet_infos_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->bullet_infos(i));
+    }
+  }
+
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->obj_id());
+  }
+
+  // int64 bullet_id = 2;
+  if (this->bullet_id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->bullet_id());
+  }
+
+  // int32 bullet_type = 3;
+  if (this->bullet_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->bullet_type());
+  }
+
+  // float pos_x = 4;
+  if (this->pos_x() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float pos_y = 5;
+  if (this->pos_y() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float pos_z = 6;
+  if (this->pos_z() != 0) {
+    total_size += 1 + 4;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SC_NOTI_FIRE::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:GAME.SC_NOTI_FIRE)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SC_NOTI_FIRE* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SC_NOTI_FIRE>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:GAME.SC_NOTI_FIRE)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:GAME.SC_NOTI_FIRE)
+    MergeFrom(*source);
+  }
+}
+
+void SC_NOTI_FIRE::MergeFrom(const SC_NOTI_FIRE& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:GAME.SC_NOTI_FIRE)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  bullet_infos_.MergeFrom(from.bullet_infos_);
+  if (from.obj_id() != 0) {
+    set_obj_id(from.obj_id());
+  }
+  if (from.bullet_id() != 0) {
+    set_bullet_id(from.bullet_id());
+  }
+  if (from.bullet_type() != 0) {
+    set_bullet_type(from.bullet_type());
+  }
+  if (from.pos_x() != 0) {
+    set_pos_x(from.pos_x());
+  }
+  if (from.pos_y() != 0) {
+    set_pos_y(from.pos_y());
+  }
+  if (from.pos_z() != 0) {
+    set_pos_z(from.pos_z());
+  }
+}
+
+void SC_NOTI_FIRE::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:GAME.SC_NOTI_FIRE)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SC_NOTI_FIRE::CopyFrom(const SC_NOTI_FIRE& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:GAME.SC_NOTI_FIRE)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SC_NOTI_FIRE::IsInitialized() const {
+  return true;
+}
+
+void SC_NOTI_FIRE::Swap(SC_NOTI_FIRE* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SC_NOTI_FIRE::InternalSwap(SC_NOTI_FIRE* other) {
+  bullet_infos_.InternalSwap(&other->bullet_infos_);
+  std::swap(obj_id_, other->obj_id_);
+  std::swap(bullet_id_, other->bullet_id_);
+  std::swap(bullet_type_, other->bullet_type_);
+  std::swap(pos_x_, other->pos_x_);
+  std::swap(pos_y_, other->pos_y_);
+  std::swap(pos_z_, other->pos_z_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata SC_NOTI_FIRE::GetMetadata() const {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SC_NOTI_FIRE
+
+// int64 obj_id = 1;
+void SC_NOTI_FIRE::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+::google::protobuf::int64 SC_NOTI_FIRE::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.obj_id)
+  return obj_id_;
+}
+void SC_NOTI_FIRE::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.obj_id)
+}
+
+// int64 bullet_id = 2;
+void SC_NOTI_FIRE::clear_bullet_id() {
+  bullet_id_ = GOOGLE_LONGLONG(0);
+}
+::google::protobuf::int64 SC_NOTI_FIRE::bullet_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.bullet_id)
+  return bullet_id_;
+}
+void SC_NOTI_FIRE::set_bullet_id(::google::protobuf::int64 value) {
+  
+  bullet_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.bullet_id)
+}
+
+// int32 bullet_type = 3;
+void SC_NOTI_FIRE::clear_bullet_type() {
+  bullet_type_ = 0;
+}
+::google::protobuf::int32 SC_NOTI_FIRE::bullet_type() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.bullet_type)
+  return bullet_type_;
+}
+void SC_NOTI_FIRE::set_bullet_type(::google::protobuf::int32 value) {
+  
+  bullet_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.bullet_type)
+}
+
+// float pos_x = 4;
+void SC_NOTI_FIRE::clear_pos_x() {
+  pos_x_ = 0;
+}
+float SC_NOTI_FIRE::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.pos_x)
+  return pos_x_;
+}
+void SC_NOTI_FIRE::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.pos_x)
+}
+
+// float pos_y = 5;
+void SC_NOTI_FIRE::clear_pos_y() {
+  pos_y_ = 0;
+}
+float SC_NOTI_FIRE::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.pos_y)
+  return pos_y_;
+}
+void SC_NOTI_FIRE::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.pos_y)
+}
+
+// float pos_z = 6;
+void SC_NOTI_FIRE::clear_pos_z() {
+  pos_z_ = 0;
+}
+float SC_NOTI_FIRE::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.pos_z)
+  return pos_z_;
+}
+void SC_NOTI_FIRE::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.pos_z)
+}
+
+// repeated .GAME.BULLET_INFO bullet_infos = 7;
+int SC_NOTI_FIRE::bullet_infos_size() const {
+  return bullet_infos_.size();
+}
+void SC_NOTI_FIRE::clear_bullet_infos() {
+  bullet_infos_.Clear();
+}
+const ::GAME::BULLET_INFO& SC_NOTI_FIRE::bullet_infos(int index) const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_.Get(index);
+}
+::GAME::BULLET_INFO* SC_NOTI_FIRE::mutable_bullet_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_.Mutable(index);
+}
+::GAME::BULLET_INFO* SC_NOTI_FIRE::add_bullet_infos() {
+  // @@protoc_insertion_point(field_add:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >*
+SC_NOTI_FIRE::mutable_bullet_infos() {
+  // @@protoc_insertion_point(field_mutable_list:GAME.SC_NOTI_FIRE.bullet_infos)
+  return &bullet_infos_;
+}
+const ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO >&
+SC_NOTI_FIRE::bullet_infos() const {
+  // @@protoc_insertion_point(field_list:GAME.SC_NOTI_FIRE.bullet_infos)
+  return bullet_infos_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

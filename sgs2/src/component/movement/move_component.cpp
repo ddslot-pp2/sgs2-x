@@ -13,11 +13,11 @@ move_component::~move_component()
 
 }
 
-void move_component::update(float dt)
+void move_component::update(float delta)
 {
-    super::update(dt);
+    //super::update(delta);
 
-    wprintf(L"무브 컴포넌트 업데이트!\n");
+    //wprintf(L"무브 컴포넌트 업데이트!\n");
 }
 
 void move_component::set_pos(const vector3& pos)

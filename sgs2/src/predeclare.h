@@ -20,6 +20,14 @@ using task = std::function<void()>;
 
 enum comp_id { move_comp = 0 , skill_comp};
 
+using bullet_id = __int64;
+
+template<typename E>
+constexpr auto to_integral(E e) -> typename std::underlying_type<E>::type
+{
+    return static_cast<typename std::underlying_type<E>::type>(e);
+}
+
 /*
 template <class T, class Tuple>
 struct Index;

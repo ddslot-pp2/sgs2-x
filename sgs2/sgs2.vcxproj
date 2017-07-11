@@ -75,6 +75,8 @@
     <ClCompile Include="src\account\account_manager.cpp" />
     <ClCompile Include="src\component\component.cpp" />
     <ClCompile Include="src\component\movement\move_component.cpp" />
+    <ClCompile Include="src\component\skill\bullet\bullet.cpp" />
+    <ClCompile Include="src\component\skill\bullet\default_bullet.cpp" />
     <ClCompile Include="src\component\skill\skill_component.cpp" />
     <ClCompile Include="src\field\egypt_field.cpp" />
     <ClCompile Include="src\field\field.cpp" />
@@ -84,6 +86,7 @@
     <ClCompile Include="src\object\object.cpp" />
     <ClCompile Include="src\packet_processor\packet\GAME.pb.cc" />
     <ClCompile Include="src\packet_processor\packet\LOBBY.pb.cc" />
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_FIRE.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_NOTI_MOVE.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_PING.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_SYNC_FIELD.cpp" />
@@ -99,12 +102,15 @@
     <ClInclude Include="src\account\account_manager.h" />
     <ClInclude Include="src\component\component.h" />
     <ClInclude Include="src\component\movement\move_component.h" />
+    <ClInclude Include="src\component\skill\bullet\bullet.h" />
+    <ClInclude Include="src\component\skill\bullet\default_bullet.h" />
     <ClInclude Include="src\component\skill\skill_component.h" />
     <ClInclude Include="src\field\egypt_field.h" />
     <ClInclude Include="src\field\field.h" />
     <ClInclude Include="src\field\field_manager.h" />
     <ClInclude Include="src\object\character.h" />
     <ClInclude Include="src\object\object.h" />
+    <ClInclude Include="src\object\stat_info.h" />
     <ClInclude Include="src\packet_processor\opcode.h" />
     <ClInclude Include="src\packet_processor\packet\GAME.pb.h" />
     <ClInclude Include="src\packet_processor\packet\LOBBY.pb.h" />

@@ -20,7 +20,7 @@ void component::process_task()
     }
 }
 
-void component::update(float dt)
+void component::update(float delta)
 {
-    process_task();
+    //process_task();
 }
