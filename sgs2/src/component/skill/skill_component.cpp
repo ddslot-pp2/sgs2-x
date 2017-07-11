@@ -64,7 +64,7 @@ void skill_component::fire(bullet::type type, const vector3& dir)
     std::unique_ptr<bullet> bullet_object = nullptr;
     if (type == bullet::type::default_bullet)
     {
-        size = vector3(2.0f, 0.0f, 2.0f);
+        size = vector3(2.0f, 2.0f, 2.0f);
         bullet_object = std::make_unique<default_bullet>(object_, dir, size, speed, distance, power);
     }
 
@@ -95,9 +95,9 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
     bullet_info->set_dir_y(dir.Y);
     bullet_info->set_dir_z(dir.Z);
 
-    bullet_info->set_size_x(dir.X);
-    bullet_info->set_size_y(dir.Y);
-    bullet_info->set_size_z(dir.Z);
+    bullet_info->set_size_x(size.X);
+    bullet_info->set_size_y(size.Y);
+    bullet_info->set_size_z(size.Z);
 
     bullet_info->set_speed(speed);
     bullet_info->set_distance(distance);

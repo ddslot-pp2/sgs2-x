@@ -28,7 +28,7 @@ void object::initialize()
     stat_ = std::make_shared<stat_info>();
     stat_->hp = 100;
     stat_->speed = 10.0f;
-    stat_->size = vector3(2.0f, 0.0, 2.0f);
+    stat_->size = vector3(2.0f, 2.0, 2.0f);
 }
 
 void object::update(float delta)
