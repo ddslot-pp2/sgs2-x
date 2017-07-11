@@ -116,6 +116,9 @@
 			<dir_x type="float"/>
 			<dir_y type="float"/>
 			<dir_z type="float"/>
+			<size_x type="float"/>
+			<size_y type="float"/>
+			<size_z type="float"/>
 			<speed type="float"/>
 			<distance type="float"/>
 		</BULLET_INFO>

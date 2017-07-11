@@ -164,6 +164,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, dir_x_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, dir_y_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, dir_z_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, size_x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, size_y_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, size_z_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, speed_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BULLET_INFO, distance_),
   ~0u,  // no _has_bits_
@@ -198,8 +201,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 61, -1, sizeof(CS_NOTI_MOVE)},
   { 69, -1, sizeof(SC_NOTI_OTHER_MOVE)},
   { 78, -1, sizeof(BULLET_INFO)},
-  { 88, -1, sizeof(CS_FIRE)},
-  { 95, -1, sizeof(SC_NOTI_FIRE)},
+  { 91, -1, sizeof(CS_FIRE)},
+  { 98, -1, sizeof(SC_NOTI_FIRE)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -310,18 +313,19 @@ void AddDescriptorsImpl() {
       "_MOVE\022\r\n\005pos_x\030\001 \001(\002\022\r\n\005pos_y\030\002 \001(\002\022\r\n\005p"
       "os_z\030\003 \001(\002\"Q\n\022SC_NOTI_OTHER_MOVE\022\016\n\006obj_"
       "id\030\001 \001(\003\022\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r"
-      "\n\005pos_z\030\004 \001(\002\"[\n\013BULLET_INFO\022\r\n\005dir_x\030\001 "
-      "\001(\002\022\r\n\005dir_y\030\002 \001(\002\022\r\n\005dir_z\030\003 \001(\002\022\r\n\005spe"
-      "ed\030\004 \001(\002\022\020\n\010distance\030\005 \001(\002\"G\n\007CS_FIRE\022\023\n"
-      "\013bullet_type\030\001 \001(\005\022\'\n\014bullet_infos\030\002 \003(\013"
-      "2\021.GAME.BULLET_INFO\"\234\001\n\014SC_NOTI_FIRE\022\016\n\006"
-      "obj_id\030\001 \001(\003\022\021\n\tbullet_id\030\002 \001(\003\022\023\n\013bulle"
-      "t_type\030\003 \001(\005\022\r\n\005pos_x\030\004 \001(\002\022\r\n\005pos_y\030\005 \001"
-      "(\002\022\r\n\005pos_z\030\006 \001(\002\022\'\n\014bullet_infos\030\007 \003(\0132"
-      "\021.GAME.BULLET_INFOb\006proto3"
+      "\n\005pos_z\030\004 \001(\002\"\213\001\n\013BULLET_INFO\022\r\n\005dir_x\030\001"
+      " \001(\002\022\r\n\005dir_y\030\002 \001(\002\022\r\n\005dir_z\030\003 \001(\002\022\016\n\006si"
+      "ze_x\030\004 \001(\002\022\016\n\006size_y\030\005 \001(\002\022\016\n\006size_z\030\006 \001"
+      "(\002\022\r\n\005speed\030\007 \001(\002\022\020\n\010distance\030\010 \001(\002\"G\n\007C"
+      "S_FIRE\022\023\n\013bullet_type\030\001 \001(\005\022\'\n\014bullet_in"
+      "fos\030\002 \003(\0132\021.GAME.BULLET_INFO\"\234\001\n\014SC_NOTI"
+      "_FIRE\022\016\n\006obj_id\030\001 \001(\003\022\021\n\tbullet_id\030\002 \001(\003"
+      "\022\023\n\013bullet_type\030\003 \001(\005\022\r\n\005pos_x\030\004 \001(\002\022\r\n\005"
+      "pos_y\030\005 \001(\002\022\r\n\005pos_z\030\006 \001(\002\022\'\n\014bullet_inf"
+      "os\030\007 \003(\0132\021.GAME.BULLET_INFOb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1066);
+      descriptor, 1115);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -3844,6 +3848,9 @@ void SC_NOTI_OTHER_MOVE::set_pos_z(float value) {
 const int BULLET_INFO::kDirXFieldNumber;
 const int BULLET_INFO::kDirYFieldNumber;
 const int BULLET_INFO::kDirZFieldNumber;
+const int BULLET_INFO::kSizeXFieldNumber;
+const int BULLET_INFO::kSizeYFieldNumber;
+const int BULLET_INFO::kSizeZFieldNumber;
 const int BULLET_INFO::kSpeedFieldNumber;
 const int BULLET_INFO::kDistanceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -3962,10 +3969,52 @@ bool BULLET_INFO::MergePartialFromCodedStream(
         break;
       }
 
-      // float speed = 4;
+      // float size_x = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(37u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &size_x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float size_y = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &size_y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float size_z = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &size_z_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float speed = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -3976,10 +4025,10 @@ bool BULLET_INFO::MergePartialFromCodedStream(
         break;
       }
 
-      // float distance = 5;
-      case 5: {
+      // float distance = 8;
+      case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u)) {
+            static_cast< ::google::protobuf::uint8>(69u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -4032,14 +4081,29 @@ void BULLET_INFO::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->dir_z(), output);
   }
 
-  // float speed = 4;
-  if (this->speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->speed(), output);
+  // float size_x = 4;
+  if (this->size_x() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->size_x(), output);
   }
 
-  // float distance = 5;
+  // float size_y = 5;
+  if (this->size_y() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->size_y(), output);
+  }
+
+  // float size_z = 6;
+  if (this->size_z() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->size_z(), output);
+  }
+
+  // float speed = 7;
+  if (this->speed() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->speed(), output);
+  }
+
+  // float distance = 8;
   if (this->distance() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->distance(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->distance(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:GAME.BULLET_INFO)
@@ -4066,14 +4130,29 @@ void BULLET_INFO::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->dir_z(), target);
   }
 
-  // float speed = 4;
-  if (this->speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->speed(), target);
+  // float size_x = 4;
+  if (this->size_x() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->size_x(), target);
   }
 
-  // float distance = 5;
+  // float size_y = 5;
+  if (this->size_y() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->size_y(), target);
+  }
+
+  // float size_z = 6;
+  if (this->size_z() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->size_z(), target);
+  }
+
+  // float speed = 7;
+  if (this->speed() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->speed(), target);
+  }
+
+  // float distance = 8;
   if (this->distance() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->distance(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->distance(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:GAME.BULLET_INFO)
@@ -4099,12 +4178,27 @@ size_t BULLET_INFO::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float speed = 4;
+  // float size_x = 4;
+  if (this->size_x() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float size_y = 5;
+  if (this->size_y() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float size_z = 6;
+  if (this->size_z() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float speed = 7;
   if (this->speed() != 0) {
     total_size += 1 + 4;
   }
 
-  // float distance = 5;
+  // float distance = 8;
   if (this->distance() != 0) {
     total_size += 1 + 4;
   }
@@ -4147,6 +4241,15 @@ void BULLET_INFO::MergeFrom(const BULLET_INFO& from) {
   if (from.dir_z() != 0) {
     set_dir_z(from.dir_z());
   }
+  if (from.size_x() != 0) {
+    set_size_x(from.size_x());
+  }
+  if (from.size_y() != 0) {
+    set_size_y(from.size_y());
+  }
+  if (from.size_z() != 0) {
+    set_size_z(from.size_z());
+  }
   if (from.speed() != 0) {
     set_speed(from.speed());
   }
@@ -4181,6 +4284,9 @@ void BULLET_INFO::InternalSwap(BULLET_INFO* other) {
   std::swap(dir_x_, other->dir_x_);
   std::swap(dir_y_, other->dir_y_);
   std::swap(dir_z_, other->dir_z_);
+  std::swap(size_x_, other->size_x_);
+  std::swap(size_y_, other->size_y_);
+  std::swap(size_z_, other->size_z_);
   std::swap(speed_, other->speed_);
   std::swap(distance_, other->distance_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -4236,7 +4342,49 @@ void BULLET_INFO::set_dir_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_z)
 }
 
-// float speed = 4;
+// float size_x = 4;
+void BULLET_INFO::clear_size_x() {
+  size_x_ = 0;
+}
+float BULLET_INFO::size_x() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.size_x)
+  return size_x_;
+}
+void BULLET_INFO::set_size_x(float value) {
+  
+  size_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.size_x)
+}
+
+// float size_y = 5;
+void BULLET_INFO::clear_size_y() {
+  size_y_ = 0;
+}
+float BULLET_INFO::size_y() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.size_y)
+  return size_y_;
+}
+void BULLET_INFO::set_size_y(float value) {
+  
+  size_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.size_y)
+}
+
+// float size_z = 6;
+void BULLET_INFO::clear_size_z() {
+  size_z_ = 0;
+}
+float BULLET_INFO::size_z() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.size_z)
+  return size_z_;
+}
+void BULLET_INFO::set_size_z(float value) {
+  
+  size_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.size_z)
+}
+
+// float speed = 7;
 void BULLET_INFO::clear_speed() {
   speed_ = 0;
 }
@@ -4250,7 +4398,7 @@ void BULLET_INFO::set_speed(float value) {
   // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.speed)
 }
 
-// float distance = 5;
+// float distance = 8;
 void BULLET_INFO::clear_distance() {
   distance_ = 0;
 }

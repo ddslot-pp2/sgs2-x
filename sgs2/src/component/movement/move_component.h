@@ -8,7 +8,6 @@ class vector3;
 class move_component : public component
 {
 public:
-
     explicit move_component(object* obj);
     virtual ~move_component();
 

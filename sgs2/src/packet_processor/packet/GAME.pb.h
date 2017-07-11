@@ -1087,15 +1087,33 @@ class BULLET_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poi
   float dir_z() const;
   void set_dir_z(float value);
 
-  // float speed = 4;
+  // float size_x = 4;
+  void clear_size_x();
+  static const int kSizeXFieldNumber = 4;
+  float size_x() const;
+  void set_size_x(float value);
+
+  // float size_y = 5;
+  void clear_size_y();
+  static const int kSizeYFieldNumber = 5;
+  float size_y() const;
+  void set_size_y(float value);
+
+  // float size_z = 6;
+  void clear_size_z();
+  static const int kSizeZFieldNumber = 6;
+  float size_z() const;
+  void set_size_z(float value);
+
+  // float speed = 7;
   void clear_speed();
-  static const int kSpeedFieldNumber = 4;
+  static const int kSpeedFieldNumber = 7;
   float speed() const;
   void set_speed(float value);
 
-  // float distance = 5;
+  // float distance = 8;
   void clear_distance();
-  static const int kDistanceFieldNumber = 5;
+  static const int kDistanceFieldNumber = 8;
   float distance() const;
   void set_distance(float value);
 
@@ -1106,6 +1124,9 @@ class BULLET_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poi
   float dir_x_;
   float dir_y_;
   float dir_z_;
+  float size_x_;
+  float size_y_;
+  float size_z_;
   float speed_;
   float distance_;
   mutable int _cached_size_;
@@ -2013,7 +2034,49 @@ inline void BULLET_INFO::set_dir_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.dir_z)
 }
 
-// float speed = 4;
+// float size_x = 4;
+inline void BULLET_INFO::clear_size_x() {
+  size_x_ = 0;
+}
+inline float BULLET_INFO::size_x() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.size_x)
+  return size_x_;
+}
+inline void BULLET_INFO::set_size_x(float value) {
+  
+  size_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.size_x)
+}
+
+// float size_y = 5;
+inline void BULLET_INFO::clear_size_y() {
+  size_y_ = 0;
+}
+inline float BULLET_INFO::size_y() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.size_y)
+  return size_y_;
+}
+inline void BULLET_INFO::set_size_y(float value) {
+  
+  size_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.size_y)
+}
+
+// float size_z = 6;
+inline void BULLET_INFO::clear_size_z() {
+  size_z_ = 0;
+}
+inline float BULLET_INFO::size_z() const {
+  // @@protoc_insertion_point(field_get:GAME.BULLET_INFO.size_z)
+  return size_z_;
+}
+inline void BULLET_INFO::set_size_z(float value) {
+  
+  size_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.size_z)
+}
+
+// float speed = 7;
 inline void BULLET_INFO::clear_speed() {
   speed_ = 0;
 }
@@ -2027,7 +2090,7 @@ inline void BULLET_INFO::set_speed(float value) {
   // @@protoc_insertion_point(field_set:GAME.BULLET_INFO.speed)
 }
 
-// float distance = 5;
+// float distance = 8;
 inline void BULLET_INFO::clear_distance() {
   distance_ = 0;
 }

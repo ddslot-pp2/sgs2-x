@@ -59,24 +59,25 @@ void skill_component::fire(bullet::type type, const vector3& dir)
     auto speed = 5.0f;
     auto distance = 20.0f;
     auto power = 10.0f;
-
+    vector3 size(0.0f, 0.0f, 0.0f); 
     // 추후 factory 처리
     std::unique_ptr<bullet> bullet_object = nullptr;
     if (type == bullet::type::default_bullet)
     {
-        vector3 size(2.0f, 0.0f, 2.0f);
+        size = vector3(2.0f, 0.0f, 2.0f);
         bullet_object = std::make_unique<default_bullet>(object_, dir, size, speed, distance, power);
     }
 
     if (bullet_object)
     {
-        noti_fire(type, object_->get_object_id(), bullet_object_id, object_->get_pos(), dir, speed, distance);
+        noti_fire(type, object_->get_object_id(), bullet_object_id, object_->get_pos(), dir, size, speed, distance);
         bullet_object_id = reinterpret_cast<std::uintptr_t>(&(*bullet_object));
         bullets_[bullet_object_id] = std::move(bullet_object);
     }
 }
 
-void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id bullet_obj_id, const vector3& pos, const vector3& dir, float speed, float distance) const
+// 구조체로 변경하자...
+void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id bullet_obj_id, const vector3& pos, const vector3& dir, const vector3& size, float speed, float distance) const
 {
     // view_list에게 bullet정보를 전달해줌
     GAME::SC_NOTI_FIRE noti;
@@ -93,6 +94,10 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
     bullet_info->set_dir_x(dir.X);
     bullet_info->set_dir_y(dir.Y);
     bullet_info->set_dir_z(dir.Z);
+
+    bullet_info->set_size_x(dir.X);
+    bullet_info->set_size_y(dir.Y);
+    bullet_info->set_size_z(dir.Z);
 
     bullet_info->set_speed(speed);
     bullet_info->set_distance(distance);
