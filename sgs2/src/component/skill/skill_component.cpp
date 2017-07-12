@@ -70,8 +70,9 @@ void skill_component::fire(bullet::type type, const vector3& pos, const vector3&
 
     if (bullet_object)
     {
-        noti_fire(type, object_->get_object_id(), bullet_object_id, pos, dir, bullet_dir, size, speed, distance);
         bullet_object_id = reinterpret_cast<std::uintptr_t>(&(*bullet_object));
+        bullet_object->set_bullet_id(bullet_object_id);
+        noti_fire(type, object_->get_object_id(), bullet_object_id, pos, dir, bullet_dir, size, speed, distance);
         bullets_[bullet_object_id] = std::move(bullet_object);
     }
 }
@@ -83,7 +84,6 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
     GAME::SC_NOTI_FIRE noti;
 
     noti.set_obj_id(obj_id);
-    noti.set_bullet_id(bullet_obj_id);
     noti.set_bullet_type(to_integral(type));
 
     noti.set_pos_x(pos.X);
@@ -95,6 +95,9 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
     noti.set_dir_z(dir.Z);
 
     auto bullet_info = noti.add_bullet_infos();
+
+    bullet_info->set_bullet_id(bullet_obj_id);
+
     bullet_info->set_dir_x(bullet_dir.X);
     bullet_info->set_dir_y(bullet_dir.Y);
     bullet_info->set_dir_z(bullet_dir.Z);

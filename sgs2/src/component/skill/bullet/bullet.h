@@ -4,6 +4,7 @@
 #include "../../../predeclare.h"
 
 class object;
+class character;
 
 class bullet
 {
@@ -19,6 +20,8 @@ public:
 
     virtual void update(float delta);
     virtual void destroy() const;
+
+    virtual void collide_with_other(std::shared_ptr<character> target_object);
 
     bool get_destroy() const { return destroy_; }
     void set_bullet_id(bullet_id id);

@@ -1,6 +1,9 @@
 #include "bullet.h"
 #include "../../../object/object.h"
 #include "../../../field/field.h"
+#include "../../../packet_processor/packet/GAME.pb.h"
+#include "../../../packet_processor/opcode.h"
+#include "../../../packet_processor/send_helper.h"
 
 bullet::bullet(object* obj, const vector3& dir, const vector3& size, float speed, float distance, float power) : object_(obj), dir_(dir), size_(size), speed_(speed), distance_(distance), power_(power), destroy_(false)
 {
@@ -21,7 +24,9 @@ void bullet::update(float delta)
         destroy_ = true;
         return;
     }
-    
+
+    std::shared_ptr<character> target_object = nullptr;
+
     // 이 충돌 부분 속도관련 업데이트 필요
     auto& view_list = object_->get_field()->get_view_list();
     for (auto view : view_list)
@@ -33,10 +38,17 @@ void bullet::update(float delta)
         auto stat_info = other->get_stat_info();
         if (check_intersection(pos_, other->get_pos(), size_, stat_info->size))
         {
-            wprintf(L"충돌체에 부딪혀서 총알 파괴\n");
-            destroy_ = true;
-            return;
+            target_object = other;
+            break;
         }
+    }
+
+    if (target_object)
+    {
+        wprintf(L"충돌체에 부딪혀서 총알 파괴\n");
+        collide_with_other(target_object);
+        destroy_ = true;
+        return;
     }
 
     pos_ = pos_ + (dir_ * speed_ * delta);
@@ -48,6 +60,35 @@ void bullet::destroy() const
 
 }
 
+void bullet::collide_with_other(std::shared_ptr<character> target_object)
+{
+    // other hp 감소
+    auto stat_info = target_object->get_stat_info();
+    int target_hp = static_cast<float>(stat_info->hp) - power_;
+
+    stat_info->hp = target_hp;
+
+    GAME::SC_NOTI_DESTROY_BULLET noti;
+    noti.set_obj_id(object_->get_object_id());
+    noti.set_bullet_id(id_);
+
+    auto damage_info = noti.add_damage_infos();
+    damage_info->set_target_id(target_object->get_object_id());
+    damage_info->set_damage(target_hp);
+    damage_info->set_damage(power_);
+
+    auto& view_list = object_->get_field()->get_view_list();
+    for (auto view : view_list)
+    {
+        auto other = view.second;
+        auto other_session = other->get_session();
+        if (other_session)
+        {
+            send_packet(other_session, opcode::SC_NOTI_DESTROY_BULLET, noti);
+        }
+    }
+}
+
 void bullet::set_bullet_id(bullet_id id)
 {
     id_ = id;
@@ -55,7 +96,25 @@ void bullet::set_bullet_id(bullet_id id)
 
 bool bullet::over_distance() const
 {
-    if (distance(from_, pos_) > distance_) return true;
+    if (distance(from_, pos_) > distance_)
+    {
+        GAME::SC_NOTI_DESTROY_BULLET noti;
+        noti.set_obj_id(object_->get_object_id());
+        noti.set_bullet_id(id_);
+
+        auto& view_list = object_->get_field()->get_view_list();
+        for (auto view : view_list)
+        {
+            auto other = view.second;
+            auto other_session = other->get_session();
+            if (other_session)
+            {
+                send_packet(other_session, opcode::SC_NOTI_DESTROY_BULLET, noti);
+            }
+        }
+
+        return true;
+    }
         
     return false;
 }
