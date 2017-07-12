@@ -14,8 +14,8 @@ public:
 
     void update(float delta) override;
 
-    void fire(bullet::type type, const vector3& dir);
-    void noti_fire(bullet::type type, object_id obj_id, bullet_id bullet_obj_id, const vector3& pos, const vector3& dir, const vector3& size, float speed, float distance) const;
+    void fire(bullet::type type, const vector3& pos, const vector3& dir, const vector3& bullet_dir);
+    void noti_fire(bullet::type type, object_id obj_id, bullet_id bullet_obj_id, const vector3& pos, const vector3& bullet_dir, const vector3& dir, const vector3& size, float speed, float distance) const;
 
 private:
     std::map<bullet_id, std::unique_ptr<bullet>> bullets_;

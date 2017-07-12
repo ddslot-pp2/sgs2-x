@@ -1198,10 +1198,10 @@ class CS_FIRE : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
-  // repeated .GAME.BULLET_INFO bullet_infos = 2;
+  // repeated .GAME.BULLET_INFO bullet_infos = 8;
   int bullet_infos_size() const;
   void clear_bullet_infos();
-  static const int kBulletInfosFieldNumber = 2;
+  static const int kBulletInfosFieldNumber = 8;
   const ::GAME::BULLET_INFO& bullet_infos(int index) const;
   ::GAME::BULLET_INFO* mutable_bullet_infos(int index);
   ::GAME::BULLET_INFO* add_bullet_infos();
@@ -1216,12 +1216,54 @@ class CS_FIRE : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::int32 bullet_type() const;
   void set_bullet_type(::google::protobuf::int32 value);
 
+  // float pos_x = 2;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 2;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 3;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 3;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 4;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 4;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // float dir_x = 5;
+  void clear_dir_x();
+  static const int kDirXFieldNumber = 5;
+  float dir_x() const;
+  void set_dir_x(float value);
+
+  // float dir_y = 6;
+  void clear_dir_y();
+  static const int kDirYFieldNumber = 6;
+  float dir_y() const;
+  void set_dir_y(float value);
+
+  // float dir_z = 7;
+  void clear_dir_z();
+  static const int kDirZFieldNumber = 7;
+  float dir_z() const;
+  void set_dir_z(float value);
+
   // @@protoc_insertion_point(class_scope:GAME.CS_FIRE)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::GAME::BULLET_INFO > bullet_infos_;
   ::google::protobuf::int32 bullet_type_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
+  float dir_x_;
+  float dir_y_;
+  float dir_z_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -1291,10 +1333,10 @@ class SC_NOTI_FIRE : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // repeated .GAME.BULLET_INFO bullet_infos = 7;
+  // repeated .GAME.BULLET_INFO bullet_infos = 10;
   int bullet_infos_size() const;
   void clear_bullet_infos();
-  static const int kBulletInfosFieldNumber = 7;
+  static const int kBulletInfosFieldNumber = 10;
   const ::GAME::BULLET_INFO& bullet_infos(int index) const;
   ::GAME::BULLET_INFO* mutable_bullet_infos(int index);
   ::GAME::BULLET_INFO* add_bullet_infos();
@@ -1339,6 +1381,24 @@ class SC_NOTI_FIRE : public ::google::protobuf::Message /* @@protoc_insertion_po
   float pos_z() const;
   void set_pos_z(float value);
 
+  // float dir_x = 7;
+  void clear_dir_x();
+  static const int kDirXFieldNumber = 7;
+  float dir_x() const;
+  void set_dir_x(float value);
+
+  // float dir_y = 8;
+  void clear_dir_y();
+  static const int kDirYFieldNumber = 8;
+  float dir_y() const;
+  void set_dir_y(float value);
+
+  // float dir_z = 9;
+  void clear_dir_z();
+  static const int kDirZFieldNumber = 9;
+  float dir_z() const;
+  void set_dir_z(float value);
+
   // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_FIRE)
  private:
 
@@ -1350,6 +1410,9 @@ class SC_NOTI_FIRE : public ::google::protobuf::Message /* @@protoc_insertion_po
   float pos_x_;
   float pos_y_;
   float pos_z_;
+  float dir_x_;
+  float dir_y_;
+  float dir_z_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -2122,7 +2185,91 @@ inline void CS_FIRE::set_bullet_type(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:GAME.CS_FIRE.bullet_type)
 }
 
-// repeated .GAME.BULLET_INFO bullet_infos = 2;
+// float pos_x = 2;
+inline void CS_FIRE::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float CS_FIRE::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.pos_x)
+  return pos_x_;
+}
+inline void CS_FIRE::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.pos_x)
+}
+
+// float pos_y = 3;
+inline void CS_FIRE::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float CS_FIRE::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.pos_y)
+  return pos_y_;
+}
+inline void CS_FIRE::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.pos_y)
+}
+
+// float pos_z = 4;
+inline void CS_FIRE::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float CS_FIRE::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.pos_z)
+  return pos_z_;
+}
+inline void CS_FIRE::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.pos_z)
+}
+
+// float dir_x = 5;
+inline void CS_FIRE::clear_dir_x() {
+  dir_x_ = 0;
+}
+inline float CS_FIRE::dir_x() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.dir_x)
+  return dir_x_;
+}
+inline void CS_FIRE::set_dir_x(float value) {
+  
+  dir_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.dir_x)
+}
+
+// float dir_y = 6;
+inline void CS_FIRE::clear_dir_y() {
+  dir_y_ = 0;
+}
+inline float CS_FIRE::dir_y() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.dir_y)
+  return dir_y_;
+}
+inline void CS_FIRE::set_dir_y(float value) {
+  
+  dir_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.dir_y)
+}
+
+// float dir_z = 7;
+inline void CS_FIRE::clear_dir_z() {
+  dir_z_ = 0;
+}
+inline float CS_FIRE::dir_z() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_FIRE.dir_z)
+  return dir_z_;
+}
+inline void CS_FIRE::set_dir_z(float value) {
+  
+  dir_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_FIRE.dir_z)
+}
+
+// repeated .GAME.BULLET_INFO bullet_infos = 8;
 inline int CS_FIRE::bullet_infos_size() const {
   return bullet_infos_.size();
 }
@@ -2240,7 +2387,49 @@ inline void SC_NOTI_FIRE::set_pos_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.pos_z)
 }
 
-// repeated .GAME.BULLET_INFO bullet_infos = 7;
+// float dir_x = 7;
+inline void SC_NOTI_FIRE::clear_dir_x() {
+  dir_x_ = 0;
+}
+inline float SC_NOTI_FIRE::dir_x() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.dir_x)
+  return dir_x_;
+}
+inline void SC_NOTI_FIRE::set_dir_x(float value) {
+  
+  dir_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.dir_x)
+}
+
+// float dir_y = 8;
+inline void SC_NOTI_FIRE::clear_dir_y() {
+  dir_y_ = 0;
+}
+inline float SC_NOTI_FIRE::dir_y() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.dir_y)
+  return dir_y_;
+}
+inline void SC_NOTI_FIRE::set_dir_y(float value) {
+  
+  dir_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.dir_y)
+}
+
+// float dir_z = 9;
+inline void SC_NOTI_FIRE::clear_dir_z() {
+  dir_z_ = 0;
+}
+inline float SC_NOTI_FIRE::dir_z() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_FIRE.dir_z)
+  return dir_z_;
+}
+inline void SC_NOTI_FIRE::set_dir_z(float value) {
+  
+  dir_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_FIRE.dir_z)
+}
+
+// repeated .GAME.BULLET_INFO bullet_infos = 10;
 inline int SC_NOTI_FIRE::bullet_infos_size() const {
   return bullet_infos_.size();
 }

@@ -51,7 +51,7 @@ void skill_component::update(float delta)
     //wprintf(L"스킬 컴포넌트 업데이트!\n");
 }
 
-void skill_component::fire(bullet::type type, const vector3& dir)
+void skill_component::fire(bullet::type type, const vector3& pos, const vector3& dir, const vector3& bullet_dir)
 {
     wprintf(L"FIRE!!!!\n");
     bullet_id bullet_object_id = 0;
@@ -65,19 +65,19 @@ void skill_component::fire(bullet::type type, const vector3& dir)
     if (type == bullet::type::default_bullet)
     {
         size = vector3(2.0f, 2.0f, 2.0f);
-        bullet_object = std::make_unique<default_bullet>(object_, dir, size, speed, distance, power);
+        bullet_object = std::make_unique<default_bullet>(object_, bullet_dir, size, speed, distance, power);
     }
 
     if (bullet_object)
     {
-        noti_fire(type, object_->get_object_id(), bullet_object_id, object_->get_pos(), dir, size, speed, distance);
+        noti_fire(type, object_->get_object_id(), bullet_object_id, pos, dir, bullet_dir, size, speed, distance);
         bullet_object_id = reinterpret_cast<std::uintptr_t>(&(*bullet_object));
         bullets_[bullet_object_id] = std::move(bullet_object);
     }
 }
 
 // 구조체로 변경하자...
-void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id bullet_obj_id, const vector3& pos, const vector3& dir, const vector3& size, float speed, float distance) const
+void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id bullet_obj_id, const vector3& pos, const vector3& dir, const vector3& bullet_dir, const vector3& size, float speed, float distance) const
 {
     // view_list에게 bullet정보를 전달해줌
     GAME::SC_NOTI_FIRE noti;
@@ -90,10 +90,14 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
     noti.set_pos_y(pos.Y);
     noti.set_pos_z(pos.Z);
 
+    noti.set_dir_x(dir.X);
+    noti.set_dir_y(dir.Y);
+    noti.set_dir_z(dir.Z);
+
     auto bullet_info = noti.add_bullet_infos();
-    bullet_info->set_dir_x(dir.X);
-    bullet_info->set_dir_y(dir.Y);
-    bullet_info->set_dir_z(dir.Z);
+    bullet_info->set_dir_x(bullet_dir.X);
+    bullet_info->set_dir_y(bullet_dir.Y);
+    bullet_info->set_dir_z(bullet_dir.Z);
 
     bullet_info->set_size_x(size.X);
     bullet_info->set_size_y(size.Y);

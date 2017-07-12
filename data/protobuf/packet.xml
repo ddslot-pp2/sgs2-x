@@ -113,7 +113,7 @@
 		</SC_NOTI_OTHER_MOVE>
 
 		<BULLET_INFO struct = "true">
-			<dir_x type="float"/>
+			<dir_x type="float"/> <!-- bullet diretion -->
 			<dir_y type="float"/>
 			<dir_z type="float"/>
 			<size_x type="float"/>
@@ -125,16 +125,25 @@
 
 		<CS_FIRE>
 			<bullet_type  type="int32"/>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+			<dir_x type="float"/> <!-- look diretion -->
+			<dir_y type="float"/>
+			<dir_z type="float"/>
 			<bullet_infos type="BULLET_INFO" repeated="true"/>
 		</CS_FIRE>
 
 		<SC_NOTI_FIRE>
 			<obj_id type="int64"/>
 			<bullet_id type="int64"/>
-			<bullet_type  type="int32"/>
+			<bullet_type type="int32"/>
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
+			<dir_x type="float"/> <!-- look diretion -->
+			<dir_y type="float"/>
+			<dir_z type="float"/>
 			<bullet_infos type="BULLET_INFO" repeated="true"/>
 		</SC_NOTI_FIRE>
 
