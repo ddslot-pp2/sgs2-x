@@ -159,6 +159,10 @@
 			<damage_infos type="DAMAGE_INFO" repeated="true"/>
 		</SC_NOTI_DESTROY_BULLET>
 
+		<SC_NOTI_DESTROY_OBJECT>
+			<obj_id type="int64"/>
+		</SC_NOTI_DESTROY_OBJECT>
+
 	</GAME>
 
 

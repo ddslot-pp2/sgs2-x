@@ -56,8 +56,8 @@ void skill_component::fire(bullet::type type, const vector3& pos, const vector3&
     wprintf(L"FIRE!!!!\n");
     bullet_id bullet_object_id = 0;
 
-    auto speed = 5.0f;
-    auto distance = 20.0f;
+    auto speed = 25.0f;
+    auto distance = 30.0f;
     auto power = 10.0f;
     vector3 size(0.0f, 0.0f, 0.0f); 
     // 추후 factory 처리

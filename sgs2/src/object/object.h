@@ -67,6 +67,7 @@ protected:
     vector3 pos_;
 
     std::shared_ptr<stat_info> stat_;
+    bool destroy_;
 };
 
 #endif

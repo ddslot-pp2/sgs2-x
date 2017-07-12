@@ -28,6 +28,9 @@ public:
     void enter_field(std::shared_ptr<server_session> session);
     void leave_field(object_id id);
 
+    void respawn_object(std::shared_ptr<server_session> session);
+    void destroy_object(object_id obj_id);
+
     size_t current_user_count() const { return current_user_count_; }
 
     template <typename Fn, typename... Args>

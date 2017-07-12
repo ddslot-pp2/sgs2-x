@@ -4,7 +4,7 @@
 #include "../packet_processor/opcode.h"
 #include "../packet_processor/send_helper.h"
 
-object::object(field_id id) : field_id_(id), field_(nullptr)
+object::object(field_id id) : field_id_(id), field_(nullptr), destroy_(false)
 {
     wprintf(L"오브젝트 생성자 호출\n");
 }

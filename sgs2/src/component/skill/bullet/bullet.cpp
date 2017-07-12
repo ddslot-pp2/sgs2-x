@@ -68,6 +68,16 @@ void bullet::collide_with_other(std::shared_ptr<character> target_object)
 
     stat_info->hp = target_hp;
 
+    if (target_hp <= 0)
+    {
+        // 이 불렛이 마지막으로 destroy시킴
+        // object_->get_object_id();
+
+        // 필드에 알려줘서 처리를 해줌
+        //object_->get_field()->reward_destroy_object(obj_id);
+
+    }
+
     GAME::SC_NOTI_DESTROY_BULLET noti;
     noti.set_obj_id(object_->get_object_id());
     noti.set_bullet_id(id_);

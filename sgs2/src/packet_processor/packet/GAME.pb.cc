@@ -46,13 +46,15 @@ class DAMAGE_INFODefaultTypeInternal : public ::google::protobuf::internal::Expl
 } _DAMAGE_INFO_default_instance_;
 class SC_NOTI_DESTROY_BULLETDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_NOTI_DESTROY_BULLET> {
 } _SC_NOTI_DESTROY_BULLET_default_instance_;
+class SC_NOTI_DESTROY_OBJECTDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_NOTI_DESTROY_OBJECT> {
+} _SC_NOTI_DESTROY_OBJECT_default_instance_;
 
 namespace protobuf_GAME_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[14];
+::google::protobuf::Metadata file_level_metadata[15];
 
 }  // namespace
 
@@ -67,6 +69,7 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
@@ -219,6 +222,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_DESTROY_BULLET, obj_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_DESTROY_BULLET, bullet_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_DESTROY_BULLET, damage_infos_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_DESTROY_OBJECT, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_DESTROY_OBJECT, obj_id_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -236,6 +245,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 105, -1, sizeof(SC_NOTI_FIRE)},
   { 119, -1, sizeof(DAMAGE_INFO)},
   { 127, -1, sizeof(SC_NOTI_DESTROY_BULLET)},
+  { 135, -1, sizeof(SC_NOTI_DESTROY_OBJECT)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -253,6 +263,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_FIRE_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_DAMAGE_INFO_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_DESTROY_BULLET_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_DESTROY_OBJECT_default_instance_),
 };
 
 namespace {
@@ -273,7 +284,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 14);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 15);
 }
 
 }  // namespace
@@ -307,6 +318,8 @@ void TableStruct::Shutdown() {
   delete file_level_metadata[12].reflection;
   _SC_NOTI_DESTROY_BULLET_default_instance_.Shutdown();
   delete file_level_metadata[13].reflection;
+  _SC_NOTI_DESTROY_OBJECT_default_instance_.Shutdown();
+  delete file_level_metadata[14].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
@@ -327,6 +340,7 @@ void TableStruct::InitDefaultsImpl() {
   _SC_NOTI_FIRE_default_instance_.DefaultConstruct();
   _DAMAGE_INFO_default_instance_.DefaultConstruct();
   _SC_NOTI_DESTROY_BULLET_default_instance_.DefaultConstruct();
+  _SC_NOTI_DESTROY_OBJECT_default_instance_.DefaultConstruct();
 }
 
 void InitDefaults() {
@@ -371,10 +385,11 @@ void AddDescriptorsImpl() {
       "\002hp\030\002 \001(\005\022\016\n\006damage\030\003 \001(\003\"d\n\026SC_NOTI_DES"
       "TROY_BULLET\022\016\n\006obj_id\030\001 \001(\003\022\021\n\tbullet_id"
       "\030\002 \001(\003\022\'\n\014damage_infos\030\003 \003(\0132\021.GAME.DAMA"
-      "GE_INFOb\006proto3"
+      "GE_INFO\"(\n\026SC_NOTI_DESTROY_OBJECT\022\016\n\006obj"
+      "_id\030\001 \001(\003b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1415);
+      descriptor, 1457);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -6450,6 +6465,240 @@ const ::google::protobuf::RepeatedPtrField< ::GAME::DAMAGE_INFO >&
 SC_NOTI_DESTROY_BULLET::damage_infos() const {
   // @@protoc_insertion_point(field_list:GAME.SC_NOTI_DESTROY_BULLET.damage_infos)
   return damage_infos_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SC_NOTI_DESTROY_OBJECT::kObjIdFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SC_NOTI_DESTROY_OBJECT::SC_NOTI_DESTROY_OBJECT()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_GAME_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:GAME.SC_NOTI_DESTROY_OBJECT)
+}
+SC_NOTI_DESTROY_OBJECT::SC_NOTI_DESTROY_OBJECT(const SC_NOTI_DESTROY_OBJECT& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  obj_id_ = from.obj_id_;
+  // @@protoc_insertion_point(copy_constructor:GAME.SC_NOTI_DESTROY_OBJECT)
+}
+
+void SC_NOTI_DESTROY_OBJECT::SharedCtor() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+  _cached_size_ = 0;
+}
+
+SC_NOTI_DESTROY_OBJECT::~SC_NOTI_DESTROY_OBJECT() {
+  // @@protoc_insertion_point(destructor:GAME.SC_NOTI_DESTROY_OBJECT)
+  SharedDtor();
+}
+
+void SC_NOTI_DESTROY_OBJECT::SharedDtor() {
+}
+
+void SC_NOTI_DESTROY_OBJECT::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SC_NOTI_DESTROY_OBJECT::descriptor() {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SC_NOTI_DESTROY_OBJECT& SC_NOTI_DESTROY_OBJECT::default_instance() {
+  protobuf_GAME_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+SC_NOTI_DESTROY_OBJECT* SC_NOTI_DESTROY_OBJECT::New(::google::protobuf::Arena* arena) const {
+  SC_NOTI_DESTROY_OBJECT* n = new SC_NOTI_DESTROY_OBJECT;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void SC_NOTI_DESTROY_OBJECT::Clear() {
+// @@protoc_insertion_point(message_clear_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+
+bool SC_NOTI_DESTROY_OBJECT::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 obj_id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &obj_id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:GAME.SC_NOTI_DESTROY_OBJECT)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:GAME.SC_NOTI_DESTROY_OBJECT)
+  return false;
+#undef DO_
+}
+
+void SC_NOTI_DESTROY_OBJECT::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->obj_id(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_DESTROY_OBJECT)
+}
+
+::google::protobuf::uint8* SC_NOTI_DESTROY_OBJECT::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->obj_id(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_DESTROY_OBJECT)
+  return target;
+}
+
+size_t SC_NOTI_DESTROY_OBJECT::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  size_t total_size = 0;
+
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->obj_id());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SC_NOTI_DESTROY_OBJECT::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SC_NOTI_DESTROY_OBJECT* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SC_NOTI_DESTROY_OBJECT>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:GAME.SC_NOTI_DESTROY_OBJECT)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:GAME.SC_NOTI_DESTROY_OBJECT)
+    MergeFrom(*source);
+  }
+}
+
+void SC_NOTI_DESTROY_OBJECT::MergeFrom(const SC_NOTI_DESTROY_OBJECT& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.obj_id() != 0) {
+    set_obj_id(from.obj_id());
+  }
+}
+
+void SC_NOTI_DESTROY_OBJECT::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SC_NOTI_DESTROY_OBJECT::CopyFrom(const SC_NOTI_DESTROY_OBJECT& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:GAME.SC_NOTI_DESTROY_OBJECT)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SC_NOTI_DESTROY_OBJECT::IsInitialized() const {
+  return true;
+}
+
+void SC_NOTI_DESTROY_OBJECT::Swap(SC_NOTI_DESTROY_OBJECT* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SC_NOTI_DESTROY_OBJECT::InternalSwap(SC_NOTI_DESTROY_OBJECT* other) {
+  std::swap(obj_id_, other->obj_id_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata SC_NOTI_DESTROY_OBJECT::GetMetadata() const {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SC_NOTI_DESTROY_OBJECT
+
+// int64 obj_id = 1;
+void SC_NOTI_DESTROY_OBJECT::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+::google::protobuf::int64 SC_NOTI_DESTROY_OBJECT::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_DESTROY_OBJECT.obj_id)
+  return obj_id_;
+}
+void SC_NOTI_DESTROY_OBJECT::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_DESTROY_OBJECT.obj_id)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

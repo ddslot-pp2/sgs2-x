@@ -21,6 +21,7 @@ public:
    
     std::shared_ptr<server_session> get_session() const;
 
+    void check_destroy();
 
 protected:
     std::weak_ptr<server_session> session_;

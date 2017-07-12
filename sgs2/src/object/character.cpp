@@ -1,6 +1,8 @@
 #include "character.h"
 #include "../field/field.h"
 #include "../field/field_manager.h"
+#include "../packet_processor/packet/GAME.pb.h"
+#include "../packet_processor/send_helper.h"
 
 using super = object;
 
@@ -23,14 +25,18 @@ void character::initialize()
 
 void character::update(float delta)
 {
+    // 본인 hp 체크
+    check_destroy();
+
+    if (destroy_) return;
+
     super::update(delta);
 }
 
 void character::leave_field() const
 {
-    
-    field_->send_task(&field::leave_field, object_id_);
-
+    //field_->send_task(&field::leave_field, object_id_);
+    field_->leave_field(object_id_);
 }
 
 std::shared_ptr<server_session> character::get_session() const
@@ -42,4 +48,9 @@ std::shared_ptr<server_session> character::get_session() const
     }
 
     return nullptr;
+}
+
+void character::check_destroy()
+{
+    if (stat_->hp <= 0) destroy_ = true;
 }

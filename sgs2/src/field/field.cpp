@@ -126,12 +126,11 @@ void field::leave_field(object_id id)
     current_user_count_ = characters_.size();
     auto it = characters_.find(id);
 
+    if (it == characters_.end()) return;
+
     auto sess = it->second->get_session();
 
-    if (it != characters_.end())
-    {
-        characters_.erase(id);
-    }
+    characters_.erase(id);
 
     if (sess)
     {
@@ -140,6 +139,9 @@ void field::leave_field(object_id id)
         //sess->
     }
 
+    GAME::SC_NOTI_OTHER_LEAVE_FIELD noti;
+    noti.set_obj_id(id);
+
     for (const auto& kv : characters_)
     {
         auto user = kv.second;
@@ -147,11 +149,37 @@ void field::leave_field(object_id id)
         auto other_session = user->get_session();
         if (!other_session) continue;
 
-        GAME::SC_NOTI_OTHER_LEAVE_FIELD noti;
         send_packet(other_session, opcode::SC_NOTI_OTHER_LEAVE_FIELD, noti);
     }
 
     wprintf(L"유저 카운트: %lld\n", characters_.size());
+}
+
+void field::respawn_object(std::shared_ptr<server_session> session)
+{
+
+}
+
+void field::destroy_object(object_id id)
+{
+    GAME::SC_NOTI_DESTROY_OBJECT noti;
+
+    for (auto kv : characters_)
+    {
+        auto other = kv.second;
+        auto other_session = other->get_session();
+        if (other_session)
+        {
+            send_packet(other_session, opcode::SC_NOTI_DESTROY_OBJECT, noti);
+        }
+    }
+
+    /*
+    auto it = characters_.find(id);
+    if (it == characters_.end()) return;
+
+    characters_.erase(id);
+    */
 }
 
 void field::sync_field(std::shared_ptr<server_session> session) const
