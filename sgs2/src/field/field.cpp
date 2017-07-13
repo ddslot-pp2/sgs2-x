@@ -155,24 +155,14 @@ void field::leave_field(object_id id)
     wprintf(L"유저 카운트: %lld\n", characters_.size());
 }
 
-void field::respawn_object(std::shared_ptr<server_session> session)
+void field::respawn_character(object_id id)
 {
+    /*
+    auto it = characters_.find(id);
+    if (it == characters_.end()) return;
 
-}
-
-void field::destroy_object(object_id id)
-{
-    GAME::SC_NOTI_DESTROY_CHARACTER noti;
-
-    for (auto kv : characters_)
-    {
-        auto other = kv.second;
-        auto other_session = other->get_session();
-        if (other_session)
-        {
-            send_packet(other_session, opcode::SC_NOTI_DESTROY_CHARACTER, noti);
-        }
-    }
+    it->second->respawn();
+    */
 }
 
 void field::sync_field(std::shared_ptr<server_session> session) const

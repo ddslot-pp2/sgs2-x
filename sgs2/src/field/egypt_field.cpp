@@ -89,12 +89,24 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
         other_info->set_pos_y(pos.Y);
         other_info->set_pos_z(pos.Z);
 
-        auto hp = 100;
-        other_info->set_hp(hp);
+        auto stat_info = other->get_stat_info();
 
+        other_info->set_hp(stat_info->hp);
+
+        // 추후 처리해야 함
         auto tank_type = 1;
         other_info->set_tank_type(tank_type);
     }
 
     send_packet(session, opcode::SC_SYNC_FIELD, send);
+}
+
+void egypt_field::respawn_character(object_id id)
+{
+    vector3 spawn_pos(10.0f, 0.0f, 0.0f);
+
+    auto it = characters_.find(id);
+    if (it == characters_.end()) return;
+
+    it->second->respawn(spawn_pos);
 }

@@ -19,7 +19,7 @@ void handle_CS_PING(std::shared_ptr<server_session> session, const GAME::CS_PING
 void handle_CS_SYNC_FIELD(std::shared_ptr<server_session> session, const GAME::CS_SYNC_FIELD& read);
 void handle_CS_NOTI_MOVE(std::shared_ptr<server_session> session, const GAME::CS_NOTI_MOVE& read);
 void handle_CS_FIRE(std::shared_ptr<server_session> session, const GAME::CS_FIRE& read);
-void handle_CS_RESPAWN(std::shared_ptr<server_session> session, const GAME::CS_RESPAWN& read);
+void handle_CS_RESPAWN_CHARACTER(std::shared_ptr<server_session> session, const GAME::CS_RESPAWN_CHARACTER& read);
 
 
 void register_handlers();

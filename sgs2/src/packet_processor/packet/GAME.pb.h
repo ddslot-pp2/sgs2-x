@@ -43,9 +43,9 @@ extern CS_NOTI_MOVEDefaultTypeInternal _CS_NOTI_MOVE_default_instance_;
 class CS_PING;
 class CS_PINGDefaultTypeInternal;
 extern CS_PINGDefaultTypeInternal _CS_PING_default_instance_;
-class CS_RESPAWN;
-class CS_RESPAWNDefaultTypeInternal;
-extern CS_RESPAWNDefaultTypeInternal _CS_RESPAWN_default_instance_;
+class CS_RESPAWN_CHARACTER;
+class CS_RESPAWN_CHARACTERDefaultTypeInternal;
+extern CS_RESPAWN_CHARACTERDefaultTypeInternal _CS_RESPAWN_CHARACTER_default_instance_;
 class CS_SYNC_FIELD;
 class CS_SYNC_FIELDDefaultTypeInternal;
 extern CS_SYNC_FIELDDefaultTypeInternal _CS_SYNC_FIELD_default_instance_;
@@ -73,9 +73,9 @@ extern SC_NOTI_OTHER_LEAVE_FIELDDefaultTypeInternal _SC_NOTI_OTHER_LEAVE_FIELD_d
 class SC_NOTI_OTHER_MOVE;
 class SC_NOTI_OTHER_MOVEDefaultTypeInternal;
 extern SC_NOTI_OTHER_MOVEDefaultTypeInternal _SC_NOTI_OTHER_MOVE_default_instance_;
-class SC_NOTI_RESPAWN;
-class SC_NOTI_RESPAWNDefaultTypeInternal;
-extern SC_NOTI_RESPAWNDefaultTypeInternal _SC_NOTI_RESPAWN_default_instance_;
+class SC_NOTI_RESPAWN_CHARACTER;
+class SC_NOTI_RESPAWN_CHARACTERDefaultTypeInternal;
+extern SC_NOTI_RESPAWN_CHARACTERDefaultTypeInternal _SC_NOTI_RESPAWN_CHARACTER_default_instance_;
 class SC_PING;
 class SC_PINGDefaultTypeInternal;
 extern SC_PINGDefaultTypeInternal _SC_PING_default_instance_;
@@ -352,29 +352,47 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int32 tank_type() const;
   void set_tank_type(::google::protobuf::int32 value);
 
-  // int32 hp = 4;
-  void clear_hp();
-  static const int kHpFieldNumber = 4;
-  ::google::protobuf::int32 hp() const;
-  void set_hp(::google::protobuf::int32 value);
-
-  // float pos_x = 5;
+  // float pos_x = 4;
   void clear_pos_x();
-  static const int kPosXFieldNumber = 5;
+  static const int kPosXFieldNumber = 4;
   float pos_x() const;
   void set_pos_x(float value);
 
-  // float pos_y = 6;
+  // float pos_y = 5;
   void clear_pos_y();
-  static const int kPosYFieldNumber = 6;
+  static const int kPosYFieldNumber = 5;
   float pos_y() const;
   void set_pos_y(float value);
 
-  // float pos_z = 7;
+  // float pos_z = 6;
   void clear_pos_z();
-  static const int kPosZFieldNumber = 7;
+  static const int kPosZFieldNumber = 6;
   float pos_z() const;
   void set_pos_z(float value);
+
+  // int32 max_hp = 7;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 7;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 hp = 8;
+  void clear_hp();
+  static const int kHpFieldNumber = 8;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float speed = 9;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 9;
+  float speed() const;
+  void set_speed(float value);
+
+  // float reload_time = 10;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 10;
+  float reload_time() const;
+  void set_reload_time(float value);
 
   // @@protoc_insertion_point(class_scope:GAME.OTHER_INFO)
  private:
@@ -383,10 +401,13 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::internal::ArenaStringPtr nickname_;
   ::google::protobuf::int64 obj_id_;
   ::google::protobuf::int32 tank_type_;
-  ::google::protobuf::int32 hp_;
   float pos_x_;
   float pos_y_;
   float pos_z_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 hp_;
+  float speed_;
+  float reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -536,10 +557,10 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
-  // repeated .GAME.OTHER_INFO other_infos = 8;
+  // repeated .GAME.OTHER_INFO other_infos = 11;
   int other_infos_size() const;
   void clear_other_infos();
-  static const int kOtherInfosFieldNumber = 8;
+  static const int kOtherInfosFieldNumber = 11;
   const ::GAME::OTHER_INFO& other_infos(int index) const;
   ::GAME::OTHER_INFO* mutable_other_infos(int index);
   ::GAME::OTHER_INFO* add_other_infos();
@@ -574,29 +595,47 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::int32 tank_type() const;
   void set_tank_type(::google::protobuf::int32 value);
 
-  // int32 hp = 4;
-  void clear_hp();
-  static const int kHpFieldNumber = 4;
-  ::google::protobuf::int32 hp() const;
-  void set_hp(::google::protobuf::int32 value);
-
-  // float pos_x = 5;
+  // float pos_x = 4;
   void clear_pos_x();
-  static const int kPosXFieldNumber = 5;
+  static const int kPosXFieldNumber = 4;
   float pos_x() const;
   void set_pos_x(float value);
 
-  // float pos_y = 6;
+  // float pos_y = 5;
   void clear_pos_y();
-  static const int kPosYFieldNumber = 6;
+  static const int kPosYFieldNumber = 5;
   float pos_y() const;
   void set_pos_y(float value);
 
-  // float pos_z = 7;
+  // float pos_z = 6;
   void clear_pos_z();
-  static const int kPosZFieldNumber = 7;
+  static const int kPosZFieldNumber = 6;
   float pos_z() const;
   void set_pos_z(float value);
+
+  // int32 max_hp = 7;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 7;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 hp = 8;
+  void clear_hp();
+  static const int kHpFieldNumber = 8;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float speed = 9;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 9;
+  float speed() const;
+  void set_speed(float value);
+
+  // float reload_time = 10;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 10;
+  float reload_time() const;
+  void set_reload_time(float value);
 
   // @@protoc_insertion_point(class_scope:GAME.SC_SYNC_FIELD)
  private:
@@ -606,10 +645,13 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::internal::ArenaStringPtr nickname_;
   ::google::protobuf::int64 obj_id_;
   ::google::protobuf::int32 tank_type_;
-  ::google::protobuf::int32 hp_;
   float pos_x_;
   float pos_y_;
   float pos_z_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 hp_;
+  float speed_;
+  float reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -705,29 +747,47 @@ class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc
   ::google::protobuf::int32 tank_type() const;
   void set_tank_type(::google::protobuf::int32 value);
 
-  // int32 hp = 4;
-  void clear_hp();
-  static const int kHpFieldNumber = 4;
-  ::google::protobuf::int32 hp() const;
-  void set_hp(::google::protobuf::int32 value);
-
-  // float pos_x = 5;
+  // float pos_x = 4;
   void clear_pos_x();
-  static const int kPosXFieldNumber = 5;
+  static const int kPosXFieldNumber = 4;
   float pos_x() const;
   void set_pos_x(float value);
 
-  // float pos_y = 6;
+  // float pos_y = 5;
   void clear_pos_y();
-  static const int kPosYFieldNumber = 6;
+  static const int kPosYFieldNumber = 5;
   float pos_y() const;
   void set_pos_y(float value);
 
-  // float pos_z = 7;
+  // float pos_z = 6;
   void clear_pos_z();
-  static const int kPosZFieldNumber = 7;
+  static const int kPosZFieldNumber = 6;
   float pos_z() const;
   void set_pos_z(float value);
+
+  // int32 max_hp = 7;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 7;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 hp = 8;
+  void clear_hp();
+  static const int kHpFieldNumber = 8;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float speed = 9;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 9;
+  float speed() const;
+  void set_speed(float value);
+
+  // float reload_time = 10;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 10;
+  float reload_time() const;
+  void set_reload_time(float value);
 
   // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_OTHER_ENTER_FIELD)
  private:
@@ -736,10 +796,13 @@ class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc
   ::google::protobuf::internal::ArenaStringPtr nickname_;
   ::google::protobuf::int64 obj_id_;
   ::google::protobuf::int32 tank_type_;
-  ::google::protobuf::int32 hp_;
   float pos_x_;
   float pos_y_;
   float pos_z_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 hp_;
+  float speed_;
+  float reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -1707,39 +1770,39 @@ class SC_NOTI_DESTROY_CHARACTER : public ::google::protobuf::Message /* @@protoc
 };
 // -------------------------------------------------------------------
 
-class CS_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_RESPAWN) */ {
+class CS_RESPAWN_CHARACTER : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_RESPAWN_CHARACTER) */ {
  public:
-  CS_RESPAWN();
-  virtual ~CS_RESPAWN();
+  CS_RESPAWN_CHARACTER();
+  virtual ~CS_RESPAWN_CHARACTER();
 
-  CS_RESPAWN(const CS_RESPAWN& from);
+  CS_RESPAWN_CHARACTER(const CS_RESPAWN_CHARACTER& from);
 
-  inline CS_RESPAWN& operator=(const CS_RESPAWN& from) {
+  inline CS_RESPAWN_CHARACTER& operator=(const CS_RESPAWN_CHARACTER& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CS_RESPAWN& default_instance();
+  static const CS_RESPAWN_CHARACTER& default_instance();
 
-  static inline const CS_RESPAWN* internal_default_instance() {
-    return reinterpret_cast<const CS_RESPAWN*>(
-               &_CS_RESPAWN_default_instance_);
+  static inline const CS_RESPAWN_CHARACTER* internal_default_instance() {
+    return reinterpret_cast<const CS_RESPAWN_CHARACTER*>(
+               &_CS_RESPAWN_CHARACTER_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
     15;
 
-  void Swap(CS_RESPAWN* other);
+  void Swap(CS_RESPAWN_CHARACTER* other);
 
   // implements Message ----------------------------------------------
 
-  inline CS_RESPAWN* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline CS_RESPAWN_CHARACTER* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  CS_RESPAWN* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  CS_RESPAWN_CHARACTER* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const CS_RESPAWN& from);
-  void MergeFrom(const CS_RESPAWN& from);
+  void CopyFrom(const CS_RESPAWN_CHARACTER& from);
+  void MergeFrom(const CS_RESPAWN_CHARACTER& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -1755,7 +1818,7 @@ class CS_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion_poin
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(CS_RESPAWN* other);
+  void InternalSwap(CS_RESPAWN_CHARACTER* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -1771,7 +1834,7 @@ class CS_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:GAME.CS_RESPAWN)
+  // @@protoc_insertion_point(class_scope:GAME.CS_RESPAWN_CHARACTER)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -1780,39 +1843,39 @@ class CS_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion_poin
 };
 // -------------------------------------------------------------------
 
-class SC_NOTI_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_RESPAWN) */ {
+class SC_NOTI_RESPAWN_CHARACTER : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_RESPAWN_CHARACTER) */ {
  public:
-  SC_NOTI_RESPAWN();
-  virtual ~SC_NOTI_RESPAWN();
+  SC_NOTI_RESPAWN_CHARACTER();
+  virtual ~SC_NOTI_RESPAWN_CHARACTER();
 
-  SC_NOTI_RESPAWN(const SC_NOTI_RESPAWN& from);
+  SC_NOTI_RESPAWN_CHARACTER(const SC_NOTI_RESPAWN_CHARACTER& from);
 
-  inline SC_NOTI_RESPAWN& operator=(const SC_NOTI_RESPAWN& from) {
+  inline SC_NOTI_RESPAWN_CHARACTER& operator=(const SC_NOTI_RESPAWN_CHARACTER& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const SC_NOTI_RESPAWN& default_instance();
+  static const SC_NOTI_RESPAWN_CHARACTER& default_instance();
 
-  static inline const SC_NOTI_RESPAWN* internal_default_instance() {
-    return reinterpret_cast<const SC_NOTI_RESPAWN*>(
-               &_SC_NOTI_RESPAWN_default_instance_);
+  static inline const SC_NOTI_RESPAWN_CHARACTER* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_RESPAWN_CHARACTER*>(
+               &_SC_NOTI_RESPAWN_CHARACTER_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
     16;
 
-  void Swap(SC_NOTI_RESPAWN* other);
+  void Swap(SC_NOTI_RESPAWN_CHARACTER* other);
 
   // implements Message ----------------------------------------------
 
-  inline SC_NOTI_RESPAWN* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline SC_NOTI_RESPAWN_CHARACTER* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  SC_NOTI_RESPAWN* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  SC_NOTI_RESPAWN_CHARACTER* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const SC_NOTI_RESPAWN& from);
-  void MergeFrom(const SC_NOTI_RESPAWN& from);
+  void CopyFrom(const SC_NOTI_RESPAWN_CHARACTER& from);
+  void MergeFrom(const SC_NOTI_RESPAWN_CHARACTER& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -1828,7 +1891,7 @@ class SC_NOTI_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(SC_NOTI_RESPAWN* other);
+  void InternalSwap(SC_NOTI_RESPAWN_CHARACTER* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -1844,10 +1907,66 @@ class SC_NOTI_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_RESPAWN)
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // float pos_x = 2;
+  void clear_pos_x();
+  static const int kPosXFieldNumber = 2;
+  float pos_x() const;
+  void set_pos_x(float value);
+
+  // float pos_y = 3;
+  void clear_pos_y();
+  static const int kPosYFieldNumber = 3;
+  float pos_y() const;
+  void set_pos_y(float value);
+
+  // float pos_z = 4;
+  void clear_pos_z();
+  static const int kPosZFieldNumber = 4;
+  float pos_z() const;
+  void set_pos_z(float value);
+
+  // int32 max_hp = 5;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 5;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 hp = 6;
+  void clear_hp();
+  static const int kHpFieldNumber = 6;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float speed = 7;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 7;
+  float speed() const;
+  void set_speed(float value);
+
+  // float reload_time = 8;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 8;
+  float reload_time() const;
+  void set_reload_time(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_RESPAWN_CHARACTER)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 obj_id_;
+  float pos_x_;
+  float pos_y_;
+  float pos_z_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 hp_;
+  float speed_;
+  float reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -1976,21 +2095,7 @@ inline void OTHER_INFO::set_allocated_nickname(::std::string* nickname) {
   // @@protoc_insertion_point(field_set_allocated:GAME.OTHER_INFO.nickname)
 }
 
-// int32 hp = 4;
-inline void OTHER_INFO::clear_hp() {
-  hp_ = 0;
-}
-inline ::google::protobuf::int32 OTHER_INFO::hp() const {
-  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.hp)
-  return hp_;
-}
-inline void OTHER_INFO::set_hp(::google::protobuf::int32 value) {
-  
-  hp_ = value;
-  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.hp)
-}
-
-// float pos_x = 5;
+// float pos_x = 4;
 inline void OTHER_INFO::clear_pos_x() {
   pos_x_ = 0;
 }
@@ -2004,7 +2109,7 @@ inline void OTHER_INFO::set_pos_x(float value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_x)
 }
 
-// float pos_y = 6;
+// float pos_y = 5;
 inline void OTHER_INFO::clear_pos_y() {
   pos_y_ = 0;
 }
@@ -2018,7 +2123,7 @@ inline void OTHER_INFO::set_pos_y(float value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_y)
 }
 
-// float pos_z = 7;
+// float pos_z = 6;
 inline void OTHER_INFO::clear_pos_z() {
   pos_z_ = 0;
 }
@@ -2030,6 +2135,62 @@ inline void OTHER_INFO::set_pos_z(float value) {
   
   pos_z_ = value;
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_z)
+}
+
+// int32 max_hp = 7;
+inline void OTHER_INFO::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.max_hp)
+  return max_hp_;
+}
+inline void OTHER_INFO::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.max_hp)
+}
+
+// int32 hp = 8;
+inline void OTHER_INFO::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.hp)
+  return hp_;
+}
+inline void OTHER_INFO::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.hp)
+}
+
+// float speed = 9;
+inline void OTHER_INFO::clear_speed() {
+  speed_ = 0;
+}
+inline float OTHER_INFO::speed() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.speed)
+  return speed_;
+}
+inline void OTHER_INFO::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.speed)
+}
+
+// float reload_time = 10;
+inline void OTHER_INFO::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline float OTHER_INFO::reload_time() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.reload_time)
+  return reload_time_;
+}
+inline void OTHER_INFO::set_reload_time(float value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.reload_time)
 }
 
 // -------------------------------------------------------------------
@@ -2135,21 +2296,7 @@ inline void SC_SYNC_FIELD::set_allocated_nickname(::std::string* nickname) {
   // @@protoc_insertion_point(field_set_allocated:GAME.SC_SYNC_FIELD.nickname)
 }
 
-// int32 hp = 4;
-inline void SC_SYNC_FIELD::clear_hp() {
-  hp_ = 0;
-}
-inline ::google::protobuf::int32 SC_SYNC_FIELD::hp() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.hp)
-  return hp_;
-}
-inline void SC_SYNC_FIELD::set_hp(::google::protobuf::int32 value) {
-  
-  hp_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.hp)
-}
-
-// float pos_x = 5;
+// float pos_x = 4;
 inline void SC_SYNC_FIELD::clear_pos_x() {
   pos_x_ = 0;
 }
@@ -2163,7 +2310,7 @@ inline void SC_SYNC_FIELD::set_pos_x(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_x)
 }
 
-// float pos_y = 6;
+// float pos_y = 5;
 inline void SC_SYNC_FIELD::clear_pos_y() {
   pos_y_ = 0;
 }
@@ -2177,7 +2324,7 @@ inline void SC_SYNC_FIELD::set_pos_y(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_y)
 }
 
-// float pos_z = 7;
+// float pos_z = 6;
 inline void SC_SYNC_FIELD::clear_pos_z() {
   pos_z_ = 0;
 }
@@ -2191,7 +2338,63 @@ inline void SC_SYNC_FIELD::set_pos_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_z)
 }
 
-// repeated .GAME.OTHER_INFO other_infos = 8;
+// int32 max_hp = 7;
+inline void SC_SYNC_FIELD::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.max_hp)
+  return max_hp_;
+}
+inline void SC_SYNC_FIELD::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.max_hp)
+}
+
+// int32 hp = 8;
+inline void SC_SYNC_FIELD::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.hp)
+  return hp_;
+}
+inline void SC_SYNC_FIELD::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.hp)
+}
+
+// float speed = 9;
+inline void SC_SYNC_FIELD::clear_speed() {
+  speed_ = 0;
+}
+inline float SC_SYNC_FIELD::speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.speed)
+  return speed_;
+}
+inline void SC_SYNC_FIELD::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.speed)
+}
+
+// float reload_time = 10;
+inline void SC_SYNC_FIELD::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline float SC_SYNC_FIELD::reload_time() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.reload_time)
+  return reload_time_;
+}
+inline void SC_SYNC_FIELD::set_reload_time(float value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.reload_time)
+}
+
+// repeated .GAME.OTHER_INFO other_infos = 11;
 inline int SC_SYNC_FIELD::other_infos_size() const {
   return other_infos_.size();
 }
@@ -2306,21 +2509,7 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_allocated_nickname(::std::string* nic
   // @@protoc_insertion_point(field_set_allocated:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
 }
 
-// int32 hp = 4;
-inline void SC_NOTI_OTHER_ENTER_FIELD::clear_hp() {
-  hp_ = 0;
-}
-inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::hp() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.hp)
-  return hp_;
-}
-inline void SC_NOTI_OTHER_ENTER_FIELD::set_hp(::google::protobuf::int32 value) {
-  
-  hp_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.hp)
-}
-
-// float pos_x = 5;
+// float pos_x = 4;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_x() {
   pos_x_ = 0;
 }
@@ -2334,7 +2523,7 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_x(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_x)
 }
 
-// float pos_y = 6;
+// float pos_y = 5;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_y() {
   pos_y_ = 0;
 }
@@ -2348,7 +2537,7 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_y(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_y)
 }
 
-// float pos_z = 7;
+// float pos_z = 6;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_z() {
   pos_z_ = 0;
 }
@@ -2360,6 +2549,62 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_z(float value) {
   
   pos_z_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_z)
+}
+
+// int32 max_hp = 7;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.max_hp)
+  return max_hp_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.max_hp)
+}
+
+// int32 hp = 8;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.hp)
+  return hp_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.hp)
+}
+
+// float speed = 9;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_speed() {
+  speed_ = 0;
+}
+inline float SC_NOTI_OTHER_ENTER_FIELD::speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.speed)
+  return speed_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.speed)
+}
+
+// float reload_time = 10;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline float SC_NOTI_OTHER_ENTER_FIELD::reload_time() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
+  return reload_time_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_reload_time(float value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
 }
 
 // -------------------------------------------------------------------
@@ -3022,11 +3267,123 @@ inline void SC_NOTI_DESTROY_CHARACTER::set_obj_id(::google::protobuf::int64 valu
 
 // -------------------------------------------------------------------
 
-// CS_RESPAWN
+// CS_RESPAWN_CHARACTER
 
 // -------------------------------------------------------------------
 
-// SC_NOTI_RESPAWN
+// SC_NOTI_RESPAWN_CHARACTER
+
+// int64 obj_id = 1;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_RESPAWN_CHARACTER::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.obj_id)
+  return obj_id_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.obj_id)
+}
+
+// float pos_x = 2;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_pos_x() {
+  pos_x_ = 0;
+}
+inline float SC_NOTI_RESPAWN_CHARACTER::pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.pos_x)
+  return pos_x_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_pos_x(float value) {
+  
+  pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.pos_x)
+}
+
+// float pos_y = 3;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_pos_y() {
+  pos_y_ = 0;
+}
+inline float SC_NOTI_RESPAWN_CHARACTER::pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.pos_y)
+  return pos_y_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_pos_y(float value) {
+  
+  pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.pos_y)
+}
+
+// float pos_z = 4;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_pos_z() {
+  pos_z_ = 0;
+}
+inline float SC_NOTI_RESPAWN_CHARACTER::pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.pos_z)
+  return pos_z_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_pos_z(float value) {
+  
+  pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.pos_z)
+}
+
+// int32 max_hp = 5;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.max_hp)
+  return max_hp_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.max_hp)
+}
+
+// int32 hp = 6;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.hp)
+  return hp_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.hp)
+}
+
+// float speed = 7;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_speed() {
+  speed_ = 0;
+}
+inline float SC_NOTI_RESPAWN_CHARACTER::speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.speed)
+  return speed_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.speed)
+}
+
+// float reload_time = 8;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline float SC_NOTI_RESPAWN_CHARACTER::reload_time() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.reload_time)
+  return reload_time_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_reload_time(float value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.reload_time)
+}
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
 // -------------------------------------------------------------------

@@ -65,10 +65,13 @@
 			<obj_id type="int64"/>
 			<tank_type type="int32"/>
 			<nickname type="string"/>
-			<hp type="int32"/>
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
+			<max_hp type="int32"/>
+			<hp type="int32"/>
+			<speed type="float"/>
+			<reload_time type="float"/>
 		</OTHER_INFO>
 
 		<CS_SYNC_FIELD>
@@ -78,10 +81,13 @@
 			<obj_id type="int64"/>
 			<tank_type type="int32"/>
 			<nickname type="string"/>
-			<hp type="int32"/>
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
+			<max_hp type="int32"/>
+			<hp type="int32"/>
+			<speed type="float"/>
+			<reload_time type="float"/>
 			<other_infos type="OTHER_INFO" repeated="true"/>
 		</SC_SYNC_FIELD>
 		
@@ -89,10 +95,13 @@
 			<obj_id type="int64"/>
 			<tank_type type="int32"/>
 			<nickname type="string"/>
-			<hp type="int32"/>
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
+			<max_hp type="int32"/>
+			<hp type="int32"/>
+			<speed type="float"/>
+			<reload_time type="float"/>
 		</SC_NOTI_OTHER_ENTER_FIELD>
 
 		<SC_NOTI_OTHER_LEAVE_FIELD>
@@ -163,13 +172,20 @@
 			<obj_id type="int64"/>
 		</SC_NOTI_DESTROY_CHARACTER>
 
-		<CS_RESPAWN>
+		<CS_RESPAWN_CHARACTER>
 
-		</CS_RESPAWN>
+		</CS_RESPAWN_CHARACTER>
 
-		<SC_NOTI_RESPAWN>
-			
-		</SC_NOTI_RESPAWN>
+		<SC_NOTI_RESPAWN_CHARACTER>
+			<obj_id type="int64"/>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+			<max_hp type="int32"/>
+			<hp type="int32"/>
+			<speed type="float"/>
+			<reload_time type="float"/>
+		</SC_NOTI_RESPAWN_CHARACTER>
 
 	</GAME>
 

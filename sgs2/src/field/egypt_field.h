@@ -13,6 +13,7 @@ public:
     virtual void update(float delta) override;
 
     void sync_field(std::shared_ptr<server_session> session) const override;
+    void respawn_character(object_id id) override;
 
 protected:
     //virtual void process_task() override;

@@ -26,9 +26,14 @@ void object::initialize()
     // session_ 한테 물어서 stat_info를 가져온다;
     // 예를들어 사이즈, 스피드 등등
     stat_ = std::make_shared<stat_info>();
+    stat_->max_hp = 100;
     stat_->hp = 100;
     stat_->speed = 10.0f;
+    stat_->reload_time = 1000.0f; // 1초
     stat_->size = vector3(2.0f, 2.0, 2.0f);
+
+    default_stat_ = std::make_shared<stat_info>();
+    default_stat_->copy(stat_);
 }
 
 void object::update(float delta)

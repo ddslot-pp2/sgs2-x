@@ -72,3 +72,39 @@ std::shared_ptr<server_session> character::get_session() const
 
     return nullptr;
 }
+
+void character::respawn(const vector3& spawn_pos)
+{
+    for (auto& comp : components_)
+    {
+        comp.second->reset();
+    }
+
+    stat_->copy(default_stat_);
+
+    pos_ = spawn_pos;
+
+    destroy_ = false;
+
+    GAME::SC_NOTI_RESPAWN_CHARACTER noti;
+    noti.set_obj_id(object_id_);
+    noti.set_pos_x(pos_.X);
+    noti.set_pos_y(pos_.Y);
+    noti.set_pos_z(pos_.Z);
+
+    noti.set_max_hp(stat_->max_hp);
+    noti.set_hp(stat_->hp);
+    noti.set_speed(stat_->speed);
+    noti.set_reload_time(stat_->reload_time);
+
+    auto& view_list = field_->get_view_list();
+    for (auto kv : view_list)
+    {
+        auto other = kv.second;
+        auto other_session = other->get_session();
+        if (other_session)
+        {
+            send_packet(other_session, opcode::SC_NOTI_RESPAWN_CHARACTER, noti);
+        }
+    }
+}

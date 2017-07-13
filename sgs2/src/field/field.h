@@ -22,14 +22,12 @@ public:
     virtual void update(float delta);
 
     virtual void sync_field(std::shared_ptr<server_session> session) const;
+    virtual void respawn_character(object_id id);
 
     bool check_update_flag();
 
     void enter_field(std::shared_ptr<server_session> session);
     void leave_field(object_id id);
-
-    void respawn_object(std::shared_ptr<server_session> session);
-    void destroy_object(object_id obj_id);
 
     size_t current_user_count() const { return current_user_count_; }
 
