@@ -14,13 +14,14 @@ skill_component::skill_component(object* obj) : component(obj)
 
 skill_component::~skill_component()
 {
-
+    wprintf(L"스킬 컴포넌트 소멸자 호출\n");
 }
 
 void skill_component::update(float delta)
 {
     //super::update(delta);
 
+    /*
     for (auto& kv : bullets_)
     {
         auto& bullet = kv.second;
@@ -29,6 +30,7 @@ void skill_component::update(float delta)
 
         }
     }
+    */
 
     for (auto it = std::begin(bullets_); it != std::end(bullets_);)
     {
@@ -51,13 +53,25 @@ void skill_component::update(float delta)
     //wprintf(L"스킬 컴포넌트 업데이트!\n");
 }
 
+void skill_component::destroy()
+{
+    wprintf(L"skill_component destroy 호출\n");
+    for (auto& kv : bullets_)
+    {
+        kv.second->destroy();
+    }
+
+    bullets_.clear();
+}
+
+
 void skill_component::fire(bullet::type type, const vector3& pos, const vector3& dir, const vector3& bullet_dir)
 {
     wprintf(L"FIRE!!!!\n");
     bullet_id bullet_object_id = 0;
 
     auto speed = 25.0f;
-    auto distance = 30.0f;
+    auto distance = 130.0f;
     auto power = 10.0f;
     vector3 size(0.0f, 0.0f, 0.0f); 
     // 추후 factory 처리
@@ -119,4 +133,10 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
             send_packet(other_session, opcode::SC_NOTI_FIRE, noti);
         }
     }
+}
+
+void skill_component::reset()
+{
+    super::reset();
+    bullets_.clear();
 }

@@ -24,13 +24,14 @@ public:
     std::wstring get_tmp_nickname() const { return L"µπ∞›≈ ≈©"; }
 
 protected:
-
     virtual void on_read_packet(std::shared_ptr<network::packet_buffer_type> buf, unsigned short size) override;
     virtual void on_connect() override;
     virtual void on_disconnect(boost::system::error_code& ec) override;
     virtual void on_disconnect() override;
 
 private:
+    void leave_field(std::shared_ptr<character> c) const;
+
     account_id account_id_;
 
     character_ptr character_;

@@ -1,6 +1,7 @@
 #include "server_session.h"
 #include "../packet_processor/packet_processor.h"
 #include "../packet_processor/send_helper.h"
+#include "../field/field_manager.h"
 
 server_session::server_session(tcp::socket socket) : session(std::move(socket)), account_id_(0), character_(nullptr)
 {
@@ -37,7 +38,7 @@ void server_session::on_disconnect(boost::system::error_code& ec)
     if (character_)
     {
         wprintf(L"케릭터가 존재함\n");
-        character_->leave_field();
+        leave_field(character_);
     }
 }
 
@@ -47,8 +48,15 @@ void server_session::on_disconnect()
     if (character_)
     {
         wprintf(L"케릭터가 존재함\n");
-        character_->leave_field();
+        leave_field(character_);
     }
+}
+
+void server_session::leave_field(std::shared_ptr<character> c) const
+{
+    auto field_id = c->get_field_id();
+    auto field = field_manager::instance().get_field(field_id);
+    field->send_task(&field::leave_field, c->get_object_id());
 }
 
 void server_session::set_character(character_ptr character)

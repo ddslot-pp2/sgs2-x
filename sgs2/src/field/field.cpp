@@ -162,7 +162,7 @@ void field::respawn_object(std::shared_ptr<server_session> session)
 
 void field::destroy_object(object_id id)
 {
-    GAME::SC_NOTI_DESTROY_OBJECT noti;
+    GAME::SC_NOTI_DESTROY_CHARACTER noti;
 
     for (auto kv : characters_)
     {
@@ -170,16 +170,9 @@ void field::destroy_object(object_id id)
         auto other_session = other->get_session();
         if (other_session)
         {
-            send_packet(other_session, opcode::SC_NOTI_DESTROY_OBJECT, noti);
+            send_packet(other_session, opcode::SC_NOTI_DESTROY_CHARACTER, noti);
         }
     }
-
-    /*
-    auto it = characters_.find(id);
-    if (it == characters_.end()) return;
-
-    characters_.erase(id);
-    */
 }
 
 void field::sync_field(std::shared_ptr<server_session> session) const

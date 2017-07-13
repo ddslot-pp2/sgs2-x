@@ -21,6 +21,9 @@ public:
     }
 
     virtual void update(float delta);
+    virtual void destroy();
+
+    virtual void reset();
 
     //Concurrency::concurrent_queue<task>& queue();
     Concurrency::concurrent_queue<task> q_;

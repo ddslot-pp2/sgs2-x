@@ -25,12 +25,35 @@ void character::initialize()
 
 void character::update(float delta)
 {
-    // 본인 hp 체크
-    check_destroy();
+    // destry 문제로 인해서 component 업데이트는 없을 예정이다.
+    if (destroy_)
+    {
 
-    if (destroy_) return;
+        return;
+    }
 
     super::update(delta);
+}
+
+void character::destroy()
+{
+    super::destroy();
+
+    destroy_ = true;
+
+    GAME::SC_NOTI_DESTROY_CHARACTER noti;
+    noti.set_obj_id(object_id_);
+
+    auto& view_list = field_->get_view_list();
+    for (auto kv : view_list)
+    {
+        auto other = kv.second;
+        auto other_session = other->get_session();
+        if (other_session)
+        {
+            send_packet(other_session, opcode::SC_NOTI_DESTROY_CHARACTER, noti);
+        }
+    }
 }
 
 void character::leave_field() const
@@ -48,9 +71,4 @@ std::shared_ptr<server_session> character::get_session() const
     }
 
     return nullptr;
-}
-
-void character::check_destroy()
-{
-    if (stat_->hp <= 0) destroy_ = true;
 }

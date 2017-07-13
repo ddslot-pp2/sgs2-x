@@ -13,7 +13,7 @@ bullet::bullet(object* obj, const vector3& dir, const vector3& size, float speed
 
 bullet::~bullet()
 {
-
+    wprintf(L"bullet 소멸자 호출\n");
 }
 
 void bullet::update(float delta)
@@ -35,6 +35,8 @@ void bullet::update(float delta)
 
         if (other->get_object_id() == object_->get_object_id()) continue;
 
+        if (other->get_destroy()) continue;
+
         auto stat_info = other->get_stat_info();
         if (check_intersection(pos_, other->get_pos(), size_, stat_info->size))
         {
@@ -52,12 +54,25 @@ void bullet::update(float delta)
     }
 
     pos_ = pos_ + (dir_ * speed_ * delta);
-    wprintf(L"총알 이동중 x: %f, z: %f\n", pos_.X, pos_.Z);
+    //wprintf(L"총알 이동중 x: %f, z: %f\n", pos_.X, pos_.Z);
 }
 
 void bullet::destroy() const
 {
+    GAME::SC_NOTI_DESTROY_BULLET noti;
+    noti.set_obj_id(object_->get_object_id());
+    noti.set_bullet_id(id_);
 
+    auto& view_list = object_->get_field()->get_view_list();
+    for (auto view : view_list)
+    {
+        auto other = view.second;
+        auto other_session = other->get_session();
+        if (other_session)
+        {
+            send_packet(other_session, opcode::SC_NOTI_DESTROY_BULLET, noti);
+        }
+    }
 }
 
 void bullet::collide_with_other(std::shared_ptr<character> target_object)
@@ -70,12 +85,12 @@ void bullet::collide_with_other(std::shared_ptr<character> target_object)
 
     if (target_hp <= 0)
     {
+        target_object->destroy();
         // 이 불렛이 마지막으로 destroy시킴
         // object_->get_object_id();
 
         // 필드에 알려줘서 처리를 해줌
         //object_->get_field()->reward_destroy_object(obj_id);
-
     }
 
     GAME::SC_NOTI_DESTROY_BULLET noti;

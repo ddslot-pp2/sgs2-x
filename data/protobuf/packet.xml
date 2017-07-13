@@ -159,9 +159,17 @@
 			<damage_infos type="DAMAGE_INFO" repeated="true"/>
 		</SC_NOTI_DESTROY_BULLET>
 
-		<SC_NOTI_DESTROY_OBJECT>
+		<SC_NOTI_DESTROY_CHARACTER>
 			<obj_id type="int64"/>
-		</SC_NOTI_DESTROY_OBJECT>
+		</SC_NOTI_DESTROY_CHARACTER>
+
+		<CS_RESPAWN>
+
+		</CS_RESPAWN>
+
+		<SC_NOTI_RESPAWN>
+			
+		</SC_NOTI_RESPAWN>
 
 	</GAME>
 

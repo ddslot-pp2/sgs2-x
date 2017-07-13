@@ -10,7 +10,7 @@ move_component::move_component(object* obj) : component(obj)
 
 move_component::~move_component()
 {
-
+    wprintf(L"이동 컴포넌트 소멸자 호출\n");
 }
 
 void move_component::update(float delta)

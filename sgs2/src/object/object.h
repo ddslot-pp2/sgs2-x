@@ -24,6 +24,8 @@ public:
     virtual void initialize();
     virtual void update(float delta);
 
+    virtual void destroy();
+
     std::shared_ptr<component> get_component(comp_id type);
    
     template <typename C, typename Fn, typename... Args>
@@ -56,6 +58,9 @@ public:
 
     field* get_field() const { return field_; }
     auto get_stat_info() const { return stat_; }
+
+    //void set_destroy(bool destroy) { destroy_ = destroy; }
+    bool get_destroy() const { return destroy_; }
 
 protected:
     std::map<comp_id, std::shared_ptr<component>> components_;

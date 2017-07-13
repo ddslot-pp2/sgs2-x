@@ -89,6 +89,7 @@
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_FIRE.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_NOTI_MOVE.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_PING.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_RESPAWN.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_SYNC_FIELD.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_ENTER_FIELD.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_FIELD_LIST.cpp" />

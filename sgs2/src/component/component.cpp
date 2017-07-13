@@ -24,3 +24,13 @@ void component::update(float delta)
 {
     //process_task();
 }
+
+void component::destroy()
+{
+    q_.clear();
+}
+
+void component::reset()
+{
+    q_.clear();
+}

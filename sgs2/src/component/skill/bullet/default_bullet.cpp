@@ -10,7 +10,7 @@ default_bullet::default_bullet(object* obj, const vector3& dir, const vector3& s
 
 default_bullet::~default_bullet()
 {
-
+    wprintf(L"default bullet 소멸자 호출\n");
 }
 
 void default_bullet::update(float delta)
@@ -20,5 +20,5 @@ void default_bullet::update(float delta)
 
 void default_bullet::destroy() const
 {
-
+    super::destroy();
 }

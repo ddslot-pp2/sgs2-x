@@ -43,6 +43,9 @@ extern CS_NOTI_MOVEDefaultTypeInternal _CS_NOTI_MOVE_default_instance_;
 class CS_PING;
 class CS_PINGDefaultTypeInternal;
 extern CS_PINGDefaultTypeInternal _CS_PING_default_instance_;
+class CS_RESPAWN;
+class CS_RESPAWNDefaultTypeInternal;
+extern CS_RESPAWNDefaultTypeInternal _CS_RESPAWN_default_instance_;
 class CS_SYNC_FIELD;
 class CS_SYNC_FIELDDefaultTypeInternal;
 extern CS_SYNC_FIELDDefaultTypeInternal _CS_SYNC_FIELD_default_instance_;
@@ -55,9 +58,9 @@ extern OTHER_INFODefaultTypeInternal _OTHER_INFO_default_instance_;
 class SC_NOTI_DESTROY_BULLET;
 class SC_NOTI_DESTROY_BULLETDefaultTypeInternal;
 extern SC_NOTI_DESTROY_BULLETDefaultTypeInternal _SC_NOTI_DESTROY_BULLET_default_instance_;
-class SC_NOTI_DESTROY_OBJECT;
-class SC_NOTI_DESTROY_OBJECTDefaultTypeInternal;
-extern SC_NOTI_DESTROY_OBJECTDefaultTypeInternal _SC_NOTI_DESTROY_OBJECT_default_instance_;
+class SC_NOTI_DESTROY_CHARACTER;
+class SC_NOTI_DESTROY_CHARACTERDefaultTypeInternal;
+extern SC_NOTI_DESTROY_CHARACTERDefaultTypeInternal _SC_NOTI_DESTROY_CHARACTER_default_instance_;
 class SC_NOTI_FIRE;
 class SC_NOTI_FIREDefaultTypeInternal;
 extern SC_NOTI_FIREDefaultTypeInternal _SC_NOTI_FIRE_default_instance_;
@@ -70,6 +73,9 @@ extern SC_NOTI_OTHER_LEAVE_FIELDDefaultTypeInternal _SC_NOTI_OTHER_LEAVE_FIELD_d
 class SC_NOTI_OTHER_MOVE;
 class SC_NOTI_OTHER_MOVEDefaultTypeInternal;
 extern SC_NOTI_OTHER_MOVEDefaultTypeInternal _SC_NOTI_OTHER_MOVE_default_instance_;
+class SC_NOTI_RESPAWN;
+class SC_NOTI_RESPAWNDefaultTypeInternal;
+extern SC_NOTI_RESPAWNDefaultTypeInternal _SC_NOTI_RESPAWN_default_instance_;
 class SC_PING;
 class SC_PINGDefaultTypeInternal;
 extern SC_PINGDefaultTypeInternal _SC_PING_default_instance_;
@@ -1621,39 +1627,39 @@ class SC_NOTI_DESTROY_BULLET : public ::google::protobuf::Message /* @@protoc_in
 };
 // -------------------------------------------------------------------
 
-class SC_NOTI_DESTROY_OBJECT : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_DESTROY_OBJECT) */ {
+class SC_NOTI_DESTROY_CHARACTER : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_DESTROY_CHARACTER) */ {
  public:
-  SC_NOTI_DESTROY_OBJECT();
-  virtual ~SC_NOTI_DESTROY_OBJECT();
+  SC_NOTI_DESTROY_CHARACTER();
+  virtual ~SC_NOTI_DESTROY_CHARACTER();
 
-  SC_NOTI_DESTROY_OBJECT(const SC_NOTI_DESTROY_OBJECT& from);
+  SC_NOTI_DESTROY_CHARACTER(const SC_NOTI_DESTROY_CHARACTER& from);
 
-  inline SC_NOTI_DESTROY_OBJECT& operator=(const SC_NOTI_DESTROY_OBJECT& from) {
+  inline SC_NOTI_DESTROY_CHARACTER& operator=(const SC_NOTI_DESTROY_CHARACTER& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const SC_NOTI_DESTROY_OBJECT& default_instance();
+  static const SC_NOTI_DESTROY_CHARACTER& default_instance();
 
-  static inline const SC_NOTI_DESTROY_OBJECT* internal_default_instance() {
-    return reinterpret_cast<const SC_NOTI_DESTROY_OBJECT*>(
-               &_SC_NOTI_DESTROY_OBJECT_default_instance_);
+  static inline const SC_NOTI_DESTROY_CHARACTER* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_DESTROY_CHARACTER*>(
+               &_SC_NOTI_DESTROY_CHARACTER_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
     14;
 
-  void Swap(SC_NOTI_DESTROY_OBJECT* other);
+  void Swap(SC_NOTI_DESTROY_CHARACTER* other);
 
   // implements Message ----------------------------------------------
 
-  inline SC_NOTI_DESTROY_OBJECT* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline SC_NOTI_DESTROY_CHARACTER* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  SC_NOTI_DESTROY_OBJECT* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  SC_NOTI_DESTROY_CHARACTER* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const SC_NOTI_DESTROY_OBJECT& from);
-  void MergeFrom(const SC_NOTI_DESTROY_OBJECT& from);
+  void CopyFrom(const SC_NOTI_DESTROY_CHARACTER& from);
+  void MergeFrom(const SC_NOTI_DESTROY_CHARACTER& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -1669,7 +1675,7 @@ class SC_NOTI_DESTROY_OBJECT : public ::google::protobuf::Message /* @@protoc_in
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(SC_NOTI_DESTROY_OBJECT* other);
+  void InternalSwap(SC_NOTI_DESTROY_CHARACTER* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -1691,11 +1697,157 @@ class SC_NOTI_DESTROY_OBJECT : public ::google::protobuf::Message /* @@protoc_in
   ::google::protobuf::int64 obj_id() const;
   void set_obj_id(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_DESTROY_OBJECT)
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_DESTROY_CHARACTER)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int64 obj_id_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class CS_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_RESPAWN) */ {
+ public:
+  CS_RESPAWN();
+  virtual ~CS_RESPAWN();
+
+  CS_RESPAWN(const CS_RESPAWN& from);
+
+  inline CS_RESPAWN& operator=(const CS_RESPAWN& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_RESPAWN& default_instance();
+
+  static inline const CS_RESPAWN* internal_default_instance() {
+    return reinterpret_cast<const CS_RESPAWN*>(
+               &_CS_RESPAWN_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    15;
+
+  void Swap(CS_RESPAWN* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_RESPAWN* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_RESPAWN* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_RESPAWN& from);
+  void MergeFrom(const CS_RESPAWN& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_RESPAWN* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:GAME.CS_RESPAWN)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_NOTI_RESPAWN : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_RESPAWN) */ {
+ public:
+  SC_NOTI_RESPAWN();
+  virtual ~SC_NOTI_RESPAWN();
+
+  SC_NOTI_RESPAWN(const SC_NOTI_RESPAWN& from);
+
+  inline SC_NOTI_RESPAWN& operator=(const SC_NOTI_RESPAWN& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_NOTI_RESPAWN& default_instance();
+
+  static inline const SC_NOTI_RESPAWN* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_RESPAWN*>(
+               &_SC_NOTI_RESPAWN_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    16;
+
+  void Swap(SC_NOTI_RESPAWN* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_NOTI_RESPAWN* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_NOTI_RESPAWN* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_NOTI_RESPAWN& from);
+  void MergeFrom(const SC_NOTI_RESPAWN& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_NOTI_RESPAWN* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_RESPAWN)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -2852,23 +3004,35 @@ SC_NOTI_DESTROY_BULLET::damage_infos() const {
 
 // -------------------------------------------------------------------
 
-// SC_NOTI_DESTROY_OBJECT
+// SC_NOTI_DESTROY_CHARACTER
 
 // int64 obj_id = 1;
-inline void SC_NOTI_DESTROY_OBJECT::clear_obj_id() {
+inline void SC_NOTI_DESTROY_CHARACTER::clear_obj_id() {
   obj_id_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::int64 SC_NOTI_DESTROY_OBJECT::obj_id() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_DESTROY_OBJECT.obj_id)
+inline ::google::protobuf::int64 SC_NOTI_DESTROY_CHARACTER::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_DESTROY_CHARACTER.obj_id)
   return obj_id_;
 }
-inline void SC_NOTI_DESTROY_OBJECT::set_obj_id(::google::protobuf::int64 value) {
+inline void SC_NOTI_DESTROY_CHARACTER::set_obj_id(::google::protobuf::int64 value) {
   
   obj_id_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_DESTROY_OBJECT.obj_id)
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_DESTROY_CHARACTER.obj_id)
 }
 
+// -------------------------------------------------------------------
+
+// CS_RESPAWN
+
+// -------------------------------------------------------------------
+
+// SC_NOTI_RESPAWN
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -17,11 +17,11 @@ public:
     void initialize() override;
     void update(float delta) override;
 
+    void destroy() override;
+
     void leave_field() const;
    
     std::shared_ptr<server_session> get_session() const;
-
-    void check_destroy();
 
 protected:
     std::weak_ptr<server_session> session_;

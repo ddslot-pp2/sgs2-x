@@ -40,6 +40,14 @@ void object::update(float delta)
     }
 }
 
+void object::destroy()
+{
+    for (auto& comp : components_)
+    {
+        comp.second->destroy();
+    }
+}
+
 void object::set_object_id(size_t obj_id) noexcept
 {
     object_id_ = obj_id;
