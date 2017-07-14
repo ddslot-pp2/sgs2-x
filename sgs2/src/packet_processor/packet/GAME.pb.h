@@ -397,12 +397,6 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   float speed() const;
   void set_speed(float value);
 
-  // float reload_time = 10;
-  void clear_reload_time();
-  static const int kReloadTimeFieldNumber = 10;
-  float reload_time() const;
-  void set_reload_time(float value);
-
   // @@protoc_insertion_point(class_scope:GAME.OTHER_INFO)
  private:
 
@@ -416,7 +410,6 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 hp_;
   float speed_;
-  float reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -792,12 +785,6 @@ class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc
   float speed() const;
   void set_speed(float value);
 
-  // float reload_time = 10;
-  void clear_reload_time();
-  static const int kReloadTimeFieldNumber = 10;
-  float reload_time() const;
-  void set_reload_time(float value);
-
   // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_OTHER_ENTER_FIELD)
  private:
 
@@ -811,7 +798,6 @@ class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc
   ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 hp_;
   float speed_;
-  float reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -2456,20 +2442,6 @@ inline void OTHER_INFO::set_speed(float value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.speed)
 }
 
-// float reload_time = 10;
-inline void OTHER_INFO::clear_reload_time() {
-  reload_time_ = 0;
-}
-inline float OTHER_INFO::reload_time() const {
-  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.reload_time)
-  return reload_time_;
-}
-inline void OTHER_INFO::set_reload_time(float value) {
-  
-  reload_time_ = value;
-  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.reload_time)
-}
-
 // -------------------------------------------------------------------
 
 // CS_SYNC_FIELD
@@ -2868,20 +2840,6 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_speed(float value) {
   
   speed_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.speed)
-}
-
-// float reload_time = 10;
-inline void SC_NOTI_OTHER_ENTER_FIELD::clear_reload_time() {
-  reload_time_ = 0;
-}
-inline float SC_NOTI_OTHER_ENTER_FIELD::reload_time() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
-  return reload_time_;
-}
-inline void SC_NOTI_OTHER_ENTER_FIELD::set_reload_time(float value) {
-  
-  reload_time_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
 }
 
 // -------------------------------------------------------------------

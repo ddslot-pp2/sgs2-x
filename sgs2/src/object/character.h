@@ -24,6 +24,8 @@ public:
     void respawn(const vector3& spawn_pos);
 
     //void set_type(
+    int get_character_type() const { return character_type_; }
+    void set_character_type(int type) { character_type_ = type; }
    
     std::shared_ptr<server_session> get_session() const;
 
@@ -34,6 +36,7 @@ private:
     void update_score();
     void update_exp() const;
   
+    int character_type_;
     int score_;
 };
 

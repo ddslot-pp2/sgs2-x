@@ -35,6 +35,9 @@ void object::initialize()
     stat_->reload_time = 1000.0f; // 1ÃÊ
     stat_->size = vector3(2.0f, 2.0, 2.0f);
 
+    stat_->exp = 0.0f;
+    stat_->score = 0;
+
     default_stat_ = std::make_shared<stat_info>();
     default_stat_->copy(stat_);
 }

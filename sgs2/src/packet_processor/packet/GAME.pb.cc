@@ -128,7 +128,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OTHER_INFO, max_hp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OTHER_INFO, hp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OTHER_INFO, speed_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(OTHER_INFO, reload_time_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_SYNC_FIELD, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -165,7 +164,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_ENTER_FIELD, max_hp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_ENTER_FIELD, hp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_ENTER_FIELD, speed_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_ENTER_FIELD, reload_time_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_OTHER_LEAVE_FIELD, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -298,23 +296,23 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 0, -1, sizeof(CS_PING)},
   { 6, -1, sizeof(SC_PING)},
   { 12, -1, sizeof(OTHER_INFO)},
-  { 27, -1, sizeof(CS_SYNC_FIELD)},
-  { 33, -1, sizeof(SC_SYNC_FIELD)},
-  { 49, -1, sizeof(SC_NOTI_OTHER_ENTER_FIELD)},
-  { 64, -1, sizeof(SC_NOTI_OTHER_LEAVE_FIELD)},
-  { 70, -1, sizeof(CS_NOTI_MOVE)},
-  { 78, -1, sizeof(SC_NOTI_OTHER_MOVE)},
-  { 87, -1, sizeof(BULLET_INFO)},
-  { 101, -1, sizeof(CS_FIRE)},
-  { 114, -1, sizeof(SC_NOTI_FIRE)},
-  { 128, -1, sizeof(DAMAGE_INFO)},
-  { 136, -1, sizeof(SC_NOTI_DESTROY_BULLET)},
-  { 144, -1, sizeof(SC_NOTI_DESTROY_CHARACTER)},
-  { 150, -1, sizeof(CS_RESPAWN_CHARACTER)},
-  { 155, -1, sizeof(SC_NOTI_RESPAWN_CHARACTER)},
-  { 168, -1, sizeof(SC_SELECT_BUFF)},
-  { 174, -1, sizeof(CS_ENHANCE_BUFF)},
-  { 180, -1, sizeof(SC_NOTI_UPDATE_CHARACTER_STATUS)},
+  { 26, -1, sizeof(CS_SYNC_FIELD)},
+  { 32, -1, sizeof(SC_SYNC_FIELD)},
+  { 48, -1, sizeof(SC_NOTI_OTHER_ENTER_FIELD)},
+  { 62, -1, sizeof(SC_NOTI_OTHER_LEAVE_FIELD)},
+  { 68, -1, sizeof(CS_NOTI_MOVE)},
+  { 76, -1, sizeof(SC_NOTI_OTHER_MOVE)},
+  { 85, -1, sizeof(BULLET_INFO)},
+  { 99, -1, sizeof(CS_FIRE)},
+  { 112, -1, sizeof(SC_NOTI_FIRE)},
+  { 126, -1, sizeof(DAMAGE_INFO)},
+  { 134, -1, sizeof(SC_NOTI_DESTROY_BULLET)},
+  { 142, -1, sizeof(SC_NOTI_DESTROY_CHARACTER)},
+  { 148, -1, sizeof(CS_RESPAWN_CHARACTER)},
+  { 153, -1, sizeof(SC_NOTI_RESPAWN_CHARACTER)},
+  { 166, -1, sizeof(SC_SELECT_BUFF)},
+  { 172, -1, sizeof(CS_ENHANCE_BUFF)},
+  { 178, -1, sizeof(SC_NOTI_UPDATE_CHARACTER_STATUS)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -440,58 +438,57 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
       "\n\nGAME.proto\022\004GAME\"\034\n\007CS_PING\022\021\n\ttimesta"
-      "mp\030\001 \001(\003\"\034\n\007SC_PING\022\021\n\ttimestamp\030\001 \001(\003\"\256"
+      "mp\030\001 \001(\003\"\034\n\007SC_PING\022\021\n\ttimestamp\030\001 \001(\003\"\231"
       "\001\n\nOTHER_INFO\022\016\n\006obj_id\030\001 \001(\003\022\021\n\ttank_ty"
       "pe\030\002 \001(\005\022\020\n\010nickname\030\003 \001(\t\022\r\n\005pos_x\030\004 \001("
       "\002\022\r\n\005pos_y\030\005 \001(\002\022\r\n\005pos_z\030\006 \001(\002\022\016\n\006max_h"
-      "p\030\007 \001(\005\022\n\n\002hp\030\010 \001(\005\022\r\n\005speed\030\t \001(\002\022\023\n\013re"
-      "load_time\030\n \001(\002\"!\n\rCS_SYNC_FIELD\022\020\n\010fiel"
-      "d_id\030\001 \001(\005\"\330\001\n\rSC_SYNC_FIELD\022\016\n\006obj_id\030\001"
-      " \001(\003\022\021\n\ttank_type\030\002 \001(\005\022\020\n\010nickname\030\003 \001("
-      "\t\022\r\n\005pos_x\030\004 \001(\002\022\r\n\005pos_y\030\005 \001(\002\022\r\n\005pos_z"
-      "\030\006 \001(\002\022\016\n\006max_hp\030\007 \001(\005\022\n\n\002hp\030\010 \001(\005\022\r\n\005sp"
-      "eed\030\t \001(\002\022\023\n\013reload_time\030\n \001(\002\022%\n\013other_"
-      "infos\030\013 \003(\0132\020.GAME.OTHER_INFO\"\275\001\n\031SC_NOT"
-      "I_OTHER_ENTER_FIELD\022\016\n\006obj_id\030\001 \001(\003\022\021\n\tt"
-      "ank_type\030\002 \001(\005\022\020\n\010nickname\030\003 \001(\t\022\r\n\005pos_"
-      "x\030\004 \001(\002\022\r\n\005pos_y\030\005 \001(\002\022\r\n\005pos_z\030\006 \001(\002\022\016\n"
-      "\006max_hp\030\007 \001(\005\022\n\n\002hp\030\010 \001(\005\022\r\n\005speed\030\t \001(\002"
-      "\022\023\n\013reload_time\030\n \001(\002\"+\n\031SC_NOTI_OTHER_L"
-      "EAVE_FIELD\022\016\n\006obj_id\030\001 \001(\003\";\n\014CS_NOTI_MO"
-      "VE\022\r\n\005pos_x\030\001 \001(\002\022\r\n\005pos_y\030\002 \001(\002\022\r\n\005pos_"
-      "z\030\003 \001(\002\"Q\n\022SC_NOTI_OTHER_MOVE\022\016\n\006obj_id\030"
-      "\001 \001(\003\022\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005p"
-      "os_z\030\004 \001(\002\"\236\001\n\013BULLET_INFO\022\021\n\tbullet_id\030"
-      "\001 \001(\003\022\r\n\005dir_x\030\002 \001(\002\022\r\n\005dir_y\030\003 \001(\002\022\r\n\005d"
-      "ir_z\030\004 \001(\002\022\016\n\006size_x\030\005 \001(\002\022\016\n\006size_y\030\006 \001"
-      "(\002\022\016\n\006size_z\030\007 \001(\002\022\r\n\005speed\030\010 \001(\002\022\020\n\010dis"
-      "tance\030\t \001(\002\"\241\001\n\007CS_FIRE\022\023\n\013bullet_type\030\001"
-      " \001(\005\022\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005po"
-      "s_z\030\004 \001(\002\022\r\n\005dir_x\030\005 \001(\002\022\r\n\005dir_y\030\006 \001(\002\022"
-      "\r\n\005dir_z\030\007 \001(\002\022\'\n\014bullet_infos\030\010 \003(\0132\021.G"
-      "AME.BULLET_INFO\"\266\001\n\014SC_NOTI_FIRE\022\016\n\006obj_"
-      "id\030\001 \001(\003\022\023\n\013bullet_type\030\002 \001(\005\022\r\n\005pos_x\030\003"
-      " \001(\002\022\r\n\005pos_y\030\004 \001(\002\022\r\n\005pos_z\030\005 \001(\002\022\r\n\005di"
-      "r_x\030\006 \001(\002\022\r\n\005dir_y\030\007 \001(\002\022\r\n\005dir_z\030\010 \001(\002\022"
-      "\'\n\014bullet_infos\030\t \003(\0132\021.GAME.BULLET_INFO"
-      "\"<\n\013DAMAGE_INFO\022\021\n\ttarget_id\030\001 \001(\003\022\n\n\002hp"
-      "\030\002 \001(\005\022\016\n\006damage\030\003 \001(\003\"d\n\026SC_NOTI_DESTRO"
-      "Y_BULLET\022\016\n\006obj_id\030\001 \001(\003\022\021\n\tbullet_id\030\002 "
-      "\001(\003\022\'\n\014damage_infos\030\003 \003(\0132\021.GAME.DAMAGE_"
-      "INFO\"+\n\031SC_NOTI_DESTROY_CHARACTER\022\016\n\006obj"
-      "_id\030\001 \001(\003\"\026\n\024CS_RESPAWN_CHARACTER\"\230\001\n\031SC"
-      "_NOTI_RESPAWN_CHARACTER\022\016\n\006obj_id\030\001 \001(\003\022"
-      "\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005pos_z\030\004"
-      " \001(\002\022\016\n\006max_hp\030\005 \001(\005\022\n\n\002hp\030\006 \001(\005\022\r\n\005spee"
-      "d\030\007 \001(\002\022\023\n\013reload_time\030\010 \001(\002\"\037\n\016SC_SELEC"
-      "T_BUFF\022\r\n\005count\030\001 \001(\005\"$\n\017CS_ENHANCE_BUFF"
-      "\022\021\n\tbuff_type\030\001 \001(\005\"q\n\037SC_NOTI_UPDATE_CH"
-      "ARACTER_STATUS\022\016\n\006obj_id\030\001 \001(\003\022\016\n\006max_hp"
-      "\030\002 \001(\005\022\n\n\002hp\030\003 \001(\005\022\r\n\005speed\030\004 \001(\002\022\023\n\013rel"
-      "oad_time\030\005 \001(\002b\006proto3"
+      "p\030\007 \001(\005\022\n\n\002hp\030\010 \001(\005\022\r\n\005speed\030\t \001(\002\"!\n\rCS"
+      "_SYNC_FIELD\022\020\n\010field_id\030\001 \001(\005\"\330\001\n\rSC_SYN"
+      "C_FIELD\022\016\n\006obj_id\030\001 \001(\003\022\021\n\ttank_type\030\002 \001"
+      "(\005\022\020\n\010nickname\030\003 \001(\t\022\r\n\005pos_x\030\004 \001(\002\022\r\n\005p"
+      "os_y\030\005 \001(\002\022\r\n\005pos_z\030\006 \001(\002\022\016\n\006max_hp\030\007 \001("
+      "\005\022\n\n\002hp\030\010 \001(\005\022\r\n\005speed\030\t \001(\002\022\023\n\013reload_t"
+      "ime\030\n \001(\002\022%\n\013other_infos\030\013 \003(\0132\020.GAME.OT"
+      "HER_INFO\"\250\001\n\031SC_NOTI_OTHER_ENTER_FIELD\022\016"
+      "\n\006obj_id\030\001 \001(\003\022\021\n\ttank_type\030\002 \001(\005\022\020\n\010nic"
+      "kname\030\003 \001(\t\022\r\n\005pos_x\030\004 \001(\002\022\r\n\005pos_y\030\005 \001("
+      "\002\022\r\n\005pos_z\030\006 \001(\002\022\016\n\006max_hp\030\007 \001(\005\022\n\n\002hp\030\010"
+      " \001(\005\022\r\n\005speed\030\t \001(\002\"+\n\031SC_NOTI_OTHER_LEA"
+      "VE_FIELD\022\016\n\006obj_id\030\001 \001(\003\";\n\014CS_NOTI_MOVE"
+      "\022\r\n\005pos_x\030\001 \001(\002\022\r\n\005pos_y\030\002 \001(\002\022\r\n\005pos_z\030"
+      "\003 \001(\002\"Q\n\022SC_NOTI_OTHER_MOVE\022\016\n\006obj_id\030\001 "
+      "\001(\003\022\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005pos"
+      "_z\030\004 \001(\002\"\236\001\n\013BULLET_INFO\022\021\n\tbullet_id\030\001 "
+      "\001(\003\022\r\n\005dir_x\030\002 \001(\002\022\r\n\005dir_y\030\003 \001(\002\022\r\n\005dir"
+      "_z\030\004 \001(\002\022\016\n\006size_x\030\005 \001(\002\022\016\n\006size_y\030\006 \001(\002"
+      "\022\016\n\006size_z\030\007 \001(\002\022\r\n\005speed\030\010 \001(\002\022\020\n\010dista"
+      "nce\030\t \001(\002\"\241\001\n\007CS_FIRE\022\023\n\013bullet_type\030\001 \001"
+      "(\005\022\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005pos_"
+      "z\030\004 \001(\002\022\r\n\005dir_x\030\005 \001(\002\022\r\n\005dir_y\030\006 \001(\002\022\r\n"
+      "\005dir_z\030\007 \001(\002\022\'\n\014bullet_infos\030\010 \003(\0132\021.GAM"
+      "E.BULLET_INFO\"\266\001\n\014SC_NOTI_FIRE\022\016\n\006obj_id"
+      "\030\001 \001(\003\022\023\n\013bullet_type\030\002 \001(\005\022\r\n\005pos_x\030\003 \001"
+      "(\002\022\r\n\005pos_y\030\004 \001(\002\022\r\n\005pos_z\030\005 \001(\002\022\r\n\005dir_"
+      "x\030\006 \001(\002\022\r\n\005dir_y\030\007 \001(\002\022\r\n\005dir_z\030\010 \001(\002\022\'\n"
+      "\014bullet_infos\030\t \003(\0132\021.GAME.BULLET_INFO\"<"
+      "\n\013DAMAGE_INFO\022\021\n\ttarget_id\030\001 \001(\003\022\n\n\002hp\030\002"
+      " \001(\005\022\016\n\006damage\030\003 \001(\003\"d\n\026SC_NOTI_DESTROY_"
+      "BULLET\022\016\n\006obj_id\030\001 \001(\003\022\021\n\tbullet_id\030\002 \001("
+      "\003\022\'\n\014damage_infos\030\003 \003(\0132\021.GAME.DAMAGE_IN"
+      "FO\"+\n\031SC_NOTI_DESTROY_CHARACTER\022\016\n\006obj_i"
+      "d\030\001 \001(\003\"\026\n\024CS_RESPAWN_CHARACTER\"\230\001\n\031SC_N"
+      "OTI_RESPAWN_CHARACTER\022\016\n\006obj_id\030\001 \001(\003\022\r\n"
+      "\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005pos_z\030\004 \001"
+      "(\002\022\016\n\006max_hp\030\005 \001(\005\022\n\n\002hp\030\006 \001(\005\022\r\n\005speed\030"
+      "\007 \001(\002\022\023\n\013reload_time\030\010 \001(\002\"\037\n\016SC_SELECT_"
+      "BUFF\022\r\n\005count\030\001 \001(\005\"$\n\017CS_ENHANCE_BUFF\022\021"
+      "\n\tbuff_type\030\001 \001(\005\"q\n\037SC_NOTI_UPDATE_CHAR"
+      "ACTER_STATUS\022\016\n\006obj_id\030\001 \001(\003\022\016\n\006max_hp\030\002"
+      " \001(\005\022\n\n\002hp\030\003 \001(\005\022\r\n\005speed\030\004 \001(\002\022\023\n\013reloa"
+      "d_time\030\005 \001(\002b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1982);
+      descriptor, 1940);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -991,7 +988,6 @@ const int OTHER_INFO::kPosZFieldNumber;
 const int OTHER_INFO::kMaxHpFieldNumber;
 const int OTHER_INFO::kHpFieldNumber;
 const int OTHER_INFO::kSpeedFieldNumber;
-const int OTHER_INFO::kReloadTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 OTHER_INFO::OTHER_INFO()
@@ -1012,15 +1008,15 @@ OTHER_INFO::OTHER_INFO(const OTHER_INFO& from)
     nickname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nickname_);
   }
   ::memcpy(&obj_id_, &from.obj_id_,
-    reinterpret_cast<char*>(&reload_time_) -
-    reinterpret_cast<char*>(&obj_id_) + sizeof(reload_time_));
+    reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(speed_));
   // @@protoc_insertion_point(copy_constructor:GAME.OTHER_INFO)
 }
 
 void OTHER_INFO::SharedCtor() {
   nickname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&reload_time_) -
-    reinterpret_cast<char*>(&obj_id_) + sizeof(reload_time_));
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(speed_));
   _cached_size_ = 0;
 }
 
@@ -1059,8 +1055,8 @@ OTHER_INFO* OTHER_INFO::New(::google::protobuf::Arena* arena) const {
 void OTHER_INFO::Clear() {
 // @@protoc_insertion_point(message_clear_start:GAME.OTHER_INFO)
   nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&reload_time_) -
-    reinterpret_cast<char*>(&obj_id_) + sizeof(reload_time_));
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(speed_));
 }
 
 bool OTHER_INFO::MergePartialFromCodedStream(
@@ -1201,20 +1197,6 @@ bool OTHER_INFO::MergePartialFromCodedStream(
         break;
       }
 
-      // float reload_time = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(85u)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &reload_time_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -1292,11 +1274,6 @@ void OTHER_INFO::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->speed(), output);
   }
 
-  // float reload_time = 10;
-  if (this->reload_time() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->reload_time(), output);
-  }
-
   // @@protoc_insertion_point(serialize_end:GAME.OTHER_INFO)
 }
 
@@ -1355,11 +1332,6 @@ void OTHER_INFO::SerializeWithCachedSizes(
   // float speed = 9;
   if (this->speed() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->speed(), target);
-  }
-
-  // float reload_time = 10;
-  if (this->reload_time() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->reload_time(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:GAME.OTHER_INFO)
@@ -1425,11 +1397,6 @@ size_t OTHER_INFO::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float reload_time = 10;
-  if (this->reload_time() != 0) {
-    total_size += 1 + 4;
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -1487,9 +1454,6 @@ void OTHER_INFO::MergeFrom(const OTHER_INFO& from) {
   if (from.speed() != 0) {
     set_speed(from.speed());
   }
-  if (from.reload_time() != 0) {
-    set_reload_time(from.reload_time());
-  }
 }
 
 void OTHER_INFO::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1524,7 +1488,6 @@ void OTHER_INFO::InternalSwap(OTHER_INFO* other) {
   std::swap(max_hp_, other->max_hp_);
   std::swap(hp_, other->hp_);
   std::swap(speed_, other->speed_);
-  std::swap(reload_time_, other->reload_time_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -1699,20 +1662,6 @@ void OTHER_INFO::set_speed(float value) {
   
   speed_ = value;
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.speed)
-}
-
-// float reload_time = 10;
-void OTHER_INFO::clear_reload_time() {
-  reload_time_ = 0;
-}
-float OTHER_INFO::reload_time() const {
-  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.reload_time)
-  return reload_time_;
-}
-void OTHER_INFO::set_reload_time(float value) {
-  
-  reload_time_ = value;
-  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.reload_time)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -2772,7 +2721,6 @@ const int SC_NOTI_OTHER_ENTER_FIELD::kPosZFieldNumber;
 const int SC_NOTI_OTHER_ENTER_FIELD::kMaxHpFieldNumber;
 const int SC_NOTI_OTHER_ENTER_FIELD::kHpFieldNumber;
 const int SC_NOTI_OTHER_ENTER_FIELD::kSpeedFieldNumber;
-const int SC_NOTI_OTHER_ENTER_FIELD::kReloadTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SC_NOTI_OTHER_ENTER_FIELD::SC_NOTI_OTHER_ENTER_FIELD()
@@ -2793,15 +2741,15 @@ SC_NOTI_OTHER_ENTER_FIELD::SC_NOTI_OTHER_ENTER_FIELD(const SC_NOTI_OTHER_ENTER_F
     nickname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nickname_);
   }
   ::memcpy(&obj_id_, &from.obj_id_,
-    reinterpret_cast<char*>(&reload_time_) -
-    reinterpret_cast<char*>(&obj_id_) + sizeof(reload_time_));
+    reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(speed_));
   // @@protoc_insertion_point(copy_constructor:GAME.SC_NOTI_OTHER_ENTER_FIELD)
 }
 
 void SC_NOTI_OTHER_ENTER_FIELD::SharedCtor() {
   nickname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&reload_time_) -
-    reinterpret_cast<char*>(&obj_id_) + sizeof(reload_time_));
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(speed_));
   _cached_size_ = 0;
 }
 
@@ -2840,8 +2788,8 @@ SC_NOTI_OTHER_ENTER_FIELD* SC_NOTI_OTHER_ENTER_FIELD::New(::google::protobuf::Ar
 void SC_NOTI_OTHER_ENTER_FIELD::Clear() {
 // @@protoc_insertion_point(message_clear_start:GAME.SC_NOTI_OTHER_ENTER_FIELD)
   nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&reload_time_) -
-    reinterpret_cast<char*>(&obj_id_) + sizeof(reload_time_));
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(speed_));
 }
 
 bool SC_NOTI_OTHER_ENTER_FIELD::MergePartialFromCodedStream(
@@ -2982,20 +2930,6 @@ bool SC_NOTI_OTHER_ENTER_FIELD::MergePartialFromCodedStream(
         break;
       }
 
-      // float reload_time = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(85u)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &reload_time_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -3073,11 +3007,6 @@ void SC_NOTI_OTHER_ENTER_FIELD::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->speed(), output);
   }
 
-  // float reload_time = 10;
-  if (this->reload_time() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->reload_time(), output);
-  }
-
   // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_OTHER_ENTER_FIELD)
 }
 
@@ -3136,11 +3065,6 @@ void SC_NOTI_OTHER_ENTER_FIELD::SerializeWithCachedSizes(
   // float speed = 9;
   if (this->speed() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->speed(), target);
-  }
-
-  // float reload_time = 10;
-  if (this->reload_time() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->reload_time(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_OTHER_ENTER_FIELD)
@@ -3206,11 +3130,6 @@ size_t SC_NOTI_OTHER_ENTER_FIELD::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float reload_time = 10;
-  if (this->reload_time() != 0) {
-    total_size += 1 + 4;
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -3268,9 +3187,6 @@ void SC_NOTI_OTHER_ENTER_FIELD::MergeFrom(const SC_NOTI_OTHER_ENTER_FIELD& from)
   if (from.speed() != 0) {
     set_speed(from.speed());
   }
-  if (from.reload_time() != 0) {
-    set_reload_time(from.reload_time());
-  }
 }
 
 void SC_NOTI_OTHER_ENTER_FIELD::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3305,7 +3221,6 @@ void SC_NOTI_OTHER_ENTER_FIELD::InternalSwap(SC_NOTI_OTHER_ENTER_FIELD* other) {
   std::swap(max_hp_, other->max_hp_);
   std::swap(hp_, other->hp_);
   std::swap(speed_, other->speed_);
-  std::swap(reload_time_, other->reload_time_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -3480,20 +3395,6 @@ void SC_NOTI_OTHER_ENTER_FIELD::set_speed(float value) {
   
   speed_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.speed)
-}
-
-// float reload_time = 10;
-void SC_NOTI_OTHER_ENTER_FIELD::clear_reload_time() {
-  reload_time_ = 0;
-}
-float SC_NOTI_OTHER_ENTER_FIELD::reload_time() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
-  return reload_time_;
-}
-void SC_NOTI_OTHER_ENTER_FIELD::set_reload_time(float value) {
-  
-  reload_time_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

@@ -71,7 +71,6 @@
 			<max_hp type="int32"/>
 			<hp type="int32"/>
 			<speed type="float"/>
-			<reload_time type="float"/>
 		</OTHER_INFO>
 
 		<CS_SYNC_FIELD>
@@ -101,7 +100,6 @@
 			<max_hp type="int32"/>
 			<hp type="int32"/>
 			<speed type="float"/>
-			<reload_time type="float"/>
 		</SC_NOTI_OTHER_ENTER_FIELD>
 
 		<SC_NOTI_OTHER_LEAVE_FIELD>

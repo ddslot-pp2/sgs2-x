@@ -49,11 +49,20 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
     send.set_pos_y(pos.Y);
     send.set_pos_z(pos.Z);
 
-    auto hp = 100;
+    auto stat_info = c->get_stat_info();
+
+    auto max_hp = stat_info->max_hp.load();
+    send.set_max_hp(max_hp);
+
+    auto hp = stat_info->hp.load();
     send.set_hp(hp);
 
-    auto tank_type = 1;
+    auto tank_type = c->get_character_type();
     send.set_tank_type(tank_type);
+
+    auto speed = stat_info->speed.load();
+    send.set_speed(speed);
+    send.set_reload_time(stat_info->reload_time.load());
 
     auto nickname = session->get_tmp_nickname();
 
@@ -64,7 +73,9 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
     noti.set_pos_x(pos.X);
     noti.set_pos_x(pos.Y);
     noti.set_pos_x(pos.Z);
+    noti.set_max_hp(max_hp);
     noti.set_hp(hp);
+    noti.set_speed(speed);
     noti.set_tank_type(tank_type);
 
     // 주변 유저 정보 추가
@@ -84,18 +95,20 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
 
         other_info->set_nickname(core::wstring_to_utf8(other_session->get_tmp_nickname()));
        
-        auto pos = other->get_pos();
-        other_info->set_pos_x(pos.X);
-        other_info->set_pos_y(pos.Y);
-        other_info->set_pos_z(pos.Z);
+        auto other_pos = other->get_pos();
+        other_info->set_pos_x(other_pos.X);
+        other_info->set_pos_y(other_pos.Y);
+        other_info->set_pos_z(other_pos.Z);
 
-        auto stat_info = other->get_stat_info();
+        auto other_stat_info = other->get_stat_info();
 
-        other_info->set_hp(stat_info->hp);
+        other_info->set_max_hp(other_stat_info->max_hp);
+        other_info->set_hp(other_stat_info->hp);
+        other_info->set_speed(other_stat_info->speed);
 
         // 추후 처리해야 함
-        auto tank_type = 1;
-        other_info->set_tank_type(tank_type);
+        auto other_tank_type = other->get_character_type();
+        other_info->set_tank_type(other_tank_type);
     }
 
     send_packet(session, opcode::SC_SYNC_FIELD, send);

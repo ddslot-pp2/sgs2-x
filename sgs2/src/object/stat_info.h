@@ -24,7 +24,7 @@ public:
     std::atomic<float> exp = 0.0f;
     std::atomic<int>   score = 0;
 
-    std::atomic<int> enhance_buff_count = 0;
+    std::atomic<int> enhance_buff_count = 10;
 
     void copy(std::shared_ptr<stat_info> other)
     {

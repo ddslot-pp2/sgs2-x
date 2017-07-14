@@ -21,6 +21,8 @@ void character::initialize()
 {
     components_[comp_id::skill_comp] = std::make_shared<skill_component>(this);
     super::initialize();
+
+    character_type_ = 1;
 }
 
 void character::update(float delta)
