@@ -29,7 +29,12 @@ public:
 
 protected:
     std::weak_ptr<server_session> session_;
-    
+
+private:
+    void update_score();
+    void update_exp() const;
+  
+    int score_;
 };
 
 #endif

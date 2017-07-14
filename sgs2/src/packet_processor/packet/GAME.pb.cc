@@ -275,7 +275,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_SELECT_BUFF, obj_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_SELECT_BUFF, count_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_ENHANCE_BUFF, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -483,15 +483,15 @@ void AddDescriptorsImpl() {
       "_NOTI_RESPAWN_CHARACTER\022\016\n\006obj_id\030\001 \001(\003\022"
       "\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005pos_z\030\004"
       " \001(\002\022\016\n\006max_hp\030\005 \001(\005\022\n\n\002hp\030\006 \001(\005\022\r\n\005spee"
-      "d\030\007 \001(\002\022\023\n\013reload_time\030\010 \001(\002\" \n\016SC_SELEC"
-      "T_BUFF\022\016\n\006obj_id\030\001 \001(\003\"$\n\017CS_ENHANCE_BUF"
-      "F\022\021\n\tbuff_type\030\001 \001(\005\"q\n\037SC_NOTI_UPDATE_C"
-      "HARACTER_STATUS\022\016\n\006obj_id\030\001 \001(\003\022\016\n\006max_h"
-      "p\030\002 \001(\005\022\n\n\002hp\030\003 \001(\005\022\r\n\005speed\030\004 \001(\002\022\023\n\013re"
-      "load_time\030\005 \001(\002b\006proto3"
+      "d\030\007 \001(\002\022\023\n\013reload_time\030\010 \001(\002\"\037\n\016SC_SELEC"
+      "T_BUFF\022\r\n\005count\030\001 \001(\005\"$\n\017CS_ENHANCE_BUFF"
+      "\022\021\n\tbuff_type\030\001 \001(\005\"q\n\037SC_NOTI_UPDATE_CH"
+      "ARACTER_STATUS\022\016\n\006obj_id\030\001 \001(\003\022\016\n\006max_hp"
+      "\030\002 \001(\005\022\n\n\002hp\030\003 \001(\005\022\r\n\005speed\030\004 \001(\002\022\023\n\013rel"
+      "oad_time\030\005 \001(\002b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1983);
+      descriptor, 1982);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -8000,7 +8000,7 @@ void SC_NOTI_RESPAWN_CHARACTER::set_reload_time(float value) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SC_SELECT_BUFF::kObjIdFieldNumber;
+const int SC_SELECT_BUFF::kCountFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SC_SELECT_BUFF::SC_SELECT_BUFF()
@@ -8016,12 +8016,12 @@ SC_SELECT_BUFF::SC_SELECT_BUFF(const SC_SELECT_BUFF& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  obj_id_ = from.obj_id_;
+  count_ = from.count_;
   // @@protoc_insertion_point(copy_constructor:GAME.SC_SELECT_BUFF)
 }
 
 void SC_SELECT_BUFF::SharedCtor() {
-  obj_id_ = GOOGLE_LONGLONG(0);
+  count_ = 0;
   _cached_size_ = 0;
 }
 
@@ -8058,7 +8058,7 @@ SC_SELECT_BUFF* SC_SELECT_BUFF::New(::google::protobuf::Arena* arena) const {
 
 void SC_SELECT_BUFF::Clear() {
 // @@protoc_insertion_point(message_clear_start:GAME.SC_SELECT_BUFF)
-  obj_id_ = GOOGLE_LONGLONG(0);
+  count_ = 0;
 }
 
 bool SC_SELECT_BUFF::MergePartialFromCodedStream(
@@ -8071,14 +8071,14 @@ bool SC_SELECT_BUFF::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int64 obj_id = 1;
+      // int32 count = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &obj_id_)));
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &count_)));
         } else {
           goto handle_unusual;
         }
@@ -8112,9 +8112,9 @@ void SC_SELECT_BUFF::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 obj_id = 1;
-  if (this->obj_id() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->obj_id(), output);
+  // int32 count = 1;
+  if (this->count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->count(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:GAME.SC_SELECT_BUFF)
@@ -8126,9 +8126,9 @@ void SC_SELECT_BUFF::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 obj_id = 1;
-  if (this->obj_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->obj_id(), target);
+  // int32 count = 1;
+  if (this->count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->count(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_SELECT_BUFF)
@@ -8139,11 +8139,11 @@ size_t SC_SELECT_BUFF::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:GAME.SC_SELECT_BUFF)
   size_t total_size = 0;
 
-  // int64 obj_id = 1;
-  if (this->obj_id() != 0) {
+  // int32 count = 1;
+  if (this->count() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->obj_id());
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->count());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -8175,8 +8175,8 @@ void SC_SELECT_BUFF::MergeFrom(const SC_SELECT_BUFF& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.obj_id() != 0) {
-    set_obj_id(from.obj_id());
+  if (from.count() != 0) {
+    set_count(from.count());
   }
 }
 
@@ -8203,7 +8203,7 @@ void SC_SELECT_BUFF::Swap(SC_SELECT_BUFF* other) {
   InternalSwap(other);
 }
 void SC_SELECT_BUFF::InternalSwap(SC_SELECT_BUFF* other) {
-  std::swap(obj_id_, other->obj_id_);
+  std::swap(count_, other->count_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -8215,18 +8215,18 @@ void SC_SELECT_BUFF::InternalSwap(SC_SELECT_BUFF* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SC_SELECT_BUFF
 
-// int64 obj_id = 1;
-void SC_SELECT_BUFF::clear_obj_id() {
-  obj_id_ = GOOGLE_LONGLONG(0);
+// int32 count = 1;
+void SC_SELECT_BUFF::clear_count() {
+  count_ = 0;
 }
-::google::protobuf::int64 SC_SELECT_BUFF::obj_id() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_SELECT_BUFF.obj_id)
-  return obj_id_;
+::google::protobuf::int32 SC_SELECT_BUFF::count() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SELECT_BUFF.count)
+  return count_;
 }
-void SC_SELECT_BUFF::set_obj_id(::google::protobuf::int64 value) {
+void SC_SELECT_BUFF::set_count(::google::protobuf::int32 value) {
   
-  obj_id_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_SELECT_BUFF.obj_id)
+  count_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SELECT_BUFF.count)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

@@ -188,7 +188,7 @@
 		</SC_NOTI_RESPAWN_CHARACTER>
 
 		<SC_SELECT_BUFF>
-			<obj_id type="int64"/>
+			<count type="int32"/>
 		</SC_SELECT_BUFF>
 
 		<CS_ENHANCE_BUFF>

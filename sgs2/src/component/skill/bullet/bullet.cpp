@@ -78,19 +78,23 @@ void bullet::destroy() const
 void bullet::collide_with_other(std::shared_ptr<character> target_object)
 {
     // other hp 감소
-    auto stat_info = target_object->get_stat_info();
-    int target_hp = static_cast<float>(stat_info->hp) - power_;
+    auto target_stat_info = target_object->get_stat_info();
+    int target_hp = static_cast<float>(target_stat_info->hp) - power_;
 
-    stat_info->hp = target_hp;
+    target_stat_info->hp = target_hp;
 
     if (target_hp <= 0)
     {
-        target_object->destroy();
-        // 이 불렛이 마지막으로 destroy시킴
-        // object_->get_object_id();
+        auto stat_info = object_->get_stat_info();
+        auto score = stat_info->score.load();
+        auto reward_score = std::max(min_reward_score, (score / evaporation_percentage));
 
-        // 필드에 알려줘서 처리를 해줌
-        //object_->get_field()->reward_destroy_object(obj_id);
+        stat_info->score = stat_info->score + reward_score;
+
+        auto reward_exp = std::min(max_reward_exp, static_cast<float>(reward_score));
+        stat_info->exp = stat_info->exp + reward_exp;
+        
+        target_object->destroy();
     }
 
     GAME::SC_NOTI_DESTROY_BULLET noti;

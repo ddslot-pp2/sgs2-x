@@ -15,6 +15,8 @@ void handle_CS_ENHANCE_BUFF(std::shared_ptr<server_session> session, const GAME:
         return static_cast<std::underlying_type<buff_type>::type>(type);
     };
 
+    wprintf(L"버프 증가 초이스: %d\n", read.buff_type());
+
     auto stat_info = c->get_stat_info();
 
     if (stat_info->enhance_buff_count <= 0) return;

@@ -2045,17 +2045,17 @@ class SC_SELECT_BUFF : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
-  // int64 obj_id = 1;
-  void clear_obj_id();
-  static const int kObjIdFieldNumber = 1;
-  ::google::protobuf::int64 obj_id() const;
-  void set_obj_id(::google::protobuf::int64 value);
+  // int32 count = 1;
+  void clear_count();
+  static const int kCountFieldNumber = 1;
+  ::google::protobuf::int32 count() const;
+  void set_count(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:GAME.SC_SELECT_BUFF)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 obj_id_;
+  ::google::protobuf::int32 count_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -3666,18 +3666,18 @@ inline void SC_NOTI_RESPAWN_CHARACTER::set_reload_time(float value) {
 
 // SC_SELECT_BUFF
 
-// int64 obj_id = 1;
-inline void SC_SELECT_BUFF::clear_obj_id() {
-  obj_id_ = GOOGLE_LONGLONG(0);
+// int32 count = 1;
+inline void SC_SELECT_BUFF::clear_count() {
+  count_ = 0;
 }
-inline ::google::protobuf::int64 SC_SELECT_BUFF::obj_id() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_SELECT_BUFF.obj_id)
-  return obj_id_;
+inline ::google::protobuf::int32 SC_SELECT_BUFF::count() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SELECT_BUFF.count)
+  return count_;
 }
-inline void SC_SELECT_BUFF::set_obj_id(::google::protobuf::int64 value) {
+inline void SC_SELECT_BUFF::set_count(::google::protobuf::int32 value) {
   
-  obj_id_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_SELECT_BUFF.obj_id)
+  count_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SELECT_BUFF.count)
 }
 
 // -------------------------------------------------------------------
