@@ -187,6 +187,22 @@
 			<reload_time type="float"/>
 		</SC_NOTI_RESPAWN_CHARACTER>
 
+		<SC_SELECT_BUFF>
+			<obj_id type="int64"/>
+		</SC_SELECT_BUFF>
+
+		<CS_ENHANCE_BUFF>
+			<buff_type type="int32"/>
+		</CS_ENHANCE_BUFF>
+
+		<SC_NOTI_UPDATE_CHARACTER_STATUS>
+			<obj_id type="int64"/>
+			<max_hp type="int32"/>
+			<hp type="int32"/>
+			<speed type="float"/>
+			<reload_time type="float"/>
+		</SC_NOTI_UPDATE_CHARACTER_STATUS>
+
 	</GAME>
 
 

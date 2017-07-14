@@ -34,6 +34,9 @@ namespace GAME {
 class BULLET_INFO;
 class BULLET_INFODefaultTypeInternal;
 extern BULLET_INFODefaultTypeInternal _BULLET_INFO_default_instance_;
+class CS_ENHANCE_BUFF;
+class CS_ENHANCE_BUFFDefaultTypeInternal;
+extern CS_ENHANCE_BUFFDefaultTypeInternal _CS_ENHANCE_BUFF_default_instance_;
 class CS_FIRE;
 class CS_FIREDefaultTypeInternal;
 extern CS_FIREDefaultTypeInternal _CS_FIRE_default_instance_;
@@ -76,9 +79,15 @@ extern SC_NOTI_OTHER_MOVEDefaultTypeInternal _SC_NOTI_OTHER_MOVE_default_instanc
 class SC_NOTI_RESPAWN_CHARACTER;
 class SC_NOTI_RESPAWN_CHARACTERDefaultTypeInternal;
 extern SC_NOTI_RESPAWN_CHARACTERDefaultTypeInternal _SC_NOTI_RESPAWN_CHARACTER_default_instance_;
+class SC_NOTI_UPDATE_CHARACTER_STATUS;
+class SC_NOTI_UPDATE_CHARACTER_STATUSDefaultTypeInternal;
+extern SC_NOTI_UPDATE_CHARACTER_STATUSDefaultTypeInternal _SC_NOTI_UPDATE_CHARACTER_STATUS_default_instance_;
 class SC_PING;
 class SC_PINGDefaultTypeInternal;
 extern SC_PINGDefaultTypeInternal _SC_PING_default_instance_;
+class SC_SELECT_BUFF;
+class SC_SELECT_BUFFDefaultTypeInternal;
+extern SC_SELECT_BUFFDefaultTypeInternal _SC_SELECT_BUFF_default_instance_;
 class SC_SYNC_FIELD;
 class SC_SYNC_FIELDDefaultTypeInternal;
 extern SC_SYNC_FIELDDefaultTypeInternal _SC_SYNC_FIELD_default_instance_;
@@ -1970,6 +1979,274 @@ class SC_NOTI_RESPAWN_CHARACTER : public ::google::protobuf::Message /* @@protoc
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class SC_SELECT_BUFF : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_SELECT_BUFF) */ {
+ public:
+  SC_SELECT_BUFF();
+  virtual ~SC_SELECT_BUFF();
+
+  SC_SELECT_BUFF(const SC_SELECT_BUFF& from);
+
+  inline SC_SELECT_BUFF& operator=(const SC_SELECT_BUFF& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_SELECT_BUFF& default_instance();
+
+  static inline const SC_SELECT_BUFF* internal_default_instance() {
+    return reinterpret_cast<const SC_SELECT_BUFF*>(
+               &_SC_SELECT_BUFF_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    17;
+
+  void Swap(SC_SELECT_BUFF* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_SELECT_BUFF* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_SELECT_BUFF* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_SELECT_BUFF& from);
+  void MergeFrom(const SC_SELECT_BUFF& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_SELECT_BUFF* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_SELECT_BUFF)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 obj_id_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class CS_ENHANCE_BUFF : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.CS_ENHANCE_BUFF) */ {
+ public:
+  CS_ENHANCE_BUFF();
+  virtual ~CS_ENHANCE_BUFF();
+
+  CS_ENHANCE_BUFF(const CS_ENHANCE_BUFF& from);
+
+  inline CS_ENHANCE_BUFF& operator=(const CS_ENHANCE_BUFF& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_ENHANCE_BUFF& default_instance();
+
+  static inline const CS_ENHANCE_BUFF* internal_default_instance() {
+    return reinterpret_cast<const CS_ENHANCE_BUFF*>(
+               &_CS_ENHANCE_BUFF_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    18;
+
+  void Swap(CS_ENHANCE_BUFF* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_ENHANCE_BUFF* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_ENHANCE_BUFF* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_ENHANCE_BUFF& from);
+  void MergeFrom(const CS_ENHANCE_BUFF& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_ENHANCE_BUFF* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 buff_type = 1;
+  void clear_buff_type();
+  static const int kBuffTypeFieldNumber = 1;
+  ::google::protobuf::int32 buff_type() const;
+  void set_buff_type(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GAME.CS_ENHANCE_BUFF)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 buff_type_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_NOTI_UPDATE_CHARACTER_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS) */ {
+ public:
+  SC_NOTI_UPDATE_CHARACTER_STATUS();
+  virtual ~SC_NOTI_UPDATE_CHARACTER_STATUS();
+
+  SC_NOTI_UPDATE_CHARACTER_STATUS(const SC_NOTI_UPDATE_CHARACTER_STATUS& from);
+
+  inline SC_NOTI_UPDATE_CHARACTER_STATUS& operator=(const SC_NOTI_UPDATE_CHARACTER_STATUS& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_NOTI_UPDATE_CHARACTER_STATUS& default_instance();
+
+  static inline const SC_NOTI_UPDATE_CHARACTER_STATUS* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_UPDATE_CHARACTER_STATUS*>(
+               &_SC_NOTI_UPDATE_CHARACTER_STATUS_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    19;
+
+  void Swap(SC_NOTI_UPDATE_CHARACTER_STATUS* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_NOTI_UPDATE_CHARACTER_STATUS* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_NOTI_UPDATE_CHARACTER_STATUS* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_NOTI_UPDATE_CHARACTER_STATUS& from);
+  void MergeFrom(const SC_NOTI_UPDATE_CHARACTER_STATUS& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_NOTI_UPDATE_CHARACTER_STATUS* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // int32 max_hp = 2;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 2;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 hp = 3;
+  void clear_hp();
+  static const int kHpFieldNumber = 3;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // float speed = 4;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 4;
+  float speed() const;
+  void set_speed(float value);
+
+  // float reload_time = 5;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 5;
+  float reload_time() const;
+  void set_reload_time(float value);
+
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 obj_id_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 hp_;
+  float speed_;
+  float reload_time_;
+  mutable int _cached_size_;
+  friend struct protobuf_GAME_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -3385,7 +3662,123 @@ inline void SC_NOTI_RESPAWN_CHARACTER::set_reload_time(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.reload_time)
 }
 
+// -------------------------------------------------------------------
+
+// SC_SELECT_BUFF
+
+// int64 obj_id = 1;
+inline void SC_SELECT_BUFF::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_SELECT_BUFF::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SELECT_BUFF.obj_id)
+  return obj_id_;
+}
+inline void SC_SELECT_BUFF::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SELECT_BUFF.obj_id)
+}
+
+// -------------------------------------------------------------------
+
+// CS_ENHANCE_BUFF
+
+// int32 buff_type = 1;
+inline void CS_ENHANCE_BUFF::clear_buff_type() {
+  buff_type_ = 0;
+}
+inline ::google::protobuf::int32 CS_ENHANCE_BUFF::buff_type() const {
+  // @@protoc_insertion_point(field_get:GAME.CS_ENHANCE_BUFF.buff_type)
+  return buff_type_;
+}
+inline void CS_ENHANCE_BUFF::set_buff_type(::google::protobuf::int32 value) {
+  
+  buff_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.CS_ENHANCE_BUFF.buff_type)
+}
+
+// -------------------------------------------------------------------
+
+// SC_NOTI_UPDATE_CHARACTER_STATUS
+
+// int64 obj_id = 1;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_UPDATE_CHARACTER_STATUS::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.obj_id)
+  return obj_id_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.obj_id)
+}
+
+// int32 max_hp = 2;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.max_hp)
+  return max_hp_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.max_hp)
+}
+
+// int32 hp = 3;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.hp)
+  return hp_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.hp)
+}
+
+// float speed = 4;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_speed() {
+  speed_ = 0;
+}
+inline float SC_NOTI_UPDATE_CHARACTER_STATUS::speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.speed)
+  return speed_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.speed)
+}
+
+// float reload_time = 5;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline float SC_NOTI_UPDATE_CHARACTER_STATUS::reload_time() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.reload_time)
+  return reload_time_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_reload_time(float value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.reload_time)
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

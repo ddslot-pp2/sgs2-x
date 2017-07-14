@@ -144,9 +144,9 @@ void field::leave_field(object_id id)
 
     for (const auto& kv : characters_)
     {
-        auto user = kv.second;
+        auto other = kv.second;
 
-        auto other_session = user->get_session();
+        auto other_session = other->get_session();
         if (!other_session) continue;
 
         send_packet(other_session, opcode::SC_NOTI_OTHER_LEAVE_FIELD, noti);
@@ -168,4 +168,29 @@ void field::respawn_character(object_id id)
 void field::sync_field(std::shared_ptr<server_session> session) const
 {
     wprintf(L"sync field called\n");
+}
+
+void field::update_character_status(object_id id) const
+{
+    auto it = characters_.find(id);
+    if (it == characters_.end()) return;
+    
+    auto stat_info = it->second->get_stat_info();
+
+    GAME::SC_NOTI_UPDATE_CHARACTER_STATUS noti;
+    noti.set_obj_id(id);
+    noti.set_max_hp(stat_info->max_hp);
+    noti.set_hp(stat_info->hp);
+    noti.set_speed(stat_info->speed);
+    noti.set_reload_time(stat_info->reload_time);
+
+    for (const auto& kv : characters_)
+    {
+        auto other = kv.second;
+
+        auto other_session = other->get_session();
+        if (!other_session) continue;
+
+        send_packet(other_session, opcode::SC_NOTI_UPDATE_CHARACTER_STATUS, noti);
+    }
 }

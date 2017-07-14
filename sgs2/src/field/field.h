@@ -41,6 +41,8 @@ public:
 
     std::map<object_id, std::shared_ptr<character>>& get_view_list();
 
+    void update_character_status(object_id id) const;
+
 protected:
 
     unsigned int field_id_;

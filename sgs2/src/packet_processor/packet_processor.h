@@ -20,6 +20,7 @@ void handle_CS_SYNC_FIELD(std::shared_ptr<server_session> session, const GAME::C
 void handle_CS_NOTI_MOVE(std::shared_ptr<server_session> session, const GAME::CS_NOTI_MOVE& read);
 void handle_CS_FIRE(std::shared_ptr<server_session> session, const GAME::CS_FIRE& read);
 void handle_CS_RESPAWN_CHARACTER(std::shared_ptr<server_session> session, const GAME::CS_RESPAWN_CHARACTER& read);
+void handle_CS_ENHANCE_BUFF(std::shared_ptr<server_session> session, const GAME::CS_ENHANCE_BUFF& read);
 
 
 void register_handlers();
