@@ -136,7 +136,7 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
     }
 }
 
-void skill_component::volley_fire(bullet::type type, const vector3& pos, const vector3& dir, int count, const std::array<vector3, 4>& dirs)
+void skill_component::volley_fire(bullet::type type, const vector3& pos, const vector3& dir, int count, const std::array<vector3, max_volley_count>& dirs)
 {
     wprintf(L"VOLLEY FIRE!!!!\n");
     bullet_id bullet_object_id = 0;
@@ -145,8 +145,8 @@ void skill_component::volley_fire(bullet::type type, const vector3& pos, const v
     const auto power = object_->get_stat_info()->bullet_power.load();
     const auto distance = object_->get_stat_info()->bullet_distance.load();
 
-    std::array<bullet_id, 4> bullet_obj_ids;
-    std::array<vector3, 4>   sizes;
+    std::array<bullet_id, max_volley_count> bullet_obj_ids;
+    std::array<vector3, max_volley_count>   sizes;
 
     for (auto i = 0; i < count; ++i)
     {
@@ -177,7 +177,7 @@ void skill_component::volley_fire(bullet::type type, const vector3& pos, const v
 
 }
 
-void skill_component::noti_volley_fire(bullet::type type, object_id obj_id, std::array<bullet_id, 4> bullet_obj_ids, const vector3& pos, const vector3& dir, int count, const std::array<vector3, 4>& bullet_dirs, const std::array<vector3, 4>& sizes, float speed, float distance) const
+void skill_component::noti_volley_fire(bullet::type type, object_id obj_id, std::array<bullet_id, max_volley_count> bullet_obj_ids, const vector3& pos, const vector3& dir, int count, const std::array<vector3, max_volley_count>& bullet_dirs, const std::array<vector3, max_volley_count>& sizes, float speed, float distance) const
 {
     // view_list에게 bullet정보를 전달해줌
     GAME::SC_NOTI_FIRE noti;
