@@ -136,6 +136,93 @@ void skill_component::noti_fire(bullet::type type, object_id obj_id, bullet_id b
     }
 }
 
+void skill_component::volley_fire(bullet::type type, const vector3& pos, const vector3& dir, int count, const std::array<vector3, 4>& dirs)
+{
+    wprintf(L"VOLLEY FIRE!!!!\n");
+    bullet_id bullet_object_id = 0;
+
+    const auto speed = object_->get_stat_info()->bullet_speed.load();
+    const auto power = object_->get_stat_info()->bullet_power.load();
+    const auto distance = object_->get_stat_info()->bullet_distance.load();
+
+    std::array<bullet_id, 4> bullet_obj_ids;
+    std::array<vector3, 4>   sizes;
+
+    for (auto i = 0; i < count; ++i)
+    {
+        vector3 size(0.0f, 0.0f, 0.0f);
+        // 추후 factory 처리
+        std::unique_ptr<bullet> bullet_object = nullptr;
+        if (type == bullet::type::default_bullet)
+        {
+            size = vector3(2.0f, 2.0f, 2.0f);
+            sizes[i] = size;
+            bullet_object = std::make_unique<default_bullet>(object_, dirs[i], size, speed, distance, power);
+        }
+
+        if (bullet_object)
+        {
+            bullet_object_id = reinterpret_cast<std::uintptr_t>(&(*bullet_object));
+            bullet_object->set_bullet_id(bullet_object_id);
+
+            bullet_obj_ids[i] = bullet_object_id;
+            bullets_[bullet_object_id] = std::move(bullet_object);
+        }
+    }
+
+    if (count > 0)
+    {
+        noti_volley_fire(type, object_->get_object_id(), bullet_obj_ids, pos, dir, count, dirs, sizes, speed, distance);
+    }
+
+}
+
+void skill_component::noti_volley_fire(bullet::type type, object_id obj_id, std::array<bullet_id, 4> bullet_obj_ids, const vector3& pos, const vector3& dir, int count, const std::array<vector3, 4>& bullet_dirs, const std::array<vector3, 4>& sizes, float speed, float distance) const
+{
+    // view_list에게 bullet정보를 전달해줌
+    GAME::SC_NOTI_FIRE noti;
+
+    noti.set_obj_id(obj_id);
+    noti.set_bullet_type(to_integral(type));
+
+    noti.set_pos_x(pos.X);
+    noti.set_pos_y(pos.Y);
+    noti.set_pos_z(pos.Z);
+
+    noti.set_dir_x(dir.X);
+    noti.set_dir_y(dir.Y);
+    noti.set_dir_z(dir.Z);
+
+    for (auto i = 0; i < count; ++i)
+    {
+        auto bullet_info = noti.add_bullet_infos();
+
+        bullet_info->set_bullet_id(bullet_obj_ids[i]);
+
+        bullet_info->set_dir_x(bullet_dirs[i].X);
+        bullet_info->set_dir_y(bullet_dirs[i].Y);
+        bullet_info->set_dir_z(bullet_dirs[i].Z);
+
+        bullet_info->set_size_x(sizes[i].X);
+        bullet_info->set_size_y(sizes[i].Y);
+        bullet_info->set_size_z(sizes[i].Z);
+
+        bullet_info->set_speed(speed);
+        bullet_info->set_distance(distance);
+    }
+
+    auto& view_list = object_->get_field()->get_view_list();
+    for (auto view : view_list)
+    {
+        auto other = view.second;
+        auto other_session = other->get_session();
+        if (other_session)
+        {
+            send_packet(other_session, opcode::SC_NOTI_FIRE, noti);
+        }
+    }
+}
+
 void skill_component::reset()
 {
     super::reset();
