@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<character_property>
+	<character>	
+		<id>0</id>
+		<name>BillyTank</name>
+		<max_hp>100</max_hp>
+		<speed>5.0</speed>
+		<size_x>2.0</size_x>
+		<size_y>2.0</size_y>
+		<size_z>2.0</size_z>
+		<bullet_id>0</bullet_id>
+		<reload_time>1000.0</reload_time>
+	</character>
+</character_property>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bullet_property>
+	<bullet>	
+		<id>0</id>
+		<name>default_bullet</name>
+		<speed>20.0f</speed>
+		<power>2.0</power>
+		<distance>20.0</distance>
+		<size_x>1.0</size_x>
+		<size_y>1.0</size_y>
+		<size_z>1.0</size_z>
+	</bullet>
+</bullet_property>

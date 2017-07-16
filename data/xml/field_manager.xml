@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<field_manager>
+	<field>	
+		<id>0</id>
+
+		<name>이집트</name>
+		<count>20</count>
+		<max_user_per_field>50</max_user_per_field>
+
+		<size_x>100.0</size_x>
+		<size_y>1.0</size_y>
+		<size_z>100.0</size_z>
+
+		<hp_item_spawn>5000.0f</hp_item_spawn>
+		<max_hp_item_count>20</max_hp_item_count>
+
+		<crystal_spawn>2000.0f</crystal_spawn>
+		<max_crystal_count>50</max_crystal_count>
+
+		<gold_spawn>5000.0f</gold_spawn>
+		<max_gold_count>20</max_gold_count>
+
+		<spawn_infos>
+			<spawn_info>
+				<pos_x>20.0f</pos_x>
+				<pos_y>0.0f</pos_y>
+				<pos_z>20.0f</pos_z>
+				<radius>5.0f</radius>
+			</spawn_info>
+			<spawn_info>
+				<pos_x>120.0f</pos_x>
+				<pos_y>0.0f</pos_y>
+				<pos_z>120.0f</pos_z>
+				<radius>5.0f</radius>
+			</spawn_info>
+		</spawn_infos>
+
+		<collider_infos>
+			<collider_info>
+					<pos_x>120.0f</pos_x>
+					<pos_y>0.0f</pos_y>
+					<pos_z>120.0f</pos_z>
+					<radius>5.0f</radius>
+			</collider_info>
+			<collider_info>
+					<pos_x>50.0f</pos_x>
+					<pos_y>0.0f</pos_y>
+					<pos_z>30.0f</pos_z>
+					<radius>5.0f</radius>
+			</collider_info>
+		</collider_infos>
+
+		
+	</field>
+	<!--
+	<field>	
+		<id>1</id>
+		<name>도심</name>
+		<count>10</count>
+		<xml_file>city_field.xml</xml_file>
+	</field>
+	-->
+</field_manager>
