@@ -4,7 +4,7 @@
 
 void field_manager::create_fields() 
 {
-    for (auto i = 0; i < 50; ++i)
+    for (auto i = 0; i < 1; ++i)
     {
         auto field = std::make_shared<egypt_field>(i);
         fields_.emplace_back(field);

@@ -18,46 +18,34 @@ egypt_field::~egypt_field()
 void egypt_field::initialize()
 {
     // rotation: -16.873
-    //colliders_.emplace_back(collider(vector3(-7.0, 0.0f, -23.4f), vector3(10.0f, 0.0f, 10.0f), -16.873));
+    //colliders_.emplace_back(collider(vector3(-7.0, 0.0f, -23.4f), vector3(10.0f, 0.0f, 10.0f), -16.873f));
+    //colliders_.emplace_back(collider(vector3(10.0, 0.0f, 0.0f), vector3(10.0f, 0.0f, 10.0f),  90.0f));
 
-
-    colliders_.emplace_back(collider(vector3(-36.5f, 0.0f, -35.3f), vector3(10.0f, 0.0f, 10.0f),  31.815f));
+    colliders_.emplace_back(collider(vector3(-36.5f, 0.0f, 35.3f), vector3(10.0f, 0.0f, 10.0f),  31.815f));
     colliders_.emplace_back(collider(vector3( 45.0f, 0.0f,  44.8f), vector3(10.0f, 0.0f, 10.0f), -28.189f));
     colliders_.emplace_back(collider(vector3( 46.5f, 0.0f, -42.0f), vector3(10.0f, 0.0f, 10.0f), -38.78f));
     colliders_.emplace_back(collider(vector3(-36.1f, 0.0f, -41.2f), vector3(10.0f, 0.0f, 10.0f), -63.455f));
-        
     colliders_.emplace_back(collider(vector3(-15.6f, 0.0f,   8.9f), vector3(10.0f, 0.0f, 10.0f), -19.766f));
     colliders_.emplace_back(collider(vector3( 24.3f, 0.0f, -11.4f), vector3(10.0f, 0.0f, 10.0f), 32.987f));
-
     colliders_.emplace_back(collider(vector3(-7.0f, 0.0f, -23.4f), vector3(10.0f, 0.0f, 10.0f), -16.873f));
     colliders_.emplace_back(collider(vector3(14.3f, 0.0f,  26.4f), vector3(10.0f, 0.0f, 10.0f),  16.314f));
-
     colliders_.emplace_back(collider(vector3(-56.0f, 0.0f,  55.1f), vector3(5.0f, 0.0f, 5.0f),  32.378f));
     colliders_.emplace_back(collider(vector3( 61.0f, 0.0f,  59.1f), vector3(5.0f, 0.0f, 5.0f), -31.039f));
     colliders_.emplace_back(collider(vector3( 49.0f, 0.0f, -14.4f), vector3(5.0f, 0.0f, 5.0f), -34.395f));
     colliders_.emplace_back(collider(vector3(-55.6f, 0.0f, -59.8f), vector3(5.0f, 0.0f, 5.0f), -23.465f));
     colliders_.emplace_back(collider(vector3(53.8f, 0.0f,  -61.3f), vector3(5.0f, 0.0f, 5.0f), -20.887f));
-    
     colliders_.emplace_back(collider(vector3(-36.4f, 0.0f, -11.5f), vector3(5.0f, 0.0f, 5.0f),  23.794f));
     colliders_.emplace_back(collider(vector3( -9.2f, 0.0f,  44.5f), vector3(5.0f, 0.0f, 5.0f), -30.408f));
-
     colliders_.emplace_back(collider(vector3(42.8f, 0.0f,  19.2f), vector3(5.0f, 0.0f, 5.0f), -35.617f));
     colliders_.emplace_back(collider(vector3(26.1f, 0.0f, -47.1f), vector3(5.0f, 0.0f, 5.0f),  21.373f));
-
     colliders_.emplace_back(collider(vector3(-14.0f, 0.0f, -46.9f), vector3(5.0f, 0.0f, 5.0f), -41.659f));
     colliders_.emplace_back(collider(vector3( 30.6f, 0.0f,  56.4f), vector3(5.0f, 0.0f, 5.0f), -27.661f));
-
     colliders_.emplace_back(collider(vector3(-48.8f, 0.0f,  18.2f), vector3(5.0f, 0.0f, 5.0f), -37.117f));
     colliders_.emplace_back(collider(vector3( 13.3f, 0.0f, -23.8f), vector3(5.0f, 0.0f, 5.0f), -20.314f));
-
     colliders_.emplace_back(collider(vector3(-6.8f, 0.0f,  21.8f), vector3(5.0f, 0.0f, 5.0f),   31.268f));
-    
-    
     colliders_.emplace_back(collider(vector3(19.4f, 0.0f,   8.3f), vector3(5.0f, 0.0f, 5.0f), -29.955f));
-
     colliders_.emplace_back(collider(vector3(-56.4, 0.0f, -23.8f), vector3(5.0f, 0.0f, 5.0f), -26.436f));
     colliders_.emplace_back(collider(vector3( 58.5f, 0.0f,-26.8f), vector3(5.0f, 0.0f, 5.0f), -22.443f));
-
     colliders_.emplace_back(collider(vector3( 15.8f, 0.0f,  49.4f), vector3(5.0f, 0.0f, 5.0f), -32.244f));
     colliders_.emplace_back(collider(vector3(-24.5f, 0.0f,  59.5f), vector3(5.0f, 0.0f, 5.0f), -23.226f));
     colliders_.emplace_back(collider(vector3( 16.5f, 0.0f, -58.8f), vector3(5.0f, 0.0f, 5.0f), -24.652f));  
