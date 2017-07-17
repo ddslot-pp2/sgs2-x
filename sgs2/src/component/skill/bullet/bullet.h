@@ -29,7 +29,7 @@ public:
     bool over_distance() const;
     bool check_intersection(const vector3& bullet_pos, const vector3& other_pos, const vector3& bullet_size, const vector3& other_size) const;
 
-    bool collide_with_collider();
+    bool collide_with_collider() const;
 
     object* object_;
     vector3 from_;

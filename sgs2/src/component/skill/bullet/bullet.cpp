@@ -181,12 +181,17 @@ bool bullet::check_intersection(const vector3& bullet_pos, const vector3& other_
     return true;
 }
 
-bool bullet::collide_with_collider()
+bool bullet::collide_with_collider() const
 {
     auto colliders = object_->get_field()->get_colliders();
 
     for (const auto& collider : colliders)
     {
-        return collider.check_intersection(pos_, size_);
+        if (collider.check_intersection(pos_, size_))
+        {
+            return true;
+        }
     }
+
+    return false;
 }
