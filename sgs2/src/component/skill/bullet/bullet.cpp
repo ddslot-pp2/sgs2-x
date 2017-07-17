@@ -53,6 +53,13 @@ void bullet::update(float delta)
         return;
     }
 
+    if (collide_with_collider())
+    {
+        wprintf(L"Á¶Çü¹°¿¡ ºÎµúÇô¼­ ÃÑ¾Ë ÆÄ±«\n");
+        destroy_ = true;
+        return;
+    }
+
     pos_ = pos_ + (dir_ * speed_ * delta);
     //wprintf(L"ÃÑ¾Ë ÀÌµ¿Áß x: %f, z: %f\n", pos_.X, pos_.Z);
 }
@@ -172,4 +179,14 @@ bool bullet::check_intersection(const vector3& bullet_pos, const vector3& other_
     if (a_max_z < b_min_z || a_min_z > b_max_z) return false;
 
     return true;
+}
+
+bool bullet::collide_with_collider()
+{
+    auto colliders = object_->get_field()->get_colliders();
+
+    for (const auto& collider : colliders)
+    {
+        return collider.check_intersection(pos_, size_);
+    }
 }

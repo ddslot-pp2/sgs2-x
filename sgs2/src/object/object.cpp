@@ -29,7 +29,7 @@ void object::initialize()
     stat_->max_hp = 100;
     stat_->hp = 100;
     stat_->speed = 10.0f;
-    stat_->bullet_speed = 25.0f;
+    stat_->bullet_speed = 10.0f;
     stat_->bullet_power = 5.0f;
     stat_->bullet_distance = 25.0f;
     stat_->reload_time = 1000.0f; // 1√ 

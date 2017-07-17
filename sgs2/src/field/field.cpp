@@ -110,7 +110,7 @@ void field::enter_field(std::shared_ptr<server_session> session)
     characters_[object_id] = c;
     c->set_object_id(object_id);
 
-    vector3 spawn_pos(5.0f, 0.0f, 0.0f);
+    vector3 spawn_pos(11.0f, 0.0f, 0.0f);
     c->set_pos(spawn_pos);
 
     session->set_character(c);

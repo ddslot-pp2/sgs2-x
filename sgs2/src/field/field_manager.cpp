@@ -6,7 +6,9 @@ void field_manager::create_fields()
 {
     for (auto i = 0; i < 50; ++i)
     {
-        fields_.emplace_back(std::make_shared<egypt_field>(i));
+        auto field = std::make_shared<egypt_field>(i);
+        fields_.emplace_back(field);
+        field->initialize();
     }
 }
 

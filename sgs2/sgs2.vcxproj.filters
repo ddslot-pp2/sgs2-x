@@ -132,6 +132,15 @@
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_ENHANCE_BUFF.cpp">
       <Filter>src\packet_processor\packet_handler\game</Filter>
     </ClCompile>
+    <ClCompile Include="src\object\item.cpp">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\hp_item.cpp">
+      <Filter>src\object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\collider.cpp">
+      <Filter>src\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -195,6 +204,15 @@
       <Filter>src\component\skill\bullet</Filter>
     </ClInclude>
     <ClInclude Include="src\object\stat_info.h">
+      <Filter>src\object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object\item.h">
+      <Filter>src\object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object\hp_item.h">
+      <Filter>src\object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object\collider.h">
       <Filter>src\object</Filter>
     </ClInclude>
   </ItemGroup>

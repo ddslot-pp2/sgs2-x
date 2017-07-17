@@ -17,7 +17,9 @@ egypt_field::~egypt_field()
 
 void egypt_field::initialize()
 {
-
+    // rotation: -16.873
+    //colliders_.emplace_back(collider(vector3(-7.0, 0.0f, -23.4f), vector3(10.0f, 0.0f, 10.0f)));
+    colliders_.emplace_back(collider(vector3(-10.0, 0.0f, -5.0f), vector3(10.0f, 0.0f, 10.0f)));
 }
 
 void egypt_field::update(float delta)

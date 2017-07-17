@@ -9,6 +9,7 @@
 #include <concurrent_queue.h>
 #include "../object/character.h"
 #include "../server_session/server_session.h"
+#include "../object/collider.h"
 
 class field : std::enable_shared_from_this<field>
 {
@@ -43,11 +44,15 @@ public:
 
     void update_character_status(object_id id) const;
 
+    std::vector<collider>& get_colliders() { return colliders_; }
+
 protected:
 
     unsigned int field_id_;
     Concurrency::concurrent_queue<task> q_;
     std::map<object_id, std::shared_ptr<character>> characters_;
+
+    std::vector<collider> colliders_;
 
 private:
     void process_task();
