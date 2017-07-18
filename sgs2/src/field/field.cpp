@@ -8,7 +8,7 @@
 
 using namespace network;
 
-field::field(unsigned int field_id) : field_id_(field_id)
+field::field(unsigned int field_id) : field_id_(field_id), last_update_(clock())
 {
 
 }

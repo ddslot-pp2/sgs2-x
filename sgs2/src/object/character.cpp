@@ -145,7 +145,7 @@ void character::update_exp() const
     stat_->exp = stat_->exp - (level_up_count * 100.0f);
 
     stat_->level = stat_->level + static_cast<int>(level_up_count);
-    wprintf(L"현재 레벨: %d\n", stat_->level);
+    wprintf(L"현재 레벨: %d\n", stat_->level.load());
 
     stat_->enhance_buff_count += level_up_count;
 
