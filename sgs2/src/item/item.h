@@ -11,7 +11,6 @@ class field;
 class item : public std::enable_shared_from_this<item>
 {
 public:
-
     enum class type : int { hp = 0 };
 
     explicit item(field_id id, std::chrono::milliseconds reactive_time, const vector3& pos);
@@ -21,6 +20,15 @@ public:
 
     virtual void destroy();
     //void set_active(bool active) { active_ = active; }
+
+    void set_item_id(item_id id) { item_id_ = id; }
+    item_id get_item_id() const { return item_id_; }
+
+    type get_type() const { return type_; }
+
+    const vector3& get_pos() const { return pos_; }
+
+    bool get_active() const { return active_; }
 
 protected:
     bool check_intersection(const vector3& character_pos, const vector3& character_size) const;
@@ -39,6 +47,7 @@ protected:
     vector3 size_;
 
     type type_;
+    item_id item_id_;
 };
 
 #endif

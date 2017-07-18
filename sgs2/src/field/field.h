@@ -11,6 +11,8 @@
 #include "../server_session/server_session.h"
 #include "../object/collider.h"
 
+class item;
+
 class field : std::enable_shared_from_this<field>
 {
 public:
@@ -40,11 +42,44 @@ public:
         q_.push(f);
     }
 
+    template <typename T, typename P>
+    void noti_packet(T opcode, P noti) const
+    {
+        for (const auto& kv : characters_)
+        {
+            auto other = kv.second;
+
+            auto other_session = other->get_session();
+            if (!other_session) continue;
+
+            send_packet(other_session, opcode, noti);
+        }
+    }
+
+    template <typename T, typename P, typename I>
+    void noti_packet(T opcode, P noti, I obj_id) const
+    {
+        for (const auto& kv : characters_)
+        {
+            auto other = kv.second;
+
+            if (obj_id == other->get_object_id()) continue;
+
+            auto other_session = other->get_session();
+            if (!other_session) continue;
+
+            send_packet(other_session, opcode, noti);
+        }
+    }
+
     std::map<object_id, std::shared_ptr<character>>& get_view_list();
 
     void update_character_status(object_id id) const;
 
     std::vector<collider>& get_colliders() { return colliders_; }
+
+    void noti_active_item() const;
+    void noti_active_item(std::shared_ptr<server_session> session) const;
 
 protected:
 
@@ -53,6 +88,7 @@ protected:
     std::map<object_id, std::shared_ptr<character>> characters_;
 
     std::vector<collider> colliders_;
+    std::vector<std::shared_ptr<item>> items_;
 
 private:
     void process_task();

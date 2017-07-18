@@ -2,10 +2,13 @@
 #include "../field/field_manager.h"
 #include "../field/field.h"
 
-item::item(field_id id, std::chrono::milliseconds reactive_time, const vector3& pos) : field_id_(id), reactive_time_(reactive_time), pos_(pos), active_(true)
+item::item(field_id id, std::chrono::milliseconds reactive_time, const vector3& pos) : field_id_(id), active_(true), reactive_time_(reactive_time), pos_(pos), size_(vector3(2.0f, 0.0, 2.0f))
 {
     field_ = field_manager::instance().get_field(id);
     active_timer_ = std::make_unique<timer_ptr::element_type>(network::io_service());
+
+    item_id_ = reinterpret_cast<std::uintptr_t>(this);
+    //wprintf(L"item_id: %lld\n", item_id_);
 }
 
 item::~item()

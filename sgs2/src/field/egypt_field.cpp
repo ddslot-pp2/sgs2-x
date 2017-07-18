@@ -2,6 +2,7 @@
 #include "../packet_processor/packet/GAME.pb.h"
 #include "../packet_processor/send_helper.h"
 #include "../core/src/locale/string_helper.h"
+#include "../item/hp_item.h"
 
 using super = field;
 
@@ -44,12 +45,16 @@ void egypt_field::initialize()
     colliders_.emplace_back(collider(vector3( 13.3f, 0.0f, -23.8f), vector3(5.0f, 0.0f, 5.0f), -20.314f));
     colliders_.emplace_back(collider(vector3(-6.8f, 0.0f,  21.8f), vector3(5.0f, 0.0f, 5.0f),   31.268f));
     colliders_.emplace_back(collider(vector3(19.4f, 0.0f,   8.3f), vector3(5.0f, 0.0f, 5.0f), -29.955f));
-    colliders_.emplace_back(collider(vector3(-56.4, 0.0f, -23.8f), vector3(5.0f, 0.0f, 5.0f), -26.436f));
+    colliders_.emplace_back(collider(vector3(-56.4f, 0.0f, -23.8f), vector3(5.0f, 0.0f, 5.0f), -26.436f));
     colliders_.emplace_back(collider(vector3( 58.5f, 0.0f,-26.8f), vector3(5.0f, 0.0f, 5.0f), -22.443f));
     colliders_.emplace_back(collider(vector3( 15.8f, 0.0f,  49.4f), vector3(5.0f, 0.0f, 5.0f), -32.244f));
     colliders_.emplace_back(collider(vector3(-24.5f, 0.0f,  59.5f), vector3(5.0f, 0.0f, 5.0f), -23.226f));
     colliders_.emplace_back(collider(vector3( 16.5f, 0.0f, -58.8f), vector3(5.0f, 0.0f, 5.0f), -24.652f));  
-    
+ 
+    items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(0.0f, 0.0f, 5.0f)));
+    items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(0.0f, 0.0f, 0.0f)));
+    items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(5.0f, 0.0f, 0.0f)));
+    items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(0.0f, 0.0f, -5.0f)));
 }
 
 void egypt_field::update(float delta)
@@ -144,6 +149,9 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
     }
 
     send_packet(session, opcode::SC_SYNC_FIELD, send);
+
+    // 아이템 정보도 보내줌
+    noti_active_item(session);
 }
 
 void egypt_field::respawn_character(object_id id)

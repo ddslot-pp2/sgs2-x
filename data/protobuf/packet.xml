@@ -201,6 +201,26 @@
 			<reload_time type="float"/>
 		</SC_NOTI_UPDATE_CHARACTER_STATUS>
 
+		<ITEM_INFO struct = "true">
+			<item_id type="int64"/>
+			<item_type type="int32"/>
+			<pos_x type="float"/>
+			<pos_y type="float"/>
+			<pos_z type="float"/>
+		</ITEM_INFO>
+
+		<SC_NOTI_ACTIVE_ITEM>
+			<item_infos type="ITEM_INFO" repeated="true"/>
+		</SC_NOTI_ACTIVE_ITEM>
+
+		<SC_NOTI_ACQUIRE_ITEM>
+			<obj_id type="int64"/>
+			<item_id type="int64"/>
+			<item_type type="int32"/>
+			<hp type="int32"/>
+			<exp type="int32"/>
+		</SC_NOTI_ACQUIRE_ITEM>
+
 	</GAME>
 
 

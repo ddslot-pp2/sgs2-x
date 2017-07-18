@@ -5,6 +5,7 @@
 #include "../packet_processor/packet/LOBBY.pb.h"
 #include "../packet_processor/send_helper.h"
 #include "../packet_processor/packet/GAME.pb.h"
+#include "../item/item.h"
 
 using namespace network;
 
@@ -28,6 +29,11 @@ void field::update(float delta)
     for (auto& c : characters_)
     {
         c.second->update(delta);
+    }
+
+    for (auto& item : items_)
+    {
+        item->update(delta);
     }
 }
 
@@ -193,4 +199,46 @@ void field::update_character_status(object_id id) const
 
         send_packet(other_session, opcode::SC_NOTI_UPDATE_CHARACTER_STATUS, noti);
     }
+}
+
+void field::noti_active_item() const
+{
+    GAME::SC_NOTI_ACTIVE_ITEM noti;
+    for (const auto& item : items_)
+    {
+        if (item->get_active())
+        {
+            auto item_info = noti.add_item_infos();
+            item_info->set_item_id(item->get_item_id());
+            item_info->set_item_type(to_integral(item->get_type()));
+
+            const auto& pos = item->get_pos();
+            item_info->set_pos_x(pos.X);
+            item_info->set_pos_y(pos.Y);
+            item_info->set_pos_z(pos.Z);
+        }
+    }
+
+    noti_packet(opcode::SC_NOTI_ACTIVE_ITEM, noti);
+}
+
+void field::noti_active_item(std::shared_ptr<server_session> session) const
+{
+    GAME::SC_NOTI_ACTIVE_ITEM noti;
+    for (const auto& item : items_)
+    {
+        if (item->get_active())
+        {
+            auto item_info = noti.add_item_infos();
+            item_info->set_item_id(item->get_item_id());
+            item_info->set_item_type(to_integral(item->get_type()));
+
+            const auto& pos = item->get_pos();
+            item_info->set_pos_x(pos.X);
+            item_info->set_pos_y(pos.Y);
+            item_info->set_pos_z(pos.Z);
+        }
+    }
+    
+    send_packet(session, opcode::SC_NOTI_ACTIVE_ITEM, noti);
 }
