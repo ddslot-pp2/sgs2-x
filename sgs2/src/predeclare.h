@@ -21,6 +21,7 @@ using task = std::function<void()>;
 enum comp_id { move_comp = 0 , skill_comp};
 
 using bullet_id = __int64;
+using item_id = __int64;
 
 template<typename E>
 constexpr auto to_integral(E e) -> typename std::underlying_type<E>::type
@@ -30,7 +31,7 @@ constexpr auto to_integral(E e) -> typename std::underlying_type<E>::type
 
 constexpr static auto evaporation_percentage = 10;
 constexpr static auto min_reward_score = 5;
-constexpr static auto max_reward_exp = 80.0f;
+constexpr static auto max_reward_exp = 40.0f;
 
 constexpr static auto max_volley_count = 4;
 

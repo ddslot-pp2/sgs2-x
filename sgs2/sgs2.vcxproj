@@ -81,11 +81,11 @@
     <ClCompile Include="src\field\egypt_field.cpp" />
     <ClCompile Include="src\field\field.cpp" />
     <ClCompile Include="src\field\field_manager.cpp" />
+    <ClCompile Include="src\item\hp_item.cpp" />
+    <ClCompile Include="src\item\item.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\object\character.cpp" />
     <ClCompile Include="src\object\collider.cpp" />
-    <ClCompile Include="src\object\hp_item.cpp" />
-    <ClCompile Include="src\object\item.cpp" />
     <ClCompile Include="src\object\object.cpp" />
     <ClCompile Include="src\packet_processor\packet\GAME.pb.cc" />
     <ClCompile Include="src\packet_processor\packet\LOBBY.pb.cc" />
@@ -113,10 +113,10 @@
     <ClInclude Include="src\field\egypt_field.h" />
     <ClInclude Include="src\field\field.h" />
     <ClInclude Include="src\field\field_manager.h" />
+    <ClInclude Include="src\item\hp_item.h" />
+    <ClInclude Include="src\item\item.h" />
     <ClInclude Include="src\object\character.h" />
     <ClInclude Include="src\object\collider.h" />
-    <ClInclude Include="src\object\hp_item.h" />
-    <ClInclude Include="src\object\item.h" />
     <ClInclude Include="src\object\object.h" />
     <ClInclude Include="src\object\stat_info.h" />
     <ClInclude Include="src\packet_processor\opcode.h" />
