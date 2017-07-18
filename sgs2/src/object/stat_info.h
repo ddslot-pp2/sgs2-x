@@ -24,7 +24,8 @@ public:
     std::atomic<float> exp = 0.0f;
     std::atomic<int>   score = 0;
 
-    std::atomic<int> enhance_buff_count = 10;
+    std::atomic<int> enhance_buff_count = 0;
+    std::atomic<int> level = 0;
 
     void copy(std::shared_ptr<stat_info> other)
     {
@@ -39,6 +40,9 @@ public:
 
         exp = other->exp.load();
         score = other->score.load();
+
+        enhance_buff_count = other->enhance_buff_count.load();
+        level = other->level.load();
     }
 
 };

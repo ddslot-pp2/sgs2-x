@@ -99,7 +99,11 @@ void bullet::collide_with_other(std::shared_ptr<character> target_object)
         stat_info->score = stat_info->score + reward_score;
 
         auto reward_exp = std::min(max_reward_exp, static_cast<float>(reward_score));
-        stat_info->exp = stat_info->exp + reward_exp;
+
+        // reward_exp 5씩 올라감 너무 조금 올라감 lv에 맞춰서 레벨이 낮으면 많이 올라가고 높으면 조금 올라가게 수정해야겠음
+        auto extra_level_exp = static_cast<float>(max_level - stat_info->level);
+
+        stat_info->exp = stat_info->exp + reward_exp + extra_level_exp;
         
         target_object->destroy();
     }

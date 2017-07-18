@@ -133,16 +133,26 @@ void character::update_exp() const
 {
     if (stat_->exp < 100.0f) return;
 
-    auto exp = stat_->exp.load();
-    auto enhance_buff_count = static_cast<int>(exp / 100.0f);
+    if (stat_->level == max_level)
+    {
+        wprintf(L"최대 레벨로 인해 업그레이드를 할수 없습니다\n");
+        return;
+    }
 
-    stat_->exp = exp - (100.0f * enhance_buff_count);
-    stat_->enhance_buff_count += enhance_buff_count;
+    auto exp = stat_->exp.load();
+
+    auto level_up_count = static_cast<int>(exp / 100.0f);
+    stat_->exp = stat_->exp - (level_up_count * 100.0f);
+
+    stat_->level = stat_->level + static_cast<int>(level_up_count);
+    wprintf(L"현재 레벨: %d\n", stat_->level);
+
+    stat_->enhance_buff_count += level_up_count;
 
     wprintf(L"버프 카운트 증가: %d\n", stat_->enhance_buff_count.load());
 
     GAME::SC_SELECT_BUFF noti;
-    noti.set_count(enhance_buff_count);
+    noti.set_count(level_up_count);
     auto session = session_.lock();
     if (session)
     {

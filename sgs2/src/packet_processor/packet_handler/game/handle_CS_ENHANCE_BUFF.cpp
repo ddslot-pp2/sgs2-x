@@ -24,35 +24,55 @@ void handle_CS_ENHANCE_BUFF(std::shared_ptr<server_session> session, const GAME:
         wprintf(L"버프 증가 할수없음\n");
         return;
     }
+
+    auto enhance_buff_count = stat_info->enhance_buff_count - 1;
+    stat_info->enhance_buff_count = std::max(0, enhance_buff_count);
+
+    wprintf(L"버프 증가 카운트: %d\n", stat_info->enhance_buff_count);
    
     auto type = read.buff_type();
     if (type == to_index(buff_type::max_hp))
     {
-        stat_info->max_hp = stat_info->max_hp + 10;
+        auto max_hp_per = stat_info->max_hp * 0.1;
+        wprintf(L"before 최대 hp: %d\n", stat_info->max_hp);
+        stat_info->max_hp = stat_info->max_hp + max_hp_per;
+        wprintf(L"after  최대 hp: %d\n", stat_info->max_hp);
     }
     else if (type == to_index(buff_type::character_speed))
     {
-        stat_info->speed = stat_info->speed + 2.0f;
+        auto speed_per = stat_info->speed * 0.1;
+        wprintf(L"before 스피드: %f\n", stat_info->speed.load());
+        stat_info->speed = stat_info->speed + speed_per;
+        wprintf(L"after  스피드: %f\n", stat_info->speed.load());
     }
     else if (type == to_index(buff_type::bullet_speed))
     {
-        stat_info->bullet_speed = stat_info->bullet_speed + 4.0f;
+        auto bullet_speed_per = stat_info->bullet_speed * 0.1;
+        wprintf(L"before 총알 스피드: %f\n", stat_info->bullet_speed.load());
+        stat_info->bullet_speed = stat_info->bullet_speed + bullet_speed_per;
+        wprintf(L"after  총알 스피드: %f\n", stat_info->bullet_speed.load());
     }
     else if (type == to_index(buff_type::bullet_power))
     {
-        stat_info->bullet_power = stat_info->bullet_power + 2.0f;
+        auto bullet_power_per = stat_info->bullet_power * 0.1;
+        wprintf(L"before 총알 파워: %f\n", stat_info->bullet_power.load());
+        stat_info->bullet_power = stat_info->bullet_power + bullet_power_per;
+        wprintf(L"after  총알 파워: %f\n", stat_info->bullet_power.load());
     }
     else if (type == to_index(buff_type::bullet_distance))
     {
-        stat_info->bullet_distance = stat_info->bullet_distance + 4.0f;
+        auto bullet_distance_per = stat_info->bullet_distance * 0.1;
+        wprintf(L"before 총알 사정거리: %f\n", stat_info->bullet_distance.load());
+        stat_info->bullet_distance = stat_info->bullet_distance + bullet_distance_per;
+        wprintf(L"before 총알 사정거리: %f\n", stat_info->bullet_distance.load());
     }
     else if (type == to_index(buff_type::reload_time))
     {
-        stat_info->reload_time = stat_info->reload_time - 50.0f;
+        auto reload_time_per = stat_info->reload_time * 0.1;
+        wprintf(L"before 리로드 시간: %f\n", stat_info->reload_time.load());
+        stat_info->reload_time = stat_info->reload_time - reload_time_per;
+        wprintf(L"after  리로드 시간: %f\n", stat_info->reload_time.load());
     }
-
-    auto enhance_buff_count = stat_info->enhance_buff_count - 1;
-    stat_info->enhance_buff_count = std::max(0, enhance_buff_count);
 
     if (type == to_index(buff_type::bullet_speed) || type == to_index(buff_type::bullet_power) || type == to_index(buff_type::bullet_distance)) return;
 

@@ -30,9 +30,11 @@ constexpr auto to_integral(E e) -> typename std::underlying_type<E>::type
 
 constexpr static auto evaporation_percentage = 10;
 constexpr static auto min_reward_score = 5;
-constexpr static auto max_reward_exp = 50.0f;
+constexpr static auto max_reward_exp = 80.0f;
 
 constexpr static auto max_volley_count = 4;
+
+constexpr static auto max_level = 30;
 
 /*
 template <class T, class Tuple>
