@@ -63,7 +63,6 @@ void hp_item::update(float delta)
 
 void hp_item::noti_acquire_item(object_id id, std::shared_ptr<stat_info> stat_info) const
 {
-    
     GAME::SC_NOTI_ACQUIRE_ITEM noti;
     noti.set_obj_id(id);
     noti.set_item_id(item_id_);
