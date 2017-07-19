@@ -52,12 +52,6 @@
     <Filter Include="src\item">
       <UniqueIdentifier>{ed34eb61-06cc-4d6c-9bea-c29f0b8b9e88}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\db">
-      <UniqueIdentifier>{2b2481ff-9129-4b39-9af3-bb0753c1b9fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\db\mysql">
-      <UniqueIdentifier>{254c5161-b69c-4373-8e4f-f11db167aebd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
