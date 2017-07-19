@@ -78,7 +78,7 @@ public:
 
     std::vector<collider>& get_colliders() { return colliders_; }
 
-    void noti_active_item() const;
+    void noti_active_item(const item_id& id, const int& type, const vector3& pos) const;
     void noti_active_item(std::shared_ptr<server_session> session) const;
 
 protected:

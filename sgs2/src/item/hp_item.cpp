@@ -52,7 +52,7 @@ void hp_item::update(float delta)
                 }
 
                 active_ = true;
-                field_->noti_active_item();
+                field_->noti_active_item(item_id_, to_integral(type_), pos_);
             });
 
             return;
