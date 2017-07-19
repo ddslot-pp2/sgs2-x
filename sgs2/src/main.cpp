@@ -10,6 +10,13 @@
 #include "../../core/src/timer/timer_helper.hpp"
 #include "field/field_manager.h"
 
+#include "mysql_connection.h"
+
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+
 std::mutex m;
 std::condition_variable cv;
 std::atomic_bool stop = false;
@@ -58,6 +65,25 @@ void on_local_thread_initialize()
 
 int main()
 {
+    try 
+    {
+        sql::Driver *driver;
+        sql::Connection *con;
+        sql::Statement *stmt;
+        sql::ResultSet *res;
+
+        /* Create a connection */
+        driver = get_driver_instance();
+        con = driver->connect("tcp://127.0.0.1:3306", "root", "1111");
+        /* Connect to the MySQL test database */
+        con->setSchema("test");
+        wprintf(L"sql 접속 성공\n");
+    } 
+    catch (sql::SQLException &e) 
+    {
+        wprintf(L"SQLException\n");
+    }
+
     // 서버 종료 ctrl + break
     std::signal(SIGBREAK, sig_handler);
 
