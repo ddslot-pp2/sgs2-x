@@ -9,11 +9,8 @@
 #include <type_traits>   
 #include "../../core/src/timer/timer_helper.hpp"
 #include "field/field_manager.h"
-
-#include <cppconn/driver.h>
-#include <cppconn/exception.h>
-#include <cppconn/resultset.h>
-#include <cppconn/statement.h>
+#include "../../core/src/locale/string_helper.h"
+#include "mysql/mysql_connector.h"
 
 std::mutex m;
 std::condition_variable cv;
@@ -43,7 +40,6 @@ void test()
 
     field_manager::instance().try_enter_field(fid, sess);
 
-
     using namespace std::chrono_literals;
     std::this_thread::sleep_for(2s);
     auto c = sess->get_character();
@@ -58,34 +54,50 @@ void test()
 
 void test_sql()
 {
+    using namespace mysql_connector;
+
+    make_connection(L"127.0.0.1", L"root", L"1111", L"test");
+    make_statement();
+
+    try
+    {
+        auto res = execute_query("select * from student_info");
+        while (res->next())
+        {
+            res->getInt("id");
+            std::wstring tmp = core::string_to_wstring(res->getString("name"));
+
+            wprintf(L"name: %s\n", tmp.c_str());
+        }
+    }
+    catch (sql::SQLException &e) 
+    {
+        auto e_what = e.what();
+        //cout << " (MySQL error code: " << e.getErrorCode();
+        //cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+    }
+    /*
     using namespace std;
 
     try 
     {
         sql::Driver *driver;
-        sql::Connection *con;
-        sql::Statement *stmt;
-        sql::ResultSet *res;
-
-        /* Create a connection */
+      
+   
         driver = get_driver_instance();
-        con = driver->connect("tcp://127.0.0.1:3306", "root", "1111");
-        /* Connect to the MySQL test database */
+        std::shared_ptr<sql::Connection> con(driver->connect("tcp://127.0.0.1:3306", "root", "1111"));
         con->setSchema("test");
 
-        stmt = con->createStatement();
-        res = stmt->executeQuery("SELECT 'Hello World!' AS _message");
-        while (res->next()) {
-            cout << "\t... MySQL replies: ";
-            /* Access column data by alias or column name */
-            cout << res->getString("_message") << endl;
-            cout << "\t... MySQL says it again: ";
-            /* Access column data by numeric offset, 1 is the first column */
-            cout << res->getString(1) << endl;
+        std::shared_ptr<sql::Statement> stmt(con->createStatement());
+        std::shared_ptr<sql::ResultSet> res(stmt->executeQuery("select * from student_info"));
+        while (res->next()) 
+        {
+        
+            res->getInt("id");
+            std::wstring tmp = core::string_to_wstring(res->getString("name"));
+        
+            wprintf(L"name: %s\n", tmp.c_str());
         }
-        delete res;
-        delete stmt;
-        delete con;
 
     }
     catch (sql::SQLException &e) {
@@ -97,18 +109,17 @@ void test_sql()
     }
 
     cout << endl;
+    */
 
-    //return EXIT_SUCCESS;
 }
 
 void on_local_thread_initialize()
 {
-
+    test_sql();
 }
 
 int main()
 {
-    test_sql();
     // 서버 종료 ctrl + break
     std::signal(SIGBREAK, sig_handler);
 

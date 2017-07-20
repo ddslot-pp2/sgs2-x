@@ -52,6 +52,9 @@
     <Filter Include="src\item">
       <UniqueIdentifier>{ed34eb61-06cc-4d6c-9bea-c29f0b8b9e88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\mysql">
+      <UniqueIdentifier>{e02c8d69-ab26-4252-ab7f-389258657f6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -144,6 +147,9 @@
     <ClCompile Include="src\item\hp_item.cpp">
       <Filter>src\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\mysql\mysql_connector.cpp">
+      <Filter>src\mysql</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -217,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="src\item\hp_item.h">
       <Filter>src\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mysql\mysql_connector.h">
+      <Filter>src\mysql</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
