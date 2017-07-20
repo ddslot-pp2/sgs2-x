@@ -58,16 +58,16 @@ void test_sql()
 
     try
     {
-        make_connection(L"127.0.0.1", L"root", L"1112", L"test");
-        make_statement();
-        auto res = execute_query("select * from student_info");
+        make_connection(L"aurora.cqgzbcd3tarw.ap-northeast-2.rds.amazonaws.com", 3306, L"root", L"11111111", L"aurora");
+
+        auto res = execute_query("select * from user_info");
         
         if (!res) return;
 
         while (res->next())
         {
             res->getInt("id");
-            std::wstring tmp = core::string_to_wstring(res->getString("name"));
+            std::wstring tmp = core::string_to_wstring(res->getString("innodb"));
 
             wprintf(L"name: %s\n", tmp.c_str());
         }
@@ -75,7 +75,7 @@ void test_sql()
     catch (sql::SQLException &e) 
     {
         auto e_what = e.what();
-        wprintf(L"db catch\n");
+        printf("error: %s\n", e_what);
         //cout << " (MySQL error code: " << e.getErrorCode();
         //cout << ", SQLState: " << e.getSQLState() << " )" << endl;
     }

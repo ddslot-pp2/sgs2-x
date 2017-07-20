@@ -9,7 +9,7 @@
 
 namespace mysql_connector
 {
-    void make_connection(std::wstring ip, std::wstring id, std::wstring password, std::wstring schema = L"");
+    void make_connection(std::wstring hostname, int port, std::wstring username, std::wstring password, std::wstring schema);
     void make_statement();
 
     std::shared_ptr<sql::Connection> get_connection();

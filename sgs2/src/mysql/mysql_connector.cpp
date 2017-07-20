@@ -8,30 +8,28 @@ namespace mysql_connector
      thread_local std::shared_ptr<sql::Connection> connection;
      thread_local std::shared_ptr<sql::Statement>  statement;
 
-    void make_connection(std::wstring ip, std::wstring id, std::wstring password, std::wstring schema)
+    void make_connection(std::wstring hostname, int port, std::wstring username, std::wstring password, std::wstring schema)
     {
         std::lock_guard<std::mutex> lock(driver_lock);
+
         if (!g_driver)
         {
             g_driver = get_driver_instance();
         }
 
-        //ip = L"tcp://" + ip;
+        auto to_string = core::wstring_to_string;
 
-        //sql::Driver* driver = get_driver_instance();
-        //std::shared_ptr<sql::Connection> con(driver->connect("tcp://127.0.0.1:3306", "root", "1111"));
+        sql::ConnectOptionsMap connection_properties;
+        connection_properties["hostName"] = to_string(hostname);
+        connection_properties["userName"] = to_string(username);
+        connection_properties["password"] = to_string(password);
+        connection_properties["schema"] = to_string(schema);
+        connection_properties["port"] = port;
+        //connection_properties["OPT_RECONNECT"] = true;
 
-        sql::SQLString _ip = "tcp://127.0.0.1:3306";
-        sql::SQLString _id = core::wstring_to_string(id);
-        sql::SQLString _password = core::wstring_to_string(password);
+        connection.reset(g_driver->connect(connection_properties));
 
-        connection.reset(g_driver->connect(_ip, _id, _password));
-        //std::shared_ptr<sql::Connection> con(g_driver->connect("tcp://127.0.0.1:3306", "root", "1111"));
-
-        if (schema != L"")
-        {
-            connection->setSchema(core::wstring_to_string(schema).c_str());
-        }
+        make_statement();
     }
 
     void make_statement()
