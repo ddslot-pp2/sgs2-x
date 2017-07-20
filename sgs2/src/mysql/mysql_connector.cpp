@@ -25,17 +25,12 @@ namespace mysql_connector
         sql::SQLString _id = core::wstring_to_string(id);
         sql::SQLString _password = core::wstring_to_string(password);
 
-        std::shared_ptr<sql::Connection> con(g_driver->connect(_ip, _id, _password));
+        connection.reset(g_driver->connect(_ip, _id, _password));
         //std::shared_ptr<sql::Connection> con(g_driver->connect("tcp://127.0.0.1:3306", "root", "1111"));
 
         if (schema != L"")
         {
-            con->setSchema(core::wstring_to_string(schema).c_str());
-        }
-
-        if (con)
-        {
-            connection = con;
+            connection->setSchema(core::wstring_to_string(schema).c_str());
         }
     }
 
