@@ -47,11 +47,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\boost;..\network\src;..\protobuf-master\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\boost;..\network\src;..\protobuf-master\src;..\mysql-connector-c++-1.1.9</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CPPCONN_PUBLIC_FUNC=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\boost\stage\lib;..\x64\$(Configuration);../protobuf-master\cmake\build\solution\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libboost_system-vc140-mt-gd-1_65.lib;libprotobufd.lib;libprotobuf-lited.lib;core.lib;network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\boost\stage\lib;..\x64\$(Configuration);../protobuf-master\cmake\build\solution\$(Configuration);..\mysql-connector-c-6.1.10\libmysql\$(Configuration);..\mysql-connector-c++-1.1.9\driver\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libboost_system-vc140-mt-gd-1_65.lib;libprotobufd.lib;libprotobuf-lited.lib;core.lib;network.lib;mysqlclient.lib;mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

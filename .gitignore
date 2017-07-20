@@ -2,7 +2,8 @@
 boost/
 tbb2017_20161128oss/
 protobuf-master/
-mysql-connector-cpp/
+mysql-connector-c-6.1.10/
+mysql-connector-c++-1.1.9/
 .vs/
 *.proto
 

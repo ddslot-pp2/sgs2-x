@@ -16,4 +16,3 @@ protobuf3 를 활용 유니티와 간단한 tcp 통신
 3. build_protobuf.bat 실행해서 protobuf3 관련 라이브러리 생성
 
 4. data/protobuf/create_protobuf.py 실행해서 data/protobuf/packet.xml에 정의된 xml형식 패킷을 proto로 자동생성 및 관련 파일 생성
-
