@@ -56,12 +56,14 @@ void test_sql()
 {
     using namespace mysql_connector;
 
-    make_connection(L"127.0.0.1", L"root", L"1111", L"test");
-    make_statement();
-
     try
     {
+        make_connection(L"127.0.0.1", L"root", L"1112", L"test");
+        make_statement();
         auto res = execute_query("select * from student_info");
+        
+        if (!res) return;
+
         while (res->next())
         {
             res->getInt("id");
@@ -73,6 +75,7 @@ void test_sql()
     catch (sql::SQLException &e) 
     {
         auto e_what = e.what();
+        wprintf(L"db catch\n");
         //cout << " (MySQL error code: " << e.getErrorCode();
         //cout << ", SQLState: " << e.getSQLState() << " )" << endl;
     }
