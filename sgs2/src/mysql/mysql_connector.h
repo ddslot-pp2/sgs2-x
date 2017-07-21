@@ -16,6 +16,7 @@ namespace mysql_connector
     std::shared_ptr<sql::Statement>  get_statement();
 
     std::shared_ptr<sql::ResultSet> execute_query(const std::string& query);
+    void execute(const std::string& query);
 
     static std::mutex driver_lock;
 }

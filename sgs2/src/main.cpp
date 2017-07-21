@@ -61,8 +61,6 @@ void test_sql()
         make_connection(L"aurora.cqgzbcd3tarw.ap-northeast-2.rds.amazonaws.com", 3306, L"root", L"11111111", L"aurora");
 
         auto res = execute_query("select * from user_info");
-        
-        if (!res) return;
 
         while (res->next())
         {
