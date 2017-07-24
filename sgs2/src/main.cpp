@@ -60,6 +60,7 @@ void test_sql()
     {
         make_connection(L"aurora.cqgzbcd3tarw.ap-northeast-2.rds.amazonaws.com", 3306, L"root", L"11111111", L"aurora");
 
+        /*
         auto res = execute_query("select * from user_info");
         
         if (!res) return;
@@ -71,10 +72,12 @@ void test_sql()
 
             wprintf(L"name: %s\n", tmp.c_str());
         }
+        */
     }
     catch (sql::SQLException &e) 
     {
         auto e_what = e.what();
+        wprintf(L"sql 접속 실패\n");
         printf("error: %s\n", e_what);
         //cout << " (MySQL error code: " << e.getErrorCode();
         //cout << ", SQLState: " << e.getSQLState() << " )" << endl;
