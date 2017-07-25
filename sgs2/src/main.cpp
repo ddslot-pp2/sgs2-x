@@ -52,76 +52,29 @@ void test()
     }
 }
 
-void test_sql()
+bool connect_to_mysql()
 {
     using namespace mysql_connector;
 
     try
     {
         make_connection(L"aurora.cqgzbcd3tarw.ap-northeast-2.rds.amazonaws.com", 3306, L"root", L"11111111", L"aurora");
-
-        /*
-        auto res = execute_query("select * from user_info");
-        
-        if (!res) return;
-
-        while (res->next())
-        {
-            res->getInt("id");
-            std::wstring tmp = core::string_to_wstring(res->getString("innodb"));
-
-            wprintf(L"name: %s\n", tmp.c_str());
-        }
-        */
+        wprintf(L"sql 立加 己傍\n");
+        return true;
     }
     catch (sql::SQLException &e) 
     {
         auto e_what = e.what();
-        wprintf(L"sql 立加 角菩\n");
         printf("error: %s\n", e_what);
+        return false;
         //cout << " (MySQL error code: " << e.getErrorCode();
         //cout << ", SQLState: " << e.getSQLState() << " )" << endl;
     }
-    /*
-    using namespace std;
-
-    try 
-    {
-        sql::Driver *driver;
-      
-   
-        driver = get_driver_instance();
-        std::shared_ptr<sql::Connection> con(driver->connect("tcp://127.0.0.1:3306", "root", "1111"));
-        con->setSchema("test");
-
-        std::shared_ptr<sql::Statement> stmt(con->createStatement());
-        std::shared_ptr<sql::ResultSet> res(stmt->executeQuery("select * from student_info"));
-        while (res->next()) 
-        {
-        
-            res->getInt("id");
-            std::wstring tmp = core::string_to_wstring(res->getString("name"));
-        
-            wprintf(L"name: %s\n", tmp.c_str());
-        }
-
-    }
-    catch (sql::SQLException &e) {
-        cout << "# ERR: SQLException in " << __FILE__;
-        cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
-        cout << "# ERR: " << e.what();
-        cout << " (MySQL error code: " << e.getErrorCode();
-        cout << ", SQLState: " << e.getSQLState() << " )" << endl;
-    }
-
-    cout << endl;
-    */
-
 }
 
 void on_local_thread_initialize()
 {
-    test_sql();
+    assert(connect_to_mysql(), "unable to connect to mysql server!");
 }
 
 int main()

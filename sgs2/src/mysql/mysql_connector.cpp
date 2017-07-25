@@ -29,11 +29,6 @@ namespace mysql_connector
 
         connection.reset(g_driver->connect(connection_properties));
 
-        if (connection)
-        {
-            wprintf(L"sql 접속 성공 존재함\n");
-        }
-
         make_statement();
     }
 
