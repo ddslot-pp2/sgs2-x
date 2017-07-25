@@ -64,13 +64,19 @@ class SC_NOTI_ACTIVE_ITEMDefaultTypeInternal : public ::google::protobuf::intern
 } _SC_NOTI_ACTIVE_ITEM_default_instance_;
 class SC_NOTI_ACQUIRE_ITEMDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_NOTI_ACQUIRE_ITEM> {
 } _SC_NOTI_ACQUIRE_ITEM_default_instance_;
+class MEDAL_ITEM_INFODefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<MEDAL_ITEM_INFO> {
+} _MEDAL_ITEM_INFO_default_instance_;
+class SC_NOTI_CREATE_MEDAL_ITEMDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_NOTI_CREATE_MEDAL_ITEM> {
+} _SC_NOTI_CREATE_MEDAL_ITEM_default_instance_;
+class SC_NOTI_ACQUIRE_MEDAL_ITEMDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_NOTI_ACQUIRE_MEDAL_ITEM> {
+} _SC_NOTI_ACQUIRE_MEDAL_ITEM_default_instance_;
 
 namespace protobuf_GAME_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[23];
+::google::protobuf::Metadata file_level_metadata[26];
 
 }  // namespace
 
@@ -85,6 +91,9 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
@@ -325,6 +334,32 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, item_type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, hp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, exp_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, item_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, item_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, from_pos_x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, from_pos_y_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, from_pos_z_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, to_pos_x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, to_pos_y_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, to_pos_z_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_CREATE_MEDAL_ITEM, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_CREATE_MEDAL_ITEM, medal_item_infos_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_MEDAL_ITEM, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_MEDAL_ITEM, item_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_MEDAL_ITEM, count_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -351,6 +386,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 188, -1, sizeof(ITEM_INFO)},
   { 198, -1, sizeof(SC_NOTI_ACTIVE_ITEM)},
   { 204, -1, sizeof(SC_NOTI_ACQUIRE_ITEM)},
+  { 214, -1, sizeof(MEDAL_ITEM_INFO)},
+  { 227, -1, sizeof(SC_NOTI_CREATE_MEDAL_ITEM)},
+  { 233, -1, sizeof(SC_NOTI_ACQUIRE_MEDAL_ITEM)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -377,6 +415,9 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_ITEM_INFO_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_ACTIVE_ITEM_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_ACQUIRE_ITEM_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_MEDAL_ITEM_INFO_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_CREATE_MEDAL_ITEM_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_SC_NOTI_ACQUIRE_MEDAL_ITEM_default_instance_),
 };
 
 namespace {
@@ -397,7 +438,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 23);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 26);
 }
 
 }  // namespace
@@ -449,6 +490,12 @@ void TableStruct::Shutdown() {
   delete file_level_metadata[21].reflection;
   _SC_NOTI_ACQUIRE_ITEM_default_instance_.Shutdown();
   delete file_level_metadata[22].reflection;
+  _MEDAL_ITEM_INFO_default_instance_.Shutdown();
+  delete file_level_metadata[23].reflection;
+  _SC_NOTI_CREATE_MEDAL_ITEM_default_instance_.Shutdown();
+  delete file_level_metadata[24].reflection;
+  _SC_NOTI_ACQUIRE_MEDAL_ITEM_default_instance_.Shutdown();
+  delete file_level_metadata[25].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
@@ -478,6 +525,9 @@ void TableStruct::InitDefaultsImpl() {
   _ITEM_INFO_default_instance_.DefaultConstruct();
   _SC_NOTI_ACTIVE_ITEM_default_instance_.DefaultConstruct();
   _SC_NOTI_ACQUIRE_ITEM_default_instance_.DefaultConstruct();
+  _MEDAL_ITEM_INFO_default_instance_.DefaultConstruct();
+  _SC_NOTI_CREATE_MEDAL_ITEM_default_instance_.DefaultConstruct();
+  _SC_NOTI_ACQUIRE_MEDAL_ITEM_default_instance_.DefaultConstruct();
 }
 
 void InitDefaults() {
@@ -541,10 +591,18 @@ void AddDescriptorsImpl() {
       "TIVE_ITEM\022#\n\nitem_infos\030\001 \003(\0132\017.GAME.ITE"
       "M_INFO\"c\n\024SC_NOTI_ACQUIRE_ITEM\022\016\n\006obj_id"
       "\030\001 \001(\003\022\017\n\007item_id\030\002 \001(\003\022\021\n\titem_type\030\003 \001"
-      "(\005\022\n\n\002hp\030\004 \001(\005\022\013\n\003exp\030\005 \001(\005b\006proto3"
+      "(\005\022\n\n\002hp\030\004 \001(\005\022\013\n\003exp\030\005 \001(\005\"\247\001\n\017MEDAL_IT"
+      "EM_INFO\022\017\n\007item_id\030\001 \001(\003\022\021\n\titem_type\030\002 "
+      "\001(\005\022\022\n\nfrom_pos_x\030\003 \001(\002\022\022\n\nfrom_pos_y\030\004 "
+      "\001(\002\022\022\n\nfrom_pos_z\030\005 \001(\002\022\020\n\010to_pos_x\030\006 \001("
+      "\002\022\020\n\010to_pos_y\030\007 \001(\002\022\020\n\010to_pos_z\030\010 \001(\002\"L\n"
+      "\031SC_NOTI_CREATE_MEDAL_ITEM\022/\n\020medal_item"
+      "_infos\030\001 \003(\0132\025.GAME.MEDAL_ITEM_INFO\"<\n\032S"
+      "C_NOTI_ACQUIRE_MEDAL_ITEM\022\017\n\007item_id\030\001 \001"
+      "(\003\022\r\n\005count\030\002 \001(\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2195);
+      descriptor, 2505);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -9974,6 +10032,1122 @@ void SC_NOTI_ACQUIRE_ITEM::set_exp(::google::protobuf::int32 value) {
   
   exp_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_ITEM.exp)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int MEDAL_ITEM_INFO::kItemIdFieldNumber;
+const int MEDAL_ITEM_INFO::kItemTypeFieldNumber;
+const int MEDAL_ITEM_INFO::kFromPosXFieldNumber;
+const int MEDAL_ITEM_INFO::kFromPosYFieldNumber;
+const int MEDAL_ITEM_INFO::kFromPosZFieldNumber;
+const int MEDAL_ITEM_INFO::kToPosXFieldNumber;
+const int MEDAL_ITEM_INFO::kToPosYFieldNumber;
+const int MEDAL_ITEM_INFO::kToPosZFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+MEDAL_ITEM_INFO::MEDAL_ITEM_INFO()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_GAME_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:GAME.MEDAL_ITEM_INFO)
+}
+MEDAL_ITEM_INFO::MEDAL_ITEM_INFO(const MEDAL_ITEM_INFO& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&item_id_, &from.item_id_,
+    reinterpret_cast<char*>(&to_pos_z_) -
+    reinterpret_cast<char*>(&item_id_) + sizeof(to_pos_z_));
+  // @@protoc_insertion_point(copy_constructor:GAME.MEDAL_ITEM_INFO)
+}
+
+void MEDAL_ITEM_INFO::SharedCtor() {
+  ::memset(&item_id_, 0, reinterpret_cast<char*>(&to_pos_z_) -
+    reinterpret_cast<char*>(&item_id_) + sizeof(to_pos_z_));
+  _cached_size_ = 0;
+}
+
+MEDAL_ITEM_INFO::~MEDAL_ITEM_INFO() {
+  // @@protoc_insertion_point(destructor:GAME.MEDAL_ITEM_INFO)
+  SharedDtor();
+}
+
+void MEDAL_ITEM_INFO::SharedDtor() {
+}
+
+void MEDAL_ITEM_INFO::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* MEDAL_ITEM_INFO::descriptor() {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const MEDAL_ITEM_INFO& MEDAL_ITEM_INFO::default_instance() {
+  protobuf_GAME_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+MEDAL_ITEM_INFO* MEDAL_ITEM_INFO::New(::google::protobuf::Arena* arena) const {
+  MEDAL_ITEM_INFO* n = new MEDAL_ITEM_INFO;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void MEDAL_ITEM_INFO::Clear() {
+// @@protoc_insertion_point(message_clear_start:GAME.MEDAL_ITEM_INFO)
+  ::memset(&item_id_, 0, reinterpret_cast<char*>(&to_pos_z_) -
+    reinterpret_cast<char*>(&item_id_) + sizeof(to_pos_z_));
+}
+
+bool MEDAL_ITEM_INFO::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:GAME.MEDAL_ITEM_INFO)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 item_id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &item_id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 item_type = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &item_type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float from_pos_x = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &from_pos_x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float from_pos_y = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &from_pos_y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float from_pos_z = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &from_pos_z_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float to_pos_x = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &to_pos_x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float to_pos_y = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &to_pos_y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float to_pos_z = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(69u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &to_pos_z_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:GAME.MEDAL_ITEM_INFO)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:GAME.MEDAL_ITEM_INFO)
+  return false;
+#undef DO_
+}
+
+void MEDAL_ITEM_INFO::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:GAME.MEDAL_ITEM_INFO)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 item_id = 1;
+  if (this->item_id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->item_id(), output);
+  }
+
+  // int32 item_type = 2;
+  if (this->item_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->item_type(), output);
+  }
+
+  // float from_pos_x = 3;
+  if (this->from_pos_x() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->from_pos_x(), output);
+  }
+
+  // float from_pos_y = 4;
+  if (this->from_pos_y() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->from_pos_y(), output);
+  }
+
+  // float from_pos_z = 5;
+  if (this->from_pos_z() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->from_pos_z(), output);
+  }
+
+  // float to_pos_x = 6;
+  if (this->to_pos_x() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->to_pos_x(), output);
+  }
+
+  // float to_pos_y = 7;
+  if (this->to_pos_y() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->to_pos_y(), output);
+  }
+
+  // float to_pos_z = 8;
+  if (this->to_pos_z() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->to_pos_z(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:GAME.MEDAL_ITEM_INFO)
+}
+
+::google::protobuf::uint8* MEDAL_ITEM_INFO::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:GAME.MEDAL_ITEM_INFO)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 item_id = 1;
+  if (this->item_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->item_id(), target);
+  }
+
+  // int32 item_type = 2;
+  if (this->item_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->item_type(), target);
+  }
+
+  // float from_pos_x = 3;
+  if (this->from_pos_x() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->from_pos_x(), target);
+  }
+
+  // float from_pos_y = 4;
+  if (this->from_pos_y() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->from_pos_y(), target);
+  }
+
+  // float from_pos_z = 5;
+  if (this->from_pos_z() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->from_pos_z(), target);
+  }
+
+  // float to_pos_x = 6;
+  if (this->to_pos_x() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->to_pos_x(), target);
+  }
+
+  // float to_pos_y = 7;
+  if (this->to_pos_y() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->to_pos_y(), target);
+  }
+
+  // float to_pos_z = 8;
+  if (this->to_pos_z() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->to_pos_z(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:GAME.MEDAL_ITEM_INFO)
+  return target;
+}
+
+size_t MEDAL_ITEM_INFO::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GAME.MEDAL_ITEM_INFO)
+  size_t total_size = 0;
+
+  // int64 item_id = 1;
+  if (this->item_id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->item_id());
+  }
+
+  // int32 item_type = 2;
+  if (this->item_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->item_type());
+  }
+
+  // float from_pos_x = 3;
+  if (this->from_pos_x() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float from_pos_y = 4;
+  if (this->from_pos_y() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float from_pos_z = 5;
+  if (this->from_pos_z() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float to_pos_x = 6;
+  if (this->to_pos_x() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float to_pos_y = 7;
+  if (this->to_pos_y() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float to_pos_z = 8;
+  if (this->to_pos_z() != 0) {
+    total_size += 1 + 4;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void MEDAL_ITEM_INFO::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:GAME.MEDAL_ITEM_INFO)
+  GOOGLE_DCHECK_NE(&from, this);
+  const MEDAL_ITEM_INFO* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const MEDAL_ITEM_INFO>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:GAME.MEDAL_ITEM_INFO)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:GAME.MEDAL_ITEM_INFO)
+    MergeFrom(*source);
+  }
+}
+
+void MEDAL_ITEM_INFO::MergeFrom(const MEDAL_ITEM_INFO& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:GAME.MEDAL_ITEM_INFO)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.item_id() != 0) {
+    set_item_id(from.item_id());
+  }
+  if (from.item_type() != 0) {
+    set_item_type(from.item_type());
+  }
+  if (from.from_pos_x() != 0) {
+    set_from_pos_x(from.from_pos_x());
+  }
+  if (from.from_pos_y() != 0) {
+    set_from_pos_y(from.from_pos_y());
+  }
+  if (from.from_pos_z() != 0) {
+    set_from_pos_z(from.from_pos_z());
+  }
+  if (from.to_pos_x() != 0) {
+    set_to_pos_x(from.to_pos_x());
+  }
+  if (from.to_pos_y() != 0) {
+    set_to_pos_y(from.to_pos_y());
+  }
+  if (from.to_pos_z() != 0) {
+    set_to_pos_z(from.to_pos_z());
+  }
+}
+
+void MEDAL_ITEM_INFO::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:GAME.MEDAL_ITEM_INFO)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void MEDAL_ITEM_INFO::CopyFrom(const MEDAL_ITEM_INFO& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:GAME.MEDAL_ITEM_INFO)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MEDAL_ITEM_INFO::IsInitialized() const {
+  return true;
+}
+
+void MEDAL_ITEM_INFO::Swap(MEDAL_ITEM_INFO* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void MEDAL_ITEM_INFO::InternalSwap(MEDAL_ITEM_INFO* other) {
+  std::swap(item_id_, other->item_id_);
+  std::swap(item_type_, other->item_type_);
+  std::swap(from_pos_x_, other->from_pos_x_);
+  std::swap(from_pos_y_, other->from_pos_y_);
+  std::swap(from_pos_z_, other->from_pos_z_);
+  std::swap(to_pos_x_, other->to_pos_x_);
+  std::swap(to_pos_y_, other->to_pos_y_);
+  std::swap(to_pos_z_, other->to_pos_z_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata MEDAL_ITEM_INFO::GetMetadata() const {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// MEDAL_ITEM_INFO
+
+// int64 item_id = 1;
+void MEDAL_ITEM_INFO::clear_item_id() {
+  item_id_ = GOOGLE_LONGLONG(0);
+}
+::google::protobuf::int64 MEDAL_ITEM_INFO::item_id() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.item_id)
+  return item_id_;
+}
+void MEDAL_ITEM_INFO::set_item_id(::google::protobuf::int64 value) {
+  
+  item_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.item_id)
+}
+
+// int32 item_type = 2;
+void MEDAL_ITEM_INFO::clear_item_type() {
+  item_type_ = 0;
+}
+::google::protobuf::int32 MEDAL_ITEM_INFO::item_type() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.item_type)
+  return item_type_;
+}
+void MEDAL_ITEM_INFO::set_item_type(::google::protobuf::int32 value) {
+  
+  item_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.item_type)
+}
+
+// float from_pos_x = 3;
+void MEDAL_ITEM_INFO::clear_from_pos_x() {
+  from_pos_x_ = 0;
+}
+float MEDAL_ITEM_INFO::from_pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.from_pos_x)
+  return from_pos_x_;
+}
+void MEDAL_ITEM_INFO::set_from_pos_x(float value) {
+  
+  from_pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.from_pos_x)
+}
+
+// float from_pos_y = 4;
+void MEDAL_ITEM_INFO::clear_from_pos_y() {
+  from_pos_y_ = 0;
+}
+float MEDAL_ITEM_INFO::from_pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.from_pos_y)
+  return from_pos_y_;
+}
+void MEDAL_ITEM_INFO::set_from_pos_y(float value) {
+  
+  from_pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.from_pos_y)
+}
+
+// float from_pos_z = 5;
+void MEDAL_ITEM_INFO::clear_from_pos_z() {
+  from_pos_z_ = 0;
+}
+float MEDAL_ITEM_INFO::from_pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.from_pos_z)
+  return from_pos_z_;
+}
+void MEDAL_ITEM_INFO::set_from_pos_z(float value) {
+  
+  from_pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.from_pos_z)
+}
+
+// float to_pos_x = 6;
+void MEDAL_ITEM_INFO::clear_to_pos_x() {
+  to_pos_x_ = 0;
+}
+float MEDAL_ITEM_INFO::to_pos_x() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.to_pos_x)
+  return to_pos_x_;
+}
+void MEDAL_ITEM_INFO::set_to_pos_x(float value) {
+  
+  to_pos_x_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.to_pos_x)
+}
+
+// float to_pos_y = 7;
+void MEDAL_ITEM_INFO::clear_to_pos_y() {
+  to_pos_y_ = 0;
+}
+float MEDAL_ITEM_INFO::to_pos_y() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.to_pos_y)
+  return to_pos_y_;
+}
+void MEDAL_ITEM_INFO::set_to_pos_y(float value) {
+  
+  to_pos_y_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.to_pos_y)
+}
+
+// float to_pos_z = 8;
+void MEDAL_ITEM_INFO::clear_to_pos_z() {
+  to_pos_z_ = 0;
+}
+float MEDAL_ITEM_INFO::to_pos_z() const {
+  // @@protoc_insertion_point(field_get:GAME.MEDAL_ITEM_INFO.to_pos_z)
+  return to_pos_z_;
+}
+void MEDAL_ITEM_INFO::set_to_pos_z(float value) {
+  
+  to_pos_z_ = value;
+  // @@protoc_insertion_point(field_set:GAME.MEDAL_ITEM_INFO.to_pos_z)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SC_NOTI_CREATE_MEDAL_ITEM::kMedalItemInfosFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SC_NOTI_CREATE_MEDAL_ITEM::SC_NOTI_CREATE_MEDAL_ITEM()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_GAME_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+}
+SC_NOTI_CREATE_MEDAL_ITEM::SC_NOTI_CREATE_MEDAL_ITEM(const SC_NOTI_CREATE_MEDAL_ITEM& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      medal_item_infos_(from.medal_item_infos_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::SharedCtor() {
+  _cached_size_ = 0;
+}
+
+SC_NOTI_CREATE_MEDAL_ITEM::~SC_NOTI_CREATE_MEDAL_ITEM() {
+  // @@protoc_insertion_point(destructor:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  SharedDtor();
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::SharedDtor() {
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SC_NOTI_CREATE_MEDAL_ITEM::descriptor() {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SC_NOTI_CREATE_MEDAL_ITEM& SC_NOTI_CREATE_MEDAL_ITEM::default_instance() {
+  protobuf_GAME_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+SC_NOTI_CREATE_MEDAL_ITEM* SC_NOTI_CREATE_MEDAL_ITEM::New(::google::protobuf::Arena* arena) const {
+  SC_NOTI_CREATE_MEDAL_ITEM* n = new SC_NOTI_CREATE_MEDAL_ITEM;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::Clear() {
+// @@protoc_insertion_point(message_clear_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  medal_item_infos_.Clear();
+}
+
+bool SC_NOTI_CREATE_MEDAL_ITEM::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .GAME.MEDAL_ITEM_INFO medal_item_infos = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_medal_item_infos()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  return false;
+#undef DO_
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .GAME.MEDAL_ITEM_INFO medal_item_infos = 1;
+  for (unsigned int i = 0, n = this->medal_item_infos_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->medal_item_infos(i), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+}
+
+::google::protobuf::uint8* SC_NOTI_CREATE_MEDAL_ITEM::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .GAME.MEDAL_ITEM_INFO medal_item_infos = 1;
+  for (unsigned int i = 0, n = this->medal_item_infos_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, this->medal_item_infos(i), deterministic, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  return target;
+}
+
+size_t SC_NOTI_CREATE_MEDAL_ITEM::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  size_t total_size = 0;
+
+  // repeated .GAME.MEDAL_ITEM_INFO medal_item_infos = 1;
+  {
+    unsigned int count = this->medal_item_infos_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->medal_item_infos(i));
+    }
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SC_NOTI_CREATE_MEDAL_ITEM* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SC_NOTI_CREATE_MEDAL_ITEM>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+    MergeFrom(*source);
+  }
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::MergeFrom(const SC_NOTI_CREATE_MEDAL_ITEM& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  medal_item_infos_.MergeFrom(from.medal_item_infos_);
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::CopyFrom(const SC_NOTI_CREATE_MEDAL_ITEM& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:GAME.SC_NOTI_CREATE_MEDAL_ITEM)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SC_NOTI_CREATE_MEDAL_ITEM::IsInitialized() const {
+  return true;
+}
+
+void SC_NOTI_CREATE_MEDAL_ITEM::Swap(SC_NOTI_CREATE_MEDAL_ITEM* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SC_NOTI_CREATE_MEDAL_ITEM::InternalSwap(SC_NOTI_CREATE_MEDAL_ITEM* other) {
+  medal_item_infos_.InternalSwap(&other->medal_item_infos_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata SC_NOTI_CREATE_MEDAL_ITEM::GetMetadata() const {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SC_NOTI_CREATE_MEDAL_ITEM
+
+// repeated .GAME.MEDAL_ITEM_INFO medal_item_infos = 1;
+int SC_NOTI_CREATE_MEDAL_ITEM::medal_item_infos_size() const {
+  return medal_item_infos_.size();
+}
+void SC_NOTI_CREATE_MEDAL_ITEM::clear_medal_item_infos() {
+  medal_item_infos_.Clear();
+}
+const ::GAME::MEDAL_ITEM_INFO& SC_NOTI_CREATE_MEDAL_ITEM::medal_item_infos(int index) const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_CREATE_MEDAL_ITEM.medal_item_infos)
+  return medal_item_infos_.Get(index);
+}
+::GAME::MEDAL_ITEM_INFO* SC_NOTI_CREATE_MEDAL_ITEM::mutable_medal_item_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:GAME.SC_NOTI_CREATE_MEDAL_ITEM.medal_item_infos)
+  return medal_item_infos_.Mutable(index);
+}
+::GAME::MEDAL_ITEM_INFO* SC_NOTI_CREATE_MEDAL_ITEM::add_medal_item_infos() {
+  // @@protoc_insertion_point(field_add:GAME.SC_NOTI_CREATE_MEDAL_ITEM.medal_item_infos)
+  return medal_item_infos_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::GAME::MEDAL_ITEM_INFO >*
+SC_NOTI_CREATE_MEDAL_ITEM::mutable_medal_item_infos() {
+  // @@protoc_insertion_point(field_mutable_list:GAME.SC_NOTI_CREATE_MEDAL_ITEM.medal_item_infos)
+  return &medal_item_infos_;
+}
+const ::google::protobuf::RepeatedPtrField< ::GAME::MEDAL_ITEM_INFO >&
+SC_NOTI_CREATE_MEDAL_ITEM::medal_item_infos() const {
+  // @@protoc_insertion_point(field_list:GAME.SC_NOTI_CREATE_MEDAL_ITEM.medal_item_infos)
+  return medal_item_infos_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SC_NOTI_ACQUIRE_MEDAL_ITEM::kItemIdFieldNumber;
+const int SC_NOTI_ACQUIRE_MEDAL_ITEM::kCountFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SC_NOTI_ACQUIRE_MEDAL_ITEM::SC_NOTI_ACQUIRE_MEDAL_ITEM()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_GAME_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+}
+SC_NOTI_ACQUIRE_MEDAL_ITEM::SC_NOTI_ACQUIRE_MEDAL_ITEM(const SC_NOTI_ACQUIRE_MEDAL_ITEM& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&item_id_, &from.item_id_,
+    reinterpret_cast<char*>(&count_) -
+    reinterpret_cast<char*>(&item_id_) + sizeof(count_));
+  // @@protoc_insertion_point(copy_constructor:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::SharedCtor() {
+  ::memset(&item_id_, 0, reinterpret_cast<char*>(&count_) -
+    reinterpret_cast<char*>(&item_id_) + sizeof(count_));
+  _cached_size_ = 0;
+}
+
+SC_NOTI_ACQUIRE_MEDAL_ITEM::~SC_NOTI_ACQUIRE_MEDAL_ITEM() {
+  // @@protoc_insertion_point(destructor:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  SharedDtor();
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::SharedDtor() {
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SC_NOTI_ACQUIRE_MEDAL_ITEM::descriptor() {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SC_NOTI_ACQUIRE_MEDAL_ITEM& SC_NOTI_ACQUIRE_MEDAL_ITEM::default_instance() {
+  protobuf_GAME_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+SC_NOTI_ACQUIRE_MEDAL_ITEM* SC_NOTI_ACQUIRE_MEDAL_ITEM::New(::google::protobuf::Arena* arena) const {
+  SC_NOTI_ACQUIRE_MEDAL_ITEM* n = new SC_NOTI_ACQUIRE_MEDAL_ITEM;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::Clear() {
+// @@protoc_insertion_point(message_clear_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  ::memset(&item_id_, 0, reinterpret_cast<char*>(&count_) -
+    reinterpret_cast<char*>(&item_id_) + sizeof(count_));
+}
+
+bool SC_NOTI_ACQUIRE_MEDAL_ITEM::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 item_id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &item_id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 count = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  return false;
+#undef DO_
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 item_id = 1;
+  if (this->item_id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->item_id(), output);
+  }
+
+  // int32 count = 2;
+  if (this->count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->count(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+}
+
+::google::protobuf::uint8* SC_NOTI_ACQUIRE_MEDAL_ITEM::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 item_id = 1;
+  if (this->item_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->item_id(), target);
+  }
+
+  // int32 count = 2;
+  if (this->count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->count(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  return target;
+}
+
+size_t SC_NOTI_ACQUIRE_MEDAL_ITEM::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  size_t total_size = 0;
+
+  // int64 item_id = 1;
+  if (this->item_id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->item_id());
+  }
+
+  // int32 count = 2;
+  if (this->count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->count());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SC_NOTI_ACQUIRE_MEDAL_ITEM* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SC_NOTI_ACQUIRE_MEDAL_ITEM>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+    MergeFrom(*source);
+  }
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::MergeFrom(const SC_NOTI_ACQUIRE_MEDAL_ITEM& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.item_id() != 0) {
+    set_item_id(from.item_id());
+  }
+  if (from.count() != 0) {
+    set_count(from.count());
+  }
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::CopyFrom(const SC_NOTI_ACQUIRE_MEDAL_ITEM& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SC_NOTI_ACQUIRE_MEDAL_ITEM::IsInitialized() const {
+  return true;
+}
+
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::Swap(SC_NOTI_ACQUIRE_MEDAL_ITEM* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::InternalSwap(SC_NOTI_ACQUIRE_MEDAL_ITEM* other) {
+  std::swap(item_id_, other->item_id_);
+  std::swap(count_, other->count_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata SC_NOTI_ACQUIRE_MEDAL_ITEM::GetMetadata() const {
+  protobuf_GAME_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_GAME_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SC_NOTI_ACQUIRE_MEDAL_ITEM
+
+// int64 item_id = 1;
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_item_id() {
+  item_id_ = GOOGLE_LONGLONG(0);
+}
+::google::protobuf::int64 SC_NOTI_ACQUIRE_MEDAL_ITEM::item_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.item_id)
+  return item_id_;
+}
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_item_id(::google::protobuf::int64 value) {
+  
+  item_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.item_id)
+}
+
+// int32 count = 2;
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_count() {
+  count_ = 0;
+}
+::google::protobuf::int32 SC_NOTI_ACQUIRE_MEDAL_ITEM::count() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.count)
+  return count_;
+}
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_count(::google::protobuf::int32 value) {
+  
+  count_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.count)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

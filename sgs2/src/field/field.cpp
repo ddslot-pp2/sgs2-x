@@ -5,7 +5,9 @@
 #include "../packet_processor/packet/LOBBY.pb.h"
 #include "../packet_processor/send_helper.h"
 #include "../packet_processor/packet/GAME.pb.h"
-#include "../item/item.h"
+//#include "../item/item.h"
+#include "../item/medal_item.h"
+#include <random>
 
 using namespace network;
 
@@ -35,6 +37,24 @@ void field::update(float delta)
     {
         item->update(delta);
     }
+
+    for (auto it = std::begin(medal_items_); it != std::end(medal_items_);)
+    {
+        auto& medal_item = it->second;
+        medal_item->update(delta);
+
+        if (!medal_item->get_active())
+        {
+            // »èÁ¦
+            //medal_item->destroy();
+            medal_items_.erase(it++);
+        }
+        else
+        {
+            ++it;
+        }
+    }
+
 }
 
 void field::try_update()
@@ -234,4 +254,40 @@ void field::noti_active_item(std::shared_ptr<server_session> session) const
     }
     
     send_packet(session, opcode::SC_NOTI_ACTIVE_ITEM, noti);
+}
+
+void field::create_medal_item(const vector3& from_pos, const int count)
+{
+    GAME::SC_NOTI_CREATE_MEDAL_ITEM noti;
+
+    for (auto i = 0; i < count; ++i)
+    {
+        // spawn_from
+        // spawn_to
+        std::mt19937 rng;
+        rng.seed(std::random_device()());
+        std::uniform_int_distribution<std::mt19937::result_type> dist(1, 20); // distribution in range [1, 6]
+
+        auto random_x = dist(rng);
+        auto random_z = dist(rng);
+
+        //std::cout << dist(rng) << std::endl;
+
+        vector3 to_pos(from_pos.X + random_x, 0.0f, from_pos.Z + random_z);
+
+        auto medal = std::make_shared<medal_item>(field_id_, core::timestamp(), to_pos);
+
+        auto medal_item_info = noti.add_medal_item_infos();
+
+        medal_item_info->set_item_id(medal->get_item_id());
+        medal_item_info->set_item_type(to_integral(medal->get_type()));
+        medal_item_info->set_from_pos_x(from_pos.X);
+        medal_item_info->set_from_pos_x(from_pos.Y);
+        medal_item_info->set_from_pos_x(from_pos.Z);
+        medal_item_info->set_to_pos_x(to_pos.X);
+        medal_item_info->set_to_pos_x(to_pos.Y);
+        medal_item_info->set_to_pos_x(to_pos.Z);
+    }
+
+    noti_packet(opcode::SC_NOTI_CREATE_MEDAL_ITEM, noti);
 }

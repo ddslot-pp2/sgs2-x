@@ -83,8 +83,11 @@
     <ClCompile Include="src\field\egypt_field.cpp" />
     <ClCompile Include="src\field\field.cpp" />
     <ClCompile Include="src\field\field_manager.cpp" />
+    <ClCompile Include="src\item\coin_item.cpp" />
     <ClCompile Include="src\item\hp_item.cpp" />
     <ClCompile Include="src\item\item.cpp" />
+    <ClCompile Include="src\item\medal_item.cpp" />
+    <ClCompile Include="src\item\shield_item.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\mysql\mysql_connector.cpp" />
     <ClCompile Include="src\object\character.cpp" />
@@ -116,8 +119,11 @@
     <ClInclude Include="src\field\egypt_field.h" />
     <ClInclude Include="src\field\field.h" />
     <ClInclude Include="src\field\field_manager.h" />
+    <ClInclude Include="src\item\coin_item.h" />
     <ClInclude Include="src\item\hp_item.h" />
     <ClInclude Include="src\item\item.h" />
+    <ClInclude Include="src\item\medal_item.h" />
+    <ClInclude Include="src\item\shield_item.h" />
     <ClInclude Include="src\mysql\mysql_connector.h" />
     <ClInclude Include="src\object\character.h" />
     <ClInclude Include="src\object\collider.h" />

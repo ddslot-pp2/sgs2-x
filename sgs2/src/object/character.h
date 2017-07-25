@@ -38,6 +38,8 @@ private:
   
     int character_type_;
     int score_;
+
+    std::chrono::milliseconds start_time_;
 };
 
 #endif

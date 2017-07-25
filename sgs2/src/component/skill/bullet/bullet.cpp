@@ -93,19 +93,27 @@ void bullet::collide_with_other(std::shared_ptr<character> target_object)
     if (target_hp <= 0)
     {
         auto stat_info = object_->get_stat_info();
-        auto score = stat_info->score.load();
-        auto reward_score = std::max(min_reward_score, (score / evaporation_percentage));
+        //auto score = stat_info->score.load();
+        //auto reward_score = std::max(min_reward_score, (score / evaporation_percentage));
+        auto reward_score = 50;
 
         stat_info->score = stat_info->score + reward_score;
-
+        /*
         auto reward_exp = std::min(max_reward_exp, static_cast<float>(reward_score));
 
         // reward_exp 5씩 올라감 너무 조금 올라감 lv에 맞춰서 레벨이 낮으면 많이 올라가고 높으면 조금 올라가게 수정해야겠음
         auto extra_level_exp = static_cast<float>(max_level - stat_info->level);
 
         stat_info->exp = stat_info->exp + reward_exp + extra_level_exp;
+        */
         
         target_object->destroy();
+    }
+    else
+    {
+        auto stat_info = object_->get_stat_info();
+        auto reward_score = 20;
+        stat_info->score = stat_info->score + reward_score;
     }
 
     GAME::SC_NOTI_DESTROY_BULLET noti;

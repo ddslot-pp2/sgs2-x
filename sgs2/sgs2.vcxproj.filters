@@ -150,6 +150,15 @@
     <ClCompile Include="src\mysql\mysql_connector.cpp">
       <Filter>src\mysql</Filter>
     </ClCompile>
+    <ClCompile Include="src\item\medal_item.cpp">
+      <Filter>src\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\item\shield_item.cpp">
+      <Filter>src\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\item\coin_item.cpp">
+      <Filter>src\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -226,6 +235,15 @@
     </ClInclude>
     <ClInclude Include="src\mysql\mysql_connector.h">
       <Filter>src\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="src\item\coin_item.h">
+      <Filter>src\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\item\medal_item.h">
+      <Filter>src\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\item\shield_item.h">
+      <Filter>src\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,10 +3,11 @@
 #include "../field/field_manager.h"
 #include "../packet_processor/packet/GAME.pb.h"
 #include "../packet_processor/send_helper.h"
+#include "../../../core/src/timer/timer_helper.hpp"
 
 using super = object;
 
-character::character(field_id id, std::shared_ptr<server_session> session) : object(id), session_(session), score_(0)
+character::character(field_id id, std::shared_ptr<server_session> session) : object(id), session_(session), score_(0), start_time_(0)
 {
     wprintf(L"케릭터 생성자 호출\n");
     field_ = field_manager::instance().get_field(id);
@@ -23,6 +24,7 @@ void character::initialize()
     super::initialize();
 
     character_type_ = 1;
+    start_time_ = core::timestamp();
 }
 
 void character::update(float delta)
@@ -59,6 +61,13 @@ void character::destroy()
             send_packet(other_session, opcode::SC_NOTI_DESTROY_CHARACTER, noti);
         }
     }
+
+    auto total_time = core::timestamp() - start_time_;
+    wprintf(L"유저가 버틴 시간은: %lld ms", total_time.count());
+
+    // 랭크매니져 만들면 거기서 계산해서줌
+    auto create_medal_count = 1;
+    field_->create_medal_item(pos_, create_medal_count);
 }
 
 void character::leave_field() const

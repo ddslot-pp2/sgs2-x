@@ -221,6 +221,26 @@
 			<exp type="int32"/>
 		</SC_NOTI_ACQUIRE_ITEM>
 
+		<MEDAL_ITEM_INFO struct = "true">
+			<item_id type="int64"/>
+			<item_type type="int32"/>
+			<from_pos_x type="float"/>
+			<from_pos_y type="float"/>
+			<from_pos_z type="float"/>
+			<to_pos_x type="float"/>
+			<to_pos_y type="float"/>
+			<to_pos_z type="float"/>
+		</MEDAL_ITEM_INFO>
+
+		<SC_NOTI_CREATE_MEDAL_ITEM>
+			<medal_item_infos type="MEDAL_ITEM_INFO" repeated="true"/>
+		</SC_NOTI_CREATE_MEDAL_ITEM>
+
+		<SC_NOTI_ACQUIRE_MEDAL_ITEM>
+			<item_id type="int64"/>
+			<count type="int32"/>
+		</SC_NOTI_ACQUIRE_MEDAL_ITEM>
+
 	</GAME>
 
 

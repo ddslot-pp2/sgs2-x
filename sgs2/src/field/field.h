@@ -81,6 +81,8 @@ public:
     void noti_active_item(const item_id& id, const int& type, const vector3& pos) const;
     void noti_active_item(std::shared_ptr<server_session> session) const;
 
+    void create_medal_item(const vector3& from_pos, const int count);
+
 protected:
 
     unsigned int field_id_;
@@ -89,6 +91,8 @@ protected:
 
     std::vector<collider> colliders_;
     std::vector<std::shared_ptr<item>> items_;
+
+    std::map<uintptr_t, std::shared_ptr<item>> medal_items_;
 
 private:
     void process_task();
