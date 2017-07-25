@@ -11,6 +11,7 @@
 #include "field/field_manager.h"
 #include "../../core/src/locale/string_helper.h"
 #include "mysql/mysql_connector.h"
+#include "property/property_manager.h"
 
 std::mutex m;
 std::condition_variable cv;
@@ -30,6 +31,9 @@ void initialize()
 
     // 필드 업데이트 시작 
     field_manager::instance().update_fields();
+
+    // 기본 property 읽기
+    property_manager::instance().read_xml(L"");
 }
 
 void test()

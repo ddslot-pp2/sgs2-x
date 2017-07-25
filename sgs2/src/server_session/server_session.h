@@ -35,8 +35,6 @@ private:
     account_id account_id_;
 
     character_ptr character_;
-
-    
     //std::shared_ptr<character> character_;
 };
 

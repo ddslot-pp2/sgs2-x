@@ -55,6 +55,9 @@
     <Filter Include="src\mysql">
       <UniqueIdentifier>{e02c8d69-ab26-4252-ab7f-389258657f6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\property">
+      <UniqueIdentifier>{7e66a812-a3b8-4434-9037-6db168eeeb7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -159,6 +162,9 @@
     <ClCompile Include="src\item\coin_item.cpp">
       <Filter>src\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\property\property_manager.cpp">
+      <Filter>src\property</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -244,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="src\item\shield_item.h">
       <Filter>src\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\property\property_manager.h">
+      <Filter>src\property</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
