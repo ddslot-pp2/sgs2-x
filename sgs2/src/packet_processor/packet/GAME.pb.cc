@@ -358,6 +358,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_MEDAL_ITEM, obj_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_MEDAL_ITEM, item_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_MEDAL_ITEM, count_),
 };
@@ -597,12 +598,13 @@ void AddDescriptorsImpl() {
       "\001(\002\022\022\n\nfrom_pos_z\030\005 \001(\002\022\020\n\010to_pos_x\030\006 \001("
       "\002\022\020\n\010to_pos_y\030\007 \001(\002\022\020\n\010to_pos_z\030\010 \001(\002\"L\n"
       "\031SC_NOTI_CREATE_MEDAL_ITEM\022/\n\020medal_item"
-      "_infos\030\001 \003(\0132\025.GAME.MEDAL_ITEM_INFO\"<\n\032S"
-      "C_NOTI_ACQUIRE_MEDAL_ITEM\022\017\n\007item_id\030\001 \001"
-      "(\003\022\r\n\005count\030\002 \001(\005b\006proto3"
+      "_infos\030\001 \003(\0132\025.GAME.MEDAL_ITEM_INFO\"L\n\032S"
+      "C_NOTI_ACQUIRE_MEDAL_ITEM\022\016\n\006obj_id\030\001 \001("
+      "\003\022\017\n\007item_id\030\002 \001(\003\022\r\n\005count\030\003 \001(\005b\006proto"
+      "3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2505);
+      descriptor, 2521);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -10867,6 +10869,7 @@ SC_NOTI_CREATE_MEDAL_ITEM::medal_item_infos() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SC_NOTI_ACQUIRE_MEDAL_ITEM::kObjIdFieldNumber;
 const int SC_NOTI_ACQUIRE_MEDAL_ITEM::kItemIdFieldNumber;
 const int SC_NOTI_ACQUIRE_MEDAL_ITEM::kCountFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -10884,15 +10887,15 @@ SC_NOTI_ACQUIRE_MEDAL_ITEM::SC_NOTI_ACQUIRE_MEDAL_ITEM(const SC_NOTI_ACQUIRE_MED
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&item_id_, &from.item_id_,
+  ::memcpy(&obj_id_, &from.obj_id_,
     reinterpret_cast<char*>(&count_) -
-    reinterpret_cast<char*>(&item_id_) + sizeof(count_));
+    reinterpret_cast<char*>(&obj_id_) + sizeof(count_));
   // @@protoc_insertion_point(copy_constructor:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
 }
 
 void SC_NOTI_ACQUIRE_MEDAL_ITEM::SharedCtor() {
-  ::memset(&item_id_, 0, reinterpret_cast<char*>(&count_) -
-    reinterpret_cast<char*>(&item_id_) + sizeof(count_));
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&count_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(count_));
   _cached_size_ = 0;
 }
 
@@ -10929,8 +10932,8 @@ SC_NOTI_ACQUIRE_MEDAL_ITEM* SC_NOTI_ACQUIRE_MEDAL_ITEM::New(::google::protobuf::
 
 void SC_NOTI_ACQUIRE_MEDAL_ITEM::Clear() {
 // @@protoc_insertion_point(message_clear_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
-  ::memset(&item_id_, 0, reinterpret_cast<char*>(&count_) -
-    reinterpret_cast<char*>(&item_id_) + sizeof(count_));
+  ::memset(&obj_id_, 0, reinterpret_cast<char*>(&count_) -
+    reinterpret_cast<char*>(&obj_id_) + sizeof(count_));
 }
 
 bool SC_NOTI_ACQUIRE_MEDAL_ITEM::MergePartialFromCodedStream(
@@ -10943,10 +10946,24 @@ bool SC_NOTI_ACQUIRE_MEDAL_ITEM::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int64 item_id = 1;
+      // int64 obj_id = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &obj_id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 item_id = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
@@ -10957,10 +10974,10 @@ bool SC_NOTI_ACQUIRE_MEDAL_ITEM::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 count = 2;
-      case 2: {
+      // int32 count = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u)) {
+            static_cast< ::google::protobuf::uint8>(24u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -10998,14 +11015,19 @@ void SC_NOTI_ACQUIRE_MEDAL_ITEM::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 item_id = 1;
-  if (this->item_id() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->item_id(), output);
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->obj_id(), output);
   }
 
-  // int32 count = 2;
+  // int64 item_id = 2;
+  if (this->item_id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->item_id(), output);
+  }
+
+  // int32 count = 3;
   if (this->count() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->count(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->count(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
@@ -11017,14 +11039,19 @@ void SC_NOTI_ACQUIRE_MEDAL_ITEM::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 item_id = 1;
-  if (this->item_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->item_id(), target);
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->obj_id(), target);
   }
 
-  // int32 count = 2;
+  // int64 item_id = 2;
+  if (this->item_id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->item_id(), target);
+  }
+
+  // int32 count = 3;
   if (this->count() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->count(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->count(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
@@ -11035,14 +11062,21 @@ size_t SC_NOTI_ACQUIRE_MEDAL_ITEM::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
   size_t total_size = 0;
 
-  // int64 item_id = 1;
+  // int64 obj_id = 1;
+  if (this->obj_id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->obj_id());
+  }
+
+  // int64 item_id = 2;
   if (this->item_id() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
         this->item_id());
   }
 
-  // int32 count = 2;
+  // int32 count = 3;
   if (this->count() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -11078,6 +11112,9 @@ void SC_NOTI_ACQUIRE_MEDAL_ITEM::MergeFrom(const SC_NOTI_ACQUIRE_MEDAL_ITEM& fro
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.obj_id() != 0) {
+    set_obj_id(from.obj_id());
+  }
   if (from.item_id() != 0) {
     set_item_id(from.item_id());
   }
@@ -11109,6 +11146,7 @@ void SC_NOTI_ACQUIRE_MEDAL_ITEM::Swap(SC_NOTI_ACQUIRE_MEDAL_ITEM* other) {
   InternalSwap(other);
 }
 void SC_NOTI_ACQUIRE_MEDAL_ITEM::InternalSwap(SC_NOTI_ACQUIRE_MEDAL_ITEM* other) {
+  std::swap(obj_id_, other->obj_id_);
   std::swap(item_id_, other->item_id_);
   std::swap(count_, other->count_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -11122,7 +11160,21 @@ void SC_NOTI_ACQUIRE_MEDAL_ITEM::InternalSwap(SC_NOTI_ACQUIRE_MEDAL_ITEM* other)
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // SC_NOTI_ACQUIRE_MEDAL_ITEM
 
-// int64 item_id = 1;
+// int64 obj_id = 1;
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+::google::protobuf::int64 SC_NOTI_ACQUIRE_MEDAL_ITEM::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.obj_id)
+  return obj_id_;
+}
+void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.obj_id)
+}
+
+// int64 item_id = 2;
 void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_item_id() {
   item_id_ = GOOGLE_LONGLONG(0);
 }
@@ -11136,7 +11188,7 @@ void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_item_id(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.item_id)
 }
 
-// int32 count = 2;
+// int32 count = 3;
 void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_count() {
   count_ = 0;
 }

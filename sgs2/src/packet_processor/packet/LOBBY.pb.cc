@@ -85,6 +85,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_LOG_IN, result_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_LOG_IN, timestamp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_LOG_IN, nickname_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_LOG_IN, medal_count_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_LOG_IN, coin_count_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FIELD_INFO, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -137,13 +139,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 0, -1, sizeof(CS_LOG_IN)},
   { 7, -1, sizeof(SC_LOG_IN)},
-  { 15, -1, sizeof(FIELD_INFO)},
-  { 23, -1, sizeof(CS_FIELD_LIST)},
-  { 28, -1, sizeof(SC_FIELD_LIST)},
-  { 35, -1, sizeof(CS_ENTER_FIELD)},
-  { 41, -1, sizeof(SC_ENTER_FIELD)},
-  { 49, -1, sizeof(CS_LEAVE_FIELD)},
-  { 55, -1, sizeof(SC_LEAVE_FIELD)},
+  { 17, -1, sizeof(FIELD_INFO)},
+  { 25, -1, sizeof(CS_FIELD_LIST)},
+  { 30, -1, sizeof(SC_FIELD_LIST)},
+  { 37, -1, sizeof(CS_ENTER_FIELD)},
+  { 43, -1, sizeof(SC_ENTER_FIELD)},
+  { 51, -1, sizeof(CS_LEAVE_FIELD)},
+  { 57, -1, sizeof(SC_LEAVE_FIELD)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -225,22 +227,23 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
       "\n\013LOBBY.proto\022\005LOBBY\")\n\tCS_LOG_IN\022\n\n\002id\030"
-      "\001 \001(\t\022\020\n\010password\030\002 \001(\t\"@\n\tSC_LOG_IN\022\016\n\006"
+      "\001 \001(\t\022\020\n\010password\030\002 \001(\t\"i\n\tSC_LOG_IN\022\016\n\006"
       "result\030\001 \001(\010\022\021\n\ttimestamp\030\002 \001(\003\022\020\n\010nickn"
-      "ame\030\003 \001(\t\"J\n\nFIELD_INFO\022\020\n\010field_id\030\001 \001("
-      "\005\022\022\n\nuser_count\030\002 \001(\005\022\026\n\016max_user_count\030"
-      "\003 \001(\005\"\017\n\rCS_FIELD_LIST\"G\n\rSC_FIELD_LIST\022"
-      "\016\n\006result\030\001 \001(\010\022&\n\013field_infos\030\002 \003(\0132\021.L"
-      "OBBY.FIELD_INFO\"\"\n\016CS_ENTER_FIELD\022\020\n\010fie"
-      "ld_id\030\001 \001(\005\">\n\016SC_ENTER_FIELD\022\016\n\006result\030"
-      "\001 \001(\010\022\020\n\010field_id\030\002 \001(\005\022\n\n\002ec\030\003 \001(\t\"\"\n\016C"
-      "S_LEAVE_FIELD\022\020\n\010field_id\030\001 \001(\005\",\n\016SC_LE"
-      "AVE_FIELD\022\016\n\006result\030\001 \001(\010\022\n\n\002ec\030\002 \001(\t*2\n"
-      "\014GameDataType\022\n\n\006test_1\020\000\022\n\n\006test_2\020\001\022\n\n"
-      "\006test_3\020\002b\006proto3"
+      "ame\030\003 \001(\t\022\023\n\013medal_count\030\004 \001(\005\022\022\n\ncoin_c"
+      "ount\030\005 \001(\005\"J\n\nFIELD_INFO\022\020\n\010field_id\030\001 \001"
+      "(\005\022\022\n\nuser_count\030\002 \001(\005\022\026\n\016max_user_count"
+      "\030\003 \001(\005\"\017\n\rCS_FIELD_LIST\"G\n\rSC_FIELD_LIST"
+      "\022\016\n\006result\030\001 \001(\010\022&\n\013field_infos\030\002 \003(\0132\021."
+      "LOBBY.FIELD_INFO\"\"\n\016CS_ENTER_FIELD\022\020\n\010fi"
+      "eld_id\030\001 \001(\005\">\n\016SC_ENTER_FIELD\022\016\n\006result"
+      "\030\001 \001(\010\022\020\n\010field_id\030\002 \001(\005\022\n\n\002ec\030\003 \001(\t\"\"\n\016"
+      "CS_LEAVE_FIELD\022\020\n\010field_id\030\001 \001(\005\",\n\016SC_L"
+      "EAVE_FIELD\022\016\n\006result\030\001 \001(\010\022\n\n\002ec\030\002 \001(\t*2"
+      "\n\014GameDataType\022\n\n\006test_1\020\000\022\n\n\006test_2\020\001\022\n"
+      "\n\006test_3\020\002b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 537);
+      descriptor, 578);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "LOBBY.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -682,6 +685,8 @@ void CS_LOG_IN::set_allocated_password(::std::string* password) {
 const int SC_LOG_IN::kResultFieldNumber;
 const int SC_LOG_IN::kTimestampFieldNumber;
 const int SC_LOG_IN::kNicknameFieldNumber;
+const int SC_LOG_IN::kMedalCountFieldNumber;
+const int SC_LOG_IN::kCoinCountFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SC_LOG_IN::SC_LOG_IN()
@@ -702,15 +707,15 @@ SC_LOG_IN::SC_LOG_IN(const SC_LOG_IN& from)
     nickname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nickname_);
   }
   ::memcpy(&timestamp_, &from.timestamp_,
-    reinterpret_cast<char*>(&result_) -
-    reinterpret_cast<char*>(&timestamp_) + sizeof(result_));
+    reinterpret_cast<char*>(&coin_count_) -
+    reinterpret_cast<char*>(&timestamp_) + sizeof(coin_count_));
   // @@protoc_insertion_point(copy_constructor:LOBBY.SC_LOG_IN)
 }
 
 void SC_LOG_IN::SharedCtor() {
   nickname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&timestamp_, 0, reinterpret_cast<char*>(&result_) -
-    reinterpret_cast<char*>(&timestamp_) + sizeof(result_));
+  ::memset(&timestamp_, 0, reinterpret_cast<char*>(&coin_count_) -
+    reinterpret_cast<char*>(&timestamp_) + sizeof(coin_count_));
   _cached_size_ = 0;
 }
 
@@ -749,8 +754,8 @@ SC_LOG_IN* SC_LOG_IN::New(::google::protobuf::Arena* arena) const {
 void SC_LOG_IN::Clear() {
 // @@protoc_insertion_point(message_clear_start:LOBBY.SC_LOG_IN)
   nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&timestamp_, 0, reinterpret_cast<char*>(&result_) -
-    reinterpret_cast<char*>(&timestamp_) + sizeof(result_));
+  ::memset(&timestamp_, 0, reinterpret_cast<char*>(&coin_count_) -
+    reinterpret_cast<char*>(&timestamp_) + sizeof(coin_count_));
 }
 
 bool SC_LOG_IN::MergePartialFromCodedStream(
@@ -807,6 +812,34 @@ bool SC_LOG_IN::MergePartialFromCodedStream(
         break;
       }
 
+      // int32 medal_count = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &medal_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 coin_count = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &coin_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -854,6 +887,16 @@ void SC_LOG_IN::SerializeWithCachedSizes(
       3, this->nickname(), output);
   }
 
+  // int32 medal_count = 4;
+  if (this->medal_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->medal_count(), output);
+  }
+
+  // int32 coin_count = 5;
+  if (this->coin_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->coin_count(), output);
+  }
+
   // @@protoc_insertion_point(serialize_end:LOBBY.SC_LOG_IN)
 }
 
@@ -884,6 +927,16 @@ void SC_LOG_IN::SerializeWithCachedSizes(
         3, this->nickname(), target);
   }
 
+  // int32 medal_count = 4;
+  if (this->medal_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->medal_count(), target);
+  }
+
+  // int32 coin_count = 5;
+  if (this->coin_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->coin_count(), target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:LOBBY.SC_LOG_IN)
   return target;
 }
@@ -909,6 +962,20 @@ size_t SC_LOG_IN::ByteSizeLong() const {
   // bool result = 1;
   if (this->result() != 0) {
     total_size += 1 + 1;
+  }
+
+  // int32 medal_count = 4;
+  if (this->medal_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->medal_count());
+  }
+
+  // int32 coin_count = 5;
+  if (this->coin_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->coin_count());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -950,6 +1017,12 @@ void SC_LOG_IN::MergeFrom(const SC_LOG_IN& from) {
   if (from.result() != 0) {
     set_result(from.result());
   }
+  if (from.medal_count() != 0) {
+    set_medal_count(from.medal_count());
+  }
+  if (from.coin_count() != 0) {
+    set_coin_count(from.coin_count());
+  }
 }
 
 void SC_LOG_IN::CopyFrom(const ::google::protobuf::Message& from) {
@@ -978,6 +1051,8 @@ void SC_LOG_IN::InternalSwap(SC_LOG_IN* other) {
   nickname_.Swap(&other->nickname_);
   std::swap(timestamp_, other->timestamp_);
   std::swap(result_, other->result_);
+  std::swap(medal_count_, other->medal_count_);
+  std::swap(coin_count_, other->coin_count_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -1068,6 +1143,34 @@ void SC_LOG_IN::set_allocated_nickname(::std::string* nickname) {
   }
   nickname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nickname);
   // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_LOG_IN.nickname)
+}
+
+// int32 medal_count = 4;
+void SC_LOG_IN::clear_medal_count() {
+  medal_count_ = 0;
+}
+::google::protobuf::int32 SC_LOG_IN::medal_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_LOG_IN.medal_count)
+  return medal_count_;
+}
+void SC_LOG_IN::set_medal_count(::google::protobuf::int32 value) {
+  
+  medal_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_LOG_IN.medal_count)
+}
+
+// int32 coin_count = 5;
+void SC_LOG_IN::clear_coin_count() {
+  coin_count_ = 0;
+}
+::google::protobuf::int32 SC_LOG_IN::coin_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_LOG_IN.coin_count)
+  return coin_count_;
+}
+void SC_LOG_IN::set_coin_count(::google::protobuf::int32 value) {
+  
+  coin_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_LOG_IN.coin_count)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

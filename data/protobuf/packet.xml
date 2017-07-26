@@ -18,6 +18,8 @@
 			<result type="bool"/>
 			<timestamp type="int64"/>
 			<nickname type="string"/>
+			<medal_count type="int32"/>
+			<coin_count type="int32"/>
 		</SC_LOG_IN>
 
 		<FIELD_INFO struct = "true">
@@ -237,6 +239,7 @@
 		</SC_NOTI_CREATE_MEDAL_ITEM>
 
 		<SC_NOTI_ACQUIRE_MEDAL_ITEM>
+			<obj_id type="int64"/>
 			<item_id type="int64"/>
 			<count type="int32"/>
 		</SC_NOTI_ACQUIRE_MEDAL_ITEM>

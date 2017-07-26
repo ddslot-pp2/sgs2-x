@@ -2834,15 +2834,21 @@ class SC_NOTI_ACQUIRE_MEDAL_ITEM : public ::google::protobuf::Message /* @@proto
 
   // accessors -------------------------------------------------------
 
-  // int64 item_id = 1;
+  // int64 obj_id = 1;
+  void clear_obj_id();
+  static const int kObjIdFieldNumber = 1;
+  ::google::protobuf::int64 obj_id() const;
+  void set_obj_id(::google::protobuf::int64 value);
+
+  // int64 item_id = 2;
   void clear_item_id();
-  static const int kItemIdFieldNumber = 1;
+  static const int kItemIdFieldNumber = 2;
   ::google::protobuf::int64 item_id() const;
   void set_item_id(::google::protobuf::int64 value);
 
-  // int32 count = 2;
+  // int32 count = 3;
   void clear_count();
-  static const int kCountFieldNumber = 2;
+  static const int kCountFieldNumber = 3;
   ::google::protobuf::int32 count() const;
   void set_count(::google::protobuf::int32 value);
 
@@ -2850,6 +2856,7 @@ class SC_NOTI_ACQUIRE_MEDAL_ITEM : public ::google::protobuf::Message /* @@proto
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 obj_id_;
   ::google::protobuf::int64 item_id_;
   ::google::protobuf::int32 count_;
   mutable int _cached_size_;
@@ -4688,7 +4695,21 @@ SC_NOTI_CREATE_MEDAL_ITEM::medal_item_infos() const {
 
 // SC_NOTI_ACQUIRE_MEDAL_ITEM
 
-// int64 item_id = 1;
+// int64 obj_id = 1;
+inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_obj_id() {
+  obj_id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SC_NOTI_ACQUIRE_MEDAL_ITEM::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.obj_id)
+  return obj_id_;
+}
+inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_obj_id(::google::protobuf::int64 value) {
+  
+  obj_id_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.obj_id)
+}
+
+// int64 item_id = 2;
 inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_item_id() {
   item_id_ = GOOGLE_LONGLONG(0);
 }
@@ -4702,7 +4723,7 @@ inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_item_id(::google::protobuf::int64 va
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.item_id)
 }
 
-// int32 count = 2;
+// int32 count = 3;
 inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_count() {
   count_ = 0;
 }

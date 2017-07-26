@@ -294,6 +294,18 @@ class SC_LOG_IN : public ::google::protobuf::Message /* @@protoc_insertion_point
   bool result() const;
   void set_result(bool value);
 
+  // int32 medal_count = 4;
+  void clear_medal_count();
+  static const int kMedalCountFieldNumber = 4;
+  ::google::protobuf::int32 medal_count() const;
+  void set_medal_count(::google::protobuf::int32 value);
+
+  // int32 coin_count = 5;
+  void clear_coin_count();
+  static const int kCoinCountFieldNumber = 5;
+  ::google::protobuf::int32 coin_count() const;
+  void set_coin_count(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:LOBBY.SC_LOG_IN)
  private:
 
@@ -301,6 +313,8 @@ class SC_LOG_IN : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::google::protobuf::internal::ArenaStringPtr nickname_;
   ::google::protobuf::int64 timestamp_;
   bool result_;
+  ::google::protobuf::int32 medal_count_;
+  ::google::protobuf::int32 coin_count_;
   mutable int _cached_size_;
   friend struct protobuf_LOBBY_2eproto::TableStruct;
 };
@@ -1118,6 +1132,34 @@ inline void SC_LOG_IN::set_allocated_nickname(::std::string* nickname) {
   }
   nickname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nickname);
   // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_LOG_IN.nickname)
+}
+
+// int32 medal_count = 4;
+inline void SC_LOG_IN::clear_medal_count() {
+  medal_count_ = 0;
+}
+inline ::google::protobuf::int32 SC_LOG_IN::medal_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_LOG_IN.medal_count)
+  return medal_count_;
+}
+inline void SC_LOG_IN::set_medal_count(::google::protobuf::int32 value) {
+  
+  medal_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_LOG_IN.medal_count)
+}
+
+// int32 coin_count = 5;
+inline void SC_LOG_IN::clear_coin_count() {
+  coin_count_ = 0;
+}
+inline ::google::protobuf::int32 SC_LOG_IN::coin_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_LOG_IN.coin_count)
+  return coin_count_;
+}
+inline void SC_LOG_IN::set_coin_count(::google::protobuf::int32 value) {
+  
+  coin_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_LOG_IN.coin_count)
 }
 
 // -------------------------------------------------------------------

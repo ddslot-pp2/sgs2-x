@@ -3,7 +3,7 @@
 
 #include <memory>
 #include <map>
-#include "../predeclare.h"
+#include <mutex>
 #include "account.h"
 
 class account_manager
@@ -18,7 +18,12 @@ public:
     account_manager(const account_manager& other) = delete;
     account_manager& operator=(const account_manager& other) = delete;
 
-    std::map<account_id, std::unique_ptr<account>> accounts_;
+    std::shared_ptr<account> add_account(const account_info& acc_info);
+    void del_account(const account_id id);
+    
+private:
+    std::mutex account_lock_;
+    std::map<account_id, std::shared_ptr<account>> accounts_;
 };
 
 #endif

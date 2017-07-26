@@ -8,6 +8,7 @@
 //#include "../item/item.h"
 #include "../item/medal_item.h"
 #include <random>
+#include "../property/property_manager.h"
 
 using namespace network;
 
@@ -139,6 +140,22 @@ void field::enter_field(std::shared_ptr<server_session> session)
     vector3 spawn_pos(11.0f, 0.0f, 0.0f);
     c->set_pos(spawn_pos);
 
+    // stat_info ¼³Á¤ => default_stat_info + stat_info (account)
+    const auto& default_stat_info = property_manager::instance().get_default_stat_info(session->get_character_type());
+
+    auto stat = std::make_shared<stat_info>();
+
+    auto buff_stat = session->get_stat_info();
+    stat->max_hp       = default_stat_info->max_hp + buff_stat->max_hp;
+    stat->hp           = stat->max_hp.load();
+    stat->speed        = default_stat_info->speed + buff_stat->speed;
+    stat->bullet_speed = default_stat_info->bullet_speed + buff_stat->bullet_speed;
+    stat->bullet_power = default_stat_info->bullet_power + buff_stat->bullet_power;
+    stat->bullet_distance = default_stat_info->bullet_distance + buff_stat->bullet_distance;
+    stat->reload_time = std::max(0.0f, default_stat_info->reload_time - buff_stat->reload_time);
+
+    c->set_stat_info(stat);
+
     session->set_character(c);
     current_user_count_ = characters_.size();
     send_packet(session, opcode::SC_ENTER_FIELD, send);
@@ -266,7 +283,7 @@ void field::create_medal_item(const vector3& from_pos, const int count)
         // spawn_to
         std::mt19937 rng;
         rng.seed(std::random_device()());
-        std::uniform_int_distribution<std::mt19937::result_type> dist(1, 20); // distribution in range [1, 6]
+        std::uniform_int_distribution<std::mt19937::result_type> dist(1, 20);
 
         auto random_x = dist(rng);
         auto random_z = dist(rng);

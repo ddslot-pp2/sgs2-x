@@ -57,6 +57,7 @@ public:
     vector3 get_pos();
 
     field* get_field() const { return field_; }
+    void set_stat_info(std::shared_ptr<stat_info> stat);
     auto get_stat_info() const { return stat_; }
 
     //void set_destroy(bool destroy) { destroy_ = destroy; }

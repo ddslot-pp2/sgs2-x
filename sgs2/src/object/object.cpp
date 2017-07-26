@@ -100,3 +100,10 @@ vector3 object::get_pos()
 {
     return pos_;
 }
+
+void object::set_stat_info(std::shared_ptr<stat_info> stat)
+{
+    stat_ = stat;
+    default_stat_ = std::make_shared<stat_info>();
+    default_stat_->copy(stat_);
+}
