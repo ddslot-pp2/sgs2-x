@@ -311,6 +311,8 @@ void field::create_medal_item(const vector3& from_pos, const int count)
         medal_item_info->set_to_pos_x(to_pos.X);
         medal_item_info->set_to_pos_y(to_pos.Y);
         medal_item_info->set_to_pos_z(to_pos.Z);
+
+        medal_items_[medal->get_item_id()] = medal;
     }
 
     noti_packet(opcode::SC_NOTI_CREATE_MEDAL_ITEM, noti);

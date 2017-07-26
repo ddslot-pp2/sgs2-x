@@ -30,14 +30,18 @@ void medal_item::update(float delta)
 
             // 바로 보내준다
             auto session = object_->get_session();
-            if (session)
+            if (!session)
             {
-
+                
             }
+
+            session->get_account()->inc_medal_count();
+            auto count = session->get_account()->get_medal_count();
 
             GAME::SC_NOTI_ACQUIRE_MEDAL_ITEM noti;
             noti.set_obj_id(object_->get_object_id());
             noti.set_item_id(item_id_);
+            noti.set_count(count);
 
             field_->noti_packet(opcode::SC_NOTI_ACQUIRE_MEDAL_ITEM, noti);
 
