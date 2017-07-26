@@ -11,7 +11,7 @@ class field;
 class item : public std::enable_shared_from_this<item>
 {
 public:
-    enum class type : int { hp = 0, coin = 1, medal = 2 };
+    enum class type : int { hp = 0, medal = 1, coin = 2 };
 
     explicit item(field_id id, std::chrono::milliseconds reactive_time, const vector3& pos);
     virtual ~item();

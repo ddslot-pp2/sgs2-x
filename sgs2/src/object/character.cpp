@@ -63,10 +63,12 @@ void character::destroy()
     }
 
     auto total_time = core::timestamp() - start_time_;
-    wprintf(L"유저가 버틴 시간은: %lld ms", total_time.count());
+    wprintf(L"유저가 버틴 시간은: %lld ms\n", total_time.count());
 
     // 랭크매니져 만들면 거기서 계산해서줌
     auto create_medal_count = 1;
+
+    //wprintf(L"pos X: %f, pos Z: %f\n", pos_.X, pos_.Z);
     field_->create_medal_item(pos_, create_medal_count);
 }
 

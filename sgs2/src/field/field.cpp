@@ -137,7 +137,14 @@ void field::enter_field(std::shared_ptr<server_session> session)
     characters_[object_id] = c;
     c->set_object_id(object_id);
 
-    vector3 spawn_pos(11.0f, 0.0f, 0.0f);
+    std::mt19937 rng;
+    rng.seed(std::random_device()());
+    std::uniform_int_distribution<std::mt19937::result_type> dist(1, 10);
+
+    auto random_x = dist(rng);
+    auto random_z = dist(rng);
+
+    vector3 spawn_pos(0.0f + random_x, 0.0f, 0.0f + random_z);
     c->set_pos(spawn_pos);
 
     // stat_info ¼³Á¤ => default_stat_info + stat_info (account)
@@ -283,7 +290,7 @@ void field::create_medal_item(const vector3& from_pos, const int count)
         // spawn_to
         std::mt19937 rng;
         rng.seed(std::random_device()());
-        std::uniform_int_distribution<std::mt19937::result_type> dist(1, 20);
+        std::uniform_int_distribution<std::mt19937::result_type> dist(1, 10);
 
         auto random_x = dist(rng);
         auto random_z = dist(rng);
@@ -299,11 +306,11 @@ void field::create_medal_item(const vector3& from_pos, const int count)
         medal_item_info->set_item_id(medal->get_item_id());
         medal_item_info->set_item_type(to_integral(medal->get_type()));
         medal_item_info->set_from_pos_x(from_pos.X);
-        medal_item_info->set_from_pos_x(from_pos.Y);
-        medal_item_info->set_from_pos_x(from_pos.Z);
+        medal_item_info->set_from_pos_y(from_pos.Y);
+        medal_item_info->set_from_pos_z(from_pos.Z);
         medal_item_info->set_to_pos_x(to_pos.X);
-        medal_item_info->set_to_pos_x(to_pos.Y);
-        medal_item_info->set_to_pos_x(to_pos.Z);
+        medal_item_info->set_to_pos_y(to_pos.Y);
+        medal_item_info->set_to_pos_z(to_pos.Z);
     }
 
     noti_packet(opcode::SC_NOTI_CREATE_MEDAL_ITEM, noti);
