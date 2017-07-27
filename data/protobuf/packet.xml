@@ -238,11 +238,12 @@
 			<medal_item_infos type="MEDAL_ITEM_INFO" repeated="true"/>
 		</SC_NOTI_CREATE_MEDAL_ITEM>
 
-		<SC_NOTI_ACQUIRE_MEDAL_ITEM>
+		<SC_NOTI_ACQUIRE_PERSIST_ITEM>
 			<obj_id type="int64"/>
 			<item_id type="int64"/>
+			<item_type type="int32"/>
 			<count type="int32"/>
-		</SC_NOTI_ACQUIRE_MEDAL_ITEM>
+		</SC_NOTI_ACQUIRE_PERSIST_ITEM>
 
 	</GAME>
 

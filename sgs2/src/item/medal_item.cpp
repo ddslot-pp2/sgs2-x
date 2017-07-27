@@ -32,24 +32,26 @@ void medal_item::update(float delta)
             auto session = object_->get_session();
             if (!session)
             {
-                GAME::SC_NOTI_ACQUIRE_MEDAL_ITEM noti;
+                GAME::SC_NOTI_ACQUIRE_PERSIST_ITEM noti;
                 noti.set_obj_id(object_->get_object_id());
                 noti.set_item_id(item_id_);
+                noti.set_item_type(to_integral(type_));
                 noti.set_count(0);
 
-                field_->noti_packet(opcode::SC_NOTI_ACQUIRE_MEDAL_ITEM, noti);
+                field_->noti_packet(opcode::SC_NOTI_ACQUIRE_PERSIST_ITEM, noti);
                 return;
             }
 
             session->get_account()->inc_medal_count();
             const auto count = session->get_account()->get_medal_count();
 
-            GAME::SC_NOTI_ACQUIRE_MEDAL_ITEM noti;
+            GAME::SC_NOTI_ACQUIRE_PERSIST_ITEM noti;
             noti.set_obj_id(object_->get_object_id());
             noti.set_item_id(item_id_);
+            noti.set_item_type(to_integral(type_));
             noti.set_count(count);
 
-            field_->noti_packet(opcode::SC_NOTI_ACQUIRE_MEDAL_ITEM, noti);
+            field_->noti_packet(opcode::SC_NOTI_ACQUIRE_PERSIST_ITEM, noti);
 
             active_ = false;
             return;

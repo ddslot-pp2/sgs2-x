@@ -67,9 +67,9 @@ extern OTHER_INFODefaultTypeInternal _OTHER_INFO_default_instance_;
 class SC_NOTI_ACQUIRE_ITEM;
 class SC_NOTI_ACQUIRE_ITEMDefaultTypeInternal;
 extern SC_NOTI_ACQUIRE_ITEMDefaultTypeInternal _SC_NOTI_ACQUIRE_ITEM_default_instance_;
-class SC_NOTI_ACQUIRE_MEDAL_ITEM;
-class SC_NOTI_ACQUIRE_MEDAL_ITEMDefaultTypeInternal;
-extern SC_NOTI_ACQUIRE_MEDAL_ITEMDefaultTypeInternal _SC_NOTI_ACQUIRE_MEDAL_ITEM_default_instance_;
+class SC_NOTI_ACQUIRE_PERSIST_ITEM;
+class SC_NOTI_ACQUIRE_PERSIST_ITEMDefaultTypeInternal;
+extern SC_NOTI_ACQUIRE_PERSIST_ITEMDefaultTypeInternal _SC_NOTI_ACQUIRE_PERSIST_ITEM_default_instance_;
 class SC_NOTI_ACTIVE_ITEM;
 class SC_NOTI_ACTIVE_ITEMDefaultTypeInternal;
 extern SC_NOTI_ACTIVE_ITEMDefaultTypeInternal _SC_NOTI_ACTIVE_ITEM_default_instance_;
@@ -2770,39 +2770,39 @@ class SC_NOTI_CREATE_MEDAL_ITEM : public ::google::protobuf::Message /* @@protoc
 };
 // -------------------------------------------------------------------
 
-class SC_NOTI_ACQUIRE_MEDAL_ITEM : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM) */ {
+class SC_NOTI_ACQUIRE_PERSIST_ITEM : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM) */ {
  public:
-  SC_NOTI_ACQUIRE_MEDAL_ITEM();
-  virtual ~SC_NOTI_ACQUIRE_MEDAL_ITEM();
+  SC_NOTI_ACQUIRE_PERSIST_ITEM();
+  virtual ~SC_NOTI_ACQUIRE_PERSIST_ITEM();
 
-  SC_NOTI_ACQUIRE_MEDAL_ITEM(const SC_NOTI_ACQUIRE_MEDAL_ITEM& from);
+  SC_NOTI_ACQUIRE_PERSIST_ITEM(const SC_NOTI_ACQUIRE_PERSIST_ITEM& from);
 
-  inline SC_NOTI_ACQUIRE_MEDAL_ITEM& operator=(const SC_NOTI_ACQUIRE_MEDAL_ITEM& from) {
+  inline SC_NOTI_ACQUIRE_PERSIST_ITEM& operator=(const SC_NOTI_ACQUIRE_PERSIST_ITEM& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const SC_NOTI_ACQUIRE_MEDAL_ITEM& default_instance();
+  static const SC_NOTI_ACQUIRE_PERSIST_ITEM& default_instance();
 
-  static inline const SC_NOTI_ACQUIRE_MEDAL_ITEM* internal_default_instance() {
-    return reinterpret_cast<const SC_NOTI_ACQUIRE_MEDAL_ITEM*>(
-               &_SC_NOTI_ACQUIRE_MEDAL_ITEM_default_instance_);
+  static inline const SC_NOTI_ACQUIRE_PERSIST_ITEM* internal_default_instance() {
+    return reinterpret_cast<const SC_NOTI_ACQUIRE_PERSIST_ITEM*>(
+               &_SC_NOTI_ACQUIRE_PERSIST_ITEM_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
     25;
 
-  void Swap(SC_NOTI_ACQUIRE_MEDAL_ITEM* other);
+  void Swap(SC_NOTI_ACQUIRE_PERSIST_ITEM* other);
 
   // implements Message ----------------------------------------------
 
-  inline SC_NOTI_ACQUIRE_MEDAL_ITEM* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline SC_NOTI_ACQUIRE_PERSIST_ITEM* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  SC_NOTI_ACQUIRE_MEDAL_ITEM* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  SC_NOTI_ACQUIRE_PERSIST_ITEM* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const SC_NOTI_ACQUIRE_MEDAL_ITEM& from);
-  void MergeFrom(const SC_NOTI_ACQUIRE_MEDAL_ITEM& from);
+  void CopyFrom(const SC_NOTI_ACQUIRE_PERSIST_ITEM& from);
+  void MergeFrom(const SC_NOTI_ACQUIRE_PERSIST_ITEM& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -2818,7 +2818,7 @@ class SC_NOTI_ACQUIRE_MEDAL_ITEM : public ::google::protobuf::Message /* @@proto
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(SC_NOTI_ACQUIRE_MEDAL_ITEM* other);
+  void InternalSwap(SC_NOTI_ACQUIRE_PERSIST_ITEM* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -2846,18 +2846,25 @@ class SC_NOTI_ACQUIRE_MEDAL_ITEM : public ::google::protobuf::Message /* @@proto
   ::google::protobuf::int64 item_id() const;
   void set_item_id(::google::protobuf::int64 value);
 
-  // int32 count = 3;
+  // int32 item_type = 3;
+  void clear_item_type();
+  static const int kItemTypeFieldNumber = 3;
+  ::google::protobuf::int32 item_type() const;
+  void set_item_type(::google::protobuf::int32 value);
+
+  // int32 count = 4;
   void clear_count();
-  static const int kCountFieldNumber = 3;
+  static const int kCountFieldNumber = 4;
   ::google::protobuf::int32 count() const;
   void set_count(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM)
+  // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int64 obj_id_;
   ::google::protobuf::int64 item_id_;
+  ::google::protobuf::int32 item_type_;
   ::google::protobuf::int32 count_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
@@ -4693,48 +4700,62 @@ SC_NOTI_CREATE_MEDAL_ITEM::medal_item_infos() const {
 
 // -------------------------------------------------------------------
 
-// SC_NOTI_ACQUIRE_MEDAL_ITEM
+// SC_NOTI_ACQUIRE_PERSIST_ITEM
 
 // int64 obj_id = 1;
-inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_obj_id() {
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::clear_obj_id() {
   obj_id_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::int64 SC_NOTI_ACQUIRE_MEDAL_ITEM::obj_id() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.obj_id)
+inline ::google::protobuf::int64 SC_NOTI_ACQUIRE_PERSIST_ITEM::obj_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.obj_id)
   return obj_id_;
 }
-inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_obj_id(::google::protobuf::int64 value) {
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::set_obj_id(::google::protobuf::int64 value) {
   
   obj_id_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.obj_id)
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.obj_id)
 }
 
 // int64 item_id = 2;
-inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_item_id() {
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::clear_item_id() {
   item_id_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::int64 SC_NOTI_ACQUIRE_MEDAL_ITEM::item_id() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.item_id)
+inline ::google::protobuf::int64 SC_NOTI_ACQUIRE_PERSIST_ITEM::item_id() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.item_id)
   return item_id_;
 }
-inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_item_id(::google::protobuf::int64 value) {
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::set_item_id(::google::protobuf::int64 value) {
   
   item_id_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.item_id)
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.item_id)
 }
 
-// int32 count = 3;
-inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::clear_count() {
+// int32 item_type = 3;
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::clear_item_type() {
+  item_type_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_ACQUIRE_PERSIST_ITEM::item_type() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.item_type)
+  return item_type_;
+}
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::set_item_type(::google::protobuf::int32 value) {
+  
+  item_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.item_type)
+}
+
+// int32 count = 4;
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::clear_count() {
   count_ = 0;
 }
-inline ::google::protobuf::int32 SC_NOTI_ACQUIRE_MEDAL_ITEM::count() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.count)
+inline ::google::protobuf::int32 SC_NOTI_ACQUIRE_PERSIST_ITEM::count() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.count)
   return count_;
 }
-inline void SC_NOTI_ACQUIRE_MEDAL_ITEM::set_count(::google::protobuf::int32 value) {
+inline void SC_NOTI_ACQUIRE_PERSIST_ITEM::set_count(::google::protobuf::int32 value) {
   
   count_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_MEDAL_ITEM.count)
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_PERSIST_ITEM.count)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS

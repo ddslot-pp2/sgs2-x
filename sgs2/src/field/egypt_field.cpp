@@ -3,6 +3,7 @@
 #include "../packet_processor/send_helper.h"
 #include "../core/src/locale/string_helper.h"
 #include "../item/hp_item.h"
+#include "../item/coin_item.h"
 
 using super = field;
 
@@ -55,6 +56,12 @@ void egypt_field::initialize()
     items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(0.0f, 0.0f, 0.0f)));
     items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(5.0f, 0.0f, 0.0f)));
     items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(0.0f, 0.0f, -5.0f)));
+
+
+    items_.emplace_back(std::make_shared<coin_item>(field_id_, std::chrono::milliseconds(8000), vector3(4.0f, 0.0f, 5.0f)));
+    items_.emplace_back(std::make_shared<coin_item>(field_id_, std::chrono::milliseconds(8000), vector3(2.0f, 0.0f, 0.0f)));
+    items_.emplace_back(std::make_shared<coin_item>(field_id_, std::chrono::milliseconds(8000), vector3(8.0f, 0.0f, 0.0f)));
+    items_.emplace_back(std::make_shared<coin_item>(field_id_, std::chrono::milliseconds(8000), vector3(10.0f, 0.0f, -5.0f)));
 }
 
 void egypt_field::update(float delta)
