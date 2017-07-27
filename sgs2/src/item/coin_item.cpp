@@ -73,5 +73,4 @@ void coin_item::update(float delta)
             return;
         }
     }
-
 }

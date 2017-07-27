@@ -245,6 +245,22 @@
 			<count type="int32"/>
 		</SC_NOTI_ACQUIRE_PERSIST_ITEM>
 
+		<RANK_INFO struct = "true">
+			<object_id type="int64"/>
+			<nickname type="string"/>
+			<score type="int32"/>
+		</RANK_INFO>
+
+		<SC_NOTI_RANK_INFO>
+			<rank_infos type="RANK_INFO" repeated="true"/>
+		</SC_NOTI_RANK_INFO>
+
+		<SC_NOTI_RANK>
+			<rank type="int32"/>
+			<nickname type="string"/>
+			<score type="int32"/>
+		</SC_NOTI_RANK>
+
 	</GAME>
 
 

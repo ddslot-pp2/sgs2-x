@@ -1,6 +1,6 @@
 #include "account.h"
 
-account::account(const account_info& acc_info) : account_id_(acc_info.id), medal_count_(acc_info.medal_count), coin_count_(acc_info.coin_count)
+account::account(const account_info& acc_info) : account_id_(acc_info.id), nickname_(acc_info.nickname), medal_count_(acc_info.medal_count), coin_count_(acc_info.coin_count)
 {
 
 }
@@ -8,6 +8,11 @@ account::account(const account_info& acc_info) : account_id_(acc_info.id), medal
 account::~account()
 {
 
+}
+
+const std::wstring& account::get_nickname() const
+{
+    return nickname_;
 }
 
 int account::get_medal_count() const
@@ -34,6 +39,7 @@ account_info account::to_account_info() const
 {
     account_info acc_info;
     acc_info.id = account_id_;
+    acc_info.nickname = nickname_;
     acc_info.medal_count = medal_count_;
     acc_info.coin_count = coin_count_;
 

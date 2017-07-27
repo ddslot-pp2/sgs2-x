@@ -12,6 +12,7 @@
 #include "../../core/src/locale/string_helper.h"
 #include "mysql/mysql_connector.h"
 #include "property/property_manager.h"
+#include "rank/rank_info.h"
 
 std::mutex m;
 std::condition_variable cv;

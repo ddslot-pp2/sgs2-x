@@ -58,6 +58,9 @@
     <Filter Include="src\property">
       <UniqueIdentifier>{7e66a812-a3b8-4434-9037-6db168eeeb7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\rank">
+      <UniqueIdentifier>{3869ee39-a351-44df-8341-9d583731e452}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -165,6 +168,9 @@
     <ClCompile Include="src\property\property_manager.cpp">
       <Filter>src\property</Filter>
     </ClCompile>
+    <ClCompile Include="src\rank\rank_info.cpp">
+      <Filter>src\rank</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -253,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="src\property\property_manager.h">
       <Filter>src\property</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rank\rank_info.h">
+      <Filter>src\rank</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

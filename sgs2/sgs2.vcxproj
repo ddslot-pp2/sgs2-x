@@ -107,6 +107,7 @@
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LOG_IN.cpp" />
     <ClCompile Include="src\packet_processor\packet_processor.cpp" />
     <ClCompile Include="src\property\property_manager.cpp" />
+    <ClCompile Include="src\rank\rank_info.cpp" />
     <ClCompile Include="src\server_session\server_session.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,7 @@
     <ClInclude Include="src\packet_processor\static_if.h" />
     <ClInclude Include="src\predeclare.h" />
     <ClInclude Include="src\property\property_manager.h" />
+    <ClInclude Include="src\rank\rank_info.h" />
     <ClInclude Include="src\server_session\server_session.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -28,6 +28,7 @@ public:
 
     //void destroy_character();
     std::wstring get_tmp_nickname() const { return L"µ¹°ÝÅÊÅ©"; }
+    const std::wstring& get_nickname() const { return account_->get_nickname(); }
 
     void set_character_type(int type) { character_type_ = type; }
     int  get_character_type() const   { return character_type_; }

@@ -62,6 +62,8 @@ void egypt_field::initialize()
     items_.emplace_back(std::make_shared<coin_item>(field_id_, std::chrono::milliseconds(8000), vector3(2.0f, 0.0f, 0.0f)));
     items_.emplace_back(std::make_shared<coin_item>(field_id_, std::chrono::milliseconds(8000), vector3(8.0f, 0.0f, 0.0f)));
     items_.emplace_back(std::make_shared<coin_item>(field_id_, std::chrono::milliseconds(8000), vector3(10.0f, 0.0f, -5.0f)));
+
+    super::initialize();
 }
 
 void egypt_field::update(float delta)
@@ -72,6 +74,11 @@ void egypt_field::update(float delta)
     }
 
     super::update(delta);
+}
+
+void egypt_field::destroy()
+{
+    super::destroy();
 }
 
 void egypt_field::sync_field(std::shared_ptr<server_session> session) const
@@ -108,7 +115,7 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
     send.set_speed(speed);
     send.set_reload_time(stat_info->reload_time.load());
 
-    auto nickname = session->get_tmp_nickname();
+    auto nickname = session->get_nickname();
 
     // 다른 유저에게도 나의 정보를 보내줘야함
     GAME::SC_NOTI_OTHER_ENTER_FIELD noti;
@@ -137,7 +144,7 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
         auto other_info = send.add_other_infos();
         other_info->set_obj_id(other->get_object_id());
 
-        other_info->set_nickname(core::wstring_to_utf8(other_session->get_tmp_nickname()));
+        other_info->set_nickname(core::wstring_to_utf8(other_session->get_nickname()));
        
         auto other_pos = other->get_pos();
         other_info->set_pos_x(other_pos.X);

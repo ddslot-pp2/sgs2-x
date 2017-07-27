@@ -23,6 +23,7 @@ public:
 
     virtual void initialize();
     virtual void update(float delta);
+    virtual void destroy();
 
     virtual void sync_field(std::shared_ptr<server_session> session) const;
     virtual void respawn_character(object_id id);
@@ -83,25 +84,34 @@ public:
 
     void create_medal_item(const vector3& from_pos, const int count);
 
+    void update_rank();
+
 protected:
 
     unsigned int field_id_;
     Concurrency::concurrent_queue<task> q_;
     std::map<object_id, std::shared_ptr<character>> characters_;
+    std::vector<std::shared_ptr<character>> rank_characters_;
 
     std::vector<collider> colliders_;
     std::vector<std::shared_ptr<item>> items_;
 
     std::map<uintptr_t, std::shared_ptr<item>> medal_items_;
 
+    void start_rank_timer();
+
 private:
     void process_task();
+    void noti_rank_info() const;
 
     timer_ptr update_timer_;
     clock_t last_update_;
     std::atomic_flag update_flag_ = ATOMIC_FLAG_INIT;
     
     std::atomic<size_t> current_user_count_;
+
+    timer_ptr rank_timer_;
+    std::chrono::milliseconds rank_time_;
 };
 
 #endif

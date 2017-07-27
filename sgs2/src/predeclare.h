@@ -37,6 +37,8 @@ constexpr static auto max_volley_count = 4;
 
 constexpr static auto max_level = 30;
 
+constexpr static auto max_rank_size = 5;
+
 /*
 template <class T, class Tuple>
 struct Index;

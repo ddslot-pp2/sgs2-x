@@ -9,12 +9,13 @@
 #include "../item/medal_item.h"
 #include <random>
 #include "../property/property_manager.h"
+#include "../../../core/src/locale/string_helper.h"
 
 using namespace network;
 
-field::field(unsigned int field_id) : field_id_(field_id), last_update_(clock())
+field::field(unsigned int field_id) : field_id_(field_id), last_update_(clock()), rank_timer_(std::make_unique<timer_ptr::element_type>(network::io_service())), rank_time_(2000)
 {
-
+    
 }
 
 field::~field()
@@ -25,6 +26,7 @@ field::~field()
 void field::initialize()
 {
     current_user_count_ = characters_.size();
+    start_rank_timer();
 }
 
 void field::update(float delta)
@@ -56,6 +58,7 @@ void field::update(float delta)
         }
     }
 
+    update_rank();
 }
 
 void field::try_update()
@@ -167,6 +170,7 @@ void field::enter_field(std::shared_ptr<server_session> session)
     current_user_count_ = characters_.size();
     send_packet(session, opcode::SC_ENTER_FIELD, send);
 
+    rank_characters_.emplace_back(c);
     wprintf(L"유저 카운트: %lld\n", characters_.size());
 }
 
@@ -178,9 +182,19 @@ void field::leave_field(object_id id)
 
     if (it == characters_.end()) return;
 
-    auto sess = it->second->get_session();
+    auto c = it->second;
+    auto sess = c->get_session();
 
     characters_.erase(id);
+
+    auto remove_c = std::find_if(rank_characters_.begin(), rank_characters_.end(), [c](std::shared_ptr<character> o)
+    {
+        if (c->get_object_id() == o->get_object_id()) return true;
+
+        return false;
+    });
+
+    if(remove_c != rank_characters_.end()) rank_characters_.erase(remove_c);
 
     if (sess)
     {
@@ -316,4 +330,69 @@ void field::create_medal_item(const vector3& from_pos, const int count)
     }
 
     noti_packet(opcode::SC_NOTI_CREATE_MEDAL_ITEM, noti);
+}
+
+void field::update_rank()
+{
+    std::sort(rank_characters_.begin(), rank_characters_.end(), [](std::shared_ptr<character> l, std::shared_ptr<character> r)
+    {
+        if (l->get_score() > r->get_score()) return true;
+
+        return false;
+    });
+
+    auto size = rank_characters_.size() > max_rank_size ? max_rank_size : rank_characters_.size();
+    for (auto i = 0; i < size; ++i)
+    {
+        auto obj_id = rank_characters_[i]->get_object_id();
+        auto score  = rank_characters_[i]->get_score();
+        rank_characters_[i]->set_rank(i+1);
+        //wprintf(L"obj_id: %lld, score: %d\n", obj_id, score);
+    }
+}
+
+void field::destroy()
+{
+    rank_timer_->cancel();
+}
+
+void field::start_rank_timer()
+{
+    auto self = shared_from_this();
+    rank_timer_->expires_from_now(rank_time_);
+    rank_timer_->async_wait([this, self](const boost::system::error_code& ec) {
+
+        wprintf(L"랭크 타이머 호출\n");
+
+        if (ec)
+        {
+            wprintf(L"랭크 타이머가 문제있음\n");
+            return;
+        }
+
+        send_task(&field::noti_rank_info);
+        start_rank_timer();
+    });
+}
+
+void field::noti_rank_info() const
+{
+    GAME::SC_NOTI_RANK_INFO noti;
+    auto size = rank_characters_.size() > max_rank_size ? max_rank_size : rank_characters_.size();
+    for (auto i = 0; i < size; ++i)
+    {
+        auto rank_info = noti.add_rank_infos();
+
+        auto obj_id = rank_characters_[i]->get_object_id();
+        auto score = rank_characters_[i]->get_score();
+
+        rank_info->set_object_id(obj_id);
+        rank_info->set_score(score);
+
+        auto sess = rank_characters_[i]->get_session();
+        if (sess) rank_info->set_nickname(core::wstring_to_utf8(sess->get_nickname()));
+
+        wprintf(L"obj_id: %lld, score: %d\n", obj_id, score);
+    }
+    noti_packet(opcode::SC_NOTI_RANK_INFO, noti);
 }

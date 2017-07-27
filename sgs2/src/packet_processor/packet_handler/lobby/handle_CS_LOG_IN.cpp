@@ -33,6 +33,10 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     acc_info.medal_count = 150;
     acc_info.coin_count = 500;
 
+    auto nickname = L"µπ∞›≈ ≈©" + std::to_wstring(account_id);
+
+    acc_info.nickname = nickname;
+
     auto acc = account_manager::instance().add_account(acc_info);
     if (!acc)
     {

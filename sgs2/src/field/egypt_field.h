@@ -9,8 +9,9 @@ public:
     explicit egypt_field(unsigned int field_id);
     virtual ~egypt_field();
 
-    virtual void initialize() override;
-    virtual void update(float delta) override;
+    void initialize() override;
+    void update(float delta) override;
+    void destroy() override;
 
     void sync_field(std::shared_ptr<server_session> session) const override;
     void respawn_character(object_id id) override;

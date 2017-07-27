@@ -11,7 +11,6 @@ class server_session;
 class character : public object
 {
 public:
-
     explicit character(field_id id, std::shared_ptr<server_session> session);
     ~character();
 
@@ -29,6 +28,11 @@ public:
    
     std::shared_ptr<server_session> get_session() const;
 
+    int get_score() const { return score_; }
+
+    void set_rank(int rank) { rank_ = rank; }
+    int  get_rank() const { return rank_; }
+
 protected:
     std::weak_ptr<server_session> session_;
 
@@ -38,6 +42,7 @@ private:
   
     int character_type_;
     int score_;
+    int rank_;
 
     std::chrono::milliseconds start_time_;
 };

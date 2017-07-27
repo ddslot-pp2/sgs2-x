@@ -4,10 +4,11 @@
 #include "../packet_processor/packet/GAME.pb.h"
 #include "../packet_processor/send_helper.h"
 #include "../../../core/src/timer/timer_helper.hpp"
+#include "../../../core/src/locale/string_helper.h"
 
 using super = object;
 
-character::character(field_id id, std::shared_ptr<server_session> session) : object(id), session_(session), score_(0), start_time_(0)
+character::character(field_id id, std::shared_ptr<server_session> session) : object(id), session_(session), score_(0), start_time_(0), rank_(0)
 {
     wprintf(L"케릭터 생성자 호출\n");
     field_ = field_manager::instance().get_field(id);
@@ -37,7 +38,7 @@ void character::update(float delta)
     }
 
     update_score();
-    update_exp();
+    //update_exp();
 
     super::update(delta);
 }
@@ -128,16 +129,20 @@ void character::respawn(const vector3& spawn_pos)
 void character::update_score()
 {
     auto score = stat_->score.load();
-    if (score_ != score && score > 0)
-    {
-        wprintf(L"스코어 증가: %d\n", score);
-        /*
-        GAME::SC_UPDATE_SCORE noti;
-        noti.set_score(100);
-        send_packet(session_, opcode::SC_UPDATE_SCORE, noti);
-        */
-        score_ = score;
-    }
+    if (score_ == score || score <= 0) return;
+
+    auto sess = session_.lock();
+    if (!sess) return;
+
+    score_ = score;
+
+    wprintf(L"스코어 증가: %d\n", score);
+    GAME::SC_NOTI_RANK noti;
+    noti.set_rank(rank_);
+    noti.set_nickname(core::wstring_to_utf8(sess->get_nickname()));
+    noti.set_score(score_);
+
+    send_packet(sess, opcode::SC_NOTI_RANK, noti);
 }
 
 void character::update_exp() const
