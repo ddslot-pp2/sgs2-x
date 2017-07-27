@@ -65,7 +65,7 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     LOBBY::SC_LOG_IN send;
     send.set_result(result);
     send.set_timestamp(core::timestamp().count());
-    send.set_nickname(core::wstring_to_utf8(L"¸Û¸ÛÀÌ"));
+    send.set_nickname(core::wstring_to_utf8(acc->get_nickname()));
 
     send.set_medal_count(acc->get_medal_count());
     send.set_coin_count(acc->get_coin_count());

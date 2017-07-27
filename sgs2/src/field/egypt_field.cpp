@@ -94,6 +94,7 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
     GAME::SC_SYNC_FIELD send;
     // 나의 정보 추가
     send.set_obj_id(c->get_object_id());
+    send.set_nickname(core::wstring_to_utf8(session->get_nickname()));
 
     auto pos = c->get_pos();
     send.set_pos_x(pos.X);
@@ -170,10 +171,13 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
 
 void egypt_field::respawn_character(object_id id)
 {
-    vector3 spawn_pos(10.0f, 0.0f, 0.0f);
+    //vector3 spawn_pos(10.0f, 0.0f, 0.0f);
 
     auto it = characters_.find(id);
     if (it == characters_.end()) return;
 
-    it->second->respawn(spawn_pos);
+    auto c = it->second;
+    
+    auto spawn_pos = c->get_pos();
+    c->respawn(spawn_pos);
 }

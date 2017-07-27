@@ -362,8 +362,6 @@ void field::start_rank_timer()
     rank_timer_->expires_from_now(rank_time_);
     rank_timer_->async_wait([this, self](const boost::system::error_code& ec) {
 
-        wprintf(L"랭크 타이머 호출\n");
-
         if (ec)
         {
             wprintf(L"랭크 타이머가 문제있음\n");
@@ -391,8 +389,6 @@ void field::noti_rank_info() const
 
         auto sess = rank_characters_[i]->get_session();
         if (sess) rank_info->set_nickname(core::wstring_to_utf8(sess->get_nickname()));
-
-        wprintf(L"obj_id: %lld, score: %d\n", obj_id, score);
     }
     noti_packet(opcode::SC_NOTI_RANK_INFO, noti);
 }

@@ -147,6 +147,7 @@ void character::update_score()
 
 void character::update_exp() const
 {
+    /*
     if (stat_->exp < 100.0f) return;
 
     if (stat_->level == max_level)
@@ -174,4 +175,5 @@ void character::update_exp() const
     {
         send_packet(session, opcode::SC_SELECT_BUFF, noti);
     }
+    */
 }

@@ -8,6 +8,7 @@
 void handle_CS_ENHANCE_BUFF(std::shared_ptr<server_session> session, const GAME::CS_ENHANCE_BUFF& read)
 {
     // 댕글릴 될수 있음 atomic_load가 아니라서 봅시다...
+    /*
     auto c = session->get_character();
     if (!c) return;
     
@@ -91,4 +92,5 @@ void handle_CS_ENHANCE_BUFF(std::shared_ptr<server_session> session, const GAME:
     auto field_id = c->get_field_id();
     auto field = field_manager::instance().get_field(field_id);
     field->send_task(&field::update_character_status, c->get_object_id());
+    */
 }
