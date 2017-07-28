@@ -183,7 +183,15 @@ void field::leave_field(object_id id)
     if (it == characters_.end()) return;
 
     auto c = it->second;
+    c->destroy();
+
     auto sess = c->get_session();
+    if (sess)
+    {
+        sess->set_character(nullptr);
+        // 정상적으로 방을 나갔다고 알려줌
+        //sess->
+    }
 
     characters_.erase(id);
 
@@ -195,13 +203,6 @@ void field::leave_field(object_id id)
     });
 
     if(remove_c != rank_characters_.end()) rank_characters_.erase(remove_c);
-
-    if (sess)
-    {
-        sess->set_character(nullptr);
-        // 정상적으로 방을 나갔다고 알려줌
-        //sess->
-    }
 
     GAME::SC_NOTI_OTHER_LEAVE_FIELD noti;
     noti.set_obj_id(id);
