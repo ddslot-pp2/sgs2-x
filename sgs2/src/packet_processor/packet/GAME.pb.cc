@@ -342,6 +342,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, item_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, item_type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, hp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, shield_time_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_ACQUIRE_ITEM, exp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MEDAL_ITEM_INFO, _internal_metadata_),
@@ -419,12 +420,12 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 188, -1, sizeof(ITEM_INFO)},
   { 198, -1, sizeof(SC_NOTI_ACTIVE_ITEM)},
   { 204, -1, sizeof(SC_NOTI_ACQUIRE_ITEM)},
-  { 214, -1, sizeof(MEDAL_ITEM_INFO)},
-  { 227, -1, sizeof(SC_NOTI_CREATE_MEDAL_ITEM)},
-  { 233, -1, sizeof(SC_NOTI_ACQUIRE_PERSIST_ITEM)},
-  { 242, -1, sizeof(RANK_INFO)},
-  { 250, -1, sizeof(SC_NOTI_RANK_INFO)},
-  { 256, -1, sizeof(SC_NOTI_RANK)},
+  { 215, -1, sizeof(MEDAL_ITEM_INFO)},
+  { 228, -1, sizeof(SC_NOTI_CREATE_MEDAL_ITEM)},
+  { 234, -1, sizeof(SC_NOTI_ACQUIRE_PERSIST_ITEM)},
+  { 243, -1, sizeof(RANK_INFO)},
+  { 251, -1, sizeof(SC_NOTI_RANK_INFO)},
+  { 257, -1, sizeof(SC_NOTI_RANK)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -637,26 +638,26 @@ void AddDescriptorsImpl() {
       "(\003\022\021\n\titem_type\030\002 \001(\005\022\r\n\005pos_x\030\003 \001(\002\022\r\n\005"
       "pos_y\030\004 \001(\002\022\r\n\005pos_z\030\005 \001(\002\":\n\023SC_NOTI_AC"
       "TIVE_ITEM\022#\n\nitem_infos\030\001 \003(\0132\017.GAME.ITE"
-      "M_INFO\"c\n\024SC_NOTI_ACQUIRE_ITEM\022\016\n\006obj_id"
+      "M_INFO\"x\n\024SC_NOTI_ACQUIRE_ITEM\022\016\n\006obj_id"
       "\030\001 \001(\003\022\017\n\007item_id\030\002 \001(\003\022\021\n\titem_type\030\003 \001"
-      "(\005\022\n\n\002hp\030\004 \001(\005\022\013\n\003exp\030\005 \001(\005\"\247\001\n\017MEDAL_IT"
-      "EM_INFO\022\017\n\007item_id\030\001 \001(\003\022\021\n\titem_type\030\002 "
-      "\001(\005\022\022\n\nfrom_pos_x\030\003 \001(\002\022\022\n\nfrom_pos_y\030\004 "
-      "\001(\002\022\022\n\nfrom_pos_z\030\005 \001(\002\022\020\n\010to_pos_x\030\006 \001("
-      "\002\022\020\n\010to_pos_y\030\007 \001(\002\022\020\n\010to_pos_z\030\010 \001(\002\"L\n"
-      "\031SC_NOTI_CREATE_MEDAL_ITEM\022/\n\020medal_item"
-      "_infos\030\001 \003(\0132\025.GAME.MEDAL_ITEM_INFO\"a\n\034S"
-      "C_NOTI_ACQUIRE_PERSIST_ITEM\022\016\n\006obj_id\030\001 "
-      "\001(\003\022\017\n\007item_id\030\002 \001(\003\022\021\n\titem_type\030\003 \001(\005\022"
-      "\r\n\005count\030\004 \001(\005\"\?\n\tRANK_INFO\022\021\n\tobject_id"
-      "\030\001 \001(\003\022\020\n\010nickname\030\002 \001(\t\022\r\n\005score\030\003 \001(\005\""
-      "8\n\021SC_NOTI_RANK_INFO\022#\n\nrank_infos\030\001 \003(\013"
-      "2\017.GAME.RANK_INFO\"=\n\014SC_NOTI_RANK\022\014\n\004ran"
-      "k\030\001 \001(\005\022\020\n\010nickname\030\002 \001(\t\022\r\n\005score\030\003 \001(\005"
-      "b\006proto3"
+      "(\005\022\n\n\002hp\030\004 \001(\005\022\023\n\013shield_time\030\005 \001(\005\022\013\n\003e"
+      "xp\030\006 \001(\005\"\247\001\n\017MEDAL_ITEM_INFO\022\017\n\007item_id\030"
+      "\001 \001(\003\022\021\n\titem_type\030\002 \001(\005\022\022\n\nfrom_pos_x\030\003"
+      " \001(\002\022\022\n\nfrom_pos_y\030\004 \001(\002\022\022\n\nfrom_pos_z\030\005"
+      " \001(\002\022\020\n\010to_pos_x\030\006 \001(\002\022\020\n\010to_pos_y\030\007 \001(\002"
+      "\022\020\n\010to_pos_z\030\010 \001(\002\"L\n\031SC_NOTI_CREATE_MED"
+      "AL_ITEM\022/\n\020medal_item_infos\030\001 \003(\0132\025.GAME"
+      ".MEDAL_ITEM_INFO\"a\n\034SC_NOTI_ACQUIRE_PERS"
+      "IST_ITEM\022\016\n\006obj_id\030\001 \001(\003\022\017\n\007item_id\030\002 \001("
+      "\003\022\021\n\titem_type\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\"\?\n\tR"
+      "ANK_INFO\022\021\n\tobject_id\030\001 \001(\003\022\020\n\010nickname\030"
+      "\002 \001(\t\022\r\n\005score\030\003 \001(\005\"8\n\021SC_NOTI_RANK_INF"
+      "O\022#\n\nrank_infos\030\001 \003(\0132\017.GAME.RANK_INFO\"="
+      "\n\014SC_NOTI_RANK\022\014\n\004rank\030\001 \001(\005\022\020\n\010nickname"
+      "\030\002 \001(\t\022\r\n\005score\030\003 \001(\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2728);
+      descriptor, 2749);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -9659,6 +9660,7 @@ const int SC_NOTI_ACQUIRE_ITEM::kObjIdFieldNumber;
 const int SC_NOTI_ACQUIRE_ITEM::kItemIdFieldNumber;
 const int SC_NOTI_ACQUIRE_ITEM::kItemTypeFieldNumber;
 const int SC_NOTI_ACQUIRE_ITEM::kHpFieldNumber;
+const int SC_NOTI_ACQUIRE_ITEM::kShieldTimeFieldNumber;
 const int SC_NOTI_ACQUIRE_ITEM::kExpFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -9790,10 +9792,24 @@ bool SC_NOTI_ACQUIRE_ITEM::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 exp = 5;
+      // int32 shield_time = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(40u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &shield_time_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 exp = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(48u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -9851,9 +9867,14 @@ void SC_NOTI_ACQUIRE_ITEM::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->hp(), output);
   }
 
-  // int32 exp = 5;
+  // int32 shield_time = 5;
+  if (this->shield_time() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->shield_time(), output);
+  }
+
+  // int32 exp = 6;
   if (this->exp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->exp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->exp(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_ACQUIRE_ITEM)
@@ -9885,9 +9906,14 @@ void SC_NOTI_ACQUIRE_ITEM::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->hp(), target);
   }
 
-  // int32 exp = 5;
+  // int32 shield_time = 5;
+  if (this->shield_time() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->shield_time(), target);
+  }
+
+  // int32 exp = 6;
   if (this->exp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->exp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->exp(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_ACQUIRE_ITEM)
@@ -9926,7 +9952,14 @@ size_t SC_NOTI_ACQUIRE_ITEM::ByteSizeLong() const {
         this->hp());
   }
 
-  // int32 exp = 5;
+  // int32 shield_time = 5;
+  if (this->shield_time() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->shield_time());
+  }
+
+  // int32 exp = 6;
   if (this->exp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -9974,6 +10007,9 @@ void SC_NOTI_ACQUIRE_ITEM::MergeFrom(const SC_NOTI_ACQUIRE_ITEM& from) {
   if (from.hp() != 0) {
     set_hp(from.hp());
   }
+  if (from.shield_time() != 0) {
+    set_shield_time(from.shield_time());
+  }
   if (from.exp() != 0) {
     set_exp(from.exp());
   }
@@ -10006,6 +10042,7 @@ void SC_NOTI_ACQUIRE_ITEM::InternalSwap(SC_NOTI_ACQUIRE_ITEM* other) {
   std::swap(item_id_, other->item_id_);
   std::swap(item_type_, other->item_type_);
   std::swap(hp_, other->hp_);
+  std::swap(shield_time_, other->shield_time_);
   std::swap(exp_, other->exp_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -10074,7 +10111,21 @@ void SC_NOTI_ACQUIRE_ITEM::set_hp(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_ITEM.hp)
 }
 
-// int32 exp = 5;
+// int32 shield_time = 5;
+void SC_NOTI_ACQUIRE_ITEM::clear_shield_time() {
+  shield_time_ = 0;
+}
+::google::protobuf::int32 SC_NOTI_ACQUIRE_ITEM::shield_time() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_ITEM.shield_time)
+  return shield_time_;
+}
+void SC_NOTI_ACQUIRE_ITEM::set_shield_time(::google::protobuf::int32 value) {
+  
+  shield_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_ITEM.shield_time)
+}
+
+// int32 exp = 6;
 void SC_NOTI_ACQUIRE_ITEM::clear_exp() {
   exp_ = 0;
 }

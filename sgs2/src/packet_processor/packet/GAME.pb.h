@@ -2544,9 +2544,15 @@ class SC_NOTI_ACQUIRE_ITEM : public ::google::protobuf::Message /* @@protoc_inse
   ::google::protobuf::int32 hp() const;
   void set_hp(::google::protobuf::int32 value);
 
-  // int32 exp = 5;
+  // int32 shield_time = 5;
+  void clear_shield_time();
+  static const int kShieldTimeFieldNumber = 5;
+  ::google::protobuf::int32 shield_time() const;
+  void set_shield_time(::google::protobuf::int32 value);
+
+  // int32 exp = 6;
   void clear_exp();
-  static const int kExpFieldNumber = 5;
+  static const int kExpFieldNumber = 6;
   ::google::protobuf::int32 exp() const;
   void set_exp(::google::protobuf::int32 value);
 
@@ -2558,6 +2564,7 @@ class SC_NOTI_ACQUIRE_ITEM : public ::google::protobuf::Message /* @@protoc_inse
   ::google::protobuf::int64 item_id_;
   ::google::protobuf::int32 item_type_;
   ::google::protobuf::int32 hp_;
+  ::google::protobuf::int32 shield_time_;
   ::google::protobuf::int32 exp_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
@@ -4833,7 +4840,21 @@ inline void SC_NOTI_ACQUIRE_ITEM::set_hp(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_ITEM.hp)
 }
 
-// int32 exp = 5;
+// int32 shield_time = 5;
+inline void SC_NOTI_ACQUIRE_ITEM::clear_shield_time() {
+  shield_time_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_ACQUIRE_ITEM::shield_time() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_ACQUIRE_ITEM.shield_time)
+  return shield_time_;
+}
+inline void SC_NOTI_ACQUIRE_ITEM::set_shield_time(::google::protobuf::int32 value) {
+  
+  shield_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_ACQUIRE_ITEM.shield_time)
+}
+
+// int32 exp = 6;
 inline void SC_NOTI_ACQUIRE_ITEM::clear_exp() {
   exp_ = 0;
 }

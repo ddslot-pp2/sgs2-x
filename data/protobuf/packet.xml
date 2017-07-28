@@ -220,6 +220,7 @@
 			<item_id type="int64"/>
 			<item_type type="int32"/>
 			<hp type="int32"/>
+			<shield_time type="int32"/>
 			<exp type="int32"/>
 		</SC_NOTI_ACQUIRE_ITEM>
 

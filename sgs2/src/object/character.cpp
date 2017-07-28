@@ -8,7 +8,7 @@
 
 using super = object;
 
-character::character(field_id id, std::shared_ptr<server_session> session) : object(id), session_(session), score_(0), start_time_(0), rank_(0)
+character::character(field_id id, std::shared_ptr<server_session> session) : object(id), session_(session), score_(0), start_time_(0), rank_(0), shield_(false), shield_time_(10000), shield_timer_(std::make_unique<timer_ptr::element_type>(network::io_service()))
 {
     wprintf(L"케릭터 생성자 호출\n");
     field_ = field_manager::instance().get_field(id);
@@ -71,6 +71,8 @@ void character::destroy()
 
     //wprintf(L"pos X: %f, pos Z: %f\n", pos_.X, pos_.Z);
     field_->create_medal_item(pos_, create_medal_count);
+
+    shield_timer_->cancel();
 }
 
 void character::leave_field() const
@@ -176,4 +178,31 @@ void character::update_exp() const
         send_packet(session, opcode::SC_SELECT_BUFF, noti);
     }
     */
+}
+
+unsigned int character::get_shield_time() const
+{
+    return static_cast<unsigned int>(shield_time_.count());
+}
+
+void character::start_shield_timer()
+{
+    if (shield_) return;
+
+    wprintf(L"쉴드 아이템 시작\n");
+    shield_ = true;
+
+    auto self = shared_from_this();
+    shield_timer_->expires_from_now(shield_time_);
+    shield_timer_->async_wait([this, self](const boost::system::error_code& ec) {
+
+        if (ec)
+        {
+            wprintf(L"쉴드 타이머가 문제있음\n");
+            return;
+        }
+
+        wprintf(L"쉴드 아이템 소멸\n");
+        shield_ = false;
+    });
 }
