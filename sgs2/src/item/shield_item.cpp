@@ -30,8 +30,7 @@ void shield_item::update(float delta)
             wprintf(L"유저가 shield 아이템 획득\n");
 
             // 로직처리
-            c->start_shield_timer();
-
+            c->start_shield_timer(std::chrono::milliseconds(1000 * 10));
 
             noti_acquire_item(c, stat_info);
 

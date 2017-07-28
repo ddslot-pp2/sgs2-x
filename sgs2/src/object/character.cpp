@@ -67,12 +67,15 @@ void character::destroy()
     wprintf(L"유저가 버틴 시간은: %lld ms\n", total_time.count());
 
     // 랭크매니져 만들면 거기서 계산해서줌
-    auto create_medal_count = 1;
+    if (stat_->hp <= 0)
+    {
+        auto create_medal_count = 1;
 
-    //wprintf(L"pos X: %f, pos Z: %f\n", pos_.X, pos_.Z);
-    field_->create_medal_item(pos_, create_medal_count);
+        //wprintf(L"pos X: %f, pos Z: %f\n", pos_.X, pos_.Z);
+        field_->create_medal_item(pos_, create_medal_count);
+    }
 
-    shield_timer_->cancel();
+    if(shield_timer_) shield_timer_->cancel();
 }
 
 void character::leave_field() const
@@ -185,15 +188,17 @@ unsigned int character::get_shield_time() const
     return static_cast<unsigned int>(shield_time_.count());
 }
 
-void character::start_shield_timer()
+void character::start_shield_timer(std::chrono::milliseconds shield_time)
 {
     if (shield_) return;
 
     wprintf(L"쉴드 아이템 시작\n");
     shield_ = true;
 
+    shield_time_ = shield_time;
+
     auto self = shared_from_this();
-    shield_timer_->expires_from_now(shield_time_);
+    shield_timer_->expires_from_now(shield_time);
     shield_timer_->async_wait([this, self](const boost::system::error_code& ec) {
 
         if (ec)

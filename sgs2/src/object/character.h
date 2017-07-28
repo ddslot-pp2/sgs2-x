@@ -33,9 +33,10 @@ public:
     void set_rank(int rank) { rank_ = rank; }
     int  get_rank() const { return rank_; }
 
-    void start_shield_timer();
+    void start_shield_timer(std::chrono::milliseconds shield_time);
 
     unsigned int get_shield_time() const;
+    bool get_shield() const { return shield_; }
 
 protected:
     std::weak_ptr<server_session> session_;

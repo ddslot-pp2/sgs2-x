@@ -86,6 +86,12 @@ void bullet::collide_with_other(std::shared_ptr<character> target_object)
 {
     // other hp °¨¼Ò
     auto target_stat_info = target_object->get_stat_info();
+
+    if (target_object->get_shield())
+    {
+        power_ = 0;
+    }
+
     int target_hp = static_cast<float>(target_stat_info->hp) - power_;
 
     target_stat_info->hp = target_hp;
