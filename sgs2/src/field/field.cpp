@@ -314,7 +314,8 @@ void field::create_medal_item(const vector3& from_pos, const int count)
 
         vector3 to_pos(from_pos.X + random_x, 0.0f, from_pos.Z + random_z);
 
-        auto medal = std::make_shared<medal_item>(field_id_, core::timestamp(), to_pos);
+        auto medal = std::make_shared<medal_item>(field_id_, std::chrono::milliseconds(1000 * 10), to_pos);
+        medal->start_expire_timer();
 
         auto medal_item_info = noti.add_medal_item_infos();
 

@@ -10,6 +10,10 @@ public:
     virtual ~medal_item();
     void update(float delta) override;
 
+    void start_expire_timer();
+
+private:
+    std::atomic<bool> expired_;
     //void noti_acquire_item(object_id id, std::shared_ptr<stat_info> obj_stat_info) const;
 };
 

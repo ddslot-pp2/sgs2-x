@@ -67,6 +67,7 @@ void character::destroy()
     wprintf(L"유저가 버틴 시간은: %lld ms\n", total_time.count());
 
     // 랭크매니져 만들면 거기서 계산해서줌
+    // respawn 대기 상태에서 나가버리면 훈장을 한번씩 더 나눠줌 수정필요
     if (stat_->hp <= 0)
     {
         auto create_medal_count = 1;
