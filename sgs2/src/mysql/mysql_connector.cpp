@@ -60,4 +60,9 @@ namespace mysql_connector
             return nullptr;
         }
     }
+
+    void execute(const std::string& query)
+    {
+        statement->execute(query);
+    }
 }

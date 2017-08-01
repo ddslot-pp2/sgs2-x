@@ -7,6 +7,7 @@
 #include "../../../account/account_manager.h"
 #include <random>
 #include "../../../../../core/src/timer/timer_helper.hpp"
+#include "../../../mysql/mysql_connector.h"
 
 void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_LOG_IN& read)
 {
@@ -26,6 +27,21 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     std::uniform_int_distribution<std::mt19937::result_type> dist(1, 10000); 
 
     auto account_id = dist(rng);
+
+    // db에 요청해서 유저 정보 가져옴 없으면 생성후 가져옴
+    // call sp_get_user_info(uuid, password, login_type)
+    using namespace mysql_connector;
+    auto res = execute_query("call sp_get_add_user_info('adfsfwefwef', '1111', 1);");
+
+    if (res)
+    {
+        while (res->next())
+        {
+            auto uid = res->getUInt64("uid");
+            wprintf(L"uid: %lld\n", uid);
+        }
+    }
+
 
     // 어카운트 매니져에 어카운트 추가
     account_info acc_info;
