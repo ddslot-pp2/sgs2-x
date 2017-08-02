@@ -11,6 +11,13 @@
 
 void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_LOG_IN& read)
 {
+    auto error_handler = [session]
+    {
+        LOBBY::SC_LOG_IN send;
+        send.set_result(false);
+        send_packet(session, opcode::SC_LOG_IN, send);
+    };
+
     auto id = core::utf8_to_wstring(read.id());
     wprintf(L"id: %s\n", id.c_str());
 
@@ -19,50 +26,47 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
 
     auto error_message = "";
     auto result = true;
-
-    // id 와 password 기준으로 유저의 account_id를 가져옴
-    // 임시 account id 값 생성 
-    std::mt19937 rng;
-    rng.seed(std::random_device()());
-    std::uniform_int_distribution<std::mt19937::result_type> dist(1, 10000); 
-
-    auto account_id = dist(rng);
+    //auto nickname = L"돌격탱크" + std::to_wstring(dist_id);
 
     // db에 요청해서 유저 정보 가져옴 없으면 생성후 가져옴
     // call sp_get_user_info(uuid, password, login_type)
     using namespace mysql_connector;
-    auto res = execute_query("call sp_get_add_user_info('adfsfwefwef', '1111', 1);");
+    //auto q = "call sp_get_add_user_info('adfsfwefwef4', '1111', '" + core::wstring_to_utf8(nickname) + "', 1);";
+    auto q = "call sp_get_add_account_info('adfsfwefwef4', '1111', 1);";
+    auto res = execute_query(q);
+    //auto res = execute_query("call sp_get_add_user_info('adfsfwefwef2', '1111', 'aa', 1);");
 
-    if (res)
+    if (!res)
     {
-        while (res->next())
-        {
-            auto uid = res->getUInt64("uid");
-            wprintf(L"uid: %lld\n", uid);
-        }
+        error_handler();
+        return;
     }
-
-
-    // 어카운트 매니져에 어카운트 추가
+   
     account_info acc_info;
-    acc_info.id = account_id;
-    acc_info.medal_count = 150;
-    acc_info.coin_count = 500;
+    auto character_type = 1;
+    
+    while (res->next())
+    {
+        auto uid = res->getUInt64("uid");
+        acc_info.id = uid;
+        acc_info.medal_count = res->getUInt("medal_count");
+        acc_info.coin_count  = res->getUInt("coin_count");
+        acc_info.nickname = core::utf8_to_wstring(res->getString("nickname"));
+        if (acc_info.nickname == L"")
+        {
+            acc_info.nickname = L"게스트" + std::to_wstring(acc_info.id);
+        }
 
-    auto nickname = L"돌격탱크" + std::to_wstring(account_id);
-
-    acc_info.nickname = nickname;
+        character_type = res->getUInt("character_type");
+    }
 
     auto acc = account_manager::instance().add_account(acc_info);
     if (!acc)
     {
-        LOBBY::SC_LOG_IN send;
-        send.set_result(false);
-        send_packet(session, opcode::SC_LOG_IN, send);
+        error_handler();
         return;
     }
 
-    auto character_type = 1;
     session->set_character_type(character_type);
     session->set_account(acc);
 
