@@ -8,6 +8,7 @@
 #include <random>
 #include "../../../../../core/src/timer/timer_helper.hpp"
 #include "../../../mysql/mysql_connector.h"
+#include "../../../mysql/query_helper.h"
 
 void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_LOG_IN& read)
 {
@@ -16,6 +17,7 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
         LOBBY::SC_LOG_IN send;
         send.set_result(false);
         send_packet(session, opcode::SC_LOG_IN, send);
+        session->close();
     };
 
     auto id = core::utf8_to_wstring(read.id());
@@ -31,8 +33,8 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     // db에 요청해서 유저 정보 가져옴 없으면 생성후 가져옴
     // call sp_get_user_info(uuid, password, login_type)
     using namespace mysql_connector;
-    //auto q = "call sp_get_add_user_info('adfsfwefwef4', '1111', '" + core::wstring_to_utf8(nickname) + "', 1);";
-    auto q = "call sp_get_add_account_info('adfsfwefwef4', '1111', 1);";
+    
+    auto q = make_query("sp_get_add_account_info", read.id(), "1111", 1);
     auto res = execute_query(q);
     //auto res = execute_query("call sp_get_add_user_info('adfsfwefwef2', '1111', 'aa', 1);");
 

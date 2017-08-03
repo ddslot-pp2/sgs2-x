@@ -171,6 +171,9 @@
     <ClCompile Include="src\rank\rank_info.cpp">
       <Filter>src\rank</Filter>
     </ClCompile>
+    <ClCompile Include="src\mysql\query_helper.cpp">
+      <Filter>src\mysql</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">
@@ -262,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="src\rank\rank_info.h">
       <Filter>src\rank</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mysql\query_helper.h">
+      <Filter>src\mysql</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

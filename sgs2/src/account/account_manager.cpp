@@ -19,6 +19,7 @@ std::shared_ptr<account> account_manager::add_account(const account_info& acc_in
 
 void account_manager::del_account(const account_id id)
 {
+    wprintf(L"어카운트 삭제 시도\n");
     std::lock_guard<std::mutex> lock(account_lock_);
     accounts_.erase(id);
 }

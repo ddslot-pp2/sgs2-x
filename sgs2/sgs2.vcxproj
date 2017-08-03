@@ -90,6 +90,7 @@
     <ClCompile Include="src\item\shield_item.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\mysql\mysql_connector.cpp" />
+    <ClCompile Include="src\mysql\query_helper.cpp" />
     <ClCompile Include="src\object\character.cpp" />
     <ClCompile Include="src\object\collider.cpp" />
     <ClCompile Include="src\object\object.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="src\item\medal_item.h" />
     <ClInclude Include="src\item\shield_item.h" />
     <ClInclude Include="src\mysql\mysql_connector.h" />
+    <ClInclude Include="src\mysql\query_helper.h" />
     <ClInclude Include="src\object\character.h" />
     <ClInclude Include="src\object\collider.h" />
     <ClInclude Include="src\object\object.h" />

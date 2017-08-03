@@ -7,6 +7,8 @@ namespace mysql_connector
 
      thread_local std::shared_ptr<sql::Connection> connection;
      thread_local std::shared_ptr<sql::Statement>  statement;
+     thread_local std::unique_ptr<sql::ResultSet>  res;
+     //thread_local std::shared_ptr<sql::ResultSet>  res;
 
     void make_connection(std::wstring hostname, int port, std::wstring username, std::wstring password, std::wstring schema)
     {
@@ -25,6 +27,9 @@ namespace mysql_connector
         connection_properties["password"] = to_string(password);
         connection_properties["schema"] = to_string(schema);
         connection_properties["port"] = port;
+        connection_properties["client_multi_statements"] = true;
+        connection_properties["client_multi_results"] = true;
+        
         //connection_properties["OPT_RECONNECT"] = true;
 
         connection.reset(g_driver->connect(connection_properties));
@@ -47,16 +52,18 @@ namespace mysql_connector
         return statement;
     }
 
-    std::shared_ptr<sql::ResultSet> execute_query(const std::string& query)
+    std::unique_ptr<sql::ResultSet> execute_query(const std::string& query)
     {
         try
-        {
-            std::shared_ptr<sql::ResultSet> res(statement->executeQuery(query));
-            return res;
+        {           
+            res.reset(statement->executeQuery(query));
+            // result가 2개가 있는 쿼리는 따로 처리해야할듯
+            while (statement->getMoreResults()) {}
+            return std::move(res);
         }
         catch (sql::SQLException &e) 
         {
-
+            printf("%s\n", e.what());
             return nullptr;
         }
     }

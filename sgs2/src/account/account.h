@@ -19,6 +19,8 @@ public:
     explicit account(const account_info& acc_info);
     ~account();
 
+    account_id get_account_id() const;
+
     const std::wstring& get_nickname() const;
 
     int get_medal_count() const;

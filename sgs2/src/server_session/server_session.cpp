@@ -2,6 +2,7 @@
 #include "../packet_processor/packet_processor.h"
 #include "../packet_processor/send_helper.h"
 #include "../field/field_manager.h"
+#include "../account/account_manager.h"
 
 server_session::server_session(tcp::socket socket) : session(std::move(socket)), account_id_(0), account_(nullptr), character_(nullptr), character_type_(0)
 {
@@ -40,6 +41,11 @@ void server_session::on_disconnect(boost::system::error_code& ec)
         wprintf(L"케릭터가 존재함\n");
         leave_field(character_);
     }
+
+    if (account_)
+    {
+        account_manager::instance().del_account(account_->get_account_id());
+    }
 }
 
 void server_session::on_disconnect()
@@ -49,6 +55,11 @@ void server_session::on_disconnect()
     {
         wprintf(L"케릭터가 존재함\n");
         leave_field(character_);
+    }
+
+    if (account_)
+    {
+        account_manager::instance().del_account(account_->get_account_id());
     }
 }
 

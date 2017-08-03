@@ -10,6 +10,11 @@ account::~account()
 
 }
 
+account_id account::get_account_id() const
+{
+    return account_id_;
+}
+
 const std::wstring& account::get_nickname() const
 {
     return nickname_;
