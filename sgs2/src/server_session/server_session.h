@@ -44,6 +44,7 @@ protected:
 
 private:
     void leave_field(std::shared_ptr<character> c) const;
+    void update_account_info() const;
 
     account_id account_id_;
 

@@ -3,6 +3,8 @@
 #include "../packet_processor/send_helper.h"
 #include "../field/field_manager.h"
 #include "../account/account_manager.h"
+#include "../mysql/mysql_connector.h"
+#include "../mysql/query_helper.h"
 
 server_session::server_session(tcp::socket socket) : session(std::move(socket)), account_id_(0), account_(nullptr), character_(nullptr), character_type_(0)
 {
@@ -44,6 +46,7 @@ void server_session::on_disconnect(boost::system::error_code& ec)
 
     if (account_)
     {
+        update_account_info();
         account_manager::instance().del_account(account_->get_account_id());
     }
 }
@@ -59,6 +62,7 @@ void server_session::on_disconnect()
 
     if (account_)
     {
+        update_account_info();
         account_manager::instance().del_account(account_->get_account_id());
     }
 }
@@ -108,4 +112,17 @@ std::shared_ptr<stat_info> server_session::get_stat_info() const
 {
     // 로직에서 get / set 이 동시에 일어나면 안됨 => 동시에 일어나면 atomic_load 사용해야함
     return stat_;
+}
+
+void server_session::update_account_info() const
+{
+    auto acc_id      = account_->get_account_id();
+    auto medal_count = account_->get_medal_count();
+    auto coin_count  = account_->get_coin_count();
+    auto character_type = character_type_;
+
+    using namespace mysql_connector;
+
+    auto q = make_query("sp_update_account_info", acc_id, medal_count, coin_count, character_type);
+    execute(q);
 }

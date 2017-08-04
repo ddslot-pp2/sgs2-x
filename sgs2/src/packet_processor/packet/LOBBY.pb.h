@@ -44,6 +44,9 @@ extern CS_LEAVE_FIELDDefaultTypeInternal _CS_LEAVE_FIELD_default_instance_;
 class CS_LOG_IN;
 class CS_LOG_INDefaultTypeInternal;
 extern CS_LOG_INDefaultTypeInternal _CS_LOG_IN_default_instance_;
+class CS_PURCHASE_CHARACTER;
+class CS_PURCHASE_CHARACTERDefaultTypeInternal;
+extern CS_PURCHASE_CHARACTERDefaultTypeInternal _CS_PURCHASE_CHARACTER_default_instance_;
 class FIELD_INFO;
 class FIELD_INFODefaultTypeInternal;
 extern FIELD_INFODefaultTypeInternal _FIELD_INFO_default_instance_;
@@ -59,6 +62,9 @@ extern SC_LEAVE_FIELDDefaultTypeInternal _SC_LEAVE_FIELD_default_instance_;
 class SC_LOG_IN;
 class SC_LOG_INDefaultTypeInternal;
 extern SC_LOG_INDefaultTypeInternal _SC_LOG_IN_default_instance_;
+class SC_PURCHASE_CHARACTER;
+class SC_PURCHASE_CHARACTERDefaultTypeInternal;
+extern SC_PURCHASE_CHARACTERDefaultTypeInternal _SC_PURCHASE_CHARACTER_default_instance_;
 }  // namespace LOBBY
 
 namespace LOBBY {
@@ -935,6 +941,195 @@ class SC_LEAVE_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_
   mutable int _cached_size_;
   friend struct protobuf_LOBBY_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class CS_PURCHASE_CHARACTER : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:LOBBY.CS_PURCHASE_CHARACTER) */ {
+ public:
+  CS_PURCHASE_CHARACTER();
+  virtual ~CS_PURCHASE_CHARACTER();
+
+  CS_PURCHASE_CHARACTER(const CS_PURCHASE_CHARACTER& from);
+
+  inline CS_PURCHASE_CHARACTER& operator=(const CS_PURCHASE_CHARACTER& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_PURCHASE_CHARACTER& default_instance();
+
+  static inline const CS_PURCHASE_CHARACTER* internal_default_instance() {
+    return reinterpret_cast<const CS_PURCHASE_CHARACTER*>(
+               &_CS_PURCHASE_CHARACTER_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    9;
+
+  void Swap(CS_PURCHASE_CHARACTER* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_PURCHASE_CHARACTER* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_PURCHASE_CHARACTER* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_PURCHASE_CHARACTER& from);
+  void MergeFrom(const CS_PURCHASE_CHARACTER& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_PURCHASE_CHARACTER* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 character_type = 1;
+  void clear_character_type();
+  static const int kCharacterTypeFieldNumber = 1;
+  ::google::protobuf::int32 character_type() const;
+  void set_character_type(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:LOBBY.CS_PURCHASE_CHARACTER)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 character_type_;
+  mutable int _cached_size_;
+  friend struct protobuf_LOBBY_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_PURCHASE_CHARACTER : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:LOBBY.SC_PURCHASE_CHARACTER) */ {
+ public:
+  SC_PURCHASE_CHARACTER();
+  virtual ~SC_PURCHASE_CHARACTER();
+
+  SC_PURCHASE_CHARACTER(const SC_PURCHASE_CHARACTER& from);
+
+  inline SC_PURCHASE_CHARACTER& operator=(const SC_PURCHASE_CHARACTER& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_PURCHASE_CHARACTER& default_instance();
+
+  static inline const SC_PURCHASE_CHARACTER* internal_default_instance() {
+    return reinterpret_cast<const SC_PURCHASE_CHARACTER*>(
+               &_SC_PURCHASE_CHARACTER_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    10;
+
+  void Swap(SC_PURCHASE_CHARACTER* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_PURCHASE_CHARACTER* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_PURCHASE_CHARACTER* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_PURCHASE_CHARACTER& from);
+  void MergeFrom(const SC_PURCHASE_CHARACTER& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_PURCHASE_CHARACTER* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string ec = 4;
+  void clear_ec();
+  static const int kEcFieldNumber = 4;
+  const ::std::string& ec() const;
+  void set_ec(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ec(::std::string&& value);
+  #endif
+  void set_ec(const char* value);
+  void set_ec(const char* value, size_t size);
+  ::std::string* mutable_ec();
+  ::std::string* release_ec();
+  void set_allocated_ec(::std::string* ec);
+
+  // int32 medal_count = 1;
+  void clear_medal_count();
+  static const int kMedalCountFieldNumber = 1;
+  ::google::protobuf::int32 medal_count() const;
+  void set_medal_count(::google::protobuf::int32 value);
+
+  // int32 coin_count = 2;
+  void clear_coin_count();
+  static const int kCoinCountFieldNumber = 2;
+  ::google::protobuf::int32 coin_count() const;
+  void set_coin_count(::google::protobuf::int32 value);
+
+  // bool result = 3;
+  void clear_result();
+  static const int kResultFieldNumber = 3;
+  bool result() const;
+  void set_result(bool value);
+
+  // @@protoc_insertion_point(class_scope:LOBBY.SC_PURCHASE_CHARACTER)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr ec_;
+  ::google::protobuf::int32 medal_count_;
+  ::google::protobuf::int32 coin_count_;
+  bool result_;
+  mutable int _cached_size_;
+  friend struct protobuf_LOBBY_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -1452,7 +1647,128 @@ inline void SC_LEAVE_FIELD::set_allocated_ec(::std::string* ec) {
   // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_LEAVE_FIELD.ec)
 }
 
+// -------------------------------------------------------------------
+
+// CS_PURCHASE_CHARACTER
+
+// int32 character_type = 1;
+inline void CS_PURCHASE_CHARACTER::clear_character_type() {
+  character_type_ = 0;
+}
+inline ::google::protobuf::int32 CS_PURCHASE_CHARACTER::character_type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CS_PURCHASE_CHARACTER.character_type)
+  return character_type_;
+}
+inline void CS_PURCHASE_CHARACTER::set_character_type(::google::protobuf::int32 value) {
+  
+  character_type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CS_PURCHASE_CHARACTER.character_type)
+}
+
+// -------------------------------------------------------------------
+
+// SC_PURCHASE_CHARACTER
+
+// int32 medal_count = 1;
+inline void SC_PURCHASE_CHARACTER::clear_medal_count() {
+  medal_count_ = 0;
+}
+inline ::google::protobuf::int32 SC_PURCHASE_CHARACTER::medal_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.medal_count)
+  return medal_count_;
+}
+inline void SC_PURCHASE_CHARACTER::set_medal_count(::google::protobuf::int32 value) {
+  
+  medal_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.medal_count)
+}
+
+// int32 coin_count = 2;
+inline void SC_PURCHASE_CHARACTER::clear_coin_count() {
+  coin_count_ = 0;
+}
+inline ::google::protobuf::int32 SC_PURCHASE_CHARACTER::coin_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.coin_count)
+  return coin_count_;
+}
+inline void SC_PURCHASE_CHARACTER::set_coin_count(::google::protobuf::int32 value) {
+  
+  coin_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.coin_count)
+}
+
+// bool result = 3;
+inline void SC_PURCHASE_CHARACTER::clear_result() {
+  result_ = false;
+}
+inline bool SC_PURCHASE_CHARACTER::result() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.result)
+  return result_;
+}
+inline void SC_PURCHASE_CHARACTER::set_result(bool value) {
+  
+  result_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.result)
+}
+
+// string ec = 4;
+inline void SC_PURCHASE_CHARACTER::clear_ec() {
+  ec_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SC_PURCHASE_CHARACTER::ec() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.ec)
+  return ec_.GetNoArena();
+}
+inline void SC_PURCHASE_CHARACTER::set_ec(const ::std::string& value) {
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+#if LANG_CXX11
+inline void SC_PURCHASE_CHARACTER::set_ec(::std::string&& value) {
+  
+  ec_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+#endif
+inline void SC_PURCHASE_CHARACTER::set_ec(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+inline void SC_PURCHASE_CHARACTER::set_ec(const char* value, size_t size) {
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+inline ::std::string* SC_PURCHASE_CHARACTER::mutable_ec() {
+  
+  // @@protoc_insertion_point(field_mutable:LOBBY.SC_PURCHASE_CHARACTER.ec)
+  return ec_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SC_PURCHASE_CHARACTER::release_ec() {
+  // @@protoc_insertion_point(field_release:LOBBY.SC_PURCHASE_CHARACTER.ec)
+  
+  return ec_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SC_PURCHASE_CHARACTER::set_allocated_ec(::std::string* ec) {
+  if (ec != NULL) {
+    
+  } else {
+    
+  }
+  ec_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ec);
+  // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

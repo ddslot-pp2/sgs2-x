@@ -36,13 +36,17 @@ class CS_LEAVE_FIELDDefaultTypeInternal : public ::google::protobuf::internal::E
 } _CS_LEAVE_FIELD_default_instance_;
 class SC_LEAVE_FIELDDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_LEAVE_FIELD> {
 } _SC_LEAVE_FIELD_default_instance_;
+class CS_PURCHASE_CHARACTERDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<CS_PURCHASE_CHARACTER> {
+} _CS_PURCHASE_CHARACTER_default_instance_;
+class SC_PURCHASE_CHARACTERDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<SC_PURCHASE_CHARACTER> {
+} _SC_PURCHASE_CHARACTER_default_instance_;
 
 namespace protobuf_LOBBY_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[9];
+::google::protobuf::Metadata file_level_metadata[11];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 }  // namespace
@@ -58,6 +62,8 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
@@ -134,6 +140,21 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_LEAVE_FIELD, result_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_LEAVE_FIELD, ec_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_PURCHASE_CHARACTER, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_PURCHASE_CHARACTER, character_type_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_PURCHASE_CHARACTER, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_PURCHASE_CHARACTER, medal_count_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_PURCHASE_CHARACTER, coin_count_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_PURCHASE_CHARACTER, result_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_PURCHASE_CHARACTER, ec_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -146,6 +167,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 43, -1, sizeof(SC_ENTER_FIELD)},
   { 51, -1, sizeof(CS_LEAVE_FIELD)},
   { 57, -1, sizeof(SC_LEAVE_FIELD)},
+  { 64, -1, sizeof(CS_PURCHASE_CHARACTER)},
+  { 70, -1, sizeof(SC_PURCHASE_CHARACTER)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -158,6 +181,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_ENTER_FIELD_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_CS_LEAVE_FIELD_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_SC_LEAVE_FIELD_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_CS_PURCHASE_CHARACTER_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_SC_PURCHASE_CHARACTER_default_instance_),
 };
 
 namespace {
@@ -178,7 +203,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 9);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 11);
 }
 
 }  // namespace
@@ -202,6 +227,10 @@ void TableStruct::Shutdown() {
   delete file_level_metadata[7].reflection;
   _SC_LEAVE_FIELD_default_instance_.Shutdown();
   delete file_level_metadata[8].reflection;
+  _CS_PURCHASE_CHARACTER_default_instance_.Shutdown();
+  delete file_level_metadata[9].reflection;
+  _SC_PURCHASE_CHARACTER_default_instance_.Shutdown();
+  delete file_level_metadata[10].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
@@ -217,6 +246,8 @@ void TableStruct::InitDefaultsImpl() {
   _SC_ENTER_FIELD_default_instance_.DefaultConstruct();
   _CS_LEAVE_FIELD_default_instance_.DefaultConstruct();
   _SC_LEAVE_FIELD_default_instance_.DefaultConstruct();
+  _CS_PURCHASE_CHARACTER_default_instance_.DefaultConstruct();
+  _SC_PURCHASE_CHARACTER_default_instance_.DefaultConstruct();
 }
 
 void InitDefaults() {
@@ -238,12 +269,16 @@ void AddDescriptorsImpl() {
       "eld_id\030\001 \001(\005\">\n\016SC_ENTER_FIELD\022\016\n\006result"
       "\030\001 \001(\010\022\020\n\010field_id\030\002 \001(\005\022\n\n\002ec\030\003 \001(\t\"\"\n\016"
       "CS_LEAVE_FIELD\022\020\n\010field_id\030\001 \001(\005\",\n\016SC_L"
-      "EAVE_FIELD\022\016\n\006result\030\001 \001(\010\022\n\n\002ec\030\002 \001(\t*2"
-      "\n\014GameDataType\022\n\n\006test_1\020\000\022\n\n\006test_2\020\001\022\n"
-      "\n\006test_3\020\002b\006proto3"
+      "EAVE_FIELD\022\016\n\006result\030\001 \001(\010\022\n\n\002ec\030\002 \001(\t\"/"
+      "\n\025CS_PURCHASE_CHARACTER\022\026\n\016character_typ"
+      "e\030\001 \001(\005\"\\\n\025SC_PURCHASE_CHARACTER\022\023\n\013meda"
+      "l_count\030\001 \001(\005\022\022\n\ncoin_count\030\002 \001(\005\022\016\n\006res"
+      "ult\030\003 \001(\010\022\n\n\002ec\030\004 \001(\t*2\n\014GameDataType\022\n\n"
+      "\006test_1\020\000\022\n\n\006test_2\020\001\022\n\n\006test_3\020\002b\006proto"
+      "3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 578);
+      descriptor, 721);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "LOBBY.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -3194,6 +3229,686 @@ void SC_LEAVE_FIELD::set_allocated_ec(::std::string* ec) {
   }
   ec_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ec);
   // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_LEAVE_FIELD.ec)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int CS_PURCHASE_CHARACTER::kCharacterTypeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+CS_PURCHASE_CHARACTER::CS_PURCHASE_CHARACTER()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_LOBBY_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:LOBBY.CS_PURCHASE_CHARACTER)
+}
+CS_PURCHASE_CHARACTER::CS_PURCHASE_CHARACTER(const CS_PURCHASE_CHARACTER& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  character_type_ = from.character_type_;
+  // @@protoc_insertion_point(copy_constructor:LOBBY.CS_PURCHASE_CHARACTER)
+}
+
+void CS_PURCHASE_CHARACTER::SharedCtor() {
+  character_type_ = 0;
+  _cached_size_ = 0;
+}
+
+CS_PURCHASE_CHARACTER::~CS_PURCHASE_CHARACTER() {
+  // @@protoc_insertion_point(destructor:LOBBY.CS_PURCHASE_CHARACTER)
+  SharedDtor();
+}
+
+void CS_PURCHASE_CHARACTER::SharedDtor() {
+}
+
+void CS_PURCHASE_CHARACTER::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CS_PURCHASE_CHARACTER::descriptor() {
+  protobuf_LOBBY_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_LOBBY_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const CS_PURCHASE_CHARACTER& CS_PURCHASE_CHARACTER::default_instance() {
+  protobuf_LOBBY_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+CS_PURCHASE_CHARACTER* CS_PURCHASE_CHARACTER::New(::google::protobuf::Arena* arena) const {
+  CS_PURCHASE_CHARACTER* n = new CS_PURCHASE_CHARACTER;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void CS_PURCHASE_CHARACTER::Clear() {
+// @@protoc_insertion_point(message_clear_start:LOBBY.CS_PURCHASE_CHARACTER)
+  character_type_ = 0;
+}
+
+bool CS_PURCHASE_CHARACTER::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:LOBBY.CS_PURCHASE_CHARACTER)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 character_type = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &character_type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:LOBBY.CS_PURCHASE_CHARACTER)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:LOBBY.CS_PURCHASE_CHARACTER)
+  return false;
+#undef DO_
+}
+
+void CS_PURCHASE_CHARACTER::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:LOBBY.CS_PURCHASE_CHARACTER)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 character_type = 1;
+  if (this->character_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->character_type(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:LOBBY.CS_PURCHASE_CHARACTER)
+}
+
+::google::protobuf::uint8* CS_PURCHASE_CHARACTER::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:LOBBY.CS_PURCHASE_CHARACTER)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 character_type = 1;
+  if (this->character_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->character_type(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:LOBBY.CS_PURCHASE_CHARACTER)
+  return target;
+}
+
+size_t CS_PURCHASE_CHARACTER::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LOBBY.CS_PURCHASE_CHARACTER)
+  size_t total_size = 0;
+
+  // int32 character_type = 1;
+  if (this->character_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->character_type());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CS_PURCHASE_CHARACTER::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:LOBBY.CS_PURCHASE_CHARACTER)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CS_PURCHASE_CHARACTER* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const CS_PURCHASE_CHARACTER>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:LOBBY.CS_PURCHASE_CHARACTER)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:LOBBY.CS_PURCHASE_CHARACTER)
+    MergeFrom(*source);
+  }
+}
+
+void CS_PURCHASE_CHARACTER::MergeFrom(const CS_PURCHASE_CHARACTER& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:LOBBY.CS_PURCHASE_CHARACTER)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.character_type() != 0) {
+    set_character_type(from.character_type());
+  }
+}
+
+void CS_PURCHASE_CHARACTER::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:LOBBY.CS_PURCHASE_CHARACTER)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CS_PURCHASE_CHARACTER::CopyFrom(const CS_PURCHASE_CHARACTER& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LOBBY.CS_PURCHASE_CHARACTER)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CS_PURCHASE_CHARACTER::IsInitialized() const {
+  return true;
+}
+
+void CS_PURCHASE_CHARACTER::Swap(CS_PURCHASE_CHARACTER* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void CS_PURCHASE_CHARACTER::InternalSwap(CS_PURCHASE_CHARACTER* other) {
+  std::swap(character_type_, other->character_type_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata CS_PURCHASE_CHARACTER::GetMetadata() const {
+  protobuf_LOBBY_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_LOBBY_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// CS_PURCHASE_CHARACTER
+
+// int32 character_type = 1;
+void CS_PURCHASE_CHARACTER::clear_character_type() {
+  character_type_ = 0;
+}
+::google::protobuf::int32 CS_PURCHASE_CHARACTER::character_type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CS_PURCHASE_CHARACTER.character_type)
+  return character_type_;
+}
+void CS_PURCHASE_CHARACTER::set_character_type(::google::protobuf::int32 value) {
+  
+  character_type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CS_PURCHASE_CHARACTER.character_type)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SC_PURCHASE_CHARACTER::kMedalCountFieldNumber;
+const int SC_PURCHASE_CHARACTER::kCoinCountFieldNumber;
+const int SC_PURCHASE_CHARACTER::kResultFieldNumber;
+const int SC_PURCHASE_CHARACTER::kEcFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SC_PURCHASE_CHARACTER::SC_PURCHASE_CHARACTER()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_LOBBY_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:LOBBY.SC_PURCHASE_CHARACTER)
+}
+SC_PURCHASE_CHARACTER::SC_PURCHASE_CHARACTER(const SC_PURCHASE_CHARACTER& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ec_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.ec().size() > 0) {
+    ec_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ec_);
+  }
+  ::memcpy(&medal_count_, &from.medal_count_,
+    reinterpret_cast<char*>(&result_) -
+    reinterpret_cast<char*>(&medal_count_) + sizeof(result_));
+  // @@protoc_insertion_point(copy_constructor:LOBBY.SC_PURCHASE_CHARACTER)
+}
+
+void SC_PURCHASE_CHARACTER::SharedCtor() {
+  ec_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&medal_count_, 0, reinterpret_cast<char*>(&result_) -
+    reinterpret_cast<char*>(&medal_count_) + sizeof(result_));
+  _cached_size_ = 0;
+}
+
+SC_PURCHASE_CHARACTER::~SC_PURCHASE_CHARACTER() {
+  // @@protoc_insertion_point(destructor:LOBBY.SC_PURCHASE_CHARACTER)
+  SharedDtor();
+}
+
+void SC_PURCHASE_CHARACTER::SharedDtor() {
+  ec_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void SC_PURCHASE_CHARACTER::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* SC_PURCHASE_CHARACTER::descriptor() {
+  protobuf_LOBBY_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_LOBBY_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SC_PURCHASE_CHARACTER& SC_PURCHASE_CHARACTER::default_instance() {
+  protobuf_LOBBY_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+SC_PURCHASE_CHARACTER* SC_PURCHASE_CHARACTER::New(::google::protobuf::Arena* arena) const {
+  SC_PURCHASE_CHARACTER* n = new SC_PURCHASE_CHARACTER;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void SC_PURCHASE_CHARACTER::Clear() {
+// @@protoc_insertion_point(message_clear_start:LOBBY.SC_PURCHASE_CHARACTER)
+  ec_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&medal_count_, 0, reinterpret_cast<char*>(&result_) -
+    reinterpret_cast<char*>(&medal_count_) + sizeof(result_));
+}
+
+bool SC_PURCHASE_CHARACTER::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:LOBBY.SC_PURCHASE_CHARACTER)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 medal_count = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &medal_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 coin_count = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &coin_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bool result = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &result_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string ec = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ec()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->ec().data(), this->ec().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "LOBBY.SC_PURCHASE_CHARACTER.ec"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:LOBBY.SC_PURCHASE_CHARACTER)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:LOBBY.SC_PURCHASE_CHARACTER)
+  return false;
+#undef DO_
+}
+
+void SC_PURCHASE_CHARACTER::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:LOBBY.SC_PURCHASE_CHARACTER)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 medal_count = 1;
+  if (this->medal_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->medal_count(), output);
+  }
+
+  // int32 coin_count = 2;
+  if (this->coin_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->coin_count(), output);
+  }
+
+  // bool result = 3;
+  if (this->result() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->result(), output);
+  }
+
+  // string ec = 4;
+  if (this->ec().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->ec().data(), this->ec().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "LOBBY.SC_PURCHASE_CHARACTER.ec");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->ec(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:LOBBY.SC_PURCHASE_CHARACTER)
+}
+
+::google::protobuf::uint8* SC_PURCHASE_CHARACTER::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:LOBBY.SC_PURCHASE_CHARACTER)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 medal_count = 1;
+  if (this->medal_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->medal_count(), target);
+  }
+
+  // int32 coin_count = 2;
+  if (this->coin_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->coin_count(), target);
+  }
+
+  // bool result = 3;
+  if (this->result() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->result(), target);
+  }
+
+  // string ec = 4;
+  if (this->ec().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->ec().data(), this->ec().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "LOBBY.SC_PURCHASE_CHARACTER.ec");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->ec(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:LOBBY.SC_PURCHASE_CHARACTER)
+  return target;
+}
+
+size_t SC_PURCHASE_CHARACTER::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LOBBY.SC_PURCHASE_CHARACTER)
+  size_t total_size = 0;
+
+  // string ec = 4;
+  if (this->ec().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ec());
+  }
+
+  // int32 medal_count = 1;
+  if (this->medal_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->medal_count());
+  }
+
+  // int32 coin_count = 2;
+  if (this->coin_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->coin_count());
+  }
+
+  // bool result = 3;
+  if (this->result() != 0) {
+    total_size += 1 + 1;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void SC_PURCHASE_CHARACTER::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:LOBBY.SC_PURCHASE_CHARACTER)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SC_PURCHASE_CHARACTER* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SC_PURCHASE_CHARACTER>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:LOBBY.SC_PURCHASE_CHARACTER)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:LOBBY.SC_PURCHASE_CHARACTER)
+    MergeFrom(*source);
+  }
+}
+
+void SC_PURCHASE_CHARACTER::MergeFrom(const SC_PURCHASE_CHARACTER& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:LOBBY.SC_PURCHASE_CHARACTER)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.ec().size() > 0) {
+
+    ec_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ec_);
+  }
+  if (from.medal_count() != 0) {
+    set_medal_count(from.medal_count());
+  }
+  if (from.coin_count() != 0) {
+    set_coin_count(from.coin_count());
+  }
+  if (from.result() != 0) {
+    set_result(from.result());
+  }
+}
+
+void SC_PURCHASE_CHARACTER::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:LOBBY.SC_PURCHASE_CHARACTER)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SC_PURCHASE_CHARACTER::CopyFrom(const SC_PURCHASE_CHARACTER& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LOBBY.SC_PURCHASE_CHARACTER)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SC_PURCHASE_CHARACTER::IsInitialized() const {
+  return true;
+}
+
+void SC_PURCHASE_CHARACTER::Swap(SC_PURCHASE_CHARACTER* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SC_PURCHASE_CHARACTER::InternalSwap(SC_PURCHASE_CHARACTER* other) {
+  ec_.Swap(&other->ec_);
+  std::swap(medal_count_, other->medal_count_);
+  std::swap(coin_count_, other->coin_count_);
+  std::swap(result_, other->result_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata SC_PURCHASE_CHARACTER::GetMetadata() const {
+  protobuf_LOBBY_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_LOBBY_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SC_PURCHASE_CHARACTER
+
+// int32 medal_count = 1;
+void SC_PURCHASE_CHARACTER::clear_medal_count() {
+  medal_count_ = 0;
+}
+::google::protobuf::int32 SC_PURCHASE_CHARACTER::medal_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.medal_count)
+  return medal_count_;
+}
+void SC_PURCHASE_CHARACTER::set_medal_count(::google::protobuf::int32 value) {
+  
+  medal_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.medal_count)
+}
+
+// int32 coin_count = 2;
+void SC_PURCHASE_CHARACTER::clear_coin_count() {
+  coin_count_ = 0;
+}
+::google::protobuf::int32 SC_PURCHASE_CHARACTER::coin_count() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.coin_count)
+  return coin_count_;
+}
+void SC_PURCHASE_CHARACTER::set_coin_count(::google::protobuf::int32 value) {
+  
+  coin_count_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.coin_count)
+}
+
+// bool result = 3;
+void SC_PURCHASE_CHARACTER::clear_result() {
+  result_ = false;
+}
+bool SC_PURCHASE_CHARACTER::result() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.result)
+  return result_;
+}
+void SC_PURCHASE_CHARACTER::set_result(bool value) {
+  
+  result_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.result)
+}
+
+// string ec = 4;
+void SC_PURCHASE_CHARACTER::clear_ec() {
+  ec_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& SC_PURCHASE_CHARACTER::ec() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_PURCHASE_CHARACTER.ec)
+  return ec_.GetNoArena();
+}
+void SC_PURCHASE_CHARACTER::set_ec(const ::std::string& value) {
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+#if LANG_CXX11
+void SC_PURCHASE_CHARACTER::set_ec(::std::string&& value) {
+  
+  ec_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+#endif
+void SC_PURCHASE_CHARACTER::set_ec(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+void SC_PURCHASE_CHARACTER::set_ec(const char* value, size_t size) {
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:LOBBY.SC_PURCHASE_CHARACTER.ec)
+}
+::std::string* SC_PURCHASE_CHARACTER::mutable_ec() {
+  
+  // @@protoc_insertion_point(field_mutable:LOBBY.SC_PURCHASE_CHARACTER.ec)
+  return ec_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* SC_PURCHASE_CHARACTER::release_ec() {
+  // @@protoc_insertion_point(field_release:LOBBY.SC_PURCHASE_CHARACTER.ec)
+  
+  return ec_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void SC_PURCHASE_CHARACTER::set_allocated_ec(::std::string* ec) {
+  if (ec != NULL) {
+    
+  } else {
+    
+  }
+  ec_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ec);
+  // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_PURCHASE_CHARACTER.ec)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

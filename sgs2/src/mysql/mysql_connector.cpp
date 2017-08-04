@@ -70,6 +70,13 @@ namespace mysql_connector
 
     void execute(const std::string& query)
     {
-        statement->execute(query);
+        try
+        {
+            statement->execute(query);
+        }
+        catch (sql::SQLException &e)
+        {
+            printf("%s\n", e.what());
+        }
     }
 }

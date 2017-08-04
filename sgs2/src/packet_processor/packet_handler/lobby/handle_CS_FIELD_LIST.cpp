@@ -7,16 +7,13 @@
 
 void handle_CS_FIELD_LIST(std::shared_ptr<server_session> session, const LOBBY::CS_FIELD_LIST& read)
 {
-    LOBBY::SC_FIELD_LIST send;
-    send.set_result(true);
-
-    for (auto i = 0; i < 2; ++i)
+    auto error_handler = [session]
     {
-        auto field = send.add_field_infos();
-        field->set_field_id(i);
-        field->set_user_count(i+10);
-        field->set_max_user_count(50);
-    }
+        LOBBY::SC_LOG_IN send;
+        send.set_result(false);
+        send_packet(session, opcode::SC_LOG_IN, send);
+        session->close();
+    };
 
-    send_packet(session, opcode::SC_FIELD_LIST, send);
+    
 }

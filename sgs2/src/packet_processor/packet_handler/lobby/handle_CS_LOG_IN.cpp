@@ -72,16 +72,29 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     session->set_character_type(character_type);
     session->set_account(acc);
 
-    // 추가 능력치이며 character_type의 의해 결정됨
-    stat_info stat;
-    stat.max_hp = 0;
-    stat.speed  = 0;
-    stat.bullet_speed = 0.0f;
-    stat.bullet_power = 0.0f;
-    stat.bullet_distance = 0.0f;
-    stat.reload_time = 0.0f;
+    // db 요청 추가 능력치 가져오기
+    auto acc_id = acc->get_account_id();
+    q = make_query("sp_get_character_info", acc_id, character_type);
+    res = execute_query(q);
+    if (!res)
+    {
+        error_handler();
+        return;
+    }
 
-    session->set_stat_info(stat);
+    while (res->next())
+    {
+        // 추가 능력치이며 character_type의 의해 결정됨
+        stat_info stat;
+        stat.max_hp          = res->getUInt("max_hp");
+        stat.speed           = static_cast<float>(res->getUInt("speed"));
+        stat.bullet_speed    = static_cast<float>(res->getUInt("bullet_speed"));
+        stat.bullet_power    = static_cast<float>(res->getUInt("bullet_power"));
+        stat.bullet_distance = static_cast<float>(res->getUInt("bullet_distance"));
+        stat.reload_time     = static_cast<float>(res->getUInt("reload_time"));
+
+        session->set_stat_info(stat);
+    }
 
     // 로그인 결과값을 전달
     LOBBY::SC_LOG_IN send;

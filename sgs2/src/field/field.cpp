@@ -125,6 +125,7 @@ void field::enter_field(std::shared_ptr<server_session> session)
 
     auto c = std::make_shared<character>(field_id_, session);
     c->initialize();
+    c->set_character_type(session->get_character_type());
 
     auto object_id = reinterpret_cast<std::uintptr_t>(&(*c));
 

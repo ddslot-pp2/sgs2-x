@@ -52,6 +52,16 @@
 			<ec type="string"/>
 		</SC_LEAVE_FIELD>
 
+		<CS_PURCHASE_CHARACTER>
+			<character_type type="int32"/>
+		</CS_PURCHASE_CHARACTER>
+		<SC_PURCHASE_CHARACTER>
+			<medal_count type="int32"/>
+			<coin_count type="int32"/>
+			<result type="bool"/>
+			<ec type="string"/>
+		</SC_PURCHASE_CHARACTER>
+
 	</LOBBY>
 
 	<GAME start="2000">
