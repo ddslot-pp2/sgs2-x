@@ -29,6 +29,9 @@ public:
     void inc_medal_count();
     void inc_coin_count();
 
+    void dec_medal_count(int count);
+    void dec_coin_count(int count);
+
     account_info to_account_info() const;
 
 private:

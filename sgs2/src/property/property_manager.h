@@ -33,9 +33,11 @@ public:
     bool read_xml(const std::wstring& path);
 
     std::shared_ptr<default_stat_info> get_default_stat_info(int index) const;
+    int get_default_character_medal_info(int index) const;
 
 private:
     std::vector<std::shared_ptr<default_stat_info>> default_stat_infos_;
+    std::vector<int> default_character_medal_info_;
 };
 
 #endif

@@ -126,3 +126,13 @@ void server_session::update_account_info() const
     auto q = make_query("sp_update_account_info", acc_id, medal_count, coin_count, character_type);
     execute(q);
 }
+
+void server_session::set_account_id(account_id id)
+{
+    account_id_ = id;
+}
+
+account_id server_session::get_account_id() const
+{
+    return account_id_;
+}

@@ -36,6 +36,9 @@ public:
     void set_stat_info(const stat_info& info);
     std::shared_ptr<stat_info> get_stat_info() const;
 
+    void set_account_id(account_id id);
+    account_id get_account_id() const;
+
 protected:
     virtual void on_read_packet(std::shared_ptr<network::packet_buffer_type> buf, unsigned short size) override;
     virtual void on_connect() override;

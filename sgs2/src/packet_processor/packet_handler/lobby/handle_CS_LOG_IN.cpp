@@ -74,6 +74,8 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
 
     // db 요청 추가 능력치 가져오기
     auto acc_id = acc->get_account_id();
+    session->set_account_id(acc_id);
+
     q = make_query("sp_get_character_info", acc_id, character_type);
     res = execute_query(q);
     if (!res)
