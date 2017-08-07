@@ -21,6 +21,8 @@ public:
     std::shared_ptr<account> add_account(const account_info& acc_info);
     void del_account(const account_id id);
     
+    void leave_account(const account_id id);
+
 private:
     std::mutex account_lock_;
     std::map<account_id, std::shared_ptr<account>> accounts_;

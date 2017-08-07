@@ -58,9 +58,13 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
         {
             acc_info.nickname = L"게스트" + std::to_wstring(acc_info.id);
         }
+        acc_info.session = session;
 
         character_type = res->getUInt("character_type");
     }
+    
+    // 중복 로그인 막음
+    account_manager::instance().leave_account(acc_info.id);
 
     auto acc = account_manager::instance().add_account(acc_info);
     if (!acc)

@@ -5,8 +5,9 @@
 #include "../account/account_manager.h"
 #include "../mysql/mysql_connector.h"
 #include "../mysql/query_helper.h"
+#include "../../../core/src/timer/timer_helper.hpp"
 
-server_session::server_session(tcp::socket socket) : session(std::move(socket)), account_id_(0), account_(nullptr), character_(nullptr), character_type_(0)
+server_session::server_session(tcp::socket socket) : session(std::move(socket)), account_id_(0), account_(nullptr), character_(nullptr), character_type_(0), ping_time_(8000), ping_timer_(std::make_unique<timer_ptr::element_type>(network::io_service())), ping_(true)
 {
     
 }
@@ -26,7 +27,7 @@ void server_session::on_read_packet(std::shared_ptr<network::packet_buffer_type>
 void server_session::on_connect()
 {
     wprintf(L"server_session on_connected called\n");
-
+    start_ping_timer(ping_time_);
     /*
     LOBBY::SC_LOG_IN send;
     send.set_result(true);
@@ -38,6 +39,8 @@ void server_session::on_connect()
 void server_session::on_disconnect(boost::system::error_code& ec)
 {
     wprintf(L"on disconnect with error\n");
+    ping_timer_->cancel();
+
     if (character_)
     {
         wprintf(L"케릭터가 존재함\n");
@@ -54,6 +57,8 @@ void server_session::on_disconnect(boost::system::error_code& ec)
 void server_session::on_disconnect()
 {
     wprintf(L"on disconnect\n");
+    ping_timer_->cancel();
+
     if (character_)
     {
         wprintf(L"케릭터가 존재함\n");
@@ -135,4 +140,35 @@ void server_session::set_account_id(account_id id)
 account_id server_session::get_account_id() const
 {
     return account_id_;
+}
+
+void server_session::start_ping_timer(std::chrono::milliseconds ping_time)
+{
+    wprintf(L"핑 타이머 시작\n");
+
+    auto self = shared_from_this();
+    ping_timer_->expires_from_now(ping_time_);
+    ping_timer_->async_wait([this, self](const boost::system::error_code& ec) {
+
+        if (ec)
+        {
+            wprintf(L"핑 타이머가 종료\n");
+            return;
+        }
+        
+        if (!ping_)
+        {
+            wprintf(L"핑 오지 않아서 강제 종료\n");
+            close();
+            return;
+        }
+
+        wprintf(L"핑 받음\n");
+        GAME::SC_PING send;
+        send.set_timestamp(core::timestamp().count());
+        send_packet(self, opcode::SC_PING, send);
+
+        ping_ = false;
+        start_ping_timer(ping_time_);
+    });
 }

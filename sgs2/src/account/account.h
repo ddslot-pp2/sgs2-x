@@ -4,6 +4,8 @@
 #include <atomic>
 #include "../predeclare.h"
 
+class server_session;
+
 // db의 값과 매치되지 않을까 싶다
 struct account_info
 {
@@ -11,6 +13,7 @@ struct account_info
     std::wstring nickname;
     int medal_count;
     int coin_count;
+    std::shared_ptr<server_session> session;
 };
 
 class account
@@ -34,11 +37,14 @@ public:
 
     account_info to_account_info() const;
 
+    std::shared_ptr<server_session> get_session() const;
+
 private:
     account_id account_id_;
     std::wstring nickname_;
     std::atomic<int> medal_count_;
     std::atomic<int> coin_count_;
+    std::weak_ptr<server_session> session_;
 };
 
 #endif

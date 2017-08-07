@@ -1,9 +1,10 @@
 #include "account.h"
 #include <algorithm>
+#include "../server_session/server_session.h"
 
-account::account(const account_info& acc_info) : account_id_(acc_info.id), nickname_(acc_info.nickname), medal_count_(acc_info.medal_count), coin_count_(acc_info.coin_count)
+account::account(const account_info& acc_info) : account_id_(acc_info.id), nickname_(acc_info.nickname), medal_count_(acc_info.medal_count), coin_count_(acc_info.coin_count), session_(acc_info.session)
 {
-
+    
 }
 
 account::~account()
@@ -60,4 +61,9 @@ account_info account::to_account_info() const
     acc_info.coin_count = coin_count_;
 
     return acc_info;
+}
+
+std::shared_ptr<server_session> account::get_session() const
+{
+    return session_.lock();
 }

@@ -39,6 +39,10 @@ public:
     void set_account_id(account_id id);
     account_id get_account_id() const;
 
+    void start_ping_timer(std::chrono::milliseconds ping_time);
+    bool get_ping() const { return ping_; }
+    void set_ping(bool ping) { ping_ = ping; }
+
 protected:
     virtual void on_read_packet(std::shared_ptr<network::packet_buffer_type> buf, unsigned short size) override;
     virtual void on_connect() override;
@@ -57,6 +61,10 @@ private:
     int character_type_;
     std::shared_ptr<stat_info> stat_;
     //std::shared_ptr<character> character_;
+
+    std::chrono::milliseconds ping_time_;
+    timer_ptr ping_timer_;
+    std::atomic<bool> ping_;
 };
 
 #endif
