@@ -177,6 +177,9 @@
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_PURCHASE_CHARACTER.cpp">
       <Filter>src\packet_processor\packet_handler\lobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_CHARACTER_INFO.cpp">
+      <Filter>src\packet_processor\packet_handler\lobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">

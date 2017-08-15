@@ -20,6 +20,7 @@
 			<nickname type="string"/>
 			<medal_count type="int32"/>
 			<coin_count type="int32"/>
+			<character_type type="int32"/>
 		</SC_LOG_IN>
 
 		<FIELD_INFO struct = "true">
@@ -61,6 +62,21 @@
 			<result type="bool"/>
 			<ec type="string"/>
 		</SC_PURCHASE_CHARACTER>
+
+		<CS_CHARACTER_INFO>
+			<character_type type="int32"/>
+		</CS_CHARACTER_INFO>
+		<SC_CHARACTER_INFO>
+			<result type="bool"/>
+			<ec type="string"/>
+			<character_type type="int32"/>		
+			<max_hp type="int32"/>
+			<speed type="int32"/>
+			<bullet_speed type="int32"/>
+			<bullet_power type="int32"/>
+			<bullet_distance type="int32"/>
+			<reload_time type="int32"/>
+		</SC_CHARACTER_INFO>
 
 	</LOBBY>
 

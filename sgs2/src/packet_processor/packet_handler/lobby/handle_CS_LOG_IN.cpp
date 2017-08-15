@@ -111,6 +111,8 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     send.set_medal_count(acc->get_medal_count());
     send.set_coin_count(acc->get_coin_count());
 
+    send.set_character_type(character_type);
+
     send_packet(session, opcode::SC_LOG_IN, send);
 
     /*
