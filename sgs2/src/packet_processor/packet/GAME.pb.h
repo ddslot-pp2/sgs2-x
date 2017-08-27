@@ -406,23 +406,47 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   float pos_z() const;
   void set_pos_z(float value);
 
-  // int32 max_hp = 7;
-  void clear_max_hp();
-  static const int kMaxHpFieldNumber = 7;
-  ::google::protobuf::int32 max_hp() const;
-  void set_max_hp(::google::protobuf::int32 value);
-
-  // int32 hp = 8;
+  // int32 hp = 7;
   void clear_hp();
-  static const int kHpFieldNumber = 8;
+  static const int kHpFieldNumber = 7;
   ::google::protobuf::int32 hp() const;
   void set_hp(::google::protobuf::int32 value);
 
-  // float speed = 9;
+  // int32 max_hp = 8;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 8;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 speed = 9;
   void clear_speed();
   static const int kSpeedFieldNumber = 9;
-  float speed() const;
-  void set_speed(float value);
+  ::google::protobuf::int32 speed() const;
+  void set_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_speed = 10;
+  void clear_bullet_speed();
+  static const int kBulletSpeedFieldNumber = 10;
+  ::google::protobuf::int32 bullet_speed() const;
+  void set_bullet_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_power = 11;
+  void clear_bullet_power();
+  static const int kBulletPowerFieldNumber = 11;
+  ::google::protobuf::int32 bullet_power() const;
+  void set_bullet_power(::google::protobuf::int32 value);
+
+  // int32 bullet_distance = 12;
+  void clear_bullet_distance();
+  static const int kBulletDistanceFieldNumber = 12;
+  ::google::protobuf::int32 bullet_distance() const;
+  void set_bullet_distance(::google::protobuf::int32 value);
+
+  // int32 reload_time = 13;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 13;
+  ::google::protobuf::int32 reload_time() const;
+  void set_reload_time(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:GAME.OTHER_INFO)
  private:
@@ -434,9 +458,13 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   float pos_x_;
   float pos_y_;
   float pos_z_;
-  ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 hp_;
-  float speed_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 speed_;
+  ::google::protobuf::int32 bullet_speed_;
+  ::google::protobuf::int32 bullet_power_;
+  ::google::protobuf::int32 bullet_distance_;
+  ::google::protobuf::int32 reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -586,10 +614,10 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
-  // repeated .GAME.OTHER_INFO other_infos = 11;
+  // repeated .GAME.OTHER_INFO other_infos = 14;
   int other_infos_size() const;
   void clear_other_infos();
-  static const int kOtherInfosFieldNumber = 11;
+  static const int kOtherInfosFieldNumber = 14;
   const ::GAME::OTHER_INFO& other_infos(int index) const;
   ::GAME::OTHER_INFO* mutable_other_infos(int index);
   ::GAME::OTHER_INFO* add_other_infos();
@@ -642,29 +670,47 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
   float pos_z() const;
   void set_pos_z(float value);
 
-  // int32 max_hp = 7;
-  void clear_max_hp();
-  static const int kMaxHpFieldNumber = 7;
-  ::google::protobuf::int32 max_hp() const;
-  void set_max_hp(::google::protobuf::int32 value);
-
-  // int32 hp = 8;
+  // int32 hp = 7;
   void clear_hp();
-  static const int kHpFieldNumber = 8;
+  static const int kHpFieldNumber = 7;
   ::google::protobuf::int32 hp() const;
   void set_hp(::google::protobuf::int32 value);
 
-  // float speed = 9;
+  // int32 max_hp = 8;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 8;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 speed = 9;
   void clear_speed();
   static const int kSpeedFieldNumber = 9;
-  float speed() const;
-  void set_speed(float value);
+  ::google::protobuf::int32 speed() const;
+  void set_speed(::google::protobuf::int32 value);
 
-  // float reload_time = 10;
+  // int32 bullet_speed = 10;
+  void clear_bullet_speed();
+  static const int kBulletSpeedFieldNumber = 10;
+  ::google::protobuf::int32 bullet_speed() const;
+  void set_bullet_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_power = 11;
+  void clear_bullet_power();
+  static const int kBulletPowerFieldNumber = 11;
+  ::google::protobuf::int32 bullet_power() const;
+  void set_bullet_power(::google::protobuf::int32 value);
+
+  // int32 bullet_distance = 12;
+  void clear_bullet_distance();
+  static const int kBulletDistanceFieldNumber = 12;
+  ::google::protobuf::int32 bullet_distance() const;
+  void set_bullet_distance(::google::protobuf::int32 value);
+
+  // int32 reload_time = 13;
   void clear_reload_time();
-  static const int kReloadTimeFieldNumber = 10;
-  float reload_time() const;
-  void set_reload_time(float value);
+  static const int kReloadTimeFieldNumber = 13;
+  ::google::protobuf::int32 reload_time() const;
+  void set_reload_time(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:GAME.SC_SYNC_FIELD)
  private:
@@ -677,10 +723,13 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
   float pos_x_;
   float pos_y_;
   float pos_z_;
-  ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 hp_;
-  float speed_;
-  float reload_time_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 speed_;
+  ::google::protobuf::int32 bullet_speed_;
+  ::google::protobuf::int32 bullet_power_;
+  ::google::protobuf::int32 bullet_distance_;
+  ::google::protobuf::int32 reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -3342,21 +3391,7 @@ inline void OTHER_INFO::set_pos_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_z)
 }
 
-// int32 max_hp = 7;
-inline void OTHER_INFO::clear_max_hp() {
-  max_hp_ = 0;
-}
-inline ::google::protobuf::int32 OTHER_INFO::max_hp() const {
-  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.max_hp)
-  return max_hp_;
-}
-inline void OTHER_INFO::set_max_hp(::google::protobuf::int32 value) {
-  
-  max_hp_ = value;
-  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.max_hp)
-}
-
-// int32 hp = 8;
+// int32 hp = 7;
 inline void OTHER_INFO::clear_hp() {
   hp_ = 0;
 }
@@ -3370,18 +3405,88 @@ inline void OTHER_INFO::set_hp(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.hp)
 }
 
-// float speed = 9;
+// int32 max_hp = 8;
+inline void OTHER_INFO::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.max_hp)
+  return max_hp_;
+}
+inline void OTHER_INFO::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.max_hp)
+}
+
+// int32 speed = 9;
 inline void OTHER_INFO::clear_speed() {
   speed_ = 0;
 }
-inline float OTHER_INFO::speed() const {
+inline ::google::protobuf::int32 OTHER_INFO::speed() const {
   // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.speed)
   return speed_;
 }
-inline void OTHER_INFO::set_speed(float value) {
+inline void OTHER_INFO::set_speed(::google::protobuf::int32 value) {
   
   speed_ = value;
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.speed)
+}
+
+// int32 bullet_speed = 10;
+inline void OTHER_INFO::clear_bullet_speed() {
+  bullet_speed_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::bullet_speed() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.bullet_speed)
+  return bullet_speed_;
+}
+inline void OTHER_INFO::set_bullet_speed(::google::protobuf::int32 value) {
+  
+  bullet_speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.bullet_speed)
+}
+
+// int32 bullet_power = 11;
+inline void OTHER_INFO::clear_bullet_power() {
+  bullet_power_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::bullet_power() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.bullet_power)
+  return bullet_power_;
+}
+inline void OTHER_INFO::set_bullet_power(::google::protobuf::int32 value) {
+  
+  bullet_power_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.bullet_power)
+}
+
+// int32 bullet_distance = 12;
+inline void OTHER_INFO::clear_bullet_distance() {
+  bullet_distance_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::bullet_distance() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.bullet_distance)
+  return bullet_distance_;
+}
+inline void OTHER_INFO::set_bullet_distance(::google::protobuf::int32 value) {
+  
+  bullet_distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.bullet_distance)
+}
+
+// int32 reload_time = 13;
+inline void OTHER_INFO::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::reload_time() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.reload_time)
+  return reload_time_;
+}
+inline void OTHER_INFO::set_reload_time(::google::protobuf::int32 value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.reload_time)
 }
 
 // -------------------------------------------------------------------
@@ -3529,21 +3634,7 @@ inline void SC_SYNC_FIELD::set_pos_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_z)
 }
 
-// int32 max_hp = 7;
-inline void SC_SYNC_FIELD::clear_max_hp() {
-  max_hp_ = 0;
-}
-inline ::google::protobuf::int32 SC_SYNC_FIELD::max_hp() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.max_hp)
-  return max_hp_;
-}
-inline void SC_SYNC_FIELD::set_max_hp(::google::protobuf::int32 value) {
-  
-  max_hp_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.max_hp)
-}
-
-// int32 hp = 8;
+// int32 hp = 7;
 inline void SC_SYNC_FIELD::clear_hp() {
   hp_ = 0;
 }
@@ -3557,35 +3648,91 @@ inline void SC_SYNC_FIELD::set_hp(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.hp)
 }
 
-// float speed = 9;
+// int32 max_hp = 8;
+inline void SC_SYNC_FIELD::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.max_hp)
+  return max_hp_;
+}
+inline void SC_SYNC_FIELD::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.max_hp)
+}
+
+// int32 speed = 9;
 inline void SC_SYNC_FIELD::clear_speed() {
   speed_ = 0;
 }
-inline float SC_SYNC_FIELD::speed() const {
+inline ::google::protobuf::int32 SC_SYNC_FIELD::speed() const {
   // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.speed)
   return speed_;
 }
-inline void SC_SYNC_FIELD::set_speed(float value) {
+inline void SC_SYNC_FIELD::set_speed(::google::protobuf::int32 value) {
   
   speed_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.speed)
 }
 
-// float reload_time = 10;
+// int32 bullet_speed = 10;
+inline void SC_SYNC_FIELD::clear_bullet_speed() {
+  bullet_speed_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::bullet_speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.bullet_speed)
+  return bullet_speed_;
+}
+inline void SC_SYNC_FIELD::set_bullet_speed(::google::protobuf::int32 value) {
+  
+  bullet_speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.bullet_speed)
+}
+
+// int32 bullet_power = 11;
+inline void SC_SYNC_FIELD::clear_bullet_power() {
+  bullet_power_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::bullet_power() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.bullet_power)
+  return bullet_power_;
+}
+inline void SC_SYNC_FIELD::set_bullet_power(::google::protobuf::int32 value) {
+  
+  bullet_power_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.bullet_power)
+}
+
+// int32 bullet_distance = 12;
+inline void SC_SYNC_FIELD::clear_bullet_distance() {
+  bullet_distance_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::bullet_distance() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.bullet_distance)
+  return bullet_distance_;
+}
+inline void SC_SYNC_FIELD::set_bullet_distance(::google::protobuf::int32 value) {
+  
+  bullet_distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.bullet_distance)
+}
+
+// int32 reload_time = 13;
 inline void SC_SYNC_FIELD::clear_reload_time() {
   reload_time_ = 0;
 }
-inline float SC_SYNC_FIELD::reload_time() const {
+inline ::google::protobuf::int32 SC_SYNC_FIELD::reload_time() const {
   // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.reload_time)
   return reload_time_;
 }
-inline void SC_SYNC_FIELD::set_reload_time(float value) {
+inline void SC_SYNC_FIELD::set_reload_time(::google::protobuf::int32 value) {
   
   reload_time_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.reload_time)
 }
 
-// repeated .GAME.OTHER_INFO other_infos = 11;
+// repeated .GAME.OTHER_INFO other_infos = 14;
 inline int SC_SYNC_FIELD::other_infos_size() const {
   return other_infos_.size();
 }

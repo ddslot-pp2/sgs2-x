@@ -87,6 +87,24 @@
 			<ec type="string"/>
 		</SC_MY_INFO>
 
+		<CHARACTER_INFO  struct = "true">
+			<type type="int32"/>
+			<max_hp type="int32"/>
+			<speed type="int32"/>
+			<bullet_speed type="int32"/>
+			<bullet_power type="int32"/>
+			<bullet_distance type="int32"/>
+			<reload_time type="int32"/>
+		</CHARACTER_INFO>
+
+		<CS_MY_CHARACTER_INFO>
+		</CS_MY_CHARACTER_INFO>
+		<SC_MY_CHARACTER_INFO>
+			<result type="bool"/>
+			<ec type="string"/>
+			<character_infos type="CHARACTER_INFO" repeated="true"/>
+		</SC_MY_CHARACTER_INFO>
+          
 	</LOBBY>
 
 	<GAME start="2000">
@@ -105,9 +123,13 @@
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
-			<max_hp type="int32"/>
 			<hp type="int32"/>
-			<speed type="float"/>
+			<max_hp type="int32"/>
+			<speed type="int32"/>
+			<bullet_speed type="int32"/>
+			<bullet_power type="int32"/>
+			<bullet_distance type="int32"/>
+			<reload_time type="int32"/>
 		</OTHER_INFO>
 
 		<CS_SYNC_FIELD>
@@ -120,10 +142,13 @@
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
-			<max_hp type="int32"/>
 			<hp type="int32"/>
-			<speed type="float"/>
-			<reload_time type="float"/>
+			<max_hp type="int32"/>
+			<speed type="int32"/>
+			<bullet_speed type="int32"/>
+			<bullet_power type="int32"/>
+			<bullet_distance type="int32"/>
+			<reload_time type="int32"/>
 			<other_infos type="OTHER_INFO" repeated="true"/>
 		</SC_SYNC_FIELD>
 		

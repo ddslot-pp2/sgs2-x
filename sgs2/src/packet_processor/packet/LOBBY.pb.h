@@ -32,6 +32,9 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace LOBBY {
+class CHARACTER_INFO;
+class CHARACTER_INFODefaultTypeInternal;
+extern CHARACTER_INFODefaultTypeInternal _CHARACTER_INFO_default_instance_;
 class CS_CHARACTER_INFO;
 class CS_CHARACTER_INFODefaultTypeInternal;
 extern CS_CHARACTER_INFODefaultTypeInternal _CS_CHARACTER_INFO_default_instance_;
@@ -47,6 +50,9 @@ extern CS_LEAVE_FIELDDefaultTypeInternal _CS_LEAVE_FIELD_default_instance_;
 class CS_LOG_IN;
 class CS_LOG_INDefaultTypeInternal;
 extern CS_LOG_INDefaultTypeInternal _CS_LOG_IN_default_instance_;
+class CS_MY_CHARACTER_INFO;
+class CS_MY_CHARACTER_INFODefaultTypeInternal;
+extern CS_MY_CHARACTER_INFODefaultTypeInternal _CS_MY_CHARACTER_INFO_default_instance_;
 class CS_MY_INFO;
 class CS_MY_INFODefaultTypeInternal;
 extern CS_MY_INFODefaultTypeInternal _CS_MY_INFO_default_instance_;
@@ -71,6 +77,9 @@ extern SC_LEAVE_FIELDDefaultTypeInternal _SC_LEAVE_FIELD_default_instance_;
 class SC_LOG_IN;
 class SC_LOG_INDefaultTypeInternal;
 extern SC_LOG_INDefaultTypeInternal _SC_LOG_IN_default_instance_;
+class SC_MY_CHARACTER_INFO;
+class SC_MY_CHARACTER_INFODefaultTypeInternal;
+extern SC_MY_CHARACTER_INFODefaultTypeInternal _SC_MY_CHARACTER_INFO_default_instance_;
 class SC_MY_INFO;
 class SC_MY_INFODefaultTypeInternal;
 extern SC_MY_INFODefaultTypeInternal _SC_MY_INFO_default_instance_;
@@ -1555,6 +1564,309 @@ class SC_MY_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   mutable int _cached_size_;
   friend struct protobuf_LOBBY_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class CHARACTER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:LOBBY.CHARACTER_INFO) */ {
+ public:
+  CHARACTER_INFO();
+  virtual ~CHARACTER_INFO();
+
+  CHARACTER_INFO(const CHARACTER_INFO& from);
+
+  inline CHARACTER_INFO& operator=(const CHARACTER_INFO& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CHARACTER_INFO& default_instance();
+
+  static inline const CHARACTER_INFO* internal_default_instance() {
+    return reinterpret_cast<const CHARACTER_INFO*>(
+               &_CHARACTER_INFO_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    15;
+
+  void Swap(CHARACTER_INFO* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CHARACTER_INFO* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CHARACTER_INFO* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CHARACTER_INFO& from);
+  void MergeFrom(const CHARACTER_INFO& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CHARACTER_INFO* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 type = 1;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
+
+  // int32 max_hp = 2;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 2;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
+
+  // int32 speed = 3;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 3;
+  ::google::protobuf::int32 speed() const;
+  void set_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_speed = 4;
+  void clear_bullet_speed();
+  static const int kBulletSpeedFieldNumber = 4;
+  ::google::protobuf::int32 bullet_speed() const;
+  void set_bullet_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_power = 5;
+  void clear_bullet_power();
+  static const int kBulletPowerFieldNumber = 5;
+  ::google::protobuf::int32 bullet_power() const;
+  void set_bullet_power(::google::protobuf::int32 value);
+
+  // int32 bullet_distance = 6;
+  void clear_bullet_distance();
+  static const int kBulletDistanceFieldNumber = 6;
+  ::google::protobuf::int32 bullet_distance() const;
+  void set_bullet_distance(::google::protobuf::int32 value);
+
+  // int32 reload_time = 7;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 7;
+  ::google::protobuf::int32 reload_time() const;
+  void set_reload_time(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:LOBBY.CHARACTER_INFO)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 type_;
+  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 speed_;
+  ::google::protobuf::int32 bullet_speed_;
+  ::google::protobuf::int32 bullet_power_;
+  ::google::protobuf::int32 bullet_distance_;
+  ::google::protobuf::int32 reload_time_;
+  mutable int _cached_size_;
+  friend struct protobuf_LOBBY_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class CS_MY_CHARACTER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:LOBBY.CS_MY_CHARACTER_INFO) */ {
+ public:
+  CS_MY_CHARACTER_INFO();
+  virtual ~CS_MY_CHARACTER_INFO();
+
+  CS_MY_CHARACTER_INFO(const CS_MY_CHARACTER_INFO& from);
+
+  inline CS_MY_CHARACTER_INFO& operator=(const CS_MY_CHARACTER_INFO& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CS_MY_CHARACTER_INFO& default_instance();
+
+  static inline const CS_MY_CHARACTER_INFO* internal_default_instance() {
+    return reinterpret_cast<const CS_MY_CHARACTER_INFO*>(
+               &_CS_MY_CHARACTER_INFO_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    16;
+
+  void Swap(CS_MY_CHARACTER_INFO* other);
+
+  // implements Message ----------------------------------------------
+
+  inline CS_MY_CHARACTER_INFO* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  CS_MY_CHARACTER_INFO* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const CS_MY_CHARACTER_INFO& from);
+  void MergeFrom(const CS_MY_CHARACTER_INFO& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(CS_MY_CHARACTER_INFO* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:LOBBY.CS_MY_CHARACTER_INFO)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable int _cached_size_;
+  friend struct protobuf_LOBBY_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SC_MY_CHARACTER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:LOBBY.SC_MY_CHARACTER_INFO) */ {
+ public:
+  SC_MY_CHARACTER_INFO();
+  virtual ~SC_MY_CHARACTER_INFO();
+
+  SC_MY_CHARACTER_INFO(const SC_MY_CHARACTER_INFO& from);
+
+  inline SC_MY_CHARACTER_INFO& operator=(const SC_MY_CHARACTER_INFO& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SC_MY_CHARACTER_INFO& default_instance();
+
+  static inline const SC_MY_CHARACTER_INFO* internal_default_instance() {
+    return reinterpret_cast<const SC_MY_CHARACTER_INFO*>(
+               &_SC_MY_CHARACTER_INFO_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    17;
+
+  void Swap(SC_MY_CHARACTER_INFO* other);
+
+  // implements Message ----------------------------------------------
+
+  inline SC_MY_CHARACTER_INFO* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  SC_MY_CHARACTER_INFO* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const SC_MY_CHARACTER_INFO& from);
+  void MergeFrom(const SC_MY_CHARACTER_INFO& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(SC_MY_CHARACTER_INFO* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .LOBBY.CHARACTER_INFO character_infos = 3;
+  int character_infos_size() const;
+  void clear_character_infos();
+  static const int kCharacterInfosFieldNumber = 3;
+  const ::LOBBY::CHARACTER_INFO& character_infos(int index) const;
+  ::LOBBY::CHARACTER_INFO* mutable_character_infos(int index);
+  ::LOBBY::CHARACTER_INFO* add_character_infos();
+  ::google::protobuf::RepeatedPtrField< ::LOBBY::CHARACTER_INFO >*
+      mutable_character_infos();
+  const ::google::protobuf::RepeatedPtrField< ::LOBBY::CHARACTER_INFO >&
+      character_infos() const;
+
+  // string ec = 2;
+  void clear_ec();
+  static const int kEcFieldNumber = 2;
+  const ::std::string& ec() const;
+  void set_ec(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ec(::std::string&& value);
+  #endif
+  void set_ec(const char* value);
+  void set_ec(const char* value, size_t size);
+  ::std::string* mutable_ec();
+  ::std::string* release_ec();
+  void set_allocated_ec(::std::string* ec);
+
+  // bool result = 1;
+  void clear_result();
+  static const int kResultFieldNumber = 1;
+  bool result() const;
+  void set_result(bool value);
+
+  // @@protoc_insertion_point(class_scope:LOBBY.SC_MY_CHARACTER_INFO)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::LOBBY::CHARACTER_INFO > character_infos_;
+  ::google::protobuf::internal::ArenaStringPtr ec_;
+  bool result_;
+  mutable int _cached_size_;
+  friend struct protobuf_LOBBY_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -2493,7 +2805,220 @@ inline void SC_MY_INFO::set_allocated_ec(::std::string* ec) {
   // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_MY_INFO.ec)
 }
 
+// -------------------------------------------------------------------
+
+// CHARACTER_INFO
+
+// int32 type = 1;
+inline void CHARACTER_INFO::clear_type() {
+  type_ = 0;
+}
+inline ::google::protobuf::int32 CHARACTER_INFO::type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CHARACTER_INFO.type)
+  return type_;
+}
+inline void CHARACTER_INFO::set_type(::google::protobuf::int32 value) {
+  
+  type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CHARACTER_INFO.type)
+}
+
+// int32 max_hp = 2;
+inline void CHARACTER_INFO::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 CHARACTER_INFO::max_hp() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CHARACTER_INFO.max_hp)
+  return max_hp_;
+}
+inline void CHARACTER_INFO::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CHARACTER_INFO.max_hp)
+}
+
+// int32 speed = 3;
+inline void CHARACTER_INFO::clear_speed() {
+  speed_ = 0;
+}
+inline ::google::protobuf::int32 CHARACTER_INFO::speed() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CHARACTER_INFO.speed)
+  return speed_;
+}
+inline void CHARACTER_INFO::set_speed(::google::protobuf::int32 value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CHARACTER_INFO.speed)
+}
+
+// int32 bullet_speed = 4;
+inline void CHARACTER_INFO::clear_bullet_speed() {
+  bullet_speed_ = 0;
+}
+inline ::google::protobuf::int32 CHARACTER_INFO::bullet_speed() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CHARACTER_INFO.bullet_speed)
+  return bullet_speed_;
+}
+inline void CHARACTER_INFO::set_bullet_speed(::google::protobuf::int32 value) {
+  
+  bullet_speed_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CHARACTER_INFO.bullet_speed)
+}
+
+// int32 bullet_power = 5;
+inline void CHARACTER_INFO::clear_bullet_power() {
+  bullet_power_ = 0;
+}
+inline ::google::protobuf::int32 CHARACTER_INFO::bullet_power() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CHARACTER_INFO.bullet_power)
+  return bullet_power_;
+}
+inline void CHARACTER_INFO::set_bullet_power(::google::protobuf::int32 value) {
+  
+  bullet_power_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CHARACTER_INFO.bullet_power)
+}
+
+// int32 bullet_distance = 6;
+inline void CHARACTER_INFO::clear_bullet_distance() {
+  bullet_distance_ = 0;
+}
+inline ::google::protobuf::int32 CHARACTER_INFO::bullet_distance() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CHARACTER_INFO.bullet_distance)
+  return bullet_distance_;
+}
+inline void CHARACTER_INFO::set_bullet_distance(::google::protobuf::int32 value) {
+  
+  bullet_distance_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CHARACTER_INFO.bullet_distance)
+}
+
+// int32 reload_time = 7;
+inline void CHARACTER_INFO::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline ::google::protobuf::int32 CHARACTER_INFO::reload_time() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CHARACTER_INFO.reload_time)
+  return reload_time_;
+}
+inline void CHARACTER_INFO::set_reload_time(::google::protobuf::int32 value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CHARACTER_INFO.reload_time)
+}
+
+// -------------------------------------------------------------------
+
+// CS_MY_CHARACTER_INFO
+
+// -------------------------------------------------------------------
+
+// SC_MY_CHARACTER_INFO
+
+// bool result = 1;
+inline void SC_MY_CHARACTER_INFO::clear_result() {
+  result_ = false;
+}
+inline bool SC_MY_CHARACTER_INFO::result() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_MY_CHARACTER_INFO.result)
+  return result_;
+}
+inline void SC_MY_CHARACTER_INFO::set_result(bool value) {
+  
+  result_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_MY_CHARACTER_INFO.result)
+}
+
+// string ec = 2;
+inline void SC_MY_CHARACTER_INFO::clear_ec() {
+  ec_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SC_MY_CHARACTER_INFO::ec() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_MY_CHARACTER_INFO.ec)
+  return ec_.GetNoArena();
+}
+inline void SC_MY_CHARACTER_INFO::set_ec(const ::std::string& value) {
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:LOBBY.SC_MY_CHARACTER_INFO.ec)
+}
+#if LANG_CXX11
+inline void SC_MY_CHARACTER_INFO::set_ec(::std::string&& value) {
+  
+  ec_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:LOBBY.SC_MY_CHARACTER_INFO.ec)
+}
+#endif
+inline void SC_MY_CHARACTER_INFO::set_ec(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:LOBBY.SC_MY_CHARACTER_INFO.ec)
+}
+inline void SC_MY_CHARACTER_INFO::set_ec(const char* value, size_t size) {
+  
+  ec_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:LOBBY.SC_MY_CHARACTER_INFO.ec)
+}
+inline ::std::string* SC_MY_CHARACTER_INFO::mutable_ec() {
+  
+  // @@protoc_insertion_point(field_mutable:LOBBY.SC_MY_CHARACTER_INFO.ec)
+  return ec_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SC_MY_CHARACTER_INFO::release_ec() {
+  // @@protoc_insertion_point(field_release:LOBBY.SC_MY_CHARACTER_INFO.ec)
+  
+  return ec_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SC_MY_CHARACTER_INFO::set_allocated_ec(::std::string* ec) {
+  if (ec != NULL) {
+    
+  } else {
+    
+  }
+  ec_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ec);
+  // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_MY_CHARACTER_INFO.ec)
+}
+
+// repeated .LOBBY.CHARACTER_INFO character_infos = 3;
+inline int SC_MY_CHARACTER_INFO::character_infos_size() const {
+  return character_infos_.size();
+}
+inline void SC_MY_CHARACTER_INFO::clear_character_infos() {
+  character_infos_.Clear();
+}
+inline const ::LOBBY::CHARACTER_INFO& SC_MY_CHARACTER_INFO::character_infos(int index) const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_MY_CHARACTER_INFO.character_infos)
+  return character_infos_.Get(index);
+}
+inline ::LOBBY::CHARACTER_INFO* SC_MY_CHARACTER_INFO::mutable_character_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:LOBBY.SC_MY_CHARACTER_INFO.character_infos)
+  return character_infos_.Mutable(index);
+}
+inline ::LOBBY::CHARACTER_INFO* SC_MY_CHARACTER_INFO::add_character_infos() {
+  // @@protoc_insertion_point(field_add:LOBBY.SC_MY_CHARACTER_INFO.character_infos)
+  return character_infos_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::LOBBY::CHARACTER_INFO >*
+SC_MY_CHARACTER_INFO::mutable_character_infos() {
+  // @@protoc_insertion_point(field_mutable_list:LOBBY.SC_MY_CHARACTER_INFO.character_infos)
+  return &character_infos_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::LOBBY::CHARACTER_INFO >&
+SC_MY_CHARACTER_INFO::character_infos() const {
+  // @@protoc_insertion_point(field_list:LOBBY.SC_MY_CHARACTER_INFO.character_infos)
+  return character_infos_;
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

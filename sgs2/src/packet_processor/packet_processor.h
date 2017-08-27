@@ -18,6 +18,7 @@ void handle_CS_LEAVE_FIELD(std::shared_ptr<server_session> session, const LOBBY:
 void handle_CS_PURCHASE_CHARACTER(std::shared_ptr<server_session> session, const LOBBY::CS_PURCHASE_CHARACTER& read);
 void handle_CS_CHARACTER_INFO(std::shared_ptr<server_session> session, const LOBBY::CS_CHARACTER_INFO& read);
 void handle_CS_MY_INFO(std::shared_ptr<server_session> session, const LOBBY::CS_MY_INFO& read);
+void handle_CS_MY_CHARACTER_INFO(std::shared_ptr<server_session> session, const LOBBY::CS_MY_CHARACTER_INFO& read);
 void handle_CS_PING(std::shared_ptr<server_session> session, const GAME::CS_PING& read);
 void handle_CS_SYNC_FIELD(std::shared_ptr<server_session> session, const GAME::CS_SYNC_FIELD& read);
 void handle_CS_NOTI_MOVE(std::shared_ptr<server_session> session, const GAME::CS_NOTI_MOVE& read);
