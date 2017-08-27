@@ -362,9 +362,9 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // string nickname = 3;
+  // string nickname = 2;
   void clear_nickname();
-  static const int kNicknameFieldNumber = 3;
+  static const int kNicknameFieldNumber = 2;
   const ::std::string& nickname() const;
   void set_nickname(const ::std::string& value);
   #if LANG_CXX11
@@ -382,29 +382,29 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int64 obj_id() const;
   void set_obj_id(::google::protobuf::int64 value);
 
-  // int32 tank_type = 2;
-  void clear_tank_type();
-  static const int kTankTypeFieldNumber = 2;
-  ::google::protobuf::int32 tank_type() const;
-  void set_tank_type(::google::protobuf::int32 value);
-
-  // float pos_x = 4;
+  // float pos_x = 3;
   void clear_pos_x();
-  static const int kPosXFieldNumber = 4;
+  static const int kPosXFieldNumber = 3;
   float pos_x() const;
   void set_pos_x(float value);
 
-  // float pos_y = 5;
+  // float pos_y = 4;
   void clear_pos_y();
-  static const int kPosYFieldNumber = 5;
+  static const int kPosYFieldNumber = 4;
   float pos_y() const;
   void set_pos_y(float value);
 
-  // float pos_z = 6;
+  // float pos_z = 5;
   void clear_pos_z();
-  static const int kPosZFieldNumber = 6;
+  static const int kPosZFieldNumber = 5;
   float pos_z() const;
   void set_pos_z(float value);
+
+  // int32 tank_type = 6;
+  void clear_tank_type();
+  static const int kTankTypeFieldNumber = 6;
+  ::google::protobuf::int32 tank_type() const;
+  void set_tank_type(::google::protobuf::int32 value);
 
   // int32 hp = 7;
   void clear_hp();
@@ -454,10 +454,10 @@ class OTHER_INFO : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr nickname_;
   ::google::protobuf::int64 obj_id_;
-  ::google::protobuf::int32 tank_type_;
   float pos_x_;
   float pos_y_;
   float pos_z_;
+  ::google::protobuf::int32 tank_type_;
   ::google::protobuf::int32 hp_;
   ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 speed_;
@@ -626,9 +626,9 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
   const ::google::protobuf::RepeatedPtrField< ::GAME::OTHER_INFO >&
       other_infos() const;
 
-  // string nickname = 3;
+  // string nickname = 2;
   void clear_nickname();
-  static const int kNicknameFieldNumber = 3;
+  static const int kNicknameFieldNumber = 2;
   const ::std::string& nickname() const;
   void set_nickname(const ::std::string& value);
   #if LANG_CXX11
@@ -646,29 +646,29 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::int64 obj_id() const;
   void set_obj_id(::google::protobuf::int64 value);
 
-  // int32 tank_type = 2;
-  void clear_tank_type();
-  static const int kTankTypeFieldNumber = 2;
-  ::google::protobuf::int32 tank_type() const;
-  void set_tank_type(::google::protobuf::int32 value);
-
-  // float pos_x = 4;
+  // float pos_x = 3;
   void clear_pos_x();
-  static const int kPosXFieldNumber = 4;
+  static const int kPosXFieldNumber = 3;
   float pos_x() const;
   void set_pos_x(float value);
 
-  // float pos_y = 5;
+  // float pos_y = 4;
   void clear_pos_y();
-  static const int kPosYFieldNumber = 5;
+  static const int kPosYFieldNumber = 4;
   float pos_y() const;
   void set_pos_y(float value);
 
-  // float pos_z = 6;
+  // float pos_z = 5;
   void clear_pos_z();
-  static const int kPosZFieldNumber = 6;
+  static const int kPosZFieldNumber = 5;
   float pos_z() const;
   void set_pos_z(float value);
+
+  // int32 tank_type = 6;
+  void clear_tank_type();
+  static const int kTankTypeFieldNumber = 6;
+  ::google::protobuf::int32 tank_type() const;
+  void set_tank_type(::google::protobuf::int32 value);
 
   // int32 hp = 7;
   void clear_hp();
@@ -719,10 +719,10 @@ class SC_SYNC_FIELD : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::RepeatedPtrField< ::GAME::OTHER_INFO > other_infos_;
   ::google::protobuf::internal::ArenaStringPtr nickname_;
   ::google::protobuf::int64 obj_id_;
-  ::google::protobuf::int32 tank_type_;
   float pos_x_;
   float pos_y_;
   float pos_z_;
+  ::google::protobuf::int32 tank_type_;
   ::google::protobuf::int32 hp_;
   ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 speed_;
@@ -799,9 +799,9 @@ class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc
 
   // accessors -------------------------------------------------------
 
-  // string nickname = 3;
+  // string nickname = 2;
   void clear_nickname();
-  static const int kNicknameFieldNumber = 3;
+  static const int kNicknameFieldNumber = 2;
   const ::std::string& nickname() const;
   void set_nickname(const ::std::string& value);
   #if LANG_CXX11
@@ -819,41 +819,41 @@ class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc
   ::google::protobuf::int64 obj_id() const;
   void set_obj_id(::google::protobuf::int64 value);
 
-  // int32 tank_type = 2;
-  void clear_tank_type();
-  static const int kTankTypeFieldNumber = 2;
-  ::google::protobuf::int32 tank_type() const;
-  void set_tank_type(::google::protobuf::int32 value);
-
-  // float pos_x = 4;
+  // float pos_x = 3;
   void clear_pos_x();
-  static const int kPosXFieldNumber = 4;
+  static const int kPosXFieldNumber = 3;
   float pos_x() const;
   void set_pos_x(float value);
 
-  // float pos_y = 5;
+  // float pos_y = 4;
   void clear_pos_y();
-  static const int kPosYFieldNumber = 5;
+  static const int kPosYFieldNumber = 4;
   float pos_y() const;
   void set_pos_y(float value);
 
-  // float pos_z = 6;
+  // float pos_z = 5;
   void clear_pos_z();
-  static const int kPosZFieldNumber = 6;
+  static const int kPosZFieldNumber = 5;
   float pos_z() const;
   void set_pos_z(float value);
 
-  // int32 max_hp = 7;
-  void clear_max_hp();
-  static const int kMaxHpFieldNumber = 7;
-  ::google::protobuf::int32 max_hp() const;
-  void set_max_hp(::google::protobuf::int32 value);
+  // int32 tank_type = 6;
+  void clear_tank_type();
+  static const int kTankTypeFieldNumber = 6;
+  ::google::protobuf::int32 tank_type() const;
+  void set_tank_type(::google::protobuf::int32 value);
 
-  // int32 hp = 8;
+  // int32 hp = 7;
   void clear_hp();
-  static const int kHpFieldNumber = 8;
+  static const int kHpFieldNumber = 7;
   ::google::protobuf::int32 hp() const;
   void set_hp(::google::protobuf::int32 value);
+
+  // int32 max_hp = 8;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 8;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
 
   // float speed = 9;
   void clear_speed();
@@ -861,19 +861,47 @@ class SC_NOTI_OTHER_ENTER_FIELD : public ::google::protobuf::Message /* @@protoc
   float speed() const;
   void set_speed(float value);
 
+  // int32 bullet_speed = 10;
+  void clear_bullet_speed();
+  static const int kBulletSpeedFieldNumber = 10;
+  ::google::protobuf::int32 bullet_speed() const;
+  void set_bullet_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_power = 11;
+  void clear_bullet_power();
+  static const int kBulletPowerFieldNumber = 11;
+  ::google::protobuf::int32 bullet_power() const;
+  void set_bullet_power(::google::protobuf::int32 value);
+
+  // int32 bullet_distance = 12;
+  void clear_bullet_distance();
+  static const int kBulletDistanceFieldNumber = 12;
+  ::google::protobuf::int32 bullet_distance() const;
+  void set_bullet_distance(::google::protobuf::int32 value);
+
+  // int32 reload_time = 13;
+  void clear_reload_time();
+  static const int kReloadTimeFieldNumber = 13;
+  ::google::protobuf::int32 reload_time() const;
+  void set_reload_time(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_OTHER_ENTER_FIELD)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr nickname_;
   ::google::protobuf::int64 obj_id_;
-  ::google::protobuf::int32 tank_type_;
   float pos_x_;
   float pos_y_;
   float pos_z_;
-  ::google::protobuf::int32 max_hp_;
+  ::google::protobuf::int32 tank_type_;
   ::google::protobuf::int32 hp_;
+  ::google::protobuf::int32 max_hp_;
   float speed_;
+  ::google::protobuf::int32 bullet_speed_;
+  ::google::protobuf::int32 bullet_power_;
+  ::google::protobuf::int32 bullet_distance_;
+  ::google::protobuf::int32 reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -2002,17 +2030,17 @@ class SC_NOTI_RESPAWN_CHARACTER : public ::google::protobuf::Message /* @@protoc
   float pos_z() const;
   void set_pos_z(float value);
 
-  // int32 max_hp = 5;
-  void clear_max_hp();
-  static const int kMaxHpFieldNumber = 5;
-  ::google::protobuf::int32 max_hp() const;
-  void set_max_hp(::google::protobuf::int32 value);
-
-  // int32 hp = 6;
+  // int32 hp = 5;
   void clear_hp();
-  static const int kHpFieldNumber = 6;
+  static const int kHpFieldNumber = 5;
   ::google::protobuf::int32 hp() const;
   void set_hp(::google::protobuf::int32 value);
+
+  // int32 max_hp = 6;
+  void clear_max_hp();
+  static const int kMaxHpFieldNumber = 6;
+  ::google::protobuf::int32 max_hp() const;
+  void set_max_hp(::google::protobuf::int32 value);
 
   // float speed = 7;
   void clear_speed();
@@ -2020,11 +2048,29 @@ class SC_NOTI_RESPAWN_CHARACTER : public ::google::protobuf::Message /* @@protoc
   float speed() const;
   void set_speed(float value);
 
-  // float reload_time = 8;
+  // int32 bullet_speed = 8;
+  void clear_bullet_speed();
+  static const int kBulletSpeedFieldNumber = 8;
+  ::google::protobuf::int32 bullet_speed() const;
+  void set_bullet_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_power = 9;
+  void clear_bullet_power();
+  static const int kBulletPowerFieldNumber = 9;
+  ::google::protobuf::int32 bullet_power() const;
+  void set_bullet_power(::google::protobuf::int32 value);
+
+  // int32 bullet_distance = 10;
+  void clear_bullet_distance();
+  static const int kBulletDistanceFieldNumber = 10;
+  ::google::protobuf::int32 bullet_distance() const;
+  void set_bullet_distance(::google::protobuf::int32 value);
+
+  // int32 reload_time = 11;
   void clear_reload_time();
-  static const int kReloadTimeFieldNumber = 8;
-  float reload_time() const;
-  void set_reload_time(float value);
+  static const int kReloadTimeFieldNumber = 11;
+  ::google::protobuf::int32 reload_time() const;
+  void set_reload_time(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:GAME.SC_NOTI_RESPAWN_CHARACTER)
  private:
@@ -2034,10 +2080,13 @@ class SC_NOTI_RESPAWN_CHARACTER : public ::google::protobuf::Message /* @@protoc
   float pos_x_;
   float pos_y_;
   float pos_z_;
-  ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 hp_;
+  ::google::protobuf::int32 max_hp_;
   float speed_;
-  float reload_time_;
+  ::google::protobuf::int32 bullet_speed_;
+  ::google::protobuf::int32 bullet_power_;
+  ::google::protobuf::int32 bullet_distance_;
+  ::google::protobuf::int32 reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
 };
@@ -3282,21 +3331,7 @@ inline void OTHER_INFO::set_obj_id(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.obj_id)
 }
 
-// int32 tank_type = 2;
-inline void OTHER_INFO::clear_tank_type() {
-  tank_type_ = 0;
-}
-inline ::google::protobuf::int32 OTHER_INFO::tank_type() const {
-  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.tank_type)
-  return tank_type_;
-}
-inline void OTHER_INFO::set_tank_type(::google::protobuf::int32 value) {
-  
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.tank_type)
-}
-
-// string nickname = 3;
+// string nickname = 2;
 inline void OTHER_INFO::clear_nickname() {
   nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -3349,7 +3384,7 @@ inline void OTHER_INFO::set_allocated_nickname(::std::string* nickname) {
   // @@protoc_insertion_point(field_set_allocated:GAME.OTHER_INFO.nickname)
 }
 
-// float pos_x = 4;
+// float pos_x = 3;
 inline void OTHER_INFO::clear_pos_x() {
   pos_x_ = 0;
 }
@@ -3363,7 +3398,7 @@ inline void OTHER_INFO::set_pos_x(float value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_x)
 }
 
-// float pos_y = 5;
+// float pos_y = 4;
 inline void OTHER_INFO::clear_pos_y() {
   pos_y_ = 0;
 }
@@ -3377,7 +3412,7 @@ inline void OTHER_INFO::set_pos_y(float value) {
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_y)
 }
 
-// float pos_z = 6;
+// float pos_z = 5;
 inline void OTHER_INFO::clear_pos_z() {
   pos_z_ = 0;
 }
@@ -3389,6 +3424,20 @@ inline void OTHER_INFO::set_pos_z(float value) {
   
   pos_z_ = value;
   // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.pos_z)
+}
+
+// int32 tank_type = 6;
+inline void OTHER_INFO::clear_tank_type() {
+  tank_type_ = 0;
+}
+inline ::google::protobuf::int32 OTHER_INFO::tank_type() const {
+  // @@protoc_insertion_point(field_get:GAME.OTHER_INFO.tank_type)
+  return tank_type_;
+}
+inline void OTHER_INFO::set_tank_type(::google::protobuf::int32 value) {
+  
+  tank_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.OTHER_INFO.tank_type)
 }
 
 // int32 hp = 7;
@@ -3525,21 +3574,7 @@ inline void SC_SYNC_FIELD::set_obj_id(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.obj_id)
 }
 
-// int32 tank_type = 2;
-inline void SC_SYNC_FIELD::clear_tank_type() {
-  tank_type_ = 0;
-}
-inline ::google::protobuf::int32 SC_SYNC_FIELD::tank_type() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.tank_type)
-  return tank_type_;
-}
-inline void SC_SYNC_FIELD::set_tank_type(::google::protobuf::int32 value) {
-  
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.tank_type)
-}
-
-// string nickname = 3;
+// string nickname = 2;
 inline void SC_SYNC_FIELD::clear_nickname() {
   nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -3592,7 +3627,7 @@ inline void SC_SYNC_FIELD::set_allocated_nickname(::std::string* nickname) {
   // @@protoc_insertion_point(field_set_allocated:GAME.SC_SYNC_FIELD.nickname)
 }
 
-// float pos_x = 4;
+// float pos_x = 3;
 inline void SC_SYNC_FIELD::clear_pos_x() {
   pos_x_ = 0;
 }
@@ -3606,7 +3641,7 @@ inline void SC_SYNC_FIELD::set_pos_x(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_x)
 }
 
-// float pos_y = 5;
+// float pos_y = 4;
 inline void SC_SYNC_FIELD::clear_pos_y() {
   pos_y_ = 0;
 }
@@ -3620,7 +3655,7 @@ inline void SC_SYNC_FIELD::set_pos_y(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_y)
 }
 
-// float pos_z = 6;
+// float pos_z = 5;
 inline void SC_SYNC_FIELD::clear_pos_z() {
   pos_z_ = 0;
 }
@@ -3632,6 +3667,20 @@ inline void SC_SYNC_FIELD::set_pos_z(float value) {
   
   pos_z_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.pos_z)
+}
+
+// int32 tank_type = 6;
+inline void SC_SYNC_FIELD::clear_tank_type() {
+  tank_type_ = 0;
+}
+inline ::google::protobuf::int32 SC_SYNC_FIELD::tank_type() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_SYNC_FIELD.tank_type)
+  return tank_type_;
+}
+inline void SC_SYNC_FIELD::set_tank_type(::google::protobuf::int32 value) {
+  
+  tank_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_SYNC_FIELD.tank_type)
 }
 
 // int32 hp = 7;
@@ -3780,21 +3829,7 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_obj_id(::google::protobuf::int64 valu
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.obj_id)
 }
 
-// int32 tank_type = 2;
-inline void SC_NOTI_OTHER_ENTER_FIELD::clear_tank_type() {
-  tank_type_ = 0;
-}
-inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::tank_type() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.tank_type)
-  return tank_type_;
-}
-inline void SC_NOTI_OTHER_ENTER_FIELD::set_tank_type(::google::protobuf::int32 value) {
-  
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.tank_type)
-}
-
-// string nickname = 3;
+// string nickname = 2;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_nickname() {
   nickname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -3847,7 +3882,7 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_allocated_nickname(::std::string* nic
   // @@protoc_insertion_point(field_set_allocated:GAME.SC_NOTI_OTHER_ENTER_FIELD.nickname)
 }
 
-// float pos_x = 4;
+// float pos_x = 3;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_x() {
   pos_x_ = 0;
 }
@@ -3861,7 +3896,7 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_x(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_x)
 }
 
-// float pos_y = 5;
+// float pos_y = 4;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_y() {
   pos_y_ = 0;
 }
@@ -3875,7 +3910,7 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_y(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_y)
 }
 
-// float pos_z = 6;
+// float pos_z = 5;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_pos_z() {
   pos_z_ = 0;
 }
@@ -3889,21 +3924,21 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_pos_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.pos_z)
 }
 
-// int32 max_hp = 7;
-inline void SC_NOTI_OTHER_ENTER_FIELD::clear_max_hp() {
-  max_hp_ = 0;
+// int32 tank_type = 6;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_tank_type() {
+  tank_type_ = 0;
 }
-inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::max_hp() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.max_hp)
-  return max_hp_;
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::tank_type() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.tank_type)
+  return tank_type_;
 }
-inline void SC_NOTI_OTHER_ENTER_FIELD::set_max_hp(::google::protobuf::int32 value) {
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_tank_type(::google::protobuf::int32 value) {
   
-  max_hp_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.max_hp)
+  tank_type_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.tank_type)
 }
 
-// int32 hp = 8;
+// int32 hp = 7;
 inline void SC_NOTI_OTHER_ENTER_FIELD::clear_hp() {
   hp_ = 0;
 }
@@ -3915,6 +3950,20 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_hp(::google::protobuf::int32 value) {
   
   hp_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.hp)
+}
+
+// int32 max_hp = 8;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.max_hp)
+  return max_hp_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.max_hp)
 }
 
 // float speed = 9;
@@ -3929,6 +3978,62 @@ inline void SC_NOTI_OTHER_ENTER_FIELD::set_speed(float value) {
   
   speed_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.speed)
+}
+
+// int32 bullet_speed = 10;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_bullet_speed() {
+  bullet_speed_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::bullet_speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.bullet_speed)
+  return bullet_speed_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_bullet_speed(::google::protobuf::int32 value) {
+  
+  bullet_speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.bullet_speed)
+}
+
+// int32 bullet_power = 11;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_bullet_power() {
+  bullet_power_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::bullet_power() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.bullet_power)
+  return bullet_power_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_bullet_power(::google::protobuf::int32 value) {
+  
+  bullet_power_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.bullet_power)
+}
+
+// int32 bullet_distance = 12;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_bullet_distance() {
+  bullet_distance_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::bullet_distance() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.bullet_distance)
+  return bullet_distance_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_bullet_distance(::google::protobuf::int32 value) {
+  
+  bullet_distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.bullet_distance)
+}
+
+// int32 reload_time = 13;
+inline void SC_NOTI_OTHER_ENTER_FIELD::clear_reload_time() {
+  reload_time_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_OTHER_ENTER_FIELD::reload_time() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
+  return reload_time_;
+}
+inline void SC_NOTI_OTHER_ENTER_FIELD::set_reload_time(::google::protobuf::int32 value) {
+  
+  reload_time_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_OTHER_ENTER_FIELD.reload_time)
 }
 
 // -------------------------------------------------------------------
@@ -4653,21 +4758,7 @@ inline void SC_NOTI_RESPAWN_CHARACTER::set_pos_z(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.pos_z)
 }
 
-// int32 max_hp = 5;
-inline void SC_NOTI_RESPAWN_CHARACTER::clear_max_hp() {
-  max_hp_ = 0;
-}
-inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::max_hp() const {
-  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.max_hp)
-  return max_hp_;
-}
-inline void SC_NOTI_RESPAWN_CHARACTER::set_max_hp(::google::protobuf::int32 value) {
-  
-  max_hp_ = value;
-  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.max_hp)
-}
-
-// int32 hp = 6;
+// int32 hp = 5;
 inline void SC_NOTI_RESPAWN_CHARACTER::clear_hp() {
   hp_ = 0;
 }
@@ -4679,6 +4770,20 @@ inline void SC_NOTI_RESPAWN_CHARACTER::set_hp(::google::protobuf::int32 value) {
   
   hp_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.hp)
+}
+
+// int32 max_hp = 6;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_max_hp() {
+  max_hp_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::max_hp() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.max_hp)
+  return max_hp_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_max_hp(::google::protobuf::int32 value) {
+  
+  max_hp_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.max_hp)
 }
 
 // float speed = 7;
@@ -4695,15 +4800,57 @@ inline void SC_NOTI_RESPAWN_CHARACTER::set_speed(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.speed)
 }
 
-// float reload_time = 8;
+// int32 bullet_speed = 8;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_bullet_speed() {
+  bullet_speed_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::bullet_speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.bullet_speed)
+  return bullet_speed_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_bullet_speed(::google::protobuf::int32 value) {
+  
+  bullet_speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.bullet_speed)
+}
+
+// int32 bullet_power = 9;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_bullet_power() {
+  bullet_power_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::bullet_power() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.bullet_power)
+  return bullet_power_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_bullet_power(::google::protobuf::int32 value) {
+  
+  bullet_power_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.bullet_power)
+}
+
+// int32 bullet_distance = 10;
+inline void SC_NOTI_RESPAWN_CHARACTER::clear_bullet_distance() {
+  bullet_distance_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::bullet_distance() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.bullet_distance)
+  return bullet_distance_;
+}
+inline void SC_NOTI_RESPAWN_CHARACTER::set_bullet_distance(::google::protobuf::int32 value) {
+  
+  bullet_distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.bullet_distance)
+}
+
+// int32 reload_time = 11;
 inline void SC_NOTI_RESPAWN_CHARACTER::clear_reload_time() {
   reload_time_ = 0;
 }
-inline float SC_NOTI_RESPAWN_CHARACTER::reload_time() const {
+inline ::google::protobuf::int32 SC_NOTI_RESPAWN_CHARACTER::reload_time() const {
   // @@protoc_insertion_point(field_get:GAME.SC_NOTI_RESPAWN_CHARACTER.reload_time)
   return reload_time_;
 }
-inline void SC_NOTI_RESPAWN_CHARACTER::set_reload_time(float value) {
+inline void SC_NOTI_RESPAWN_CHARACTER::set_reload_time(::google::protobuf::int32 value) {
   
   reload_time_ = value;
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_RESPAWN_CHARACTER.reload_time)

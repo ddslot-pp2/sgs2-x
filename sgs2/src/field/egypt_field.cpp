@@ -109,17 +109,20 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
 
     auto stat_info = c->get_stat_info();
 
-    auto max_hp = stat_info->max_hp.load();
-    send.set_max_hp(max_hp);
+    auto tank_type = c->get_character_type();
+    send.set_tank_type(tank_type);
 
     auto hp = stat_info->hp.load();
     send.set_hp(hp);
 
-    auto tank_type = c->get_character_type();
-    send.set_tank_type(tank_type);
+    auto max_hp = stat_info->max_hp.load();
+    send.set_max_hp(max_hp);
 
     auto speed = stat_info->speed.load();
     send.set_speed(speed);
+    send.set_bullet_speed(stat_info->bullet_speed.load());
+    send.set_bullet_power(stat_info->bullet_power.load());
+    send.set_bullet_distance(stat_info->bullet_distance.load());
     send.set_reload_time(stat_info->reload_time.load());
 
     auto nickname = session->get_nickname();
@@ -131,10 +134,16 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
     noti.set_pos_x(pos.X);
     noti.set_pos_x(pos.Y);
     noti.set_pos_x(pos.Z);
-    noti.set_max_hp(max_hp);
-    noti.set_hp(hp);
-    noti.set_speed(speed);
+  
     noti.set_tank_type(tank_type);
+    noti.set_hp(hp);
+
+    noti.set_max_hp(max_hp);
+    noti.set_speed(speed);
+    noti.set_bullet_speed(stat_info->bullet_speed.load());
+    noti.set_bullet_power(stat_info->bullet_power.load());
+    noti.set_bullet_distance(stat_info->bullet_distance.load());
+    noti.set_reload_time(stat_info->reload_time.load());
 
     // 주변 유저 정보 추가
     for (const auto& kv : characters_)
@@ -158,15 +167,18 @@ void egypt_field::sync_field(std::shared_ptr<server_session> session) const
         other_info->set_pos_y(other_pos.Y);
         other_info->set_pos_z(other_pos.Z);
 
-        auto other_stat_info = other->get_stat_info();
-
-        other_info->set_max_hp(other_stat_info->max_hp);
-        other_info->set_hp(other_stat_info->hp);
-        other_info->set_speed(other_stat_info->speed);
-
-        // 추후 처리해야 함
         auto other_tank_type = other->get_character_type();
         other_info->set_tank_type(other_tank_type);
+
+        auto other_stat_info = other->get_stat_info();
+        other_info->set_hp(other_stat_info->hp);
+        other_info->set_max_hp(other_stat_info->max_hp);
+        other_info->set_speed(other_stat_info->speed);
+
+        other_info->set_bullet_speed(other_stat_info->bullet_speed);
+        other_info->set_bullet_power(other_stat_info->bullet_power);
+        other_info->set_bullet_distance(other_stat_info->bullet_distance);
+        other_info->set_reload_time(other_stat_info->reload_time);
     }
 
     send_packet(session, opcode::SC_SYNC_FIELD, send);

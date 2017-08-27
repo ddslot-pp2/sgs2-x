@@ -115,9 +115,12 @@ void character::respawn(const vector3& spawn_pos)
     noti.set_pos_y(pos_.Y);
     noti.set_pos_z(pos_.Z);
 
-    noti.set_max_hp(stat_->max_hp);
     noti.set_hp(stat_->hp);
+    noti.set_max_hp(stat_->max_hp);
     noti.set_speed(stat_->speed);
+    noti.set_bullet_speed(stat_->bullet_speed);
+    noti.set_bullet_power(stat_->bullet_power);
+    noti.set_bullet_distance(stat_->bullet_distance);
     noti.set_reload_time(stat_->reload_time);
 
     auto& view_list = field_->get_view_list();

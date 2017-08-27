@@ -118,11 +118,11 @@
 		<!-- 패킷 아님; 유저 정보 구조체 -->
 		<OTHER_INFO struct = "true">
 			<obj_id type="int64"/>
-			<tank_type type="int32"/>
 			<nickname type="string"/>
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
+			<tank_type type="int32"/>
 			<hp type="int32"/>
 			<max_hp type="int32"/>
 			<speed type="int32"/>
@@ -137,11 +137,11 @@
 		</CS_SYNC_FIELD>
 		<SC_SYNC_FIELD>
 			<obj_id type="int64"/>
-			<tank_type type="int32"/>
 			<nickname type="string"/>
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
+			<tank_type type="int32"/>
 			<hp type="int32"/>
 			<max_hp type="int32"/>
 			<speed type="int32"/>
@@ -154,14 +154,18 @@
 		
 		<SC_NOTI_OTHER_ENTER_FIELD>
 			<obj_id type="int64"/>
-			<tank_type type="int32"/>
 			<nickname type="string"/>
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
-			<max_hp type="int32"/>
+			<tank_type type="int32"/>
 			<hp type="int32"/>
+			<max_hp type="int32"/>
 			<speed type="float"/>
+			<bullet_speed type="int32"/>
+			<bullet_power type="int32"/>
+			<bullet_distance type="int32"/>
+			<reload_time type="int32"/>
 		</SC_NOTI_OTHER_ENTER_FIELD>
 
 		<SC_NOTI_OTHER_LEAVE_FIELD>
@@ -241,10 +245,13 @@
 			<pos_x type="float"/>
 			<pos_y type="float"/>
 			<pos_z type="float"/>
-			<max_hp type="int32"/>
 			<hp type="int32"/>
+			<max_hp type="int32"/>
 			<speed type="float"/>
-			<reload_time type="float"/>
+			<bullet_speed type="int32"/>
+			<bullet_power type="int32"/>
+			<bullet_distance type="int32"/>
+			<reload_time type="int32"/>
 		</SC_NOTI_RESPAWN_CHARACTER>
 
 		<SC_SELECT_BUFF>
@@ -260,6 +267,9 @@
 			<max_hp type="int32"/>
 			<hp type="int32"/>
 			<speed type="float"/>
+			<bullet_speed type="int32"/>
+			<bullet_power type="int32"/>
+			<bullet_distance type="int32"/>
 			<reload_time type="float"/>
 		</SC_NOTI_UPDATE_CHARACTER_STATUS>
 
