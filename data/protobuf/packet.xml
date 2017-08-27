@@ -78,6 +78,15 @@
 			<reload_time type="int32"/>
 		</SC_CHARACTER_INFO>
 
+		<CS_MY_INFO>
+		</CS_MY_INFO>
+		<SC_MY_INFO>
+			<medal_count type="int32"/>
+			<coin_count type="int32"/>
+			<result type="bool"/>
+			<ec type="string"/>
+		</SC_MY_INFO>
+
 	</LOBBY>
 
 	<GAME start="2000">

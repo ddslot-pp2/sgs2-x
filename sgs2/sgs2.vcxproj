@@ -108,6 +108,7 @@
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_FIELD_LIST.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LEAVEL_FIELD.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LOG_IN.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_MY_INFO.cpp" />
     <ClCompile Include="src\packet_processor\packet_processor.cpp" />
     <ClCompile Include="src\property\property_manager.cpp" />
     <ClCompile Include="src\rank\rank_info.cpp" />
