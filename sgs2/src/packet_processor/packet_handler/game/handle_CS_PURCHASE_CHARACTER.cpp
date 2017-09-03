@@ -30,7 +30,7 @@ void handle_CS_PURCHASE_CHARACTER(std::shared_ptr<server_session> session, const
 
     if (req_medal_count <= 0)
     {
-        error_handler("");
+        error_handler("not exist tank_type! should be range from 0 to 9");
         return;
     }
 
@@ -77,7 +77,7 @@ void handle_CS_PURCHASE_CHARACTER(std::shared_ptr<server_session> session, const
     res = execute_query(q);
     if (!res)
     {
-        error_handler("");
+        error_handler("fail to get character_info");
         return;
     }
 

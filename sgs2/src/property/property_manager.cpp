@@ -24,20 +24,25 @@ bool property_manager::read_xml(const std::wstring& path)
     default_character_medal_info_.push_back(3000);
     default_character_medal_info_.push_back(4000);
     default_character_medal_info_.push_back(5000);
+    default_character_medal_info_.push_back(5000);
+    default_character_medal_info_.push_back(5000);
+    default_character_medal_info_.push_back(5000);
+    default_character_medal_info_.push_back(5000);
+    default_character_medal_info_.push_back(5000);
 
     return true;
 }
 
 std::shared_ptr<default_stat_info> property_manager::get_default_stat_info(int index) const
 {
-    if (index - 1 > default_stat_infos_.size()) return nullptr;
+    if (index < 0 || index - 1 > default_stat_infos_.size()) return nullptr;
     
     return default_stat_infos_[index];
 }
 
 int property_manager::get_default_character_medal_info(int index) const
 {
-    if (index - 1 > default_character_medal_info_.size()) return 0;
+    if (index < 0 || index > default_stat_infos_.size()) return -1;
 
     return default_character_medal_info_[index];
 }
