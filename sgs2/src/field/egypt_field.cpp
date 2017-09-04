@@ -24,6 +24,7 @@ void egypt_field::initialize()
     //colliders_.emplace_back(collider(vector3(-7.0, 0.0f, -23.4f), vector3(10.0f, 0.0f, 10.0f), -16.873f));
     //colliders_.emplace_back(collider(vector3(10.0, 0.0f, 0.0f), vector3(10.0f, 0.0f, 10.0f),  90.0f));
 
+    /*
     colliders_.emplace_back(collider(vector3(-36.5f, 0.0f, 35.3f), vector3(10.0f, 0.0f, 10.0f),  31.815f));
     colliders_.emplace_back(collider(vector3( 45.0f, 0.0f,  44.8f), vector3(10.0f, 0.0f, 10.0f), -28.189f));
     colliders_.emplace_back(collider(vector3( 46.5f, 0.0f, -42.0f), vector3(10.0f, 0.0f, 10.0f), -38.78f));
@@ -52,6 +53,7 @@ void egypt_field::initialize()
     colliders_.emplace_back(collider(vector3( 15.8f, 0.0f,  49.4f), vector3(5.0f, 0.0f, 5.0f), -32.244f));
     colliders_.emplace_back(collider(vector3(-24.5f, 0.0f,  59.5f), vector3(5.0f, 0.0f, 5.0f), -23.226f));
     colliders_.emplace_back(collider(vector3( 16.5f, 0.0f, -58.8f), vector3(5.0f, 0.0f, 5.0f), -24.652f));  
+    */
  
     items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(0.0f, 0.0f, 5.0f)));
     items_.emplace_back(std::make_shared<hp_item>(field_id_, std::chrono::milliseconds(5000), vector3(0.0f, 0.0f, 0.0f)));
