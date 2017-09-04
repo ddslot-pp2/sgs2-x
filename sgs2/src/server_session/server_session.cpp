@@ -145,7 +145,7 @@ account_id server_session::get_account_id() const
 void server_session::start_ping_timer(std::chrono::milliseconds ping_time)
 {
     wprintf(L"핑 타이머 시작\n");
-
+    return;
     auto self = shared_from_this();
     ping_timer_->expires_from_now(ping_time_);
     ping_timer_->async_wait([this, self](const boost::system::error_code& ec) {

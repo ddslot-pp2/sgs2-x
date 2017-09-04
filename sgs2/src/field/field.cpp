@@ -152,7 +152,14 @@ void field::enter_field(std::shared_ptr<server_session> session)
     c->set_pos(spawn_pos);
 
     // stat_info ¼³Á¤ => default_stat_info + stat_info (account)
-    const auto& default_stat_info = property_manager::instance().get_default_stat_info(session->get_character_type());
+    const auto default_stat_info = property_manager::instance().get_default_stat_info(session->get_character_type());
+
+    if (!default_stat_info) 
+    {
+        send.set_result(false);
+        send_packet(session, opcode::SC_ENTER_FIELD, send);
+        return;
+    }
 
     auto stat = std::make_shared<stat_info>();
 

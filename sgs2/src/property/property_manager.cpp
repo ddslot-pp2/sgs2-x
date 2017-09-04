@@ -19,6 +19,23 @@ bool property_manager::read_xml(const std::wstring& path)
     auto stat4 = std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f);
     default_stat_infos_.emplace_back(stat4);
 
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
+
+
     default_character_medal_info_.push_back(1000);
     default_character_medal_info_.push_back(2000);
     default_character_medal_info_.push_back(3000);
