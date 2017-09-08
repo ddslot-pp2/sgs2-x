@@ -84,6 +84,9 @@ void on_local_thread_initialize()
 
 int main()
 {
+    // data 파싱
+    property_manager::instance().load_character_stat("data/aaa.xml");
+
     // 서버 종료 ctrl + break
     std::signal(SIGBREAK, sig_handler);
 

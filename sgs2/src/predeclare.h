@@ -35,9 +35,15 @@ constexpr static auto max_reward_exp = 40.0f;
 
 constexpr static auto max_volley_count = 4;
 
-constexpr static auto max_level = 30;
+constexpr static auto max_level = 10;
 
 constexpr static auto max_rank_size = 5;
+
+template <typename T>
+static constexpr typename std::underlying_type<T>::type to_constexpr_index(T value)
+{
+    return static_cast<std::underlying_type_t<T>>(value);
+}
 
 /*
 template <class T, class Tuple>

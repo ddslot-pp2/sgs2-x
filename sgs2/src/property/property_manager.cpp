@@ -74,3 +74,30 @@ int property_manager::get_default_character_medal_info(int index) const
 
     return default_character_medal_info_[index];
 }
+
+bool property_manager::load_character_stat(const std::string& path)
+{
+    return true;
+}
+
+character_stat_result property_manager::get_stat(int character_type, character_level_info level_info_tup) const
+{
+    if (character_stat_.size() - 1 > character_type || character_type < 0)  return boost::none;
+
+    // out of range üũ
+    auto max_hp_level          = std::get<to_constexpr_index(buff_type::max_hp)>(level_info_tup);
+    auto speed_level           = std::get<to_constexpr_index(buff_type::character_speed)>(level_info_tup);
+    auto bullet_speed_level    = std::get<to_constexpr_index(buff_type::bullet_speed)>(level_info_tup);
+    auto bullet_power_level    = std::get<to_constexpr_index(buff_type::bullet_power)>(level_info_tup);
+    auto bullet_distance_level = std::get<to_constexpr_index(buff_type::bullet_distance)>(level_info_tup);
+    auto reload_time_level     = std::get<to_constexpr_index(buff_type::reload_time)>(level_info_tup);
+
+    auto& character_stat = character_stat_[character_type];
+    return std::make_tuple(
+        character_stat.max_hp_stat[max_hp_level],
+        character_stat.speed_stat[speed_level],
+        character_stat.bullet_speed_stat[bullet_speed_level],
+        character_stat.bullet_power_stat[bullet_power_level],
+        character_stat.bullet_distance_stat[bullet_distance_level],
+        character_stat.reload_time_stat[reload_time_level]);
+}
