@@ -53,7 +53,7 @@ public:
     std::shared_ptr<default_stat_info> get_default_stat_info(int index) const;
     int get_default_character_medal_info(int index) const;
 
-    bool load_character_stat(const std::string& path);
+    void load_character_stat(const std::string& path);
     character_stat_result get_stat(int character_type, character_level_info level_info) const;
 
 private:

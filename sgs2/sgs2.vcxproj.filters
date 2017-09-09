@@ -281,5 +281,8 @@
     <ClInclude Include="src\mysql\query_helper.h">
       <Filter>src\mysql</Filter>
     </ClInclude>
+    <ClInclude Include="src\exception.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

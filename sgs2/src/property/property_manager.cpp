@@ -1,5 +1,8 @@
 #include "property_manager.h"
 #include "../object/stat_info.h"
+#include "../exception.hpp"
+#include <boost/property_tree/xml_parser.hpp>
+#include <boost/foreach.hpp>
 
 bool property_manager::read_xml(const std::wstring& path)
 {
@@ -75,9 +78,58 @@ int property_manager::get_default_character_medal_info(int index) const
     return default_character_medal_info_[index];
 }
 
-bool property_manager::load_character_stat(const std::string& path)
+#include <iostream>
+void property_manager::load_character_stat(const std::string& path)
 {
-    return true;
+    namespace property_tree = boost::property_tree;
+    property_tree::ptree pt;
+    // 읽을 xml 파일을 설정합니다.(xml 파일경로, 엮을 객체)
+    try
+    {
+        property_tree::read_xml(path, pt);
+        BOOST_FOREACH(auto const& character_stat_info, pt.get_child("character_stat_info")) 
+        {
+            if (character_stat_info.first == "character_stat") 
+            {
+                BOOST_FOREACH(auto const& max_hp_stat, character_stat_info.second.get_child("max_hp_stat"))
+                {
+                    
+                    if (max_hp_stat.first == "max_hp")
+                    {
+                        auto v = max_hp_stat.second;
+                        auto max_hp = v.get_value<int>();
+
+                        //auto value = std::atoi(v.data);
+                    }
+                    else
+                    {
+                        // attrib
+                    }
+                }
+                
+                /*
+                BOOST_FOREACH(auto const& max_hp_stat_stat, character_stat_info.second.get_child("max_hp_stat"))
+                {
+                   
+                }
+                */
+
+                /*
+                Flight f;
+                f.carrier = v.second.get<std::string>("carrier");
+                f.number = v.second.get<unsigned>("number");
+                f.date = v.second.get<Date>("date");
+                f.cancelled = v.second.get("<xmlattr>.cancelled", false);
+                ans.push_back(f);
+                */
+            }
+        }
+    }
+    catch (...)
+    {
+        throw;
+    }
+
 }
 
 character_stat_result property_manager::get_stat(int character_type, character_level_info level_info_tup) const

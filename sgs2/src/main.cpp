@@ -13,6 +13,8 @@
 #include "mysql/mysql_connector.h"
 #include "property/property_manager.h"
 #include "rank/rank_info.h"
+#include "exception.hpp"
+#include <boost/property_tree/xml_parser.hpp>
 
 std::mutex m;
 std::condition_variable cv;
@@ -85,7 +87,13 @@ void on_local_thread_initialize()
 int main()
 {
     // data 파싱
-    property_manager::instance().load_character_stat("data/aaa.xml");
+    try {
+        property_manager::instance().load_character_stat("../data/xml/character_stat.xml");
+    } catch (boost::property_tree::xml_parser::xml_parser_error e) {
+        printf("what: %s", e.what());
+    }
+
+    getchar();
 
     // 서버 종료 ctrl + break
     std::signal(SIGBREAK, sig_handler);

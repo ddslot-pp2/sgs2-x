@@ -54,6 +54,9 @@
       <AdditionalLibraryDirectories>..\boost\stage\lib;..\x64\$(Configuration);../protobuf-master\cmake\build\solution\$(Configuration);..\mysql-connector-c-6.1.10\libmysql\$(Configuration);..\mysql-connector-c++-1.1.9\driver\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libboost_system-vc140-mt-gd-1_65.lib;libprotobufd.lib;libprotobuf-lited.lib;core.lib;network.lib;mysqlclient.lib;mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y "$(SolutionDir)data\xml\character_stat.xml"  "$(OutDir)character_stat.xml"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -123,6 +126,7 @@
     <ClInclude Include="src\component\skill\bullet\bullet.h" />
     <ClInclude Include="src\component\skill\bullet\default_bullet.h" />
     <ClInclude Include="src\component\skill\skill_component.h" />
+    <ClInclude Include="src\exception.hpp" />
     <ClInclude Include="src\field\egypt_field.h" />
     <ClInclude Include="src\field\field.h" />
     <ClInclude Include="src\field\field_manager.h" />

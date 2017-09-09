@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <character_stat_info version="1">
 	<character_stat id="1">
 		<!-- 직관적이지 않아서 바뀌어야할듯하지만 연료인듯 -->
@@ -38,7 +38,7 @@
 			<bullet_speed lv="8">100</bullet_speed>
 			<bullet_speed lv="9">100</bullet_speed>
 			<bullet_speed lv="10">100</bullet_speed>
-		</bullet_speed_stat type="int32">
+		</bullet_speed_stat>
 		<bullet_power_stat type="int32">
 			<bullet_power lv="1">10</bullet_power>
 			<bullet_power lv="2">10</bullet_power>
@@ -114,7 +114,7 @@
 			<bullet_speed lv="8">100</bullet_speed>
 			<bullet_speed lv="9">100</bullet_speed>
 			<bullet_speed lv="10">100</bullet_speed>
-		</bullet_speed_stat type="int32">
+		</bullet_speed_stat>
 		<bullet_power_stat type="int32">
 			<bullet_power lv="1">10</bullet_power>
 			<bullet_power lv="2">10</bullet_power>
