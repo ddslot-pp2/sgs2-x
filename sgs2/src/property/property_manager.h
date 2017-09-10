@@ -15,12 +15,12 @@ using character_stat_result = boost::optional<std::tuple<int, int, int, int, int
 
 struct character_stat
 {
-    std::array<int,   max_level> max_hp_stat;
-    std::array<int,   max_level> speed_stat;
-    std::array<int,   max_level> bullet_speed_stat;
-    std::array<int,   max_level> bullet_power_stat;
-    std::array<int,   max_level> bullet_distance_stat;       
-    std::array<float, max_level> reload_time_stat;
+    std::vector<int> max_hp_stat_container;
+    std::vector<int> speed_stat_container;
+    std::vector<int> bullet_speed_stat_container;
+    std::vector<int> bullet_power_stat_container;
+    std::vector<int> bullet_distance_stat_container;
+    std::vector<float> reload_time_stat_container;
 };
 
 struct default_stat_info
@@ -55,6 +55,7 @@ public:
 
     void load_character_stat(const std::string& path);
     character_stat_result get_stat(int character_type, character_level_info level_info) const;
+    void to_print_stat() const;
 
 private:
     std::vector<std::shared_ptr<default_stat_info>> default_stat_infos_;

@@ -78,7 +78,6 @@ int property_manager::get_default_character_medal_info(int index) const
     return default_character_medal_info_[index];
 }
 
-#include <iostream>
 void property_manager::load_character_stat(const std::string& path)
 {
     namespace property_tree = boost::property_tree;
@@ -91,37 +90,68 @@ void property_manager::load_character_stat(const std::string& path)
         {
             if (character_stat_info.first == "character_stat") 
             {
+                character_stat stat;
                 BOOST_FOREACH(auto const& max_hp_stat, character_stat_info.second.get_child("max_hp_stat"))
                 {
-                    
                     if (max_hp_stat.first == "max_hp")
                     {
                         auto v = max_hp_stat.second;
                         auto max_hp = v.get_value<int>();
-
-                        //auto value = std::atoi(v.data);
-                    }
-                    else
-                    {
-                        // attrib
+                        stat.max_hp_stat_container.push_back(max_hp);
                     }
                 }
-                
-                /*
-                BOOST_FOREACH(auto const& max_hp_stat_stat, character_stat_info.second.get_child("max_hp_stat"))
+
+                BOOST_FOREACH(auto const& speed_stat, character_stat_info.second.get_child("speed_stat"))
                 {
-                   
+                    if (speed_stat.first == "speed")
+                    {
+                        auto v = speed_stat.second;
+                        auto speed = v.get_value<int>();
+                        stat.speed_stat_container.push_back(speed);
+                    }
                 }
-                */
 
-                /*
-                Flight f;
-                f.carrier = v.second.get<std::string>("carrier");
-                f.number = v.second.get<unsigned>("number");
-                f.date = v.second.get<Date>("date");
-                f.cancelled = v.second.get("<xmlattr>.cancelled", false);
-                ans.push_back(f);
-                */
+                BOOST_FOREACH(auto const& bullet_speed_stat, character_stat_info.second.get_child("bullet_speed_stat"))
+                {
+                    if (bullet_speed_stat.first == "bullet_speed")
+                    {
+                        auto v = bullet_speed_stat.second;
+                        auto bullet_speed = v.get_value<int>();
+                        stat.bullet_speed_stat_container.push_back(bullet_speed);
+                    }
+                }
+
+                BOOST_FOREACH(auto const& bullet_power_stat, character_stat_info.second.get_child("bullet_power_stat"))
+                {
+                    if (bullet_power_stat.first == "bullet_power")
+                    {
+                        auto v = bullet_power_stat.second;
+                        auto bullet_power = v.get_value<int>();
+                        stat.bullet_power_stat_container.push_back(bullet_power);
+                    }
+                }
+
+                BOOST_FOREACH(auto const& bullet_distance_stat, character_stat_info.second.get_child("bullet_distance_stat"))
+                {
+                    if (bullet_distance_stat.first == "bullet_distance")
+                    {
+                        auto v = bullet_distance_stat.second;
+                        auto bullet_distance = v.get_value<int>();
+                        stat.bullet_distance_stat_container.push_back(bullet_distance);
+                    }
+                }
+
+                BOOST_FOREACH(auto const& reload_time_stat, character_stat_info.second.get_child("reload_time_stat"))
+                {
+                    if (reload_time_stat.first == "reload_time")
+                    {
+                        auto v = reload_time_stat.second;
+                        auto reload_time = v.get_value<float>();
+                        stat.reload_time_stat_container.push_back(reload_time);
+                    }
+                }
+
+                character_stat_.push_back(stat);
             }
         }
     }
@@ -146,10 +176,60 @@ character_stat_result property_manager::get_stat(int character_type, character_l
 
     auto& character_stat = character_stat_[character_type];
     return std::make_tuple(
-        character_stat.max_hp_stat[max_hp_level],
-        character_stat.speed_stat[speed_level],
-        character_stat.bullet_speed_stat[bullet_speed_level],
-        character_stat.bullet_power_stat[bullet_power_level],
-        character_stat.bullet_distance_stat[bullet_distance_level],
-        character_stat.reload_time_stat[reload_time_level]);
+        character_stat.max_hp_stat_container[max_hp_level],
+        character_stat.speed_stat_container[speed_level],
+        character_stat.bullet_speed_stat_container[bullet_speed_level],
+        character_stat.bullet_power_stat_container[bullet_power_level],
+        character_stat.bullet_distance_stat_container[bullet_distance_level],
+        character_stat.reload_time_stat_container[reload_time_level]);
+}
+
+void property_manager::to_print_stat() const
+{
+    auto index = 0;
+    for (const auto& cstat : character_stat_)
+    {
+        printf("----- CHARACTER STAT %d -----\n", index++);
+        printf("----- max_hp_stat -----\n");
+        for (auto i = 0; i < cstat.max_hp_stat_container.size(); ++i)
+        {
+            printf("%d, ", cstat.max_hp_stat_container[i]);
+        }
+        printf("\n");
+
+        printf("----- speed_stat -----\n");
+        for (auto i = 0; i < cstat.speed_stat_container.size(); ++i)
+        {
+            printf("%d, ", cstat.speed_stat_container[i]);
+        }
+        printf("\n");
+
+        printf("----- bullet_speed_stat -----\n");
+        for (auto i = 0; i < cstat.bullet_speed_stat_container.size(); ++i)
+        {
+            printf("%d, ", cstat.bullet_speed_stat_container[i]);
+        }
+        printf("\n");
+
+        printf("----- bullet_power_stat -----\n");
+        for (auto i = 0; i < cstat.bullet_power_stat_container.size(); ++i)
+        {
+            printf("%d, ", cstat.bullet_power_stat_container[i]);
+        }
+        printf("\n");
+
+        printf("----- bullet_distance_stat -----\n");
+        for (auto i = 0; i < cstat.bullet_distance_stat_container.size(); ++i)
+        {
+            printf("%d, ", cstat.bullet_distance_stat_container[i]);
+        }
+        printf("\n");
+
+        printf("----- reload_time_stat -----\n");
+        for (auto i = 0; i < cstat.reload_time_stat_container.size(); ++i)
+        {
+            printf("%f, ", cstat.reload_time_stat_container[i]);
+        }
+        printf("\n");
+    }
 }

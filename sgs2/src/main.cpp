@@ -89,6 +89,7 @@ int main()
     // data ÆÄ½Ì
     try {
         property_manager::instance().load_character_stat("../data/xml/character_stat.xml");
+        property_manager::instance().to_print_stat();
     } catch (boost::property_tree::xml_parser::xml_parser_error e) {
         printf("what: %s", e.what());
     }
