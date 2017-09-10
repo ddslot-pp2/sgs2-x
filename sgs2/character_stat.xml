@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<character_stat_info version="1">
+	<character_stat id="1">
+		<!-- 직관적이지 않아서 바뀌어야할듯하지만 연료인듯 -->
+		<max_hp_stat type="int32">
+			<max_hp lv="1">1</max_hp>
+			<max_hp lv="2">2</max_hp>
+			<max_hp lv="3">3</max_hp>
+			<max_hp lv="4">4</max_hp>
+			<max_hp lv="5">5</max_hp>
+			<max_hp lv="6">6</max_hp>
+			<max_hp lv="7">7</max_hp>
+			<max_hp lv="8">8</max_hp>
+			<max_hp lv="9">9</max_hp>
+			<max_hp lv="10">10</max_hp>
+		</max_hp_stat>
+		<speed_stat type="int32">
+			<speed lv="1">11</speed>
+			<speed lv="2">12</speed>
+			<speed lv="3">13</speed>
+			<speed lv="4">14</speed>
+			<speed lv="5">15</speed>
+			<speed lv="6">16</speed>
+			<speed lv="7">17</speed>
+			<speed lv="8">18</speed>
+			<speed lv="9">19</speed>
+			<speed lv="10">20</speed>
+		</speed_stat>
+		<!-- not use -->
+		<bullet_speed_stat type="int32">
+			<bullet_speed lv="1">21</bullet_speed>
+			<bullet_speed lv="2">22</bullet_speed>
+			<bullet_speed lv="3">23</bullet_speed>
+			<bullet_speed lv="4">24</bullet_speed>
+			<bullet_speed lv="5">25</bullet_speed>
+			<bullet_speed lv="6">26</bullet_speed>
+			<bullet_speed lv="7">27</bullet_speed>
+			<bullet_speed lv="8">28</bullet_speed>
+			<bullet_speed lv="9">29</bullet_speed>
+			<bullet_speed lv="10">30</bullet_speed>
+		</bullet_speed_stat>
+		<bullet_power_stat type="int32">
+			<bullet_power lv="1">31</bullet_power>
+			<bullet_power lv="2">32</bullet_power>
+			<bullet_power lv="3">33</bullet_power>
+			<bullet_power lv="4">34</bullet_power>
+			<bullet_power lv="5">35</bullet_power>
+			<bullet_power lv="6">36</bullet_power>
+			<bullet_power lv="7">37</bullet_power>
+			<bullet_power lv="8">38</bullet_power>
+			<bullet_power lv="9">39</bullet_power>
+			<bullet_power lv="10">40</bullet_power>
+		</bullet_power_stat>
+		<bullet_distance_stat type="int32">
+			<bullet_distance lv="1">41</bullet_distance>
+			<bullet_distance lv="2">42</bullet_distance>
+			<bullet_distance lv="3">43</bullet_distance>
+			<bullet_distance lv="4">44</bullet_distance>
+			<bullet_distance lv="5">45</bullet_distance>
+			<bullet_distance lv="6">46</bullet_distance>
+			<bullet_distance lv="7">47</bullet_distance>
+			<bullet_distance lv="8">48</bullet_distance>
+			<bullet_distance lv="9">49</bullet_distance>
+			<bullet_distance lv="10">50</bullet_distance>
+		</bullet_distance_stat>
+		<reload_time_stat type="float">
+			<reload_time lv="1">51.9</reload_time>
+			<reload_time lv="2">52.9</reload_time>
+			<reload_time lv="3">53.9</reload_time>
+			<reload_time lv="4">54.9</reload_time>
+			<reload_time lv="5">55.9</reload_time>
+			<reload_time lv="6">56.9</reload_time>
+			<reload_time lv="7">57.9</reload_time>
+			<reload_time lv="8">58.9</reload_time>
+			<reload_time lv="9">59.9</reload_time>
+			<reload_time lv="10">60.9</reload_time>
+		</reload_time_stat>
+	</character_stat>
+
+	<character_stat id="2">
+		<max_hp_stat type="int32">
+			<max_hp lv="1">100</max_hp>
+			<max_hp lv="2">110</max_hp>
+			<max_hp lv="3">120</max_hp>
+			<max_hp lv="4">130</max_hp>
+			<max_hp lv="5">140</max_hp>
+			<max_hp lv="6">140</max_hp>
+			<max_hp lv="7">140</max_hp>
+			<max_hp lv="8">140</max_hp>
+			<max_hp lv="9">140</max_hp>
+			<max_hp lv="10">140</max_hp>
+		</max_hp_stat>
+		<speed_stat type="int32">
+			<speed lv="1">100</speed>
+			<speed lv="2">110</speed>
+			<speed lv="3">120</speed>
+			<speed lv="4">130</speed>
+			<speed lv="5">140</speed>
+			<speed lv="6">100</speed>
+			<speed lv="7">110</speed>
+			<speed lv="8">120</speed>
+			<speed lv="9">130</speed>
+			<speed lv="10">140</speed>
+		</speed_stat>
+		<!-- not use -->
+		<bullet_speed_stat type="int32">
+			<bullet_speed lv="1">100</bullet_speed>
+			<bullet_speed lv="2">100</bullet_speed>
+			<bullet_speed lv="3">100</bullet_speed>
+			<bullet_speed lv="4">100</bullet_speed>
+			<bullet_speed lv="5">100</bullet_speed>
+			<bullet_speed lv="6">100</bullet_speed>
+			<bullet_speed lv="7">100</bullet_speed>
+			<bullet_speed lv="8">100</bullet_speed>
+			<bullet_speed lv="9">100</bullet_speed>
+			<bullet_speed lv="10">100</bullet_speed>
+		</bullet_speed_stat>
+		<bullet_power_stat type="int32">
+			<bullet_power lv="1">10</bullet_power>
+			<bullet_power lv="2">10</bullet_power>
+			<bullet_power lv="3">10</bullet_power>
+			<bullet_power lv="4">10</bullet_power>
+			<bullet_power lv="5">10</bullet_power>
+			<bullet_power lv="6">10</bullet_power>
+			<bullet_power lv="7">10</bullet_power>
+			<bullet_power lv="8">10</bullet_power>
+			<bullet_power lv="9">10</bullet_power>
+			<bullet_power lv="10">10</bullet_power>
+		</bullet_power_stat>
+		<bullet_distance_stat type="int32">
+			<bullet_distance lv="1">10</bullet_distance>
+			<bullet_distance lv="2">10</bullet_distance>
+			<bullet_distance lv="3">10</bullet_distance>
+			<bullet_distance lv="4">10</bullet_distance>
+			<bullet_distance lv="5">10</bullet_distance>
+			<bullet_distance lv="6">10</bullet_distance>
+			<bullet_distance lv="7">10</bullet_distance>
+			<bullet_distance lv="8">10</bullet_distance>
+			<bullet_distance lv="9">10</bullet_distance>
+			<bullet_distance lv="10">10</bullet_distance>
+		</bullet_distance_stat>
+		<reload_time_stat type="float">
+			<reload_time lv="1">1000.0</reload_time>
+			<reload_time lv="2">1000.0</reload_time>
+			<reload_time lv="3">1000.0</reload_time>
+			<reload_time lv="4">1000.0</reload_time>
+			<reload_time lv="5">1000.0</reload_time>
+			<reload_time lv="6">1000.0</reload_time>
+			<reload_time lv="7">1000.0</reload_time>
+			<reload_time lv="8">1000.0</reload_time>
+			<reload_time lv="9">1000.0</reload_time>
+			<reload_time lv="10">1000.0</reload_time>
+		</reload_time_stat>
+	</character_stat>
+</character_stat_info>

@@ -2340,9 +2340,27 @@ class SC_NOTI_UPDATE_CHARACTER_STATUS : public ::google::protobuf::Message /* @@
   float speed() const;
   void set_speed(float value);
 
-  // float reload_time = 5;
+  // int32 bullet_speed = 5;
+  void clear_bullet_speed();
+  static const int kBulletSpeedFieldNumber = 5;
+  ::google::protobuf::int32 bullet_speed() const;
+  void set_bullet_speed(::google::protobuf::int32 value);
+
+  // int32 bullet_power = 6;
+  void clear_bullet_power();
+  static const int kBulletPowerFieldNumber = 6;
+  ::google::protobuf::int32 bullet_power() const;
+  void set_bullet_power(::google::protobuf::int32 value);
+
+  // int32 bullet_distance = 7;
+  void clear_bullet_distance();
+  static const int kBulletDistanceFieldNumber = 7;
+  ::google::protobuf::int32 bullet_distance() const;
+  void set_bullet_distance(::google::protobuf::int32 value);
+
+  // float reload_time = 8;
   void clear_reload_time();
-  static const int kReloadTimeFieldNumber = 5;
+  static const int kReloadTimeFieldNumber = 8;
   float reload_time() const;
   void set_reload_time(float value);
 
@@ -2354,6 +2372,9 @@ class SC_NOTI_UPDATE_CHARACTER_STATUS : public ::google::protobuf::Message /* @@
   ::google::protobuf::int32 max_hp_;
   ::google::protobuf::int32 hp_;
   float speed_;
+  ::google::protobuf::int32 bullet_speed_;
+  ::google::protobuf::int32 bullet_power_;
+  ::google::protobuf::int32 bullet_distance_;
   float reload_time_;
   mutable int _cached_size_;
   friend struct protobuf_GAME_2eproto::TableStruct;
@@ -4952,7 +4973,49 @@ inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_speed(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.speed)
 }
 
-// float reload_time = 5;
+// int32 bullet_speed = 5;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_bullet_speed() {
+  bullet_speed_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::bullet_speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_speed)
+  return bullet_speed_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_bullet_speed(::google::protobuf::int32 value) {
+  
+  bullet_speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_speed)
+}
+
+// int32 bullet_power = 6;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_bullet_power() {
+  bullet_power_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::bullet_power() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_power)
+  return bullet_power_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_bullet_power(::google::protobuf::int32 value) {
+  
+  bullet_power_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_power)
+}
+
+// int32 bullet_distance = 7;
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_bullet_distance() {
+  bullet_distance_ = 0;
+}
+inline ::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::bullet_distance() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_distance)
+  return bullet_distance_;
+}
+inline void SC_NOTI_UPDATE_CHARACTER_STATUS::set_bullet_distance(::google::protobuf::int32 value) {
+  
+  bullet_distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_distance)
+}
+
+// float reload_time = 8;
 inline void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_reload_time() {
   reload_time_ = 0;
 }

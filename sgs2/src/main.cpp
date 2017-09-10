@@ -88,13 +88,13 @@ int main()
 {
     // data 파싱
     try {
-        property_manager::instance().load_character_stat("../data/xml/character_stat.xml");
+        property_manager::instance().load_character_stat("./character_stat.xml");
         property_manager::instance().to_print_stat();
     } catch (boost::property_tree::xml_parser::xml_parser_error e) {
         printf("what: %s", e.what());
     }
 
-    getchar();
+    //getchar();
 
     // 서버 종료 ctrl + break
     std::signal(SIGBREAK, sig_handler);

@@ -186,6 +186,12 @@
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_MY_CHARACTER_INFO.cpp">
       <Filter>src\packet_processor\packet_handler\lobby</Filter>
     </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_CHARACTER_SELECT.cpp">
+      <Filter>src\packet_processor\packet_handler\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_CHARACTER_UPGRADE.cpp">
+      <Filter>src\packet_processor\packet_handler\lobby</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\server_session\server_session.h">

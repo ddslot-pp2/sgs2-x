@@ -330,6 +330,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_UPDATE_CHARACTER_STATUS, max_hp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_UPDATE_CHARACTER_STATUS, hp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_UPDATE_CHARACTER_STATUS, speed_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_UPDATE_CHARACTER_STATUS, bullet_speed_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_UPDATE_CHARACTER_STATUS, bullet_power_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_UPDATE_CHARACTER_STATUS, bullet_distance_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_NOTI_UPDATE_CHARACTER_STATUS, reload_time_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ITEM_INFO, _internal_metadata_),
@@ -431,15 +434,15 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 180, -1, sizeof(SC_SELECT_BUFF)},
   { 186, -1, sizeof(CS_ENHANCE_BUFF)},
   { 192, -1, sizeof(SC_NOTI_UPDATE_CHARACTER_STATUS)},
-  { 202, -1, sizeof(ITEM_INFO)},
-  { 212, -1, sizeof(SC_NOTI_ACTIVE_ITEM)},
-  { 218, -1, sizeof(SC_NOTI_ACQUIRE_ITEM)},
-  { 229, -1, sizeof(MEDAL_ITEM_INFO)},
-  { 242, -1, sizeof(SC_NOTI_CREATE_MEDAL_ITEM)},
-  { 248, -1, sizeof(SC_NOTI_ACQUIRE_PERSIST_ITEM)},
-  { 257, -1, sizeof(RANK_INFO)},
-  { 265, -1, sizeof(SC_NOTI_RANK_INFO)},
-  { 271, -1, sizeof(SC_NOTI_RANK)},
+  { 205, -1, sizeof(ITEM_INFO)},
+  { 215, -1, sizeof(SC_NOTI_ACTIVE_ITEM)},
+  { 221, -1, sizeof(SC_NOTI_ACQUIRE_ITEM)},
+  { 232, -1, sizeof(MEDAL_ITEM_INFO)},
+  { 245, -1, sizeof(SC_NOTI_CREATE_MEDAL_ITEM)},
+  { 251, -1, sizeof(SC_NOTI_ACQUIRE_PERSIST_ITEM)},
+  { 260, -1, sizeof(RANK_INFO)},
+  { 268, -1, sizeof(SC_NOTI_RANK_INFO)},
+  { 274, -1, sizeof(SC_NOTI_RANK)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -653,33 +656,35 @@ void AddDescriptorsImpl() {
       "bullet_power\030\t \001(\005\022\027\n\017bullet_distance\030\n "
       "\001(\005\022\023\n\013reload_time\030\013 \001(\005\"\037\n\016SC_SELECT_BU"
       "FF\022\r\n\005count\030\001 \001(\005\"$\n\017CS_ENHANCE_BUFF\022\021\n\t"
-      "buff_type\030\001 \001(\005\"q\n\037SC_NOTI_UPDATE_CHARAC"
-      "TER_STATUS\022\016\n\006obj_id\030\001 \001(\003\022\016\n\006max_hp\030\002 \001"
-      "(\005\022\n\n\002hp\030\003 \001(\005\022\r\n\005speed\030\004 \001(\002\022\023\n\013reload_"
-      "time\030\005 \001(\002\"\\\n\tITEM_INFO\022\017\n\007item_id\030\001 \001(\003"
-      "\022\021\n\titem_type\030\002 \001(\005\022\r\n\005pos_x\030\003 \001(\002\022\r\n\005po"
-      "s_y\030\004 \001(\002\022\r\n\005pos_z\030\005 \001(\002\":\n\023SC_NOTI_ACTI"
-      "VE_ITEM\022#\n\nitem_infos\030\001 \003(\0132\017.GAME.ITEM_"
-      "INFO\"x\n\024SC_NOTI_ACQUIRE_ITEM\022\016\n\006obj_id\030\001"
-      " \001(\003\022\017\n\007item_id\030\002 \001(\003\022\021\n\titem_type\030\003 \001(\005"
-      "\022\n\n\002hp\030\004 \001(\005\022\023\n\013shield_time\030\005 \001(\005\022\013\n\003exp"
-      "\030\006 \001(\005\"\247\001\n\017MEDAL_ITEM_INFO\022\017\n\007item_id\030\001 "
-      "\001(\003\022\021\n\titem_type\030\002 \001(\005\022\022\n\nfrom_pos_x\030\003 \001"
-      "(\002\022\022\n\nfrom_pos_y\030\004 \001(\002\022\022\n\nfrom_pos_z\030\005 \001"
-      "(\002\022\020\n\010to_pos_x\030\006 \001(\002\022\020\n\010to_pos_y\030\007 \001(\002\022\020"
-      "\n\010to_pos_z\030\010 \001(\002\"L\n\031SC_NOTI_CREATE_MEDAL"
-      "_ITEM\022/\n\020medal_item_infos\030\001 \003(\0132\025.GAME.M"
-      "EDAL_ITEM_INFO\"a\n\034SC_NOTI_ACQUIRE_PERSIS"
-      "T_ITEM\022\016\n\006obj_id\030\001 \001(\003\022\017\n\007item_id\030\002 \001(\003\022"
-      "\021\n\titem_type\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\"\?\n\tRAN"
-      "K_INFO\022\021\n\tobject_id\030\001 \001(\003\022\020\n\010nickname\030\002 "
-      "\001(\t\022\r\n\005score\030\003 \001(\005\"8\n\021SC_NOTI_RANK_INFO\022"
-      "#\n\nrank_infos\030\001 \003(\0132\017.GAME.RANK_INFO\"=\n\014"
-      "SC_NOTI_RANK\022\014\n\004rank\030\001 \001(\005\022\020\n\010nickname\030\002"
-      " \001(\t\022\r\n\005score\030\003 \001(\005b\006proto3"
+      "buff_type\030\001 \001(\005\"\266\001\n\037SC_NOTI_UPDATE_CHARA"
+      "CTER_STATUS\022\016\n\006obj_id\030\001 \001(\003\022\016\n\006max_hp\030\002 "
+      "\001(\005\022\n\n\002hp\030\003 \001(\005\022\r\n\005speed\030\004 \001(\002\022\024\n\014bullet"
+      "_speed\030\005 \001(\005\022\024\n\014bullet_power\030\006 \001(\005\022\027\n\017bu"
+      "llet_distance\030\007 \001(\005\022\023\n\013reload_time\030\010 \001(\002"
+      "\"\\\n\tITEM_INFO\022\017\n\007item_id\030\001 \001(\003\022\021\n\titem_t"
+      "ype\030\002 \001(\005\022\r\n\005pos_x\030\003 \001(\002\022\r\n\005pos_y\030\004 \001(\002\022"
+      "\r\n\005pos_z\030\005 \001(\002\":\n\023SC_NOTI_ACTIVE_ITEM\022#\n"
+      "\nitem_infos\030\001 \003(\0132\017.GAME.ITEM_INFO\"x\n\024SC"
+      "_NOTI_ACQUIRE_ITEM\022\016\n\006obj_id\030\001 \001(\003\022\017\n\007it"
+      "em_id\030\002 \001(\003\022\021\n\titem_type\030\003 \001(\005\022\n\n\002hp\030\004 \001"
+      "(\005\022\023\n\013shield_time\030\005 \001(\005\022\013\n\003exp\030\006 \001(\005\"\247\001\n"
+      "\017MEDAL_ITEM_INFO\022\017\n\007item_id\030\001 \001(\003\022\021\n\tite"
+      "m_type\030\002 \001(\005\022\022\n\nfrom_pos_x\030\003 \001(\002\022\022\n\nfrom"
+      "_pos_y\030\004 \001(\002\022\022\n\nfrom_pos_z\030\005 \001(\002\022\020\n\010to_p"
+      "os_x\030\006 \001(\002\022\020\n\010to_pos_y\030\007 \001(\002\022\020\n\010to_pos_z"
+      "\030\010 \001(\002\"L\n\031SC_NOTI_CREATE_MEDAL_ITEM\022/\n\020m"
+      "edal_item_infos\030\001 \003(\0132\025.GAME.MEDAL_ITEM_"
+      "INFO\"a\n\034SC_NOTI_ACQUIRE_PERSIST_ITEM\022\016\n\006"
+      "obj_id\030\001 \001(\003\022\017\n\007item_id\030\002 \001(\003\022\021\n\titem_ty"
+      "pe\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\"\?\n\tRANK_INFO\022\021\n\t"
+      "object_id\030\001 \001(\003\022\020\n\010nickname\030\002 \001(\t\022\r\n\005sco"
+      "re\030\003 \001(\005\"8\n\021SC_NOTI_RANK_INFO\022#\n\nrank_in"
+      "fos\030\001 \003(\0132\017.GAME.RANK_INFO\"=\n\014SC_NOTI_RA"
+      "NK\022\014\n\004rank\030\001 \001(\005\022\020\n\010nickname\030\002 \001(\t\022\r\n\005sc"
+      "ore\030\003 \001(\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3067);
+      descriptor, 3137);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GAME.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -9272,6 +9277,9 @@ const int SC_NOTI_UPDATE_CHARACTER_STATUS::kObjIdFieldNumber;
 const int SC_NOTI_UPDATE_CHARACTER_STATUS::kMaxHpFieldNumber;
 const int SC_NOTI_UPDATE_CHARACTER_STATUS::kHpFieldNumber;
 const int SC_NOTI_UPDATE_CHARACTER_STATUS::kSpeedFieldNumber;
+const int SC_NOTI_UPDATE_CHARACTER_STATUS::kBulletSpeedFieldNumber;
+const int SC_NOTI_UPDATE_CHARACTER_STATUS::kBulletPowerFieldNumber;
+const int SC_NOTI_UPDATE_CHARACTER_STATUS::kBulletDistanceFieldNumber;
 const int SC_NOTI_UPDATE_CHARACTER_STATUS::kReloadTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -9403,10 +9411,52 @@ bool SC_NOTI_UPDATE_CHARACTER_STATUS::MergePartialFromCodedStream(
         break;
       }
 
-      // float reload_time = 5;
+      // int32 bullet_speed = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u)) {
+            static_cast< ::google::protobuf::uint8>(40u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &bullet_speed_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 bullet_power = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(48u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &bullet_power_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 bullet_distance = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(56u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &bullet_distance_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float reload_time = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(69u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -9464,9 +9514,24 @@ void SC_NOTI_UPDATE_CHARACTER_STATUS::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->speed(), output);
   }
 
-  // float reload_time = 5;
+  // int32 bullet_speed = 5;
+  if (this->bullet_speed() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->bullet_speed(), output);
+  }
+
+  // int32 bullet_power = 6;
+  if (this->bullet_power() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->bullet_power(), output);
+  }
+
+  // int32 bullet_distance = 7;
+  if (this->bullet_distance() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->bullet_distance(), output);
+  }
+
+  // float reload_time = 8;
   if (this->reload_time() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->reload_time(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->reload_time(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS)
@@ -9498,9 +9563,24 @@ void SC_NOTI_UPDATE_CHARACTER_STATUS::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->speed(), target);
   }
 
-  // float reload_time = 5;
+  // int32 bullet_speed = 5;
+  if (this->bullet_speed() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->bullet_speed(), target);
+  }
+
+  // int32 bullet_power = 6;
+  if (this->bullet_power() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->bullet_power(), target);
+  }
+
+  // int32 bullet_distance = 7;
+  if (this->bullet_distance() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->bullet_distance(), target);
+  }
+
+  // float reload_time = 8;
   if (this->reload_time() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->reload_time(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->reload_time(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS)
@@ -9537,7 +9617,28 @@ size_t SC_NOTI_UPDATE_CHARACTER_STATUS::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float reload_time = 5;
+  // int32 bullet_speed = 5;
+  if (this->bullet_speed() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->bullet_speed());
+  }
+
+  // int32 bullet_power = 6;
+  if (this->bullet_power() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->bullet_power());
+  }
+
+  // int32 bullet_distance = 7;
+  if (this->bullet_distance() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->bullet_distance());
+  }
+
+  // float reload_time = 8;
   if (this->reload_time() != 0) {
     total_size += 1 + 4;
   }
@@ -9583,6 +9684,15 @@ void SC_NOTI_UPDATE_CHARACTER_STATUS::MergeFrom(const SC_NOTI_UPDATE_CHARACTER_S
   if (from.speed() != 0) {
     set_speed(from.speed());
   }
+  if (from.bullet_speed() != 0) {
+    set_bullet_speed(from.bullet_speed());
+  }
+  if (from.bullet_power() != 0) {
+    set_bullet_power(from.bullet_power());
+  }
+  if (from.bullet_distance() != 0) {
+    set_bullet_distance(from.bullet_distance());
+  }
   if (from.reload_time() != 0) {
     set_reload_time(from.reload_time());
   }
@@ -9615,6 +9725,9 @@ void SC_NOTI_UPDATE_CHARACTER_STATUS::InternalSwap(SC_NOTI_UPDATE_CHARACTER_STAT
   std::swap(max_hp_, other->max_hp_);
   std::swap(hp_, other->hp_);
   std::swap(speed_, other->speed_);
+  std::swap(bullet_speed_, other->bullet_speed_);
+  std::swap(bullet_power_, other->bullet_power_);
+  std::swap(bullet_distance_, other->bullet_distance_);
   std::swap(reload_time_, other->reload_time_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -9683,7 +9796,49 @@ void SC_NOTI_UPDATE_CHARACTER_STATUS::set_speed(float value) {
   // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.speed)
 }
 
-// float reload_time = 5;
+// int32 bullet_speed = 5;
+void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_bullet_speed() {
+  bullet_speed_ = 0;
+}
+::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::bullet_speed() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_speed)
+  return bullet_speed_;
+}
+void SC_NOTI_UPDATE_CHARACTER_STATUS::set_bullet_speed(::google::protobuf::int32 value) {
+  
+  bullet_speed_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_speed)
+}
+
+// int32 bullet_power = 6;
+void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_bullet_power() {
+  bullet_power_ = 0;
+}
+::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::bullet_power() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_power)
+  return bullet_power_;
+}
+void SC_NOTI_UPDATE_CHARACTER_STATUS::set_bullet_power(::google::protobuf::int32 value) {
+  
+  bullet_power_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_power)
+}
+
+// int32 bullet_distance = 7;
+void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_bullet_distance() {
+  bullet_distance_ = 0;
+}
+::google::protobuf::int32 SC_NOTI_UPDATE_CHARACTER_STATUS::bullet_distance() const {
+  // @@protoc_insertion_point(field_get:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_distance)
+  return bullet_distance_;
+}
+void SC_NOTI_UPDATE_CHARACTER_STATUS::set_bullet_distance(::google::protobuf::int32 value) {
+  
+  bullet_distance_ = value;
+  // @@protoc_insertion_point(field_set:GAME.SC_NOTI_UPDATE_CHARACTER_STATUS.bullet_distance)
+}
+
+// float reload_time = 8;
 void SC_NOTI_UPDATE_CHARACTER_STATUS::clear_reload_time() {
   reload_time_ = 0;
 }

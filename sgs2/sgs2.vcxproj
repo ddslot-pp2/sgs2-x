@@ -107,6 +107,8 @@
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_RESPAWN_CHARACTER.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\game\handle_CS_SYNC_FIELD.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_CHARACTER_INFO.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_CHARACTER_SELECT.cpp" />
+    <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_CHARACTER_UPGRADE.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_ENTER_FIELD.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_FIELD_LIST.cpp" />
     <ClCompile Include="src\packet_processor\packet_handler\lobby\handle_CS_LEAVEL_FIELD.cpp" />
