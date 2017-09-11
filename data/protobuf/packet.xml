@@ -106,7 +106,7 @@
 		</SC_MY_CHARACTER_INFO>
 
 		<CS_CHARACTER_UPGRADE>
-			<tank_type type="int32"/>
+			<type type="int32"/>
 			<upgrade_type type="int32"/>
 		</CS_CHARACTER_UPGRADE>
 		<SC_CHARACTER_UPGRADE>
@@ -115,12 +115,12 @@
 		</SC_CHARACTER_UPGRADE>
 
 		<CS_CHARACTER_SELECT>
-			<tank_type type="int32"/>
+			<type type="int32"/>
 		</CS_CHARACTER_SELECT>
 		<SC_CHARACTER_SELECT>
 			<result type="bool"/>
 			<ec type="string"/>
-			<tank_type type="int32"/>
+			<type type="int32"/>
 		</SC_CHARACTER_SELECT>
 
           

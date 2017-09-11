@@ -253,7 +253,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_CHARACTER_UPGRADE, tank_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_CHARACTER_UPGRADE, type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_CHARACTER_UPGRADE, upgrade_type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_CHARACTER_UPGRADE, _internal_metadata_),
@@ -267,7 +267,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_CHARACTER_SELECT, tank_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CS_CHARACTER_SELECT, type_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_CHARACTER_SELECT, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -275,7 +275,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_CHARACTER_SELECT, result_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_CHARACTER_SELECT, ec_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_CHARACTER_SELECT, tank_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SC_CHARACTER_SELECT, type_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
@@ -465,17 +465,17 @@ void AddDescriptorsImpl() {
       "reload_time\030\007 \001(\005\"\026\n\024CS_MY_CHARACTER_INF"
       "O\"b\n\024SC_MY_CHARACTER_INFO\022\016\n\006result\030\001 \001("
       "\010\022\n\n\002ec\030\002 \001(\t\022.\n\017character_infos\030\003 \003(\0132\025"
-      ".LOBBY.CHARACTER_INFO\"\?\n\024CS_CHARACTER_UP"
-      "GRADE\022\021\n\ttank_type\030\001 \001(\005\022\024\n\014upgrade_type"
-      "\030\002 \001(\005\"2\n\024SC_CHARACTER_UPGRADE\022\016\n\006result"
-      "\030\001 \001(\010\022\n\n\002ec\030\002 \001(\t\"(\n\023CS_CHARACTER_SELEC"
-      "T\022\021\n\ttank_type\030\001 \001(\005\"D\n\023SC_CHARACTER_SEL"
-      "ECT\022\016\n\006result\030\001 \001(\010\022\n\n\002ec\030\002 \001(\t\022\021\n\ttank_"
-      "type\030\003 \001(\005*2\n\014GameDataType\022\n\n\006test_1\020\000\022\n"
-      "\n\006test_2\020\001\022\n\n\006test_3\020\002b\006proto3"
+      ".LOBBY.CHARACTER_INFO\":\n\024CS_CHARACTER_UP"
+      "GRADE\022\014\n\004type\030\001 \001(\005\022\024\n\014upgrade_type\030\002 \001("
+      "\005\"2\n\024SC_CHARACTER_UPGRADE\022\016\n\006result\030\001 \001("
+      "\010\022\n\n\002ec\030\002 \001(\t\"#\n\023CS_CHARACTER_SELECT\022\014\n\004"
+      "type\030\001 \001(\005\"\?\n\023SC_CHARACTER_SELECT\022\016\n\006res"
+      "ult\030\001 \001(\010\022\n\n\002ec\030\002 \001(\t\022\014\n\004type\030\003 \001(\005*2\n\014G"
+      "ameDataType\022\n\n\006test_1\020\000\022\n\n\006test_2\020\001\022\n\n\006t"
+      "est_3\020\002b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1590);
+      descriptor, 1575);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "LOBBY.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -6842,7 +6842,7 @@ SC_MY_CHARACTER_INFO::character_infos() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CS_CHARACTER_UPGRADE::kTankTypeFieldNumber;
+const int CS_CHARACTER_UPGRADE::kTypeFieldNumber;
 const int CS_CHARACTER_UPGRADE::kUpgradeTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -6859,15 +6859,15 @@ CS_CHARACTER_UPGRADE::CS_CHARACTER_UPGRADE(const CS_CHARACTER_UPGRADE& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&tank_type_, &from.tank_type_,
+  ::memcpy(&type_, &from.type_,
     reinterpret_cast<char*>(&upgrade_type_) -
-    reinterpret_cast<char*>(&tank_type_) + sizeof(upgrade_type_));
+    reinterpret_cast<char*>(&type_) + sizeof(upgrade_type_));
   // @@protoc_insertion_point(copy_constructor:LOBBY.CS_CHARACTER_UPGRADE)
 }
 
 void CS_CHARACTER_UPGRADE::SharedCtor() {
-  ::memset(&tank_type_, 0, reinterpret_cast<char*>(&upgrade_type_) -
-    reinterpret_cast<char*>(&tank_type_) + sizeof(upgrade_type_));
+  ::memset(&type_, 0, reinterpret_cast<char*>(&upgrade_type_) -
+    reinterpret_cast<char*>(&type_) + sizeof(upgrade_type_));
   _cached_size_ = 0;
 }
 
@@ -6904,8 +6904,8 @@ CS_CHARACTER_UPGRADE* CS_CHARACTER_UPGRADE::New(::google::protobuf::Arena* arena
 
 void CS_CHARACTER_UPGRADE::Clear() {
 // @@protoc_insertion_point(message_clear_start:LOBBY.CS_CHARACTER_UPGRADE)
-  ::memset(&tank_type_, 0, reinterpret_cast<char*>(&upgrade_type_) -
-    reinterpret_cast<char*>(&tank_type_) + sizeof(upgrade_type_));
+  ::memset(&type_, 0, reinterpret_cast<char*>(&upgrade_type_) -
+    reinterpret_cast<char*>(&type_) + sizeof(upgrade_type_));
 }
 
 bool CS_CHARACTER_UPGRADE::MergePartialFromCodedStream(
@@ -6918,14 +6918,14 @@ bool CS_CHARACTER_UPGRADE::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 tank_type = 1;
+      // int32 type = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &tank_type_)));
+                 input, &type_)));
         } else {
           goto handle_unusual;
         }
@@ -6973,9 +6973,9 @@ void CS_CHARACTER_UPGRADE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 tank_type = 1;
-  if (this->tank_type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->tank_type(), output);
+  // int32 type = 1;
+  if (this->type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->type(), output);
   }
 
   // int32 upgrade_type = 2;
@@ -6992,9 +6992,9 @@ void CS_CHARACTER_UPGRADE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 tank_type = 1;
-  if (this->tank_type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->tank_type(), target);
+  // int32 type = 1;
+  if (this->type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->type(), target);
   }
 
   // int32 upgrade_type = 2;
@@ -7010,11 +7010,11 @@ size_t CS_CHARACTER_UPGRADE::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:LOBBY.CS_CHARACTER_UPGRADE)
   size_t total_size = 0;
 
-  // int32 tank_type = 1;
-  if (this->tank_type() != 0) {
+  // int32 type = 1;
+  if (this->type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->tank_type());
+        this->type());
   }
 
   // int32 upgrade_type = 2;
@@ -7053,8 +7053,8 @@ void CS_CHARACTER_UPGRADE::MergeFrom(const CS_CHARACTER_UPGRADE& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.tank_type() != 0) {
-    set_tank_type(from.tank_type());
+  if (from.type() != 0) {
+    set_type(from.type());
   }
   if (from.upgrade_type() != 0) {
     set_upgrade_type(from.upgrade_type());
@@ -7084,7 +7084,7 @@ void CS_CHARACTER_UPGRADE::Swap(CS_CHARACTER_UPGRADE* other) {
   InternalSwap(other);
 }
 void CS_CHARACTER_UPGRADE::InternalSwap(CS_CHARACTER_UPGRADE* other) {
-  std::swap(tank_type_, other->tank_type_);
+  std::swap(type_, other->type_);
   std::swap(upgrade_type_, other->upgrade_type_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -7097,18 +7097,18 @@ void CS_CHARACTER_UPGRADE::InternalSwap(CS_CHARACTER_UPGRADE* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // CS_CHARACTER_UPGRADE
 
-// int32 tank_type = 1;
-void CS_CHARACTER_UPGRADE::clear_tank_type() {
-  tank_type_ = 0;
+// int32 type = 1;
+void CS_CHARACTER_UPGRADE::clear_type() {
+  type_ = 0;
 }
-::google::protobuf::int32 CS_CHARACTER_UPGRADE::tank_type() const {
-  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_UPGRADE.tank_type)
-  return tank_type_;
+::google::protobuf::int32 CS_CHARACTER_UPGRADE::type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_UPGRADE.type)
+  return type_;
 }
-void CS_CHARACTER_UPGRADE::set_tank_type(::google::protobuf::int32 value) {
+void CS_CHARACTER_UPGRADE::set_type(::google::protobuf::int32 value) {
   
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_UPGRADE.tank_type)
+  type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_UPGRADE.type)
 }
 
 // int32 upgrade_type = 2;
@@ -7472,7 +7472,7 @@ void SC_CHARACTER_UPGRADE::set_allocated_ec(::std::string* ec) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CS_CHARACTER_SELECT::kTankTypeFieldNumber;
+const int CS_CHARACTER_SELECT::kTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 CS_CHARACTER_SELECT::CS_CHARACTER_SELECT()
@@ -7488,12 +7488,12 @@ CS_CHARACTER_SELECT::CS_CHARACTER_SELECT(const CS_CHARACTER_SELECT& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  tank_type_ = from.tank_type_;
+  type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:LOBBY.CS_CHARACTER_SELECT)
 }
 
 void CS_CHARACTER_SELECT::SharedCtor() {
-  tank_type_ = 0;
+  type_ = 0;
   _cached_size_ = 0;
 }
 
@@ -7530,7 +7530,7 @@ CS_CHARACTER_SELECT* CS_CHARACTER_SELECT::New(::google::protobuf::Arena* arena) 
 
 void CS_CHARACTER_SELECT::Clear() {
 // @@protoc_insertion_point(message_clear_start:LOBBY.CS_CHARACTER_SELECT)
-  tank_type_ = 0;
+  type_ = 0;
 }
 
 bool CS_CHARACTER_SELECT::MergePartialFromCodedStream(
@@ -7543,14 +7543,14 @@ bool CS_CHARACTER_SELECT::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 tank_type = 1;
+      // int32 type = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &tank_type_)));
+                 input, &type_)));
         } else {
           goto handle_unusual;
         }
@@ -7584,9 +7584,9 @@ void CS_CHARACTER_SELECT::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 tank_type = 1;
-  if (this->tank_type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->tank_type(), output);
+  // int32 type = 1;
+  if (this->type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->type(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:LOBBY.CS_CHARACTER_SELECT)
@@ -7598,9 +7598,9 @@ void CS_CHARACTER_SELECT::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 tank_type = 1;
-  if (this->tank_type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->tank_type(), target);
+  // int32 type = 1;
+  if (this->type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->type(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:LOBBY.CS_CHARACTER_SELECT)
@@ -7611,11 +7611,11 @@ size_t CS_CHARACTER_SELECT::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:LOBBY.CS_CHARACTER_SELECT)
   size_t total_size = 0;
 
-  // int32 tank_type = 1;
-  if (this->tank_type() != 0) {
+  // int32 type = 1;
+  if (this->type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->tank_type());
+        this->type());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -7647,8 +7647,8 @@ void CS_CHARACTER_SELECT::MergeFrom(const CS_CHARACTER_SELECT& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.tank_type() != 0) {
-    set_tank_type(from.tank_type());
+  if (from.type() != 0) {
+    set_type(from.type());
   }
 }
 
@@ -7675,7 +7675,7 @@ void CS_CHARACTER_SELECT::Swap(CS_CHARACTER_SELECT* other) {
   InternalSwap(other);
 }
 void CS_CHARACTER_SELECT::InternalSwap(CS_CHARACTER_SELECT* other) {
-  std::swap(tank_type_, other->tank_type_);
+  std::swap(type_, other->type_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -7687,18 +7687,18 @@ void CS_CHARACTER_SELECT::InternalSwap(CS_CHARACTER_SELECT* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // CS_CHARACTER_SELECT
 
-// int32 tank_type = 1;
-void CS_CHARACTER_SELECT::clear_tank_type() {
-  tank_type_ = 0;
+// int32 type = 1;
+void CS_CHARACTER_SELECT::clear_type() {
+  type_ = 0;
 }
-::google::protobuf::int32 CS_CHARACTER_SELECT::tank_type() const {
-  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_SELECT.tank_type)
-  return tank_type_;
+::google::protobuf::int32 CS_CHARACTER_SELECT::type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_SELECT.type)
+  return type_;
 }
-void CS_CHARACTER_SELECT::set_tank_type(::google::protobuf::int32 value) {
+void CS_CHARACTER_SELECT::set_type(::google::protobuf::int32 value) {
   
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_SELECT.tank_type)
+  type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_SELECT.type)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -7708,7 +7708,7 @@ void CS_CHARACTER_SELECT::set_tank_type(::google::protobuf::int32 value) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SC_CHARACTER_SELECT::kResultFieldNumber;
 const int SC_CHARACTER_SELECT::kEcFieldNumber;
-const int SC_CHARACTER_SELECT::kTankTypeFieldNumber;
+const int SC_CHARACTER_SELECT::kTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SC_CHARACTER_SELECT::SC_CHARACTER_SELECT()
@@ -7729,15 +7729,15 @@ SC_CHARACTER_SELECT::SC_CHARACTER_SELECT(const SC_CHARACTER_SELECT& from)
     ec_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ec_);
   }
   ::memcpy(&result_, &from.result_,
-    reinterpret_cast<char*>(&tank_type_) -
-    reinterpret_cast<char*>(&result_) + sizeof(tank_type_));
+    reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&result_) + sizeof(type_));
   // @@protoc_insertion_point(copy_constructor:LOBBY.SC_CHARACTER_SELECT)
 }
 
 void SC_CHARACTER_SELECT::SharedCtor() {
   ec_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&result_, 0, reinterpret_cast<char*>(&tank_type_) -
-    reinterpret_cast<char*>(&result_) + sizeof(tank_type_));
+  ::memset(&result_, 0, reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&result_) + sizeof(type_));
   _cached_size_ = 0;
 }
 
@@ -7776,8 +7776,8 @@ SC_CHARACTER_SELECT* SC_CHARACTER_SELECT::New(::google::protobuf::Arena* arena) 
 void SC_CHARACTER_SELECT::Clear() {
 // @@protoc_insertion_point(message_clear_start:LOBBY.SC_CHARACTER_SELECT)
   ec_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&result_, 0, reinterpret_cast<char*>(&tank_type_) -
-    reinterpret_cast<char*>(&result_) + sizeof(tank_type_));
+  ::memset(&result_, 0, reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&result_) + sizeof(type_));
 }
 
 bool SC_CHARACTER_SELECT::MergePartialFromCodedStream(
@@ -7820,14 +7820,14 @@ bool SC_CHARACTER_SELECT::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 tank_type = 3;
+      // int32 type = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(24u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &tank_type_)));
+                 input, &type_)));
         } else {
           goto handle_unusual;
         }
@@ -7876,9 +7876,9 @@ void SC_CHARACTER_SELECT::SerializeWithCachedSizes(
       2, this->ec(), output);
   }
 
-  // int32 tank_type = 3;
-  if (this->tank_type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->tank_type(), output);
+  // int32 type = 3;
+  if (this->type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->type(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:LOBBY.SC_CHARACTER_SELECT)
@@ -7906,9 +7906,9 @@ void SC_CHARACTER_SELECT::SerializeWithCachedSizes(
         2, this->ec(), target);
   }
 
-  // int32 tank_type = 3;
-  if (this->tank_type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->tank_type(), target);
+  // int32 type = 3;
+  if (this->type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->type(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:LOBBY.SC_CHARACTER_SELECT)
@@ -7931,11 +7931,11 @@ size_t SC_CHARACTER_SELECT::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  // int32 tank_type = 3;
-  if (this->tank_type() != 0) {
+  // int32 type = 3;
+  if (this->type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->tank_type());
+        this->type());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -7974,8 +7974,8 @@ void SC_CHARACTER_SELECT::MergeFrom(const SC_CHARACTER_SELECT& from) {
   if (from.result() != 0) {
     set_result(from.result());
   }
-  if (from.tank_type() != 0) {
-    set_tank_type(from.tank_type());
+  if (from.type() != 0) {
+    set_type(from.type());
   }
 }
 
@@ -8004,7 +8004,7 @@ void SC_CHARACTER_SELECT::Swap(SC_CHARACTER_SELECT* other) {
 void SC_CHARACTER_SELECT::InternalSwap(SC_CHARACTER_SELECT* other) {
   ec_.Swap(&other->ec_);
   std::swap(result_, other->result_);
-  std::swap(tank_type_, other->tank_type_);
+  std::swap(type_, other->type_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -8083,18 +8083,18 @@ void SC_CHARACTER_SELECT::set_allocated_ec(::std::string* ec) {
   // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_CHARACTER_SELECT.ec)
 }
 
-// int32 tank_type = 3;
-void SC_CHARACTER_SELECT::clear_tank_type() {
-  tank_type_ = 0;
+// int32 type = 3;
+void SC_CHARACTER_SELECT::clear_type() {
+  type_ = 0;
 }
-::google::protobuf::int32 SC_CHARACTER_SELECT::tank_type() const {
-  // @@protoc_insertion_point(field_get:LOBBY.SC_CHARACTER_SELECT.tank_type)
-  return tank_type_;
+::google::protobuf::int32 SC_CHARACTER_SELECT::type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_CHARACTER_SELECT.type)
+  return type_;
 }
-void SC_CHARACTER_SELECT::set_tank_type(::google::protobuf::int32 value) {
+void SC_CHARACTER_SELECT::set_type(::google::protobuf::int32 value) {
   
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:LOBBY.SC_CHARACTER_SELECT.tank_type)
+  type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_CHARACTER_SELECT.type)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

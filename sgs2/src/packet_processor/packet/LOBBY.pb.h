@@ -1945,11 +1945,11 @@ class CS_CHARACTER_UPGRADE : public ::google::protobuf::Message /* @@protoc_inse
 
   // accessors -------------------------------------------------------
 
-  // int32 tank_type = 1;
-  void clear_tank_type();
-  static const int kTankTypeFieldNumber = 1;
-  ::google::protobuf::int32 tank_type() const;
-  void set_tank_type(::google::protobuf::int32 value);
+  // int32 type = 1;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
 
   // int32 upgrade_type = 2;
   void clear_upgrade_type();
@@ -1961,7 +1961,7 @@ class CS_CHARACTER_UPGRADE : public ::google::protobuf::Message /* @@protoc_inse
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int32 tank_type_;
+  ::google::protobuf::int32 type_;
   ::google::protobuf::int32 upgrade_type_;
   mutable int _cached_size_;
   friend struct protobuf_LOBBY_2eproto::TableStruct;
@@ -2127,17 +2127,17 @@ class CS_CHARACTER_SELECT : public ::google::protobuf::Message /* @@protoc_inser
 
   // accessors -------------------------------------------------------
 
-  // int32 tank_type = 1;
-  void clear_tank_type();
-  static const int kTankTypeFieldNumber = 1;
-  ::google::protobuf::int32 tank_type() const;
-  void set_tank_type(::google::protobuf::int32 value);
+  // int32 type = 1;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:LOBBY.CS_CHARACTER_SELECT)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int32 tank_type_;
+  ::google::protobuf::int32 type_;
   mutable int _cached_size_;
   friend struct protobuf_LOBBY_2eproto::TableStruct;
 };
@@ -2227,11 +2227,11 @@ class SC_CHARACTER_SELECT : public ::google::protobuf::Message /* @@protoc_inser
   bool result() const;
   void set_result(bool value);
 
-  // int32 tank_type = 3;
-  void clear_tank_type();
-  static const int kTankTypeFieldNumber = 3;
-  ::google::protobuf::int32 tank_type() const;
-  void set_tank_type(::google::protobuf::int32 value);
+  // int32 type = 3;
+  void clear_type();
+  static const int kTypeFieldNumber = 3;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:LOBBY.SC_CHARACTER_SELECT)
  private:
@@ -2239,7 +2239,7 @@ class SC_CHARACTER_SELECT : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr ec_;
   bool result_;
-  ::google::protobuf::int32 tank_type_;
+  ::google::protobuf::int32 type_;
   mutable int _cached_size_;
   friend struct protobuf_LOBBY_2eproto::TableStruct;
 };
@@ -3392,18 +3392,18 @@ SC_MY_CHARACTER_INFO::character_infos() const {
 
 // CS_CHARACTER_UPGRADE
 
-// int32 tank_type = 1;
-inline void CS_CHARACTER_UPGRADE::clear_tank_type() {
-  tank_type_ = 0;
+// int32 type = 1;
+inline void CS_CHARACTER_UPGRADE::clear_type() {
+  type_ = 0;
 }
-inline ::google::protobuf::int32 CS_CHARACTER_UPGRADE::tank_type() const {
-  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_UPGRADE.tank_type)
-  return tank_type_;
+inline ::google::protobuf::int32 CS_CHARACTER_UPGRADE::type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_UPGRADE.type)
+  return type_;
 }
-inline void CS_CHARACTER_UPGRADE::set_tank_type(::google::protobuf::int32 value) {
+inline void CS_CHARACTER_UPGRADE::set_type(::google::protobuf::int32 value) {
   
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_UPGRADE.tank_type)
+  type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_UPGRADE.type)
 }
 
 // int32 upgrade_type = 2;
@@ -3495,18 +3495,18 @@ inline void SC_CHARACTER_UPGRADE::set_allocated_ec(::std::string* ec) {
 
 // CS_CHARACTER_SELECT
 
-// int32 tank_type = 1;
-inline void CS_CHARACTER_SELECT::clear_tank_type() {
-  tank_type_ = 0;
+// int32 type = 1;
+inline void CS_CHARACTER_SELECT::clear_type() {
+  type_ = 0;
 }
-inline ::google::protobuf::int32 CS_CHARACTER_SELECT::tank_type() const {
-  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_SELECT.tank_type)
-  return tank_type_;
+inline ::google::protobuf::int32 CS_CHARACTER_SELECT::type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.CS_CHARACTER_SELECT.type)
+  return type_;
 }
-inline void CS_CHARACTER_SELECT::set_tank_type(::google::protobuf::int32 value) {
+inline void CS_CHARACTER_SELECT::set_type(::google::protobuf::int32 value) {
   
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_SELECT.tank_type)
+  type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.CS_CHARACTER_SELECT.type)
 }
 
 // -------------------------------------------------------------------
@@ -3580,18 +3580,18 @@ inline void SC_CHARACTER_SELECT::set_allocated_ec(::std::string* ec) {
   // @@protoc_insertion_point(field_set_allocated:LOBBY.SC_CHARACTER_SELECT.ec)
 }
 
-// int32 tank_type = 3;
-inline void SC_CHARACTER_SELECT::clear_tank_type() {
-  tank_type_ = 0;
+// int32 type = 3;
+inline void SC_CHARACTER_SELECT::clear_type() {
+  type_ = 0;
 }
-inline ::google::protobuf::int32 SC_CHARACTER_SELECT::tank_type() const {
-  // @@protoc_insertion_point(field_get:LOBBY.SC_CHARACTER_SELECT.tank_type)
-  return tank_type_;
+inline ::google::protobuf::int32 SC_CHARACTER_SELECT::type() const {
+  // @@protoc_insertion_point(field_get:LOBBY.SC_CHARACTER_SELECT.type)
+  return type_;
 }
-inline void SC_CHARACTER_SELECT::set_tank_type(::google::protobuf::int32 value) {
+inline void SC_CHARACTER_SELECT::set_type(::google::protobuf::int32 value) {
   
-  tank_type_ = value;
-  // @@protoc_insertion_point(field_set:LOBBY.SC_CHARACTER_SELECT.tank_type)
+  type_ = value;
+  // @@protoc_insertion_point(field_set:LOBBY.SC_CHARACTER_SELECT.type)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
