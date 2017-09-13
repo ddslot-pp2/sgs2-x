@@ -20,6 +20,11 @@ void handle_CS_CHARACTER_UPGRADE(std::shared_ptr<server_session> session, const 
         session->close();
     };
 
+    auto character_type = read.type();
+    auto upgrade_type = read.upgrade_type();
+
+    // TODO(pp2) 케릭터 순번 및 업그레이드 정의 다시해서 채워야함
+
     auto acc = session->get_account();
 
     if (!acc) 
