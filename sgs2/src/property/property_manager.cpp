@@ -78,7 +78,7 @@ int property_manager::get_default_character_medal_info(int index) const
     return default_character_medal_info_[index];
 }
 
-void property_manager::load_character_stat(const std::string& path)
+void property_manager::LoadCharacterStatData(const std::string& path)
 {
     namespace property_tree = boost::property_tree;
     property_tree::ptree pt;
@@ -96,7 +96,7 @@ void property_manager::load_character_stat(const std::string& path)
                     if (max_hp_stat.first == "max_hp")
                     {
                         auto v = max_hp_stat.second;
-                        auto max_hp = v.get_value<int>();
+                        auto max_hp = v.get_value<float>();
                         stat.max_hp_stat_container.push_back(max_hp);
                     }
                 }
@@ -106,7 +106,7 @@ void property_manager::load_character_stat(const std::string& path)
                     if (speed_stat.first == "speed")
                     {
                         auto v = speed_stat.second;
-                        auto speed = v.get_value<int>();
+                        auto speed = v.get_value<float>();
                         stat.speed_stat_container.push_back(speed);
                     }
                 }
@@ -116,7 +116,7 @@ void property_manager::load_character_stat(const std::string& path)
                     if (bullet_speed_stat.first == "bullet_speed")
                     {
                         auto v = bullet_speed_stat.second;
-                        auto bullet_speed = v.get_value<int>();
+                        auto bullet_speed = v.get_value<float>();
                         stat.bullet_speed_stat_container.push_back(bullet_speed);
                     }
                 }
@@ -126,7 +126,7 @@ void property_manager::load_character_stat(const std::string& path)
                     if (bullet_power_stat.first == "bullet_power")
                     {
                         auto v = bullet_power_stat.second;
-                        auto bullet_power = v.get_value<int>();
+                        auto bullet_power = v.get_value<float>();
                         stat.bullet_power_stat_container.push_back(bullet_power);
                     }
                 }
@@ -136,7 +136,7 @@ void property_manager::load_character_stat(const std::string& path)
                     if (bullet_distance_stat.first == "bullet_distance")
                     {
                         auto v = bullet_distance_stat.second;
-                        auto bullet_distance = v.get_value<int>();
+                        auto bullet_distance = v.get_value<float>();
                         stat.bullet_distance_stat_container.push_back(bullet_distance);
                     }
                 }
@@ -162,26 +162,19 @@ void property_manager::load_character_stat(const std::string& path)
 
 }
 
-character_stat_result property_manager::get_stat(int character_type, character_level_info level_info_tup) const
-{
-    if (character_stat_.size() - 1 > character_type || character_type < 0)  return boost::none;
+boost::optional<CharacterStat> property_manager::CharacterStatByLevel(int type, const CharacterLevelInfo& level_info) const {
+    if (character_stat_.size() - 1 > type || type < 0)  return boost::none;
 
-    // out of range üũ
-    auto max_hp_level          = std::get<to_constexpr_index(buff_type::max_hp)>(level_info_tup);
-    auto speed_level           = std::get<to_constexpr_index(buff_type::character_speed)>(level_info_tup);
-    auto bullet_speed_level    = std::get<to_constexpr_index(buff_type::bullet_speed)>(level_info_tup);
-    auto bullet_power_level    = std::get<to_constexpr_index(buff_type::bullet_power)>(level_info_tup);
-    auto bullet_distance_level = std::get<to_constexpr_index(buff_type::bullet_distance)>(level_info_tup);
-    auto reload_time_level     = std::get<to_constexpr_index(buff_type::reload_time)>(level_info_tup);
+    auto& character_stat = character_stat_[type];
 
-    auto& character_stat = character_stat_[character_type];
-    return std::make_tuple(
-        character_stat.max_hp_stat_container[max_hp_level],
-        character_stat.speed_stat_container[speed_level],
-        character_stat.bullet_speed_stat_container[bullet_speed_level],
-        character_stat.bullet_power_stat_container[bullet_power_level],
-        character_stat.bullet_distance_stat_container[bullet_distance_level],
-        character_stat.reload_time_stat_container[reload_time_level]);
+    boost::optional<CharacterStat> stat;
+    stat->max_hp = character_stat.max_hp_stat_container[level_info.max_hp_level - 1];
+    stat->speed = character_stat.speed_stat_container[level_info.speed_level - 1];
+    stat->bullet_speed = character_stat.bullet_speed_stat_container[level_info.bullet_speed_level - 1];
+    stat->bullet_power = character_stat.bullet_power_stat_container[level_info.bullet_power_level - 1];
+    stat->bullet_distance = character_stat.bullet_distance_stat_container[level_info.bullet_distance_level - 1];
+    stat->reload_time = character_stat.reload_time_stat_container[level_info.reload_time_level - 1];
+    return stat;
 }
 
 void property_manager::to_print_stat() const
@@ -193,35 +186,35 @@ void property_manager::to_print_stat() const
         printf("----- max_hp_stat -----\n");
         for (auto i = 0; i < cstat.max_hp_stat_container.size(); ++i)
         {
-            printf("%d, ", cstat.max_hp_stat_container[i]);
+            printf("%f, ", cstat.max_hp_stat_container[i]);
         }
         printf("\n");
 
         printf("----- speed_stat -----\n");
         for (auto i = 0; i < cstat.speed_stat_container.size(); ++i)
         {
-            printf("%d, ", cstat.speed_stat_container[i]);
+            printf("%f, ", cstat.speed_stat_container[i]);
         }
         printf("\n");
 
         printf("----- bullet_speed_stat -----\n");
         for (auto i = 0; i < cstat.bullet_speed_stat_container.size(); ++i)
         {
-            printf("%d, ", cstat.bullet_speed_stat_container[i]);
+            printf("%f, ", cstat.bullet_speed_stat_container[i]);
         }
         printf("\n");
 
         printf("----- bullet_power_stat -----\n");
         for (auto i = 0; i < cstat.bullet_power_stat_container.size(); ++i)
         {
-            printf("%d, ", cstat.bullet_power_stat_container[i]);
+            printf("%f, ", cstat.bullet_power_stat_container[i]);
         }
         printf("\n");
 
         printf("----- bullet_distance_stat -----\n");
         for (auto i = 0; i < cstat.bullet_distance_stat_container.size(); ++i)
         {
-            printf("%d, ", cstat.bullet_distance_stat_container[i]);
+            printf("%f, ", cstat.bullet_distance_stat_container[i]);
         }
         printf("\n");
 

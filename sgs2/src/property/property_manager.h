@@ -9,17 +9,33 @@
 #include "../predeclare.h"
 
 using character_level_info = std::tuple<int, int, int, int, int, int>;
+struct CharacterLevelInfo {
+    int max_hp_level;
+    int speed_level;
+    int bullet_speed_level;
+    int bullet_power_level;
+    int bullet_distance_level;
+    int reload_time_level;
+};
 using character_stat_result = boost::optional<std::tuple<int, int, int, int, int, float>>;
+struct CharacterStat {
+    float max_hp;
+    float speed;
+    float bullet_speed;
+    float bullet_power;
+    float bullet_distance;
+    float reload_time;
+};
 
 //enum class stat_type : int { max_hp, speed, bullet_speed, bullet_power, bullet_distance, reload_time };
 
 struct character_stat
 {
-    std::vector<int> max_hp_stat_container;
-    std::vector<int> speed_stat_container;
-    std::vector<int> bullet_speed_stat_container;
-    std::vector<int> bullet_power_stat_container;
-    std::vector<int> bullet_distance_stat_container;
+    std::vector<float> max_hp_stat_container;
+    std::vector<float> speed_stat_container;
+    std::vector<float> bullet_speed_stat_container;
+    std::vector<float> bullet_power_stat_container;
+    std::vector<float> bullet_distance_stat_container;
     std::vector<float> reload_time_stat_container;
 };
 
@@ -53,8 +69,8 @@ public:
     std::shared_ptr<default_stat_info> get_default_stat_info(int index) const;
     int get_default_character_medal_info(int index) const;
 
-    void load_character_stat(const std::string& path);
-    character_stat_result get_stat(int character_type, character_level_info level_info) const;
+    void LoadCharacterStatData(const std::string& path);
+    boost::optional<CharacterStat> CharacterStatByLevel(int character_type, const CharacterLevelInfo& level_info) const;
     void to_print_stat() const;
 
 private:

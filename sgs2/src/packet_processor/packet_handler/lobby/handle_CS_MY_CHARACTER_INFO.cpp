@@ -12,8 +12,7 @@
 
 void handle_CS_MY_CHARACTER_INFO(std::shared_ptr<server_session> session, const LOBBY::CS_MY_CHARACTER_INFO& read)
 {
-    auto error_handler = [session] (std::string ec)
-    {
+    auto error_handler = [session] (std::string ec) {
         LOBBY::SC_MY_CHARACTER_INFO send;
     
         send_packet(session, opcode::SC_MY_CHARACTER_INFO, send);
@@ -22,8 +21,7 @@ void handle_CS_MY_CHARACTER_INFO(std::shared_ptr<server_session> session, const 
 
     auto acc = session->get_account();
 
-    if (!acc) 
-    {
+    if (!acc)  {
         error_handler("invalid account");
         return;
     }
@@ -34,8 +32,7 @@ void handle_CS_MY_CHARACTER_INFO(std::shared_ptr<server_session> session, const 
     auto res = execute_query(q);
     //auto res = execute_query("call sp_get_add_user_info('adfsfwefwef2', '1111', 'aa', 1);");
 
-    if (!res)
-    {
+    if (!res) {
         error_handler("error sp_get_all_character_info query");
         return;
     }
@@ -44,8 +41,7 @@ void handle_CS_MY_CHARACTER_INFO(std::shared_ptr<server_session> session, const 
     send.set_result(true);
     send.set_ec("");
 
-    while (res->next())
-    {
+    while (res->next()) {
         auto character_info = send.add_character_infos();
         character_info->set_type(res->getUInt("character_type"));
         character_info->set_max_hp(res->getUInt("max_hp"));
@@ -55,7 +51,6 @@ void handle_CS_MY_CHARACTER_INFO(std::shared_ptr<server_session> session, const 
         character_info->set_bullet_distance(res->getUInt("bullet_distance"));
         character_info->set_reload_time(res->getUInt("reload_time"));
     }
-   
 
     send_packet(session, opcode::SC_MY_CHARACTER_INFO, send);
 }

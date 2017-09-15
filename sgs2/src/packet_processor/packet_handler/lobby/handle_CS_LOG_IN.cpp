@@ -9,11 +9,10 @@
 #include "../../../../../core/src/timer/timer_helper.hpp"
 #include "../../../mysql/mysql_connector.h"
 #include "../../../mysql/query_helper.h"
+#include "../../../property/property_manager.h"
 
-void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_LOG_IN& read)
-{
-    auto error_handler = [session]
-    {
+void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_LOG_IN& read) {
+    auto error_handler = [session] {
         LOBBY::SC_LOG_IN send;
         send.set_result(false);
         send_packet(session, opcode::SC_LOG_IN, send);
@@ -38,8 +37,7 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     auto res = execute_query(q);
     //auto res = execute_query("call sp_get_add_user_info('adfsfwefwef2', '1111', 'aa', 1);");
 
-    if (!res)
-    {
+    if (!res) {
         error_handler();
         return;
     }
@@ -47,8 +45,7 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     account_info acc_info;
     auto character_type = 1;
     
-    while (res->next())
-    {
+    while (res->next()) {
         auto uid = res->getUInt64("uid");
         acc_info.id = uid;
         acc_info.medal_count = res->getUInt("medal_count");
@@ -67,8 +64,7 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
     account_manager::instance().leave_account(acc_info.id);
 
     auto acc = account_manager::instance().add_account(acc_info);
-    if (!acc)
-    {
+    if (!acc) {
         error_handler();
         return;
     }
@@ -82,23 +78,34 @@ void handle_CS_LOG_IN(std::shared_ptr<server_session> session, const LOBBY::CS_L
 
     q = make_query("sp_get_character_info", acc_id, character_type);
     res = execute_query(q);
-    if (!res)
-    {
+    if (!res) {
         error_handler();
         return;
     }
 
-    while (res->next())
-    {
+    while (res->next()) {
         // 추가 능력치이며 character_type의 의해 결정됨
-        stat_info stat;
-        stat.max_hp          = res->getUInt("max_hp");
-        stat.speed           = static_cast<float>(res->getUInt("speed"));
-        stat.bullet_speed    = static_cast<float>(res->getUInt("bullet_speed"));
-        stat.bullet_power    = static_cast<float>(res->getUInt("bullet_power"));
-        stat.bullet_distance = static_cast<float>(res->getUInt("bullet_distance"));
-        stat.reload_time     = static_cast<float>(res->getUInt("reload_time"));
+        CharacterLevelInfo level_info;
+        level_info.max_hp_level = res->getUInt("max_hp");
+        level_info.speed_level = res->getUInt("speed");
+        level_info.bullet_speed_level = res->getUInt("bullet_speed");
+        level_info.bullet_power_level = res->getUInt("bullet_power");
+        level_info.bullet_distance_level = res->getUInt("bullet_distance");
+        level_info.reload_time_level = res->getUInt("reload_time");
 
+        auto character_stat = property_manager::instance().CharacterStatByLevel(character_type, level_info);
+        if (!character_stat) {
+            // error
+            return;
+        }
+
+        stat_info stat;
+        stat.max_hp = character_stat->max_hp;
+        stat.speed = character_stat->speed;
+        stat.bullet_speed = character_stat->bullet_speed;
+        stat.bullet_power = character_stat->bullet_power;
+        stat.bullet_distance = character_stat->bullet_distance;
+        stat.reload_time = character_stat->reload_time;
         session->set_stat_info(stat);
     }
 
