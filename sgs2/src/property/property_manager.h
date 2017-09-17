@@ -7,8 +7,8 @@
 #include <memory>
 #include <boost/optional.hpp>
 #include "../predeclare.h"
+#include "../../core/src/util/vector3.h"
 
-using character_level_info = std::tuple<int, int, int, int, int, int>;
 struct CharacterLevelInfo {
     int max_hp_level;
     int speed_level;
@@ -17,21 +17,22 @@ struct CharacterLevelInfo {
     int bullet_distance_level;
     int reload_time_level;
 };
-using character_stat_result = boost::optional<std::tuple<int, int, int, int, int, float>>;
+
 struct CharacterStat {
-    float max_hp;
+    int max_hp;
     float speed;
     float bullet_speed;
     float bullet_power;
     float bullet_distance;
     float reload_time;
+    vector3 size;
 };
 
 //enum class stat_type : int { max_hp, speed, bullet_speed, bullet_power, bullet_distance, reload_time };
 
 struct character_stat
 {
-    std::vector<float> max_hp_stat_container;
+    std::vector<int> max_hp_stat_container;
     std::vector<float> speed_stat_container;
     std::vector<float> bullet_speed_stat_container;
     std::vector<float> bullet_power_stat_container;
@@ -64,9 +65,6 @@ public:
     property_manager(const property_manager& other) = delete;
     property_manager& operator=(const property_manager& other) = delete;
 
-    bool read_xml(const std::wstring& path);
-
-    std::shared_ptr<default_stat_info> get_default_stat_info(int index) const;
     int get_default_character_medal_info(int index) const;
 
     void LoadCharacterStatData(const std::string& path);

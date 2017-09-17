@@ -86,26 +86,19 @@ void handle_CS_PURCHASE_CHARACTER(std::shared_ptr<server_session> session, const
         // 추가 능력치이며 character_type의 의해 결정됨
         CharacterLevelInfo level_info;
         level_info.max_hp_level = res->getUInt("max_hp");
-        level_info.speed_level = static_cast<float>(res->getUInt("speed"));
-        level_info.bullet_speed_level = static_cast<float>(res->getUInt("bullet_speed"));
-        level_info.bullet_power_level = static_cast<float>(res->getUInt("bullet_power"));
-        level_info.bullet_distance_level = static_cast<float>(res->getUInt("bullet_distance"));
-        level_info.reload_time_level = static_cast<float>(res->getUInt("reload_time"));
+        level_info.speed_level = res->getUInt("speed");
+        level_info.bullet_speed_level = res->getUInt("bullet_speed");
+        level_info.bullet_power_level = res->getUInt("bullet_power");
+        level_info.bullet_distance_level = res->getUInt("bullet_distance");
+        level_info.reload_time_level = res->getUInt("reload_time");
 
-        auto character_stat = property_manager::instance().CharacterStatByLevel(character_type, level_info);
-        if (!character_stat) {
+        auto stat = property_manager::instance().CharacterStatByLevel(character_type, level_info);
+        if (!stat) {
             // error
             return;
         }
 
-        stat_info stat;
-        stat.max_hp = character_stat->max_hp;
-        stat.speed = character_stat->speed;
-        stat.bullet_speed = character_stat->bullet_speed;
-        stat.bullet_power = character_stat->bullet_power;
-        stat.bullet_distance = character_stat->bullet_distance;
-        stat.reload_time = character_stat->reload_time;
-        session->set_stat_info(stat);
+        session->set_stat_info(*stat);
     }
 
     // 구매 결과값을 전달

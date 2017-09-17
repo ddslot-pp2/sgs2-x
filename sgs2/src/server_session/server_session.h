@@ -6,6 +6,7 @@
 #include "../object/character.h"
 #include "../account/account.h"
 
+struct CharacterStat;
 using boost::asio::ip::tcp;
 
 using character_ptr = std::shared_ptr<character>;
@@ -33,7 +34,7 @@ public:
     void set_character_type(int type) { character_type_ = type; }
     int  get_character_type() const   { return character_type_; }
 
-    void set_stat_info(const stat_info& info);
+    void set_stat_info(const CharacterStat& info);
     std::shared_ptr<stat_info> get_stat_info() const;
 
     void set_account_id(account_id id);

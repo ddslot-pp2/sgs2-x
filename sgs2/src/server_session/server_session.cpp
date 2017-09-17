@@ -6,6 +6,7 @@
 #include "../mysql/mysql_connector.h"
 #include "../mysql/query_helper.h"
 #include "../../../core/src/timer/timer_helper.hpp"
+#include "../property/property_manager.h"
 
 server_session::server_session(tcp::socket socket) : session(std::move(socket)), account_id_(0), account_(nullptr), character_(nullptr), character_type_(0), ping_time_(8000), ping_timer_(std::make_unique<timer_ptr::element_type>(network::io_service())), ping_(true)
 {
@@ -99,15 +100,16 @@ std::shared_ptr<character> server_session::get_character() const
     return character_;
 }
 
-void server_session::set_stat_info(const stat_info& info)
+void server_session::set_stat_info(const CharacterStat& character_stat)
 {
     auto stat = std::make_shared<stat_info>();
-    stat->max_hp          = info.max_hp.load();
-    stat->speed           = info.speed.load();
-    stat->bullet_speed    = info.bullet_speed.load();
-    stat->bullet_power    = info.bullet_power.load();
-    stat->bullet_distance = info.bullet_distance.load();
-    stat->reload_time     = info.reload_time.load();
+    stat->max_hp = character_stat.max_hp;
+    stat->speed = character_stat.speed;
+    stat->bullet_speed = character_stat.bullet_speed;
+    stat->bullet_power = character_stat.bullet_power;
+    stat->bullet_distance = character_stat.bullet_distance;
+    stat->reload_time = character_stat.reload_time;
+    stat->size = character_stat.size;
 
     // 로직에서 get / set 이 동시에 일어나면 안됨 => 동시에 일어나면 atomic_exchange 사용해야함
     stat_ = stat;

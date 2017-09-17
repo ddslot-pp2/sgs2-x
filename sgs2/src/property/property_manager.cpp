@@ -4,73 +4,6 @@
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/foreach.hpp>
 
-bool property_manager::read_xml(const std::wstring& path)
-{
-    // 추후 xml에서 읽어서 기본값을 맞춤
-    auto stat0 = std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f);
-    default_stat_infos_.emplace_back(stat0);
-
-    auto stat1 = std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f);
-    default_stat_infos_.emplace_back(stat1);
-
-    auto stat2 = std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f);
-    default_stat_infos_.emplace_back(stat2);
-
-    auto stat3 = std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f);
-    default_stat_infos_.emplace_back(stat3);
-
-    auto stat4 = std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f);
-    default_stat_infos_.emplace_back(stat4);
-
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-    default_stat_infos_.emplace_back(std::make_shared<default_stat_info>(100, 10.0f, 20.0f, 10, 25.0f, 1000.0f));
-
-
-    default_character_medal_info_.push_back(1000);
-    default_character_medal_info_.push_back(2000);
-    default_character_medal_info_.push_back(3000);
-    default_character_medal_info_.push_back(4000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-    default_character_medal_info_.push_back(5000);
-
-    return true;
-}
-
-std::shared_ptr<default_stat_info> property_manager::get_default_stat_info(int index) const
-{
-    if (index < 0 || index - 1 > default_stat_infos_.size()) return nullptr;
-    
-    return default_stat_infos_[index];
-}
-
 int property_manager::get_default_character_medal_info(int index) const
 {
     if (index < 0 || index > default_character_medal_info_.size()) return -1;
@@ -96,7 +29,7 @@ void property_manager::LoadCharacterStatData(const std::string& path)
                     if (max_hp_stat.first == "max_hp")
                     {
                         auto v = max_hp_stat.second;
-                        auto max_hp = v.get_value<float>();
+                        auto max_hp = v.get_value<int>();
                         stat.max_hp_stat_container.push_back(max_hp);
                     }
                 }
@@ -160,20 +93,27 @@ void property_manager::LoadCharacterStatData(const std::string& path)
         throw;
     }
 
+    for (auto i = 0; i < character_stat_.size(); ++i) {
+        default_character_medal_info_.push_back(i * 1000);
+    }
 }
 
 boost::optional<CharacterStat> property_manager::CharacterStatByLevel(int type, const CharacterLevelInfo& level_info) const {
-    if (character_stat_.size() - 1 > type || type < 0)  return boost::none;
+    if (character_stat_.size() - 1 < type || type < 0)  return boost::none;
 
     auto& character_stat = character_stat_[type];
 
-    boost::optional<CharacterStat> stat;
+    boost::optional<CharacterStat> stat = CharacterStat();
     stat->max_hp = character_stat.max_hp_stat_container[level_info.max_hp_level - 1];
     stat->speed = character_stat.speed_stat_container[level_info.speed_level - 1];
     stat->bullet_speed = character_stat.bullet_speed_stat_container[level_info.bullet_speed_level - 1];
     stat->bullet_power = character_stat.bullet_power_stat_container[level_info.bullet_power_level - 1];
     stat->bullet_distance = character_stat.bullet_distance_stat_container[level_info.bullet_distance_level - 1];
     stat->reload_time = character_stat.reload_time_stat_container[level_info.reload_time_level - 1];
+    
+    // TODO(pp2) 케릭터 사이즈 xml 처리
+    stat->size = vector3(2.0f, 2.0f, 2.0f);
+
     return stat;
 }
 
@@ -186,7 +126,7 @@ void property_manager::to_print_stat() const
         printf("----- max_hp_stat -----\n");
         for (auto i = 0; i < cstat.max_hp_stat_container.size(); ++i)
         {
-            printf("%f, ", cstat.max_hp_stat_container[i]);
+            printf("%d, ", cstat.max_hp_stat_container[i]);
         }
         printf("\n");
 

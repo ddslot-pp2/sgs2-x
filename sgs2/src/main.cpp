@@ -36,7 +36,7 @@ void initialize()
     field_manager::instance().update_fields();
 
     // 기본 property 읽기
-    property_manager::instance().read_xml(L"");
+    
 }
 
 void test()

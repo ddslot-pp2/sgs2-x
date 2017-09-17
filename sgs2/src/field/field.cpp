@@ -152,6 +152,7 @@ void field::enter_field(std::shared_ptr<server_session> session)
     c->set_pos(spawn_pos);
 
     // stat_info ¼³Á¤ => default_stat_info + stat_info (account)
+    /*
     const auto default_stat_info = property_manager::instance().get_default_stat_info(session->get_character_type());
 
     if (!default_stat_info) 
@@ -171,8 +172,9 @@ void field::enter_field(std::shared_ptr<server_session> session)
     stat->bullet_power = default_stat_info->bullet_power + buff_stat->bullet_power;
     stat->bullet_distance = default_stat_info->bullet_distance + buff_stat->bullet_distance;
     stat->reload_time = std::max(0.0f, default_stat_info->reload_time - buff_stat->reload_time);
+    */
 
-    c->set_stat_info(stat);
+    c->set_stat_info(session->get_stat_info());
 
     session->set_character(c);
     current_user_count_ = characters_.size();

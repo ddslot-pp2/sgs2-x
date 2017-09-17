@@ -25,6 +25,7 @@ void object::initialize()
 
     // session_ 한테 물어서 stat_info를 가져온다;
     // 예를들어 사이즈, 스피드 등등
+    /*
     stat_ = std::make_shared<stat_info>();
     stat_->max_hp = 100;
     stat_->hp = 100;
@@ -40,6 +41,7 @@ void object::initialize()
 
     default_stat_ = std::make_shared<stat_info>();
     default_stat_->copy(stat_);
+    */
 }
 
 void object::update(float delta)
@@ -104,6 +106,11 @@ vector3 object::get_pos()
 void object::set_stat_info(std::shared_ptr<stat_info> stat)
 {
     stat_ = stat;
+    stat_->hp = stat->max_hp.load();
+    stat_->score = 0;
     default_stat_ = std::make_shared<stat_info>();
     default_stat_->copy(stat_);
+
+    // TODO(pp2) 케릭터 사이즈
+
 }
